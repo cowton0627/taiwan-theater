@@ -1,0 +1,17 @@
+[
+  {
+    "id": "the-odyssey-2026",
+    "title": "奧德賽",
+    "titleEn": "The Odyssey",
+    "year": 2026,
+    "shotOn": "IMAX 65mm 底片",
+    "audio": "5.1 聲道（無 Dolby Atmos）",
+    "versions": [
+      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（完整畫幅）" },
+      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1" },
+      { "hallCategory": "STANDARD", "ratio": 1.85, "label": "一般廳 Flat 1.85:1" },
+      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1" }
+    ],
+    "sources": ["Threads @moviekitaoji 台灣觀影指南"]
+  }
+]

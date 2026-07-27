@@ -1,0 +1,29 @@
+name: Update TMDB film list
+
+# 階段二：啟用前先在 repo Settings → Secrets 加入 TMDB_TOKEN（v4 Read Access Token）
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 21 * * *' # 每日 05:30 台北時間
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/fetch-tmdb.mjs
+        env:
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/tmdb.json
+          git diff --cached --quiet || git commit -m "chore: update TMDB film list"
+          git push

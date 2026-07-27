@@ -1,0 +1,254 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e1116;
+  --panel: #161b24;
+  --border: #2a3242;
+  --text: #e6e9ef;
+  --muted: #97a0b0;
+  --accent: #e8b23a;
+  --accent-dim: #8a6a24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'PingFang TC', 'Noto Sans TC', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin: 1.2rem 0;
+}
+
+.control-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.3rem 0;
+}
+
+.control-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  min-width: 2.6rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--accent-dim);
+}
+
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #17130a;
+  font-weight: 600;
+}
+
+.film-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0.5rem 0 0;
+}
+
+.overlay {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.2rem;
+}
+
+.overlay-rect {
+  fill: none;
+  stroke-width: 2;
+}
+
+.overlay-rect-0 { stroke: #e8b23a; }
+.overlay-rect-1 { stroke: #5ac8fa; }
+.overlay-rect-2 { stroke: #7ed957; }
+.overlay-rect-3 { stroke: #ff7e79; }
+.overlay-rect-4 { stroke: #c792ea; }
+.overlay-rect-5 { stroke: #8d99ae; }
+
+.overlay-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.overlay-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.swatch-0 { background: #e8b23a; }
+.swatch-1 { background: #5ac8fa; }
+.swatch-2 { background: #7ed957; }
+.swatch-3 { background: #ff7e79; }
+.swatch-4 { background: #c792ea; }
+.swatch-5 { background: #8d99ae; }
+
+.ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+}
+
+.rank {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 1.6rem;
+  text-align: center;
+}
+
+.mini-screen {
+  fill: #0a0d12;
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.mini-image {
+  fill: var(--accent-dim);
+  stroke: var(--accent);
+  stroke-width: 1;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-body h2 {
+  font-size: 1.02rem;
+  margin: 0 0 0.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.4rem;
+  color: var(--muted);
+}
+
+.badge.atmos {
+  color: #5ac8fa;
+  border-color: #2c5a70;
+}
+
+.badge.unverified {
+  color: #ffb454;
+  border-color: #6e5121;
+}
+
+.dims {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.dims strong {
+  color: var(--text);
+}
+
+.bar-track {
+  background: #0a0d12;
+  border-radius: 4px;
+  height: 6px;
+  margin: 0.4rem 0;
+  overflow: hidden;
+}
+
+.bar {
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  height: 100%;
+  border-radius: 4px;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.meta a {
+  color: var(--accent);
+}
+
+footer {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+@media (max-width: 560px) {
+  .card {
+    flex-wrap: wrap;
+  }
+}
