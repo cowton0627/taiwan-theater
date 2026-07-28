@@ -34,16 +34,17 @@
     "region": "north",
     "city": "新北市",
     "audioTier": "IMAX_5CH",
-    "audio": "IMAX 音響",
+    "audio": "IMAX 6 聲道",
     "seats": 352,
     "seatsNotes": "維基百科／Enjoy Movie 指南",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie 雙北 IMAX 指南（2026/4）：IMAX with Laser（Laser XT）、21.4×11.6m"
+      "Enjoy Movie 雙北 IMAX 指南（2026/4）：IMAX with Laser（Laser XT）、21.4×11.6m",
+      "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：6 聲道、環繞表現明顯改善（疑重新調校，未證實）"
     ],
-    "notes": "2023/9/28 開幕即雷射；開幕時論壇實測音響僅 5.1，是否已升級待確認"
+    "notes": "2023/9/28 開幕即雷射；音響 6 聲道（開幕以來未升級），2026/07 實測環繞評價由負轉正"
   },
   {
     "id": "vieshow-banqiao-imax",
@@ -57,16 +58,17 @@
     "region": "north",
     "city": "新北市",
     "audioTier": "IMAX_5CH",
-    "audio": "IMAX 音響",
+    "audio": "IMAX 6 聲道",
     "seats": 404,
     "seatsNotes": "Enjoy Movie 指南／MovieGo",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "PTT Theater 板升級情報（M.1669256337）：2022/12/14 由氙燈換裝 IMAX with Laser（Laser XT）"
+      "PTT Theater 板升級情報（M.1669256337）：2022/12/14 由氙燈換裝 IMAX with Laser（Laser XT）",
+      "PTT movie《奧德賽》全台十間 IMAX 簡評（M.1785070745，2026/07）＋Threads：雷射升級未同步更新音響，實測仍 6 聲道"
     ],
-    "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser；升級後聲道數未見官方公布"
+    "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser（Laser XT）；音響未隨升級更新，2026/07 實測仍為 6 聲道"
   },
   {
     "id": "milihsin-taimall-imax",
@@ -410,10 +412,10 @@
     "booking": "https://www.miramarcinemas.tw/",
     "verified": true,
     "sources": [
-      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m",
+      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文全文未能直接複核；另有網友電話詢問影城得 14×7m 獨立旁證，PTT M.1729059093）",
       "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）"
     ],
-    "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；網友實測另說 16.0×6.8m"
+    "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度"
   },
   {
     "id": "showtime-dome-dva",
@@ -490,8 +492,8 @@
     "chain": "新光影城",
     "hallCategory": "PREMIUM",
     "widthM": 17,
-    "heightM": null,
-    "projection": "RGB 4K 雷射",
+    "heightM": 7,
+    "projection": "雙機 RGB 4K 雷射",
     "brandLabel": "LUXE",
     "status": "operating",
     "region": "north",
@@ -499,13 +501,14 @@
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
     "seats": 328,
-    "seatsNotes": "部落格／票務 328；另有 322 一說",
+    "seatsNotes": "328（票務）／322（開幕稿）／323（維基）各說；官方未公開逐廳座位數；第 8 排為紅色雙人沙發",
     "booking": "https://www.skcinemas.com/",
     "verified": false,
     "sources": [
-      "媒體／部落格開幕報導：LUXE: A RealD Experience，17m 弧形終極銀幕（全球第 300 座、台灣第 4 座）、Atmos"
+      "新光官方 CMS（wp.skcinemas.com/luxe_intro）：台灣第一套雙機 RGB 4K 雷射 LUXE、RealD 終極銀幕 92% 反射率、Dolby Atmos",
+      "ETtoday 等開幕媒體稿（2020/7）：寬 17m × 高 7m 曲面銀幕、322 席（尺寸疑出自官方新聞稿，官方頁面未直接標示）"
     ],
-    "notes": "銀幕寬 17m、高未公布；青埔店與杜比影院同館"
+    "notes": "與杜比影院同館；「全球第 300 座／台灣第 4 座終極銀幕」為新光方說法、查無 RealD 官方佐證"
   },
   {
     "id": "in89-ximen-luxe",
@@ -658,6 +661,50 @@
       "Cool3c／JazzNews 開幕報導（2025/10）：台北市最大 ScreenX"
     ],
     "notes": "2025/10 開幕；270° 三面投影，主銀幕尺寸未公布"
+  },
+  {
+    "id": "venice-zhongli-atmos",
+    "name": "中壢威尼斯影城 Dolby Atmos 廳（7、8 廳）",
+    "chain": "威尼斯影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "north",
+    "city": "桃園市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "booking": "https://www.venice-cinemas.com.tw/showtime.php",
+    "verified": false,
+    "sources": [
+      "開眼時刻表（2026/7/28 實查）：營運中、當日有 Atmos 場次標示",
+      "PTT Theater 板整理串：7、8 廳雙 Atmos（2014 加裝，當時號稱全台唯一雙 Atmos 廳影城）——廳號未經官方證實"
+    ],
+    "notes": "中壢在地獨立影城；銀幕尺寸與座位數待確認"
+  },
+  {
+    "id": "broadway-zhubei-flagship",
+    "name": "百老匯影城竹北店 旗艦廳",
+    "chain": "百老匯影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "projection": "RGB 純雷射",
+    "brandLabel": "旗艦廳",
+    "status": "operating",
+    "region": "north",
+    "city": "新竹縣",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "booking": "https://www.broadway-cineplex.com.tw/book.html?obj=Zhubei",
+    "verified": false,
+    "sources": [
+      "百老匯官網 about：旗艦廳 Dolby Atmos（杜比首款自行研發主聲道揚聲器）、RGB 純雷射",
+      "開眼時刻表（2026/7/28 實查）：營運中；PTT 整理：＝第 8 廳（未官方證實）"
+    ],
+    "notes": "2022/12/14 開幕，新竹縣首座首輪影城；全店 14 廳 1,238 席；旗艦廳尺寸與座位待確認"
   },
   {
     "id": "milihsin-tamsui-giant",
