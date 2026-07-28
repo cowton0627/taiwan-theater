@@ -30,9 +30,18 @@ const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
  * 置中對齊呼應實際放映的裁切方式——不同畫幅版本是對稱地裁上下（或左右），
  * 疊圖因此直接呈現「可視範圍」的差異。
  */
-function OverlayCompare({ fits }: { fits: FitResult[] }) {
+function OverlayCompare({
+  fits,
+  selected,
+  onClear,
+}: {
+  fits: FitResult[];
+  selected: FitResult[];
+  onClear: () => void;
+}) {
   const [open, setOpen] = useState(true);
-  const top = fits.slice(0, 6);
+  const comparing = selected.length > 0;
+  const top = (comparing ? selected : fits).slice(0, 6);
   if (top.length === 0) return null;
   const maxWm = Math.max(...top.map((f) => f.imageWidthM));
   const maxHm = Math.max(...top.map((f) => f.imageHeightM));
@@ -56,14 +65,25 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
   }
   return (
     <section className="overlay-section">
-      <button
-        className="overlay-toggle"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-      >
-        <span className={open ? 'caret open' : 'caret'}>▸</span>
-        疊圖比較（前 {top.length} 名成像，同比例尺；格線每 5 公尺，＋為畫面中心）
-      </button>
+      <div className="overlay-head">
+        <button
+          className="overlay-toggle"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+        >
+          <span className={open ? 'caret open' : 'caret'}>▸</span>
+          {comparing
+            ? `疊圖比較（自選 ${top.length} 廳，同比例尺；格線每 5 公尺，＋為畫面中心）`
+            : `疊圖比較（前 ${top.length} 名成像，同比例尺；格線每 5 公尺，＋為畫面中心）`}
+        </button>
+        {comparing ? (
+          <button className="overlay-clear" onClick={onClear}>
+            清除自選
+          </button>
+        ) : (
+          <span className="overlay-hint">點下方卡片可自選比較（最多 6 廳）</span>
+        )}
+      </div>
       {open && (
         <>
           <svg
@@ -113,6 +133,8 @@ export default function App() {
   const [filmId, setFilmId] = useState<string>(films[0]?.id ?? 'custom');
   const [customRatio, setCustomRatio] = useState<number>(2.39);
   const [regions, setRegions] = useState<Set<Region>>(new Set());
+  /** 自選比較的影廳 id；空集合＝疊圖顯示預設前 6 名 */
+  const [selected, setSelected] = useState<Set<string>>(new Set());
 
   const film = films.find((f) => f.id === filmId) ?? null;
 
@@ -157,6 +179,21 @@ export default function App() {
       const next = new Set(prev);
       if (next.has(r)) next.delete(r);
       else next.add(r);
+      return next;
+    });
+  };
+
+  /** 依成像面積排序的自選比較清單（跨區也可比） */
+  const selectedFits = useMemo(
+    () => fits.filter((f) => selected.has(f.screen.id)),
+    [fits, selected],
+  );
+
+  const toggleSelect = (id: string) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else if (next.size < 6) next.add(id);
       return next;
     });
   };
@@ -220,7 +257,11 @@ export default function App() {
         )}
       </section>
 
-      <OverlayCompare fits={fits} />
+      <OverlayCompare
+        fits={fits}
+        selected={selectedFits}
+        onClear={() => setSelected(new Set())}
+      />
 
       {grouped.map((group) => (
         <section key={group.region} className="region-group">
@@ -233,7 +274,15 @@ export default function App() {
           </h2>
           <div className="ranking">
             {group.fits.map((fit, i) => (
-              <article key={fit.screen.id} className="card">
+              <article
+                key={fit.screen.id}
+                className={selected.has(fit.screen.id) ? 'card selectable selected' : 'card selectable'}
+                title="點擊加入／移除疊圖比較"
+                onClick={(e) => {
+                  if ((e.target as HTMLElement).closest('a')) return;
+                  toggleSelect(fit.screen.id);
+                }}
+              >
                 <div className="rank">{i + 1}</div>
                 <div className="card-body">
                   <h3>

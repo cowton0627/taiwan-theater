@@ -114,6 +114,33 @@ header h1 {
   transform: rotate(90deg);
 }
 
+.overlay-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+}
+
+.overlay-clear {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 0.15rem 0.7rem;
+  cursor: pointer;
+}
+
+.overlay-clear:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.overlay-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .overlay {
   display: block;
   width: auto;
@@ -213,6 +240,20 @@ header h1 {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.8rem 1rem;
+}
+
+.card.selectable {
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+
+.card.selectable:hover {
+  border-color: var(--accent);
+}
+
+.card.selected {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
 .rank {
