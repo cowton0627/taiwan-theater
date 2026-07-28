@@ -262,6 +262,10 @@ export default function App() {
     if (set.delete('other')) set.add(OTHER_CHAINS);
     return set;
   });
+  /** 城市篩選；僅在選了地區時顯示 chips，空集合＝該區全部 */
+  const [cities, setCities] = useState<Set<string>>(() =>
+    initSetParam<string>('city', (v) => screens.some((s) => s.city === v)),
+  );
   /** 自選比較的影廳 id；空集合＝疊圖顯示預設前 6 名 */
   const [selected, setSelected] = useState<Set<string>>(() =>
     initSetParam<string>('sel', (v) => screens.some((s) => s.id === v)),
@@ -285,6 +289,7 @@ export default function App() {
           .join(','),
       );
     if (sortMode !== 'area') p.set('sort', sortMode);
+    if (cities.size > 0) p.set('city', Array.from(cities).join(','));
     if (selected.size > 0) p.set('sel', Array.from(selected).join(','));
     const qs = p.toString();
     window.history.replaceState(
@@ -292,22 +297,42 @@ export default function App() {
       '',
       qs ? `${window.location.pathname}?${qs}` : window.location.pathname,
     );
-  }, [filmId, customRatio, regions, chains, sortMode, selected]);
+  }, [filmId, customRatio, regions, chains, sortMode, cities, selected]);
 
   const film = films.find((f) => f.id === filmId) ?? null;
+
+  /** 已選地區內的城市選項（依廳數排序）；未選地區時不展開城市層 */
+  const cityOptions = useMemo(() => {
+    if (regions.size === 0) return [];
+    const counts = new Map<string, number>();
+    for (const s of screens) {
+      if (s.status !== 'operating' || !regions.has(s.region)) continue;
+      counts.set(s.city, (counts.get(s.city) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'))
+      .map(([c]) => c);
+  }, [regions]);
+
+  /** 只採計目前地區範圍內的城市選取——切換地區時殘留選取自動失效 */
+  const activeCities = useMemo(
+    () => new Set(Array.from(cities).filter((c) => cityOptions.includes(c))),
+    [cities, cityOptions],
+  );
 
   const pool = useMemo(
     () =>
       screens
         .filter((s) => s.status === 'operating')
         .filter((s) => regions.size === 0 || regions.has(s.region))
+        .filter((s) => activeCities.size === 0 || activeCities.has(s.city))
         .filter(
           (s) =>
             chains.size === 0 ||
             chains.has(chainKey(s.chain)) ||
             (chains.has(OTHER_CHAINS) && MINOR_CHAINS.has(chainKey(s.chain))),
         ),
-    [regions, chains],
+    [regions, chains, activeCities],
   );
 
   const fits = useMemo(() => {
@@ -364,6 +389,15 @@ export default function App() {
 
   const toggleChain = (c: string) => {
     setChains((prev) => {
+      const next = new Set(prev);
+      if (next.has(c)) next.delete(c);
+      else next.add(c);
+      return next;
+    });
+  };
+
+  const toggleCity = (c: string) => {
+    setCities((prev) => {
       const next = new Set(prev);
       if (next.has(c)) next.delete(c);
       else next.add(c);
@@ -508,6 +542,20 @@ export default function App() {
             </button>
           ))}
         </div>
+        {cityOptions.length > 1 && (
+          <div className="control-group">
+            <span className="control-label">城市</span>
+            {cityOptions.map((c) => (
+              <button
+                key={c}
+                className={activeCities.has(c) ? 'chip active' : 'chip'}
+                onClick={() => toggleCity(c)}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        )}
         {film && (
           <>
             <p className="film-meta">
