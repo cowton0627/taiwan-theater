@@ -1,10 +1,10 @@
-import type { Film, FilmVersion, FitResult, HallCategory, Screen } from '../types';
+import type { Film, FilmVersion, FitResult, HallCategory, SizedScreen } from '../types';
 
 /**
  * 畫幅 R 投影在 W×H 銀幕上的最大內接矩形：
  * 片比銀幕寬 → 滿寬、上下留黑；片比銀幕窄 → 滿高、左右留黑。
  */
-export function fitImage(screen: Screen, version: FilmVersion): Omit<FitResult, 'versionUncertain'> {
+export function fitImage(screen: SizedScreen, version: FilmVersion): Omit<FitResult, 'versionUncertain'> {
   const screenRatio = screen.widthM / screen.heightM;
   const r = version.ratio;
   const imageWidthM = r >= screenRatio ? screen.widthM : screen.heightM * r;
@@ -34,7 +34,7 @@ const VERSION_FALLBACK: Record<HallCategory, HallCategory[]> = {
  * 同類別有多個版本（如一般廳同時發行 1.85 與 2.39）時取成像面積最大者，
  * 並標記 versionUncertain —— 實際放哪版依影城排片而定。
  */
-export function fitFilm(screen: Screen, film: Film): FitResult | null {
+export function fitFilm(screen: SizedScreen, film: Film): FitResult | null {
   for (const cat of VERSION_FALLBACK[screen.hallCategory]) {
     const versions = film.versions.filter((v) => v.hallCategory === cat);
     if (versions.length === 0) continue;

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
+import { isSized } from './types';
 import type { Film, FitResult, HallCategory, Region, Screen } from './types';
 
 const screens = screensData as Screen[];
@@ -117,10 +118,17 @@ export default function App() {
 
   const film = films.find((f) => f.id === filmId) ?? null;
 
+  const pool = useMemo(
+    () =>
+      screens
+        .filter((s) => s.status === 'operating')
+        .filter((s) => regions.size === 0 || regions.has(s.region)),
+    [regions],
+  );
+
   const fits = useMemo(() => {
-    const pool =
-      regions.size === 0 ? screens : screens.filter((s) => regions.has(s.region));
     const results = pool
+      .filter(isSized)
       .map((s) =>
         film
           ? fitFilm(s, film)
@@ -129,17 +137,21 @@ export default function App() {
       .filter((r): r is FitResult => r !== null);
     results.sort((a, b) => b.imageAreaM2 - a.imageAreaM2);
     return results;
-  }, [film, customRatio, regions]);
+  }, [film, customRatio, pool]);
 
   const maxArea = fits[0]?.imageAreaM2 ?? 1;
 
-  /** 依地區分組（固定北→中→南→東順序），區內維持成像面積排序 */
+  /** 依地區分組（固定北→中→南→東順序）；區內排名 + 尺寸未公布清單 */
   const grouped = useMemo(
     () =>
       (Object.keys(REGION_LABELS) as Region[])
-        .map((r) => ({ region: r, fits: fits.filter((f) => f.screen.region === r) }))
-        .filter((g) => g.fits.length > 0),
-    [fits],
+        .map((r) => ({
+          region: r,
+          fits: fits.filter((f) => f.screen.region === r),
+          unsized: pool.filter((s) => s.region === r && !isSized(s)),
+        }))
+        .filter((g) => g.fits.length > 0 || g.unsized.length > 0),
+    [fits, pool],
   );
 
   const toggleRegion = (r: Region) => {
@@ -216,7 +228,10 @@ export default function App() {
         <section key={group.region} className="region-group">
           <h2 className="region-title">
             {REGION_LABELS[group.region]}
-            <span className="region-count">{group.fits.length} 廳</span>
+            <span className="region-count">
+              {group.fits.length} 廳
+              {group.unsized.length > 0 && `（另 ${group.unsized.length} 廳尺寸未公布）`}
+            </span>
           </h2>
           <div className="ranking">
             {group.fits.map((fit, i) => (
@@ -227,6 +242,12 @@ export default function App() {
                   <h3>
                     {fit.screen.name}
                     <span className="badge">{CATEGORY_LABELS[fit.screen.hallCategory]}</span>
+                    {fit.screen.brandLabel && (
+                      <span className="badge brand">{fit.screen.brandLabel}</span>
+                    )}
+                    {fit.screen.projection && (
+                      <span className="badge">{fit.screen.projection}</span>
+                    )}
                     {fit.screen.atmos && <span className="badge atmos">Atmos</span>}
                     {!fit.screen.verified && (
                       <span className="badge unverified" title="尺寸為社群流傳值，尚未查證">
@@ -254,6 +275,28 @@ export default function App() {
                       查場次
                     </a>
                     {fit.screen.notes && ` ・ ${fit.screen.notes}`}
+                  </p>
+                </div>
+              </article>
+            ))}
+            {group.unsized.map((s) => (
+              <article key={s.id} className="card card-unsized">
+                <div className="rank">–</div>
+                <div className="card-body">
+                  <h3>
+                    {s.name}
+                    <span className="badge">{CATEGORY_LABELS[s.hallCategory]}</span>
+                    {s.brandLabel && <span className="badge brand">{s.brandLabel}</span>}
+                    {s.projection && <span className="badge">{s.projection}</span>}
+                    {s.atmos && <span className="badge atmos">Atmos</span>}
+                    <span className="badge unverified">尺寸未公布</span>
+                  </h3>
+                  <p className="meta">
+                    未納入成像排名 ・ {s.chain} ・ {s.city} ・{' '}
+                    <a href={s.booking} target="_blank" rel="noreferrer">
+                      查場次
+                    </a>
+                    {s.notes && ` ・ ${s.notes}`}
                   </p>
                 </div>
               </article>

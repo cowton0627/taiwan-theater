@@ -10,7 +10,7 @@
 
 ## 資料
 
-- [ ] 4. 充實 `screens.json`：MUVIE TITAN、各大遠百 IMAX、主要 Atmos 廳（每廳附來源）
+- [x] 4. 充實 `screens.json`：PTT Theater 板整理文全數收錄——11 間營運中 IMAX、品牌巨幕廳、兩座杜比影院、代表性 Atmos 廳，共 22 廳（2026-07-28；Atmos 廳仍可持續補）
 - [ ] 5. 逐廳查證尺寸、翻正 `verified` 旗標
 
 ## 功能

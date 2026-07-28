@@ -1,5 +1,16 @@
 # 架構決策紀錄
 
+## 2026-07-28 分類架構
+
+### hallCategory 與描述欄位分離
+`hallCategory`（IMAX_GT/IMAX/DOLBY_CINEMA/PREMIUM/STANDARD）只負責一件事：決定該廳拿到哪個發行版本畫幅。放映系統（雷射/氙燈/8K/LED）、廳品牌（MUVIE TITAN、鉅院廳、DVA）、Atmos 與否都是獨立描述欄位，不混進類別——否則類別會組合爆炸。
+
+### 尺寸可為 null
+杜比影院與多數 Atmos 廳不公布銀幕尺寸。與其漏掉這些廳，收錄後標「尺寸未公布」、不納入成像排名。`isSized` type guard 區分兩者。
+
+### 已歇業影廳保留資料、UI 過濾
+`status: closed`（如台北國賓大戲院鉅院廳）保留在 JSON 供未來歷史區塊使用，UI 只顯示 operating。
+
 ## 2026-07-27 專案起始
 
 ### 靜態網站而非 App

@@ -252,6 +252,15 @@ header h1 {
   border-color: #2c5a70;
 }
 
+.badge.brand {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.card-unsized {
+  opacity: 0.75;
+}
+
 .badge.unverified {
   color: #ffb454;
   border-color: #6e5121;
