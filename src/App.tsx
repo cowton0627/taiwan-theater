@@ -28,17 +28,24 @@ const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
 /** 品牌分組鍵：子品牌歸入母集團（例：威秀影城（MUVIE）→ 威秀影城） */
 const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
 
-/** 營運中影廳的品牌清單，依廳數多到少排序 */
-const CHAIN_OPTIONS = (() => {
+/** 「其他」chip 的哨兵值：涵蓋所有單廳小品牌 */
+const OTHER_CHAINS = '__other__';
+
+/** 營運中 ≥2 廳的品牌才有獨立 chip（依廳數排序）；單廳品牌收進「其他」 */
+const { MAJOR_CHAINS, MINOR_CHAINS } = (() => {
   const counts = new Map<string, number>();
   for (const s of screens) {
     if (s.status !== 'operating') continue;
     const key = chainKey(s.chain);
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
-  return Array.from(counts.entries())
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'))
-    .map(([key]) => key);
+  const sorted = Array.from(counts.entries()).sort(
+    (a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'),
+  );
+  return {
+    MAJOR_CHAINS: sorted.filter(([, n]) => n >= 2).map(([key]) => key),
+    MINOR_CHAINS: new Set(sorted.filter(([, n]) => n < 2).map(([key]) => key)),
+  };
 })();
 
 const AUDIO_TIER_LABELS: Record<AudioTier, string> = {
@@ -239,7 +246,12 @@ export default function App() {
       screens
         .filter((s) => s.status === 'operating')
         .filter((s) => regions.size === 0 || regions.has(s.region))
-        .filter((s) => chains.size === 0 || chains.has(chainKey(s.chain))),
+        .filter(
+          (s) =>
+            chains.size === 0 ||
+            chains.has(chainKey(s.chain)) ||
+            (chains.has(OTHER_CHAINS) && MINOR_CHAINS.has(chainKey(s.chain))),
+        ),
     [regions, chains],
   );
 
@@ -384,7 +396,7 @@ export default function App() {
         </div>
         <div className="control-group">
           <span className="control-label">品牌</span>
-          {CHAIN_OPTIONS.map((c) => (
+          {MAJOR_CHAINS.map((c) => (
             <button
               key={c}
               className={chains.has(c) ? 'chip active' : 'chip'}
@@ -393,6 +405,15 @@ export default function App() {
               {c}
             </button>
           ))}
+          {MINOR_CHAINS.size > 0 && (
+            <button
+              className={chains.has(OTHER_CHAINS) ? 'chip active' : 'chip'}
+              onClick={() => toggleChain(OTHER_CHAINS)}
+              title={`單廳品牌：${Array.from(MINOR_CHAINS).join('、')}`}
+            >
+              其他
+            </button>
+          )}
         </div>
         <div className="control-group">
           <span className="control-label">排序</span>

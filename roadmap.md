@@ -16,7 +16,7 @@
 - [x] 10. data-plan §5-2：新增 A 組核心廳 8 廳（青埔 LUXE、in89 LUXE、昕境國賓、置地國賓、樹林／欣欣／大巨蛋 ScreenX、ULTRA 4DX）＋淡海巨幕歇業紀錄，共 31 廳（2026-07-28；喜樂時代永和 XD 巨幕規格未明、暫未收）
 - [x] 11. data-plan §5-3：schema 遷移 `audioTier`（八級：DOLBY_CINEMA→SURROUND_5_1；移除 `atmos` 布林改由 `hasAtmos()` 推導；未查證廳保守標 SURROUND_5_1）（2026-07-28）
 - [ ] 15. 中南部／東部盤點：照北部方法論（IMAX 現況＋集團缺漏＋歇業複核）；已知線索——台中老虎城 IMAX 已拆改 TITAN（2025/1）、秀泰台中/高雄 DVA 計畫、義大/夢時代待複核
-- [ ] 16. data-plan B 組體驗型廳（4DX／GOLD CLASS／B.O.X.／MUCROWN／金鑽…）＋既有廳 `seats` 補全（南部 IMAX 多為 null）——座位資訊前置
+- [ ] 16. data-plan B 組體驗型廳（4DX／GOLD CLASS／B.O.X.／MUCROWN／金鑽…）＋既有廳 `seats` 補全（南部 IMAX 多為 null）——座位資訊前置。盤點清單來源：Threads @moviekitaoji 2025/8 特殊影廳規格指南（含 MX4D／D-BOX、「維修中／即將開幕」狀態對 15 也有用；規格在圖片內需人工轉錄、寫入標 verified:false）
 
 ## 功能
 
@@ -25,7 +25,7 @@
 - [ ] 7. 階段二：TMDB 片單接入（設 `TMDB_TOKEN`、啟用 workflow），點片名帶入手工標註畫幅
 - [x] 8. 音效維度：卡片音效層級徽章（未查證顯示虛線「音效未查證」）＋「音效層級」排序模式（同層級內按面積）＝綜合評比階段一（2026-07-28）
 - [ ] 13. 綜合評比＝逐項得分卡（點數制）：格式能力／認證／沉浸音效／口碑各項給分＋片相關名次分，每分附依據、未查證顯示 ?（規格見 data-plan §6，動工前定案分值）
-- [ ] 14. 社群實測層：`communityNotes`＋`bestRows`（推薦排數）手工策展，附 PTT/Threads 出處；與座位資訊 roadmap 合流
+- [ ] 14. 社群實測層：`communityNotes`＋`bestRows`（推薦排數）手工策展，附 PTT/Threads 出處；與座位資訊 roadmap 合流。現成素材（qa-findings 評估）：PTT 整理文推文區——秀泰巨幕實際約標稱 80–90%、國賓「亞洲最大 Atmos」指廳內空間非銀幕、岡山秀泰實測 20×11m（寫入前依慣例複核 2026 現況）
 
 ## 2026-07-28 實測報告修正包（觀影者視角 QA）
 
@@ -34,3 +34,4 @@
 - [ ] 19. URL 狀態同步：片單／品牌／地區／排序／自選比較寫入 query params，可分享、F5 不歸零
 - [ ] 20. 片版本對應誠實化：卡片標示「以一般版本計」（fallback 時）；`FilmVersion` 加信心旗標；查證蜘蛛人台灣是否有 IMAX 版（Variety：僅部分國際市場）
 - [ ] 21. 疊圖增強（併 roadmap 2 視覺）：圖例 hover 高亮對應線框、1.7m 人形比例參照取代抽象格線的一部分
+- [ ] 22. 票價欄位：逐廳收集全票／IMAX／杜比票價＋卡片顯示（顯示不計分，見 data-plan §6）——QA F-6b 誤判為已處理，實際尚未動工
