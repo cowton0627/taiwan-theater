@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
@@ -30,6 +30,15 @@ const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
 
 /** 「其他」chip 的哨兵值：涵蓋所有單廳小品牌 */
 const OTHER_CHAINS = '__other__';
+
+/** 頁面載入時的 URL 參數——所有狀態的初始值來源（可分享、F5 不歸零） */
+const INIT_PARAMS = new URLSearchParams(window.location.search);
+
+function initSetParam<T extends string>(key: string, valid: (v: string) => boolean): Set<T> {
+  const raw = INIT_PARAMS.get(key);
+  if (!raw) return new Set();
+  return new Set(raw.split(',').filter(valid) as T[]);
+}
 
 /** 營運中 ≥2 廳的品牌才有獨立 chip（依廳數排序）；單廳品牌收進「其他」 */
 const { MAJOR_CHAINS, MINOR_CHAINS } = (() => {
@@ -218,10 +227,20 @@ function OverlayCompare({
 }
 
 export default function App() {
-  const [filmId, setFilmId] = useState<string>(films[0]?.id ?? 'custom');
-  const [customRatio, setCustomRatio] = useState<number>(2.39);
+  const [filmId, setFilmId] = useState<string>(() => {
+    const f = INIT_PARAMS.get('film');
+    if (f === 'custom' || films.some((x) => x.id === f)) return f as string;
+    return films[0]?.id ?? 'custom';
+  });
+  const [customRatio, setCustomRatio] = useState<number>(() => {
+    const v = parseFloat(INIT_PARAMS.get('ratio') ?? '');
+    return !Number.isNaN(v) && v >= 0.5 && v <= 4 ? v : 2.39;
+  });
   /** 任意比例輸入框的原始字串（允許打字中間狀態，合法時才寫入 customRatio） */
-  const [ratioInput, setRatioInput] = useState<string>('2.39');
+  const [ratioInput, setRatioInput] = useState<string>(() => {
+    const v = parseFloat(INIT_PARAMS.get('ratio') ?? '');
+    return !Number.isNaN(v) && v >= 0.5 && v <= 4 ? String(v) : '2.39';
+  });
   /** 短暫回饋訊息（如自選達上限） */
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<number | undefined>(undefined);
@@ -231,13 +250,49 @@ export default function App() {
     window.clearTimeout(toastTimer.current);
     toastTimer.current = window.setTimeout(() => setToast(null), 2600);
   };
-  const [regions, setRegions] = useState<Set<Region>>(new Set());
-  /** 品牌篩選；空集合＝全部 */
-  const [chains, setChains] = useState<Set<string>>(new Set());
+  const [regions, setRegions] = useState<Set<Region>>(() =>
+    initSetParam<Region>('region', (v) => v in REGION_LABELS),
+  );
+  /** 品牌篩選；空集合＝全部；URL 中「其他」以 other 表示 */
+  const [chains, setChains] = useState<Set<string>>(() => {
+    const set = initSetParam<string>(
+      'chain',
+      (v) => v === 'other' || MAJOR_CHAINS.includes(v),
+    );
+    if (set.delete('other')) set.add(OTHER_CHAINS);
+    return set;
+  });
   /** 自選比較的影廳 id；空集合＝疊圖顯示預設前 6 名 */
-  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [selected, setSelected] = useState<Set<string>>(() =>
+    initSetParam<string>('sel', (v) => screens.some((s) => s.id === v)),
+  );
   /** 排序：成像面積（預設）或音效層級優先（同層級內仍按面積） */
-  const [sortMode, setSortMode] = useState<'area' | 'audio'>('area');
+  const [sortMode, setSortMode] = useState<'area' | 'audio'>(
+    INIT_PARAMS.get('sort') === 'audio' ? 'audio' : 'area',
+  );
+
+  /** 狀態 → URL（replaceState 不塞瀏覽紀錄；預設值省略、保持網址乾淨） */
+  useEffect(() => {
+    const p = new URLSearchParams();
+    if (filmId !== (films[0]?.id ?? 'custom')) p.set('film', filmId);
+    if (filmId === 'custom' && customRatio !== 2.39) p.set('ratio', String(customRatio));
+    if (regions.size > 0) p.set('region', Array.from(regions).join(','));
+    if (chains.size > 0)
+      p.set(
+        'chain',
+        Array.from(chains)
+          .map((c) => (c === OTHER_CHAINS ? 'other' : c))
+          .join(','),
+      );
+    if (sortMode !== 'area') p.set('sort', sortMode);
+    if (selected.size > 0) p.set('sel', Array.from(selected).join(','));
+    const qs = p.toString();
+    window.history.replaceState(
+      null,
+      '',
+      qs ? `${window.location.pathname}?${qs}` : window.location.pathname,
+    );
+  }, [filmId, customRatio, regions, chains, sortMode, selected]);
 
   const film = films.find((f) => f.id === filmId) ?? null;
 

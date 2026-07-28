@@ -31,7 +31,7 @@
 
 - [x] 17. 快贏包：場次免責聲明（footer）、自選達 6 廳上限 toast 提示、任意比例輸入框（0.5–4，保留 preset）、音效排序依據說明（控制列下方＋標籤 tooltip）（2026-07-28）
 - [ ] 18. 訂票深連結＋城市層：27 廳逐廳收集分店訂票頁 URL；城市篩選（台北≠新竹）；地址與 Google Maps 連結（地址需收資料）
-- [ ] 19. URL 狀態同步：片單／品牌／地區／排序／自選比較寫入 query params，可分享、F5 不歸零
+- [x] 19. URL 狀態同步：film/ratio/region/chain/sort/sel 寫入 query params（replaceState、預設值省略），可分享、F5 不歸零（2026-07-28）
 - [x] 20. 片版本對應誠實化：特殊廳 fallback 標示「本片無此廳型專屬版本」；`FilmVersion` 信心旗標（official/reported/expected）；查證確認**蜘蛛人台灣無 IMAX 版**（IMAX 檔期由奧德賽／沙丘 3 獨占）→ 移除 IMAX 版、補杜比影院版與 ScreenX 原生拍攝註記（2026-07-28）
 - [ ] 21. 疊圖增強（併 roadmap 2 視覺）：圖例 hover 高亮對應線框、1.7m 人形比例參照取代抽象格線的一部分
 - [ ] 22. 票價欄位：逐廳收集全票／IMAX／杜比票價＋卡片顯示（顯示不計分，見 data-plan §6）——QA F-6b 誤判為已處理，實際尚未動工
