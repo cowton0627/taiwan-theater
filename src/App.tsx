@@ -361,11 +361,20 @@ export default function App() {
           ))}
         </div>
         {film && (
-          <p className="film-meta">
-            《{film.title}》{film.titleEn}（{film.year}）
-            {film.shotOn && ` ・ ${film.shotOn}`}
-            {film.audio && ` ・ ${film.audio}`}
-          </p>
+          <>
+            <p className="film-meta">
+              《{film.title}》{film.titleEn}（{film.year}）
+              {film.shotOn && ` ・ ${film.shotOn}`}
+              {film.audio && ` ・ ${film.audio}`}
+              {film.runtimeMin != null &&
+                film.largeFormatMin != null &&
+                ` ・ 原生大畫幅 ${film.largeFormatMin}/${film.runtimeMin} 分鐘（${Math.round(
+                  (film.largeFormatMin / film.runtimeMin) * 100,
+                )}%）`}
+              {film.runtimeMin != null && film.largeFormatMin == null && ` ・ 片長 ${film.runtimeMin} 分鐘`}
+            </p>
+            {film.formatNotes && <p className="film-meta film-format">{film.formatNotes}</p>}
+          </>
         )}
       </section>
 

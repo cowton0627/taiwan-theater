@@ -4,14 +4,61 @@
     "title": "奧德賽",
     "titleEn": "The Odyssey",
     "year": 2026,
-    "shotOn": "IMAX 65mm 底片",
+    "shotOn": "IMAX 65mm 底片（全片）",
     "audio": "5.1 聲道（無 Dolby Atmos）",
+    "runtimeMin": 172,
+    "largeFormatMin": 172,
+    "formatNotes": "影史首部全片 IMAX 底片拍攝——1.43:1 廳全片滿幅，不像星際效應／奧本海默只有部分片段切換",
     "versions": [
       { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（完整畫幅）" },
       { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1" },
       { "hallCategory": "STANDARD", "ratio": 1.85, "label": "一般廳 Flat 1.85:1" },
       { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1" }
     ],
-    "sources": ["Threads @moviekitaoji 台灣觀影指南"]
+    "sources": [
+      "官方格式頁 odysseymovie.com/explore-formats：Every frame shot with IMAX Film Cameras、IMAX 70mm 全片 1.43:1",
+      "Forbes 格式解析（2026/7/17）：GT 雷射 1.43、數位 IMAX 1.90、70mm 2.20、35mm 2.39；原生混音 5.1",
+      "Collider：片長 172 分鐘",
+      "Threads @moviekitaoji 台灣觀影指南"
+    ]
+  },
+  {
+    "id": "spiderman-brand-new-day-2026",
+    "title": "蜘蛛人：重生日",
+    "titleEn": "Spider-Man: Brand New Day",
+    "year": 2026,
+    "shotOn": "數位攝影（機型未公布；非 IMAX 底片）",
+    "runtimeMin": 145,
+    "largeFormatMin": null,
+    "formatNotes": "全片 2.39:1 基準；IMAX 版關鍵段落擴展至 1.90:1（最多約多 26% 畫面），擴展段落總長未公布；另有 ScreenX 專屬段落",
+    "versions": [
+      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1（關鍵段落擴展）" },
+      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1" }
+    ],
+    "sources": [
+      "TheDirect 版本整理（2026/7）：2.39 基準＋IMAX 1.90 擴展（約 +26% 畫面）、七種版本含 ScreenX/4DX/Dolby Cinema",
+      "Wikipedia：片長 145 分鐘、攝影 Brett Pawlak；攝影機型無公開可靠出處",
+      "Variety（轉述）：奧德賽 IMAX 獨占 4 週，美國開片無 IMAX 版、1.90 版僅部分國際市場"
+    ]
+  },
+  {
+    "id": "dune-part-three-2026",
+    "title": "沙丘：第三部",
+    "titleEn": "Dune: Part Three",
+    "year": 2026,
+    "shotOn": "底片為主＋IMAX 65mm 底片（大部分）；沙漠戲刻意用數位 IMAX",
+    "runtimeMin": null,
+    "largeFormatMin": null,
+    "formatNotes": "2026/12/18 上映；「全片 IMAX」為 IMAX CEO 口誤、Variety 已更正；IMAX 底片段落理論可達 1.43:1，比例配置未公告（以下版本為預期值）；攝影 Linus Sandgren（非前兩集的 Greig Fraser）",
+    "versions": [
+      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（底片段落，預期）" },
+      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1（預期）" },
+      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1（預期）" }
+    ],
+    "sources": [
+      "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
+      "ScreenRant 引 Variety 更正：非全片 IMAX",
+      "YMCinema（2025/8）：本集以底片為主要載體"
+    ]
   }
 ]

@@ -93,6 +93,12 @@ export interface Film {
   year: number;
   shotOn?: string;
   audio?: string;
+  /** 全片片長（分鐘）；未公布 null */
+  runtimeMin?: number | null;
+  /** 原生大畫幅（IMAX 攝影機等）片段分鐘數；全片拍攝＝等於 runtimeMin；查無出處 null */
+  largeFormatMin?: number | null;
+  /** 畫幅／格式補充說明（顯示於片名下方） */
+  formatNotes?: string;
   versions: FilmVersion[];
   sources: string[];
 }

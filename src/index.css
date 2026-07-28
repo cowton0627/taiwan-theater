@@ -87,6 +87,11 @@ header h1 {
   margin: 0.5rem 0 0;
 }
 
+.film-format {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+}
+
 .overlay-section {
   margin-bottom: 1.4rem;
 }
