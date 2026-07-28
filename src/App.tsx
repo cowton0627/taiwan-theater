@@ -53,8 +53,9 @@ function MiniScreen({ fit }: { fit: FitResult }) {
   );
 }
 
-/** 疊圖比較：把前幾名影廳的成像框以同一公尺比例尺置中疊放 */
+/** 疊圖比較：把前幾名影廳的成像框以同一公尺比例尺置中疊放，可收合 */
 function OverlayCompare({ fits }: { fits: FitResult[] }) {
+  const [open, setOpen] = useState(true);
   const top = fits.slice(0, 6);
   if (top.length === 0) return null;
   const maxWm = Math.max(...top.map((f) => f.imageWidthM));
@@ -63,37 +64,49 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
   const scale = width / (maxWm * 1.06);
   const height = maxHm * scale * 1.12;
   return (
-    <div>
-      <svg
-        className="overlay"
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-label="影廳成像大小疊圖比較"
+    <section className="overlay-section">
+      <button
+        className="overlay-toggle"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
       >
-        {top.map((f, i) => {
-          const w = f.imageWidthM * scale;
-          const h = f.imageHeightM * scale;
-          return (
-            <rect
-              key={f.screen.id}
-              x={(width - w) / 2}
-              y={height - h - 4}
-              width={w}
-              height={h}
-              className={`overlay-rect overlay-rect-${i}`}
-            />
-          );
-        })}
-      </svg>
-      <ul className="overlay-legend">
-        {top.map((f, i) => (
-          <li key={f.screen.id}>
-            <span className={`swatch swatch-${i}`} />
-            {i + 1}. {f.screen.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <span className={open ? 'caret open' : 'caret'}>▸</span>
+        疊圖比較（前 {top.length} 名成像，同比例尺）
+      </button>
+      {open && (
+        <>
+          <svg
+            className="overlay"
+            viewBox={`0 0 ${width} ${height}`}
+            role="img"
+            aria-label="影廳成像大小疊圖比較"
+          >
+            {top.map((f, i) => {
+              const w = f.imageWidthM * scale;
+              const h = f.imageHeightM * scale;
+              return (
+                <rect
+                  key={f.screen.id}
+                  x={(width - w) / 2}
+                  y={height - h - 4}
+                  width={w}
+                  height={h}
+                  className={`overlay-rect overlay-rect-${i}`}
+                />
+              );
+            })}
+          </svg>
+          <ul className="overlay-legend">
+            {top.map((f, i) => (
+              <li key={f.screen.id}>
+                <span className={`swatch swatch-${i}`} />
+                {i + 1}. {f.screen.name}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
   );
 }
 

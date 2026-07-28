@@ -87,10 +87,40 @@ header h1 {
   margin: 0.5rem 0 0;
 }
 
+.overlay-section {
+  margin-bottom: 1.4rem;
+}
+
+.overlay-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.3rem 0;
+  cursor: pointer;
+}
+
+.caret {
+  display: inline-block;
+  color: var(--accent);
+  transition: transform 0.15s;
+}
+
+.caret.open {
+  transform: rotate(90deg);
+}
+
 .overlay {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1.2rem;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  /* 高畫幅（如 1.43:1）時以高度上限縮放，避免疊圖佔滿整頁 */
+  max-height: 42vh;
+  margin: 0.4rem auto 0.8rem;
 }
 
 .overlay-rect {
