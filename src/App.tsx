@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
-import { isSized } from './types';
+import { hasAtmos, isSized } from './types';
 import type { Film, FitResult, HallCategory, Region, Screen } from './types';
 
 const screens = screensData as Screen[];
@@ -304,7 +304,7 @@ export default function App() {
                     {fit.screen.projection && (
                       <span className="badge">{fit.screen.projection}</span>
                     )}
-                    {fit.screen.atmos && <span className="badge atmos">Atmos</span>}
+                    {hasAtmos(fit.screen) && <span className="badge atmos">Atmos</span>}
                     {!fit.screen.verified && (
                       <span className="badge unverified" title="尺寸為社群流傳值，尚未查證">
                         待驗證
@@ -344,7 +344,7 @@ export default function App() {
                     <span className="badge">{CATEGORY_LABELS[s.hallCategory]}</span>
                     {s.brandLabel && <span className="badge brand">{s.brandLabel}</span>}
                     {s.projection && <span className="badge">{s.projection}</span>}
-                    {s.atmos && <span className="badge atmos">Atmos</span>}
+                    {hasAtmos(s) && <span className="badge atmos">Atmos</span>}
                     <span className="badge unverified">尺寸未公布</span>
                   </h3>
                   <p className="meta">

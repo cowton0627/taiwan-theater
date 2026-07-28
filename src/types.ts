@@ -8,6 +8,37 @@ export type HallCategory =
 
 export type Region = 'north' | 'central' | 'south' | 'east';
 
+/**
+ * 音效認證／系統層級，排序即優劣參考（roadmap 8 的排序依據）。
+ * 區分重點：DOLBY_CINEMA 是整廳認證；DVA 只授權 Vision+Atmos 技術（2024 起的新層級）；
+ * ATMOS 是音響系統授權安裝。未查證的廳以保守下限 SURROUND_5_1 標記。
+ */
+export type AudioTier =
+  | 'DOLBY_CINEMA' // 杜比影院整廳認證（Vision + Atmos + 聲學環境）
+  | 'DVA'          // Dolby Vision + Atmos 授權（非整廳認證，例：大巨蛋秀泰）
+  | 'IMAX_12CH'    // IMAX 12.1 聲道（GT／CoLa 雷射）
+  | 'IMAX_5CH'     // 數位 IMAX 5/6 聲道標配
+  | 'ATMOS'        // Dolby Atmos 授權廳
+  | 'AURO_11_1'    // Barco Auro 11.1（目前無已證實案例，保留給查證後使用）
+  | 'SURROUND_7_1'
+  | 'SURROUND_5_1';
+
+export const AUDIO_TIER_ORDER: AudioTier[] = [
+  'DOLBY_CINEMA',
+  'DVA',
+  'IMAX_12CH',
+  'IMAX_5CH',
+  'ATMOS',
+  'AURO_11_1',
+  'SURROUND_7_1',
+  'SURROUND_5_1',
+];
+
+/** 該層級是否含 Dolby Atmos（取代舊 atmos 布林欄位） */
+export function hasAtmos(s: Pick<Screen, 'audioTier'>): boolean {
+  return s.audioTier === 'DOLBY_CINEMA' || s.audioTier === 'DVA' || s.audioTier === 'ATMOS';
+}
+
 export interface Screen {
   id: string;
   name: string;
@@ -24,8 +55,9 @@ export interface Screen {
   status: 'operating' | 'closed';
   region: Region;
   city: string;
-  /** 是否為 Dolby Atmos 廳 */
-  atmos: boolean;
+  /** 音效認證／系統層級；未查證廳為保守下限 SURROUND_5_1 */
+  audioTier: AudioTier;
+  /** 音響補充描述（自由文字）：聲道數、品牌、待核註記 */
   audio: string;
   /** 座位數；未公布為 null */
   seats: number | null;

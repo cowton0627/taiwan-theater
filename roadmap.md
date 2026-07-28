@@ -14,11 +14,11 @@
 - [ ] 5. 逐廳查證尺寸、翻正 `verified` 旗標（2026-07-28 已翻正：美麗華 IMAX GT、美麗華杜比、台茂 IMAX）
 - [x] 9. data-plan §5-1：修正既有資料＋補 `seats` 欄位、移除海科館（收錄準則：只收商業影廳）、台南國賓改 closed（2026-07-28）
 - [x] 10. data-plan §5-2：新增 A 組核心廳 8 廳（青埔 LUXE、in89 LUXE、昕境國賓、置地國賓、樹林／欣欣／大巨蛋 ScreenX、ULTRA 4DX）＋淡海巨幕歇業紀錄，共 31 廳（2026-07-28；喜樂時代永和 XD 巨幕規格未明、暫未收）
-- [ ] 11. data-plan §5-3：schema 遷移 `audioTier`（roadmap 8 前置）
+- [x] 11. data-plan §5-3：schema 遷移 `audioTier`（八級：DOLBY_CINEMA→SURROUND_5_1；移除 `atmos` 布林改由 `hasAtmos()` 推導；未查證廳保守標 SURROUND_5_1）（2026-07-28）
 
 ## 功能
 
 - [x] 12. 點卡片自選疊圖比較（上限 6 廳、跨區可比、可清除；無選取時維持前 6 名）（2026-07-28）
 - [ ] 6. 影城品牌篩選（威秀／國賓／秀泰…）
 - [ ] 7. 階段二：TMDB 片單接入（設 `TMDB_TOKEN`、啟用 workflow），點片名帶入手工標註畫幅
-- [ ] 8. 音效維度：Atmos／5.1 標示納入排序參考
+- [ ] 8. 音效維度：以 `audioTier` 納入排序參考／認證徽章（資料層已就緒，見 roadmap 11）
