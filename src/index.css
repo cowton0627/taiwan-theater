@@ -325,6 +325,12 @@ header h1 {
   border-color: var(--accent-dim);
 }
 
+/* 認證綠優先於品牌金（杜比影院／DVA 品牌徽章） */
+.badge.brand.tier-cert {
+  color: #7ed957;
+  border-color: #3c6b2e;
+}
+
 .card-unsized {
   opacity: 0.75;
 }

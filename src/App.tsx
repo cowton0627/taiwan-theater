@@ -63,7 +63,10 @@ const AUDIO_TIER_CLASS: Record<AudioTier, string> = {
   SURROUND_5_1: 'tier-unknown',
 };
 
-/** 音效層級徽章；與 hallCategory／brandLabel 重複時不重掛 */
+/**
+ * 音效層級徽章；與 hallCategory／brandLabel 重複時不重掛
+ * （該情況由 categoryBadgeClass／brandBadgeClass 把既有徽章染成認證綠）
+ */
 function AudioTierBadge({ s }: { s: Screen }) {
   if (s.audioTier === 'DOLBY_CINEMA' && s.hallCategory === 'DOLBY_CINEMA') return null;
   if (s.audioTier === 'DVA' && s.brandLabel === 'DVA') return null;
@@ -72,6 +75,18 @@ function AudioTierBadge({ s }: { s: Screen }) {
       {AUDIO_TIER_LABELS[s.audioTier]}
     </span>
   );
+}
+
+/** 杜比影院類別徽章＝整廳認證，染認證綠 */
+function categoryBadgeClass(s: Screen) {
+  return s.hallCategory === 'DOLBY_CINEMA' ? 'badge tier-cert' : 'badge';
+}
+
+/** DVA 品牌徽章＝認證級授權，染認證綠；其餘維持品牌金 */
+function brandBadgeClass(s: Screen) {
+  return s.brandLabel === 'DVA' || s.brandLabel === 'Dolby Cinema'
+    ? 'badge brand tier-cert'
+    : 'badge brand';
 }
 
 /**
@@ -408,9 +423,11 @@ export default function App() {
                 <div className="card-body">
                   <h3>
                     {fit.screen.name}
-                    <span className="badge">{CATEGORY_LABELS[fit.screen.hallCategory]}</span>
+                    <span className={categoryBadgeClass(fit.screen)}>
+                      {CATEGORY_LABELS[fit.screen.hallCategory]}
+                    </span>
                     {fit.screen.brandLabel && (
-                      <span className="badge brand">{fit.screen.brandLabel}</span>
+                      <span className={brandBadgeClass(fit.screen)}>{fit.screen.brandLabel}</span>
                     )}
                     {fit.screen.projection && (
                       <span className="badge">{fit.screen.projection}</span>
@@ -452,8 +469,8 @@ export default function App() {
                 <div className="card-body">
                   <h3>
                     {s.name}
-                    <span className="badge">{CATEGORY_LABELS[s.hallCategory]}</span>
-                    {s.brandLabel && <span className="badge brand">{s.brandLabel}</span>}
+                    <span className={categoryBadgeClass(s)}>{CATEGORY_LABELS[s.hallCategory]}</span>
+                    {s.brandLabel && <span className={brandBadgeClass(s)}>{s.brandLabel}</span>}
                     {s.projection && <span className="badge">{s.projection}</span>}
                     <AudioTierBadge s={s} />
                     <span className="badge unverified">尺寸未公布</span>
