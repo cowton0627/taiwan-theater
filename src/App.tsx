@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
-import { hasAtmos, isSized } from './types';
-import type { Film, FitResult, HallCategory, Region, Screen } from './types';
+import { AUDIO_TIER_ORDER, isSized } from './types';
+import type { AudioTier, Film, FitResult, HallCategory, Region, Screen } from './types';
 
 const screens = screensData as Screen[];
 const films = filmsData as Film[];
@@ -24,6 +24,39 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 };
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
+
+const AUDIO_TIER_LABELS: Record<AudioTier, string> = {
+  DOLBY_CINEMA: 'Dolby Cinema',
+  DVA: 'DVA',
+  IMAX_12CH: 'IMAX 12 聲道',
+  IMAX_5CH: 'IMAX 5 聲道',
+  ATMOS: 'Atmos',
+  AURO_11_1: 'Auro 11.1',
+  SURROUND_7_1: '7.1 聲道',
+  SURROUND_5_1: '音效未查證',
+};
+
+const AUDIO_TIER_CLASS: Record<AudioTier, string> = {
+  DOLBY_CINEMA: 'tier-cert',
+  DVA: 'tier-cert',
+  IMAX_12CH: 'tier-imax',
+  IMAX_5CH: 'tier-imax',
+  ATMOS: 'tier-atmos',
+  AURO_11_1: 'tier-atmos',
+  SURROUND_7_1: 'tier-basic',
+  SURROUND_5_1: 'tier-unknown',
+};
+
+/** 音效層級徽章；與 hallCategory／brandLabel 重複時不重掛 */
+function AudioTierBadge({ s }: { s: Screen }) {
+  if (s.audioTier === 'DOLBY_CINEMA' && s.hallCategory === 'DOLBY_CINEMA') return null;
+  if (s.audioTier === 'DVA' && s.brandLabel === 'DVA') return null;
+  return (
+    <span className={`badge ${AUDIO_TIER_CLASS[s.audioTier]}`} title={s.audio}>
+      {AUDIO_TIER_LABELS[s.audioTier]}
+    </span>
+  );
+}
 
 /**
  * 疊圖比較：前幾名影廳的成像框以同一公尺比例尺、水平＋垂直置中疊放，可收合。
@@ -145,6 +178,8 @@ export default function App() {
   const [regions, setRegions] = useState<Set<Region>>(new Set());
   /** 自選比較的影廳 id；空集合＝疊圖顯示預設前 6 名 */
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  /** 排序：成像面積（預設）或音效層級優先（同層級內仍按面積） */
+  const [sortMode, setSortMode] = useState<'area' | 'audio'>('area');
 
   const film = films.find((f) => f.id === filmId) ?? null;
 
@@ -165,9 +200,17 @@ export default function App() {
           : { ...fitImage(s, customVersion(customRatio)), versionUncertain: false },
       )
       .filter((r): r is FitResult => r !== null);
-    results.sort((a, b) => b.imageAreaM2 - a.imageAreaM2);
+    results.sort((a, b) => {
+      if (sortMode === 'audio') {
+        const tierDiff =
+          AUDIO_TIER_ORDER.indexOf(a.screen.audioTier) -
+          AUDIO_TIER_ORDER.indexOf(b.screen.audioTier);
+        if (tierDiff !== 0) return tierDiff;
+      }
+      return b.imageAreaM2 - a.imageAreaM2;
+    });
     return results;
-  }, [film, customRatio, pool]);
+  }, [film, customRatio, pool, sortMode]);
 
   const maxArea = fits[0]?.imageAreaM2 ?? 1;
 
@@ -247,6 +290,22 @@ export default function App() {
             ))}
         </div>
         <div className="control-group">
+          <span className="control-label">排序</span>
+          <button
+            className={sortMode === 'area' ? 'chip active' : 'chip'}
+            onClick={() => setSortMode('area')}
+          >
+            成像面積
+          </button>
+          <button
+            className={sortMode === 'audio' ? 'chip active' : 'chip'}
+            onClick={() => setSortMode('audio')}
+            title="音效層級優先（Dolby Cinema > DVA > IMAX 12 > IMAX 5 > Atmos > 7.1 > 5.1），同層級內按面積"
+          >
+            音效層級
+          </button>
+        </div>
+        <div className="control-group">
           <span className="control-label">地區</span>
           {(Object.keys(REGION_LABELS) as Region[]).map((r) => (
             <button
@@ -304,7 +363,7 @@ export default function App() {
                     {fit.screen.projection && (
                       <span className="badge">{fit.screen.projection}</span>
                     )}
-                    {hasAtmos(fit.screen) && <span className="badge atmos">Atmos</span>}
+                    <AudioTierBadge s={fit.screen} />
                     {!fit.screen.verified && (
                       <span className="badge unverified" title="尺寸為社群流傳值，尚未查證">
                         待驗證
@@ -344,7 +403,7 @@ export default function App() {
                     <span className="badge">{CATEGORY_LABELS[s.hallCategory]}</span>
                     {s.brandLabel && <span className="badge brand">{s.brandLabel}</span>}
                     {s.projection && <span className="badge">{s.projection}</span>}
-                    {hasAtmos(s) && <span className="badge atmos">Atmos</span>}
+                    <AudioTierBadge s={s} />
                     <span className="badge unverified">尺寸未公布</span>
                   </h3>
                   <p className="meta">
