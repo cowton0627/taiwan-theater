@@ -231,6 +231,27 @@ header h1 {
   color: var(--muted);
 }
 
+/* 音效排序模式的狀態標籤——在資訊被閱讀的位置標示，而非只在控制列 */
+.sort-note {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5ac8fa;
+  border: 1px solid #2c5a70;
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+  letter-spacing: normal;
+}
+
+.rank.rank-audio {
+  color: #5ac8fa;
+}
+
+.empty-state {
+  color: var(--muted);
+  text-align: center;
+  padding: 2rem 0;
+}
+
 .ranking {
   display: flex;
   flex-direction: column;

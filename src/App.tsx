@@ -98,10 +98,13 @@ function OverlayCompare({
   fits,
   selected,
   onClear,
+  audioSorted,
 }: {
   fits: FitResult[];
   selected: FitResult[];
   onClear: () => void;
+  /** 下方列表正以音效層級排序——疊圖需自我聲明不隨之變動 */
+  audioSorted: boolean;
 }) {
   const [open, setOpen] = useState(true);
   const comparing = selected.length > 0;
@@ -145,7 +148,11 @@ function OverlayCompare({
             清除自選
           </button>
         ) : (
-          <span className="overlay-hint">點下方卡片可自選比較（最多 6 廳）</span>
+          <span className="overlay-hint">
+            {audioSorted
+              ? '疊圖固定顯示面積前 6，不隨音效排序變動'
+              : '點下方卡片可自選比較（最多 6 廳）'}
+          </span>
         )}
       </div>
       {open && (
@@ -397,7 +404,12 @@ export default function App() {
         fits={fits}
         selected={selectedFits}
         onClear={() => setSelected(new Set())}
+        audioSorted={sortMode === 'audio'}
       />
+
+      {grouped.length === 0 && (
+        <p className="empty-state">目前的品牌／地區組合下沒有影廳，請調整篩選條件。</p>
+      )}
 
       {grouped.map((group) => (
         <section key={group.region} className="region-group">
@@ -407,6 +419,7 @@ export default function App() {
               {group.fits.length} 廳
               {group.unsized.length > 0 && `（另 ${group.unsized.length} 廳尺寸未公布）`}
             </span>
+            {sortMode === 'audio' && <span className="sort-note">音效層級排序</span>}
           </h2>
           <div className="ranking">
             {group.fits.map((fit, i) => (
@@ -414,12 +427,21 @@ export default function App() {
                 key={fit.screen.id}
                 className={selected.has(fit.screen.id) ? 'card selectable selected' : 'card selectable'}
                 title="點擊加入／移除疊圖比較"
+                role="button"
+                tabIndex={0}
+                aria-pressed={selected.has(fit.screen.id)}
                 onClick={(e) => {
                   if ((e.target as HTMLElement).closest('a')) return;
                   toggleSelect(fit.screen.id);
                 }}
+                onKeyDown={(e) => {
+                  if (e.key !== 'Enter' && e.key !== ' ') return;
+                  if ((e.target as HTMLElement).closest('a')) return;
+                  e.preventDefault();
+                  toggleSelect(fit.screen.id);
+                }}
               >
-                <div className="rank">{i + 1}</div>
+                <div className={sortMode === 'audio' ? 'rank rank-audio' : 'rank'}>{i + 1}</div>
                 <div className="card-body">
                   <h3>
                     {fit.screen.name}
