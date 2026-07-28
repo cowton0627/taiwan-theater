@@ -27,6 +27,10 @@ export interface Screen {
   /** 是否為 Dolby Atmos 廳 */
   atmos: boolean;
   audio: string;
+  /** 座位數；未公布為 null */
+  seats: number | null;
+  /** 座位數來源與異說註記 */
+  seatsNotes?: string;
   /** 訂票 / 場次查詢頁 */
   booking: string;
   /** 尺寸是否經過查證（丈量紀錄、官方公布） */

@@ -5,38 +5,22 @@
     "chain": "美麗華影城",
     "hallCategory": "IMAX_GT",
     "widthM": 28.4,
-    "heightM": 21.2,
+    "heightM": 20.54,
     "projection": "雷射 GT",
     "status": "operating",
     "region": "north",
     "city": "台北市",
     "atmos": false,
-    "audio": "IMAX 12 聲道",
-    "booking": "https://www.miramarcinemas.tw/",
-    "verified": false,
+    "audio": "IMAX 12.1 聲道",
+    "seats": 404,
+    "seatsNotes": "2D 404 席／3D 362 席（維基百科）",
+    "booking": "https://www.miramarcinemas.tw/Timetable/Index?cinema=imax",
+    "verified": true,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（數據源自 lfexaminer.com）：28.4×21.2m",
-      "美麗華官網：28.8×21.16m、609㎡（與 LF Examiner 數據略有出入）"
+      "美麗華官網 IMAX 介紹頁（2026-07 實查）：28.4×20.54m 弧形銀幕、雙機 4K 雷射、12.1 聲道",
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：28.4×21.2m（高度與官網有出入，採官網）"
     ],
-    "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳"
-  },
-  {
-    "id": "nmmst-giant-screen",
-    "name": "國立海洋科技博物館 巨幕影廳",
-    "chain": "海科館",
-    "hallCategory": "PREMIUM",
-    "widthM": 29.0,
-    "heightM": 22.0,
-    "projection": "8K 投影",
-    "status": "operating",
-    "region": "north",
-    "city": "基隆市",
-    "atmos": false,
-    "audio": "多聲道",
-    "booking": "https://www.nmmst.gov.tw/",
-    "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（數據源自 lfexaminer.com）"],
-    "notes": "原 IMAX 底片廳，2022/02 改裝 8K 投影（已非 IMAX），以科教片為主、偶有商業片"
+    "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳、全台最大銀幕；2016/3 由數位 IMAX 升級"
   },
   {
     "id": "vieshow-xindian-yulon-imax",
@@ -51,9 +35,15 @@
     "city": "新北市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": 352,
+    "seatsNotes": "維基百科／Enjoy Movie 指南",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "Enjoy Movie 雙北 IMAX 指南（2026/4）：IMAX with Laser（Laser XT）、21.4×11.6m"
+    ],
+    "notes": "2023/9/28 開幕即雷射；開幕時論壇實測音響僅 5.1，是否已升級待確認"
   },
   {
     "id": "vieshow-banqiao-imax",
@@ -68,26 +58,38 @@
     "city": "新北市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": 404,
+    "seatsNotes": "Enjoy Movie 指南／MovieGo",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "PTT Theater 板升級情報（M.1669256337）：2022/12/14 由氙燈換裝 IMAX with Laser（Laser XT）"
+    ],
+    "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser；升級後聲道數未見官方公布"
   },
   {
     "id": "milihsin-taimall-imax",
     "name": "桃園美麗新台茂 IMAX 廳",
     "chain": "美麗新影城",
     "hallCategory": "IMAX",
-    "widthM": 17.8,
-    "heightM": 9.8,
+    "widthM": 19.0,
+    "heightM": 9.75,
     "projection": "氙燈",
     "status": "operating",
     "region": "north",
     "city": "桃園市",
     "atmos": false,
     "audio": "IMAX 音響",
-    "booking": "https://www.lswcinemas.com.tw/",
-    "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "seats": 325,
+    "seatsNotes": "官網 325；維基作 329（含 4 輪椅席）",
+    "booking": "https://www.miranewcinemas.com/",
+    "verified": true,
+    "sources": [
+      "官方開幕資料／美麗新官網：19×9.75m、325 席（2016/12 啟用，大桃園首座）；維基與 PTT 實測文引用一致",
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：17.8×9.8m（與官方數字有出入，採官方）"
+    ],
+    "notes": "氙燈數位雙機 2K、未升級雷射"
   },
   {
     "id": "vieshow-hsinchu-bigcity-imax",
@@ -102,9 +104,15 @@
     "city": "新竹市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": 300,
+    "seatsNotes": "約 300 席（MovieGo）",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "開眼時刻表（2026/7/28 實查）：營運中；「拆除改 TITAN」為誤傳（混淆台中老虎城）"
+    ],
+    "notes": "氙燈數位、未升級雷射"
   },
   {
     "id": "vieshow-taichung-topcity-imax",
@@ -119,6 +127,7 @@
     "city": "台中市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": null,
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -135,10 +144,14 @@
     "region": "south",
     "city": "嘉義市",
     "atmos": false,
-    "audio": "IMAX 音響",
+    "audio": "IMAX 12 聲道",
+    "seats": null,
     "booking": "https://www.in89.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道"
+    ]
   },
   {
     "id": "vieshow-tainan-imax",
@@ -153,6 +166,7 @@
     "city": "台南市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": null,
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -170,6 +184,7 @@
     "city": "高雄市",
     "atmos": false,
     "audio": "IMAX 音響",
+    "seats": null,
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -186,10 +201,14 @@
     "region": "east",
     "city": "花蓮縣",
     "atmos": false,
-    "audio": "IMAX 音響",
+    "audio": "IMAX 12 聲道",
+    "seats": null,
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道"
+    ]
   },
   {
     "id": "muvie-titan",
@@ -205,12 +224,16 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
+    "seatsNotes": "MUVIE 全館 8 廳 1,147 席；TITAN 單廳席數未查得",
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "MUVIE CINEMAS 官方宣傳：TITAN 配置 Dolby Atmos（待核）"
-    ]
+      "MUVIE CINEMAS 官方宣傳：TITAN 配置 Dolby Atmos（待核）",
+      "La Vie 報導：TITAN 銀幕寬約 22m、RGB 高亮度雷射；全影城 THX 認證"
+    ],
+    "notes": "全影城 THX 認證；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核"
   },
   {
     "id": "luxcine-ximen-giant",
@@ -225,10 +248,15 @@
     "region": "north",
     "city": "台北市",
     "atmos": false,
-    "audio": "多聲道",
+    "audio": "Dolby 7.1",
+    "seats": null,
+    "seatsNotes": "近 800 席（媒體遊記，未證實）",
     "booking": "https://www.luxcine.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "輕旅行／PTT：A 廳 Spectro 巨幕 20×10m、Dolby 7.1"
+    ]
   },
   {
     "id": "showtime-kaohsiung-dreammall",
@@ -244,6 +272,7 @@
     "city": "高雄市",
     "atmos": false,
     "audio": "多聲道",
+    "seats": null,
     "booking": "https://www.showtimes.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -260,6 +289,7 @@
     "city": "高雄市",
     "atmos": false,
     "audio": "多聲道",
+    "seats": null,
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -271,14 +301,19 @@
     "hallCategory": "PREMIUM",
     "widthM": 15.5,
     "heightM": 6.6,
-    "status": "operating",
+    "status": "closed",
     "region": "south",
     "city": "台南市",
     "atmos": false,
     "audio": "多聲道",
+    "seats": null,
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "udn／中央社（2025/6）：台南國賓一館 2024/12/31、二館 2025/6/30 租約到期歇業；官網 2026 據點名單已無台南"
+    ],
+    "notes": "已歇業（一館 2024/12/31、二館 2025/6/30），保留供歷史紀錄"
   },
   {
     "id": "showtime-taichung-wenxin-11",
@@ -294,6 +329,7 @@
     "city": "台中市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
     "booking": "https://www.showtimes.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"],
@@ -312,6 +348,7 @@
     "city": "金門縣",
     "atmos": false,
     "audio": "多聲道",
+    "seats": null,
     "booking": "https://www.goldenlion.com.tw/",
     "verified": false,
     "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"]
@@ -321,8 +358,8 @@
     "name": "桃園新光影城 杜比影院",
     "chain": "新光影城",
     "hallCategory": "DOLBY_CINEMA",
-    "widthM": null,
-    "heightM": null,
+    "widthM": 20.0,
+    "heightM": 10.0,
     "projection": "Dolby Vision 雙雷射",
     "brandLabel": "Dolby Cinema",
     "status": "operating",
@@ -330,21 +367,23 @@
     "city": "桃園市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": 322,
+    "seatsNotes": "開幕媒體報導 322；另有 335（Marie Claire）/343（維基）異說",
     "booking": "https://www.skcinemas.com/",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "媒體報導：全台首座杜比影院（2020，桃園青埔）"
+      "中時／工商時報開幕報導（2020/12）：全台首座杜比影院、322 席、對比 1,000,000:1",
+      "UpToGo 等部落格：銀幕約 20×10m（官方未公布，論壇估計）"
     ],
-    "notes": "全台第一座 Dolby Cinema；銀幕尺寸未公布"
+    "notes": "全台第一座 Dolby Cinema（2020/12/3 啟用）；銀幕尺寸為論壇估計、官方未公布"
   },
   {
     "id": "miramar-dazhi-dolby",
     "name": "美麗華大直影城 杜比影院",
     "chain": "美麗華影城",
     "hallCategory": "DOLBY_CINEMA",
-    "widthM": null,
-    "heightM": null,
+    "widthM": 14.8,
+    "heightM": 7.0,
     "projection": "Dolby Vision 雙雷射",
     "brandLabel": "Dolby Cinema",
     "status": "operating",
@@ -352,10 +391,15 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
+    "seatsNotes": "官方未公布；303 一說（論壇未證實）",
     "booking": "https://www.miramarcinemas.tw/",
-    "verified": false,
-    "sources": ["Mobile01／美麗華官網：台灣第二座、台北唯一 Dolby Cinema（2024 開幕）"],
-    "notes": "與 IMAX GT 同館——美麗華為亞洲少數同時擁有兩者的影城；銀幕尺寸未公布"
+    "verified": true,
+    "sources": [
+      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m",
+      "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）"
+    ],
+    "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；網友實測另說 16.0×6.8m"
   },
   {
     "id": "showtime-dome-dva",
@@ -370,10 +414,14 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
     "booking": "https://www.showtimes.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"],
-    "notes": "銀幕尺寸未公布"
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "Dolby 2024/4 新聞稿：DVA＝Dolby Vision+Atmos 開放授權層級；JazzNews 秀泰結盟報導"
+    ],
+    "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布"
   },
   {
     "id": "in89-ximen-coach",
@@ -388,6 +436,7 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
     "booking": "https://www.in89.com.tw/",
     "verified": false,
     "sources": [
@@ -410,12 +459,14 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
+    "seats": null,
+    "seatsNotes": "全館 3 廳共約 1,083 席；鉅院廳單廳席數未查得",
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "國賓官網：西門町國賓大戲院營業中（Christie 4K RGB 雷射）"
+      "國賓官網鉅院廳活動頁：雙機 Christie 4K RGB 純雷射、最高 90,000 流明、營業中（2026 官網名單）"
     ],
-    "notes": "西門町"
+    "notes": "西門町；號稱全台最大 Dolby Atmos 影廳；22×12m 為論壇整理數字"
   }
 ]
