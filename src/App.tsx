@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
@@ -213,6 +213,17 @@ function OverlayCompare({
 export default function App() {
   const [filmId, setFilmId] = useState<string>(films[0]?.id ?? 'custom');
   const [customRatio, setCustomRatio] = useState<number>(2.39);
+  /** 任意比例輸入框的原始字串（允許打字中間狀態，合法時才寫入 customRatio） */
+  const [ratioInput, setRatioInput] = useState<string>('2.39');
+  /** 短暫回饋訊息（如自選達上限） */
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimer = useRef<number | undefined>(undefined);
+
+  const showToast = (msg: string) => {
+    setToast(msg);
+    window.clearTimeout(toastTimer.current);
+    toastTimer.current = window.setTimeout(() => setToast(null), 2600);
+  };
   const [regions, setRegions] = useState<Set<Region>>(new Set());
   /** 品牌篩選；空集合＝全部 */
   const [chains, setChains] = useState<Set<string>>(new Set());
@@ -296,10 +307,14 @@ export default function App() {
   );
 
   const toggleSelect = (id: string) => {
+    if (!selected.has(id) && selected.size >= 6) {
+      showToast('自選比較已達 6 廳上限，請先取消一廳再加入');
+      return;
+    }
     setSelected((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
-      else if (next.size < 6) next.add(id);
+      else next.add(id);
       return next;
     });
   };
@@ -331,16 +346,41 @@ export default function App() {
           >
             自訂畫幅
           </button>
-          {film === null &&
-            CUSTOM_RATIOS.map((r) => (
-              <button
-                key={r}
-                className={customRatio === r ? 'chip ratio active' : 'chip ratio'}
-                onClick={() => setCustomRatio(r)}
-              >
-                {r}:1
-              </button>
-            ))}
+          {film === null && (
+            <>
+              {CUSTOM_RATIOS.map((r) => (
+                <button
+                  key={r}
+                  className={customRatio === r ? 'chip ratio active' : 'chip ratio'}
+                  onClick={() => {
+                    setCustomRatio(r);
+                    setRatioInput(String(r));
+                  }}
+                >
+                  {r}:1
+                </button>
+              ))}
+              <label className="ratio-custom">
+                任意
+                <input
+                  className="ratio-input"
+                  type="number"
+                  inputMode="decimal"
+                  min={0.5}
+                  max={4}
+                  step={0.01}
+                  value={ratioInput}
+                  onChange={(e) => {
+                    setRatioInput(e.target.value);
+                    const v = parseFloat(e.target.value);
+                    if (!Number.isNaN(v) && v >= 0.5 && v <= 4) setCustomRatio(v);
+                  }}
+                  aria-label="自訂畫幅比例（0.5–4）"
+                />
+                :1
+              </label>
+            </>
+          )}
         </div>
         <div className="control-group">
           <span className="control-label">品牌</span>
@@ -370,6 +410,12 @@ export default function App() {
             音效層級
           </button>
         </div>
+        {sortMode === 'audio' && (
+          <p className="sort-basis">
+            排序依據（本站預設）：Dolby Cinema ＞ DVA ＞ IMAX 12 聲道 ＞ IMAX 5 聲道 ＞ Atmos ＞
+            7.1 ＞ 5.1——此為認證／系統規格層級，非實測音質；同層級內按成像面積。
+          </p>
+        )}
         <div className="control-group">
           <span className="control-label">地區</span>
           {(Object.keys(REGION_LABELS) as Region[]).map((r) => (
@@ -419,7 +465,14 @@ export default function App() {
               {group.fits.length} 廳
               {group.unsized.length > 0 && `（另 ${group.unsized.length} 廳尺寸未公布）`}
             </span>
-            {sortMode === 'audio' && <span className="sort-note">音效層級排序</span>}
+            {sortMode === 'audio' && (
+              <span
+                className="sort-note"
+                title="Dolby Cinema ＞ DVA ＞ IMAX 12 ＞ IMAX 5 ＞ Atmos ＞ 7.1 ＞ 5.1（認證／規格層級，非實測音質）"
+              >
+                音效層級排序
+              </span>
+            )}
           </h2>
           <div className="ranking">
             {group.fits.map((fit, i) => (
@@ -511,8 +564,15 @@ export default function App() {
         </section>
       ))}
 
+      {toast && (
+        <div className="toast" role="status">
+          {toast}
+        </div>
+      )}
+
       <footer>
         <p>
+          本站不含即時場次——各廳是否排映特定影片與格式，請以影城官網為準。
           銀幕尺寸為社群流傳資料、尚待逐廳查證；歡迎透過 GitHub issue 提供丈量或官方來源。
           比較方法啟發自 rexx/theater-screen-size-2。
         </p>
