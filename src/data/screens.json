@@ -231,9 +231,9 @@
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
       "MUVIE CINEMAS 官方宣傳：TITAN 配置 Dolby Atmos（待核）",
-      "La Vie 報導：TITAN 銀幕寬約 22m、RGB 高亮度雷射；全影城 THX 認證"
+      "La Vie／自由時報開幕報導：TITAN 銀幕寬 22m×高 12m、RGB 高亮度雷射；全影城 THX 認證"
     ],
-    "notes": "全影城 THX 認證；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核"
+    "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核"
   },
   {
     "id": "luxcine-ximen-giant",
@@ -459,14 +459,15 @@
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "全館 3 廳共約 1,083 席；鉅院廳單廳席數未查得",
+    "seats": 867,
+    "seatsNotes": "維基／媒體：867 席",
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "國賓官網鉅院廳活動頁：雙機 Christie 4K RGB 純雷射、最高 90,000 流明、營業中（2026 官網名單）"
+      "國賓官網鉅院廳活動頁：雙機 Christie 4K RGB 純雷射、最高 90,000 流明、營業中（2026 官網名單）",
+      "維基／PTT 好評文：22×12m、867 席、號稱全球第二大 Dolby Atmos 影廳"
     ],
-    "notes": "西門町；號稱全台最大 Dolby Atmos 影廳；22×12m 為論壇整理數字"
+    "notes": "西門町；號稱全球第二大 Dolby Atmos 影廳；22×12m 為業者宣傳整數、未經丈量"
   }
 ]
