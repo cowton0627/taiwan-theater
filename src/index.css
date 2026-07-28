@@ -212,18 +212,6 @@ header h1 {
   text-align: center;
 }
 
-.mini-screen {
-  fill: #0a0d12;
-  stroke: var(--border);
-  stroke-width: 1.5;
-}
-
-.mini-image {
-  fill: var(--accent-dim);
-  stroke: var(--accent);
-  stroke-width: 1;
-}
-
 .card-body {
   flex: 1;
   min-width: 0;

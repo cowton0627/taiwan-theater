@@ -25,36 +25,11 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
 
-/** 每列的迷你示意圖：銀幕外框 + 實際成像區 */
-function MiniScreen({ fit }: { fit: FitResult }) {
-  const maxW = 120;
-  const maxH = 64;
-  const scale = Math.min(maxW / fit.screen.widthM, maxH / fit.screen.heightM);
-  const sw = fit.screen.widthM * scale;
-  const sh = fit.screen.heightM * scale;
-  const iw = fit.imageWidthM * scale;
-  const ih = fit.imageHeightM * scale;
-  return (
-    <svg width={maxW} height={maxH} viewBox={`0 0 ${maxW} ${maxH}`} aria-hidden>
-      <rect
-        x={(maxW - sw) / 2}
-        y={(maxH - sh) / 2}
-        width={sw}
-        height={sh}
-        className="mini-screen"
-      />
-      <rect
-        x={(maxW - iw) / 2}
-        y={(maxH - ih) / 2}
-        width={iw}
-        height={ih}
-        className="mini-image"
-      />
-    </svg>
-  );
-}
-
-/** 疊圖比較：把前幾名影廳的成像框以同一公尺比例尺置中疊放，可收合 */
+/**
+ * 疊圖比較：前幾名影廳的成像框以同一公尺比例尺、水平＋垂直置中疊放，可收合。
+ * 置中對齊呼應實際放映的裁切方式——不同畫幅版本是對稱地裁上下（或左右），
+ * 疊圖因此直接呈現「可視範圍」的差異。
+ */
 function OverlayCompare({ fits }: { fits: FitResult[] }) {
   const [open, setOpen] = useState(true);
   const top = fits.slice(0, 6);
@@ -89,7 +64,7 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
                 <rect
                   key={f.screen.id}
                   x={(width - w) / 2}
-                  y={height - h - 4}
+                  y={(height - h) / 2}
                   width={w}
                   height={h}
                   className={`overlay-rect overlay-rect-${i}`}
@@ -237,7 +212,6 @@ export default function App() {
             {group.fits.map((fit, i) => (
               <article key={fit.screen.id} className="card">
                 <div className="rank">{i + 1}</div>
-                <MiniScreen fit={fit} />
                 <div className="card-body">
                   <h3>
                     {fit.screen.name}
