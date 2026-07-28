@@ -200,17 +200,20 @@ export default function App() {
           : { ...fitImage(s, customVersion(customRatio)), versionUncertain: false },
       )
       .filter((r): r is FitResult => r !== null);
-    results.sort((a, b) => {
-      if (sortMode === 'audio') {
-        const tierDiff =
-          AUDIO_TIER_ORDER.indexOf(a.screen.audioTier) -
-          AUDIO_TIER_ORDER.indexOf(b.screen.audioTier);
-        if (tierDiff !== 0) return tierDiff;
-      }
-      return b.imageAreaM2 - a.imageAreaM2;
-    });
+    results.sort((a, b) => b.imageAreaM2 - a.imageAreaM2);
     return results;
-  }, [film, customRatio, pool, sortMode]);
+  }, [film, customRatio, pool]);
+
+  /** 排名列表的顯示順序；疊圖不受排序模式影響、永遠按面積取前 6 */
+  const ranked = useMemo(() => {
+    if (sortMode === 'area') return fits;
+    return [...fits].sort((a, b) => {
+      const tierDiff =
+        AUDIO_TIER_ORDER.indexOf(a.screen.audioTier) -
+        AUDIO_TIER_ORDER.indexOf(b.screen.audioTier);
+      return tierDiff !== 0 ? tierDiff : b.imageAreaM2 - a.imageAreaM2;
+    });
+  }, [fits, sortMode]);
 
   const maxArea = fits[0]?.imageAreaM2 ?? 1;
 
@@ -220,11 +223,11 @@ export default function App() {
       (Object.keys(REGION_LABELS) as Region[])
         .map((r) => ({
           region: r,
-          fits: fits.filter((f) => f.screen.region === r),
+          fits: ranked.filter((f) => f.screen.region === r),
           unsized: pool.filter((s) => s.region === r && !isSized(s)),
         }))
         .filter((g) => g.fits.length > 0 || g.unsized.length > 0),
-    [fits, pool],
+    [ranked, pool],
   );
 
   const toggleRegion = (r: Region) => {
