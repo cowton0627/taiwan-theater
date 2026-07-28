@@ -25,6 +25,22 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
 
+/** 品牌分組鍵：子品牌歸入母集團（例：威秀影城（MUVIE）→ 威秀影城） */
+const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
+
+/** 營運中影廳的品牌清單，依廳數多到少排序 */
+const CHAIN_OPTIONS = (() => {
+  const counts = new Map<string, number>();
+  for (const s of screens) {
+    if (s.status !== 'operating') continue;
+    const key = chainKey(s.chain);
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'))
+    .map(([key]) => key);
+})();
+
 const AUDIO_TIER_LABELS: Record<AudioTier, string> = {
   DOLBY_CINEMA: 'Dolby Cinema',
   DVA: 'DVA',
@@ -176,6 +192,8 @@ export default function App() {
   const [filmId, setFilmId] = useState<string>(films[0]?.id ?? 'custom');
   const [customRatio, setCustomRatio] = useState<number>(2.39);
   const [regions, setRegions] = useState<Set<Region>>(new Set());
+  /** 品牌篩選；空集合＝全部 */
+  const [chains, setChains] = useState<Set<string>>(new Set());
   /** 自選比較的影廳 id；空集合＝疊圖顯示預設前 6 名 */
   const [selected, setSelected] = useState<Set<string>>(new Set());
   /** 排序：成像面積（預設）或音效層級優先（同層級內仍按面積） */
@@ -187,8 +205,9 @@ export default function App() {
     () =>
       screens
         .filter((s) => s.status === 'operating')
-        .filter((s) => regions.size === 0 || regions.has(s.region)),
-    [regions],
+        .filter((s) => regions.size === 0 || regions.has(s.region))
+        .filter((s) => chains.size === 0 || chains.has(chainKey(s.chain))),
+    [regions, chains],
   );
 
   const fits = useMemo(() => {
@@ -235,6 +254,15 @@ export default function App() {
       const next = new Set(prev);
       if (next.has(r)) next.delete(r);
       else next.add(r);
+      return next;
+    });
+  };
+
+  const toggleChain = (c: string) => {
+    setChains((prev) => {
+      const next = new Set(prev);
+      if (next.has(c)) next.delete(c);
+      else next.add(c);
       return next;
     });
   };
@@ -291,6 +319,18 @@ export default function App() {
                 {r}:1
               </button>
             ))}
+        </div>
+        <div className="control-group">
+          <span className="control-label">品牌</span>
+          {CHAIN_OPTIONS.map((c) => (
+            <button
+              key={c}
+              className={chains.has(c) ? 'chip active' : 'chip'}
+              onClick={() => toggleChain(c)}
+            >
+              {c}
+            </button>
+          ))}
         </div>
         <div className="control-group">
           <span className="control-label">排序</span>
