@@ -383,15 +383,18 @@
     "widthM": null,
     "heightM": null,
     "brandLabel": "COACH",
-    "status": "operating",
+    "status": "closed",
     "region": "north",
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
     "booking": "https://www.in89.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"],
-    "notes": "銀幕尺寸未公布"
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "新聞報導：西門 in89（前身豪華大戲院）2026/05/31 結束營業"
+    ],
+    "notes": "2026/05/31 歇業，保留供歷史紀錄"
   },
   {
     "id": "ambassador-taipei-grand",
@@ -402,14 +405,17 @@
     "heightM": 12.0,
     "projection": "雷射",
     "brandLabel": "鉅院廳",
-    "status": "closed",
+    "status": "operating",
     "region": "north",
     "city": "台北市",
     "atmos": true,
     "audio": "Dolby Atmos",
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
-    "sources": ["PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"],
-    "notes": "2023 年歇業，保留供歷史紀錄"
+    "sources": [
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "國賓官網：西門町國賓大戲院營業中（Christie 4K RGB 雷射）"
+    ],
+    "notes": "西門町"
   }
 ]

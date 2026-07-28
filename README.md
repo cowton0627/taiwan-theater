@@ -27,7 +27,7 @@ npm run build    # 產出 dist/
 ## 資料來源與致謝
 
 - 比較方法啟發自 [rexx/theater-screen-size-2](https://github.com/Rexx/theater-screen-size-2)（該 repo 未附授權，本專案未沿用其程式碼，資料獨立整理）
-- 畫幅與觀影指南觀念參考 Threads [@moviekitaoji](https://www.threads.com/@moviekitaoji)
+- 銀幕尺寸主要來源：PTT Theater 板〈全台灣 IMAX／巨幕廳資料整理〉（IMAX 數據源自 lfexaminer.com）
 - 片單資料來自 [TMDB](https://www.themoviedb.org/)（本專案未獲 TMDB 背書）
 
 ## Roadmap

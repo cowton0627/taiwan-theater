@@ -305,7 +305,7 @@ export default function App() {
       <footer>
         <p>
           銀幕尺寸為社群流傳資料、尚待逐廳查證；歡迎透過 GitHub issue 提供丈量或官方來源。
-          畫幅資訊參考 Threads @moviekitaoji；比較方法啟發自 rexx/theater-screen-size-2。
+          比較方法啟發自 rexx/theater-screen-size-2。
         </p>
       </footer>
     </main>

@@ -124,14 +124,13 @@ header h1 {
 }
 
 .grid-line {
-  stroke: #2a3242;
+  stroke: #4d5a72;
   stroke-width: 1;
-  stroke-dasharray: 2 4;
-  opacity: 0.6;
+  stroke-dasharray: 4 4;
 }
 
 .center-mark {
-  stroke: var(--muted);
+  stroke: #aeb7c6;
   stroke-width: 1.5;
 }
 
