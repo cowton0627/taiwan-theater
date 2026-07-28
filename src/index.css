@@ -123,6 +123,18 @@ header h1 {
   margin: 0.4rem auto 0.8rem;
 }
 
+.grid-line {
+  stroke: #2a3242;
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+  opacity: 0.6;
+}
+
+.center-mark {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+
 .overlay-rect {
   fill: none;
   stroke-width: 2;

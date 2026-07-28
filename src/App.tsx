@@ -39,6 +39,21 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
   const width = 720;
   const scale = width / (maxWm * 1.06);
   const height = maxHm * scale * 1.12;
+  const cx = width / 2;
+  const cy = height / 2;
+
+  // 以畫面中心為原點、每 5 公尺一條的對稱格線
+  const gridStep = 5 * scale;
+  const gridXs: number[] = [];
+  for (let d = 0; cx + d <= width; d += gridStep) {
+    gridXs.push(cx + d);
+    if (d > 0) gridXs.push(cx - d);
+  }
+  const gridYs: number[] = [];
+  for (let d = 0; cy + d <= height; d += gridStep) {
+    gridYs.push(cy + d);
+    if (d > 0) gridYs.push(cy - d);
+  }
   return (
     <section className="overlay-section">
       <button
@@ -47,7 +62,7 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
         aria-expanded={open}
       >
         <span className={open ? 'caret open' : 'caret'}>▸</span>
-        疊圖比較（前 {top.length} 名成像，同比例尺）
+        疊圖比較（前 {top.length} 名成像，同比例尺；格線每 5 公尺，＋為畫面中心）
       </button>
       {open && (
         <>
@@ -57,6 +72,14 @@ function OverlayCompare({ fits }: { fits: FitResult[] }) {
             role="img"
             aria-label="影廳成像大小疊圖比較"
           >
+            {gridXs.map((x) => (
+              <line key={`gx${x}`} x1={x} y1={0} x2={x} y2={height} className="grid-line" />
+            ))}
+            {gridYs.map((y) => (
+              <line key={`gy${y}`} x1={0} y1={y} x2={width} y2={y} className="grid-line" />
+            ))}
+            <line x1={cx - 9} y1={cy} x2={cx + 9} y2={cy} className="center-mark" />
+            <line x1={cx} y1={cy - 9} x2={cx} y2={cy + 9} className="center-mark" />
             {top.map((f, i) => {
               const w = f.imageWidthM * scale;
               const h = f.imageHeightM * scale;
