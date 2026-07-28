@@ -4,7 +4,10 @@ import type { Film, FilmVersion, FitResult, HallCategory, SizedScreen } from '..
  * 畫幅 R 投影在 W×H 銀幕上的最大內接矩形：
  * 片比銀幕寬 → 滿寬、上下留黑；片比銀幕窄 → 滿高、左右留黑。
  */
-export function fitImage(screen: SizedScreen, version: FilmVersion): Omit<FitResult, 'versionUncertain'> {
+export function fitImage(
+  screen: SizedScreen,
+  version: FilmVersion,
+): Omit<FitResult, 'versionUncertain' | 'versionFallback'> {
   const screenRatio = screen.widthM / screen.heightM;
   const r = version.ratio;
   const imageWidthM = r >= screenRatio ? screen.widthM : screen.heightM * r;
@@ -40,7 +43,12 @@ export function fitFilm(screen: SizedScreen, film: Film): FitResult | null {
     if (versions.length === 0) continue;
     const fits = versions.map((v) => fitImage(screen, v));
     fits.sort((a, b) => b.imageAreaM2 - a.imageAreaM2);
-    return { ...fits[0], versionUncertain: versions.length > 1 };
+    return {
+      ...fits[0],
+      versionUncertain: versions.length > 1,
+      // 特殊廳型拿不到專屬版本、退用他類版本 —— 卡片需標示「本片無此廳型版本」
+      versionFallback: cat !== screen.hallCategory,
+    };
   }
   return null;
 }

@@ -261,7 +261,11 @@ export default function App() {
       .map((s) =>
         film
           ? fitFilm(s, film)
-          : { ...fitImage(s, customVersion(customRatio)), versionUncertain: false },
+          : {
+              ...fitImage(s, customVersion(customRatio)),
+              versionUncertain: false,
+              versionFallback: false,
+            },
       )
       .filter((r): r is FitResult => r !== null);
     results.sort((a, b) => b.imageAreaM2 - a.imageAreaM2);
@@ -537,7 +541,13 @@ export default function App() {
                   </h3>
                   <p className="dims">
                     {fit.version.label}
+                    {fit.versionFallback &&
+                      fit.screen.hallCategory !== 'PREMIUM' &&
+                      fit.screen.hallCategory !== 'STANDARD' &&
+                      '（本片無此廳型專屬版本）'}
                     {fit.versionUncertain && '（此廳排映版本依影城而定，以較大者計）'}
+                    {fit.version.confidence === 'reported' && '（畫幅為媒體報導值）'}
+                    {fit.version.confidence === 'expected' && '（畫幅未定，此為預期值）'}
                     ・ 銀幕 {fit.screen.widthM}×{fit.screen.heightM}m ・ 成像{' '}
                     {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m ={' '}
                     <strong>{fit.imageAreaM2.toFixed(0)} ㎡</strong>（銀幕利用率{' '}

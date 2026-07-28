@@ -84,6 +84,8 @@ export interface FilmVersion {
   hallCategory: HallCategory;
   ratio: number;
   label: string;
+  /** 畫幅資訊可信度：official=官方公布（預設）、reported=媒體報導、expected=上映前預期值 */
+  confidence?: 'official' | 'reported' | 'expected';
 }
 
 export interface Film {
@@ -114,4 +116,6 @@ export interface FitResult {
   screenUsage: number;
   /** STANDARD 廳有多版本時，此廳實際排哪版依影城而定 */
   versionUncertain: boolean;
+  /** 此廳類別無專屬版本、退用他類版本計算（特殊廳卡片需標示） */
+  versionFallback: boolean;
 }

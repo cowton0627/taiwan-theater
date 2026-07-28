@@ -30,15 +30,15 @@
     "shotOn": "數位攝影（機型未公布；非 IMAX 底片）",
     "runtimeMin": 145,
     "largeFormatMin": null,
-    "formatNotes": "全片 2.39:1 基準；IMAX 版關鍵段落擴展至 1.90:1（最多約多 26% 畫面），擴展段落總長未公布；另有 ScreenX 專屬段落",
+    "formatNotes": "台灣 2026/7/29 上映、確定無 IMAX 版（IMAX 檔期由奧德賽獨占）；全片 2.39:1 基準；首部原生 ScreenX 拍攝的好萊塢片（ScreenX／4DX 有專屬版本）；國際部分市場的 IMAX 1.90 擴展版不含台灣",
     "versions": [
-      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1（關鍵段落擴展）" },
-      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1" }
+      { "hallCategory": "DOLBY_CINEMA", "ratio": 2.39, "label": "杜比影院版 Scope 2.39:1", "confidence": "reported" },
+      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1", "confidence": "reported" }
     ],
     "sources": [
-      "TheDirect 版本整理（2026/7）：2.39 基準＋IMAX 1.90 擴展（約 +26% 畫面）、七種版本含 ScreenX/4DX/Dolby Cinema",
-      "Wikipedia：片長 145 分鐘、攝影 Brett Pawlak；攝影機型無公開可靠出處",
-      "Variety（轉述）：奧德賽 IMAX 獨占 4 週，美國開片無 IMAX 版、1.90 版僅部分國際市場"
+      "PTT Theater 板情報（2026/7）：台灣無 IMAX 版，IMAX 檔期由奧德賽／沙丘 3 獨占；與 Variety「1.90 版僅部分國際市場」相符",
+      "TheDirect 版本整理（2026/7）：2.39 基準、七種版本含 ScreenX/4DX/Dolby Cinema；原生 ScreenX 拍攝",
+      "Wikipedia／索尼台灣官網：片長 145 分鐘、台灣 7/29 上映、攝影 Brett Pawlak；攝影機型無公開可靠出處"
     ]
   },
   {
@@ -51,9 +51,9 @@
     "largeFormatMin": null,
     "formatNotes": "2026/12/18 上映；「全片 IMAX」為 IMAX CEO 口誤、Variety 已更正；IMAX 底片段落理論可達 1.43:1，比例配置未公告（以下版本為預期值）；攝影 Linus Sandgren（非前兩集的 Greig Fraser）",
     "versions": [
-      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（底片段落，預期）" },
-      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1（預期）" },
-      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1（預期）" }
+      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（底片段落）", "confidence": "expected" },
+      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1", "confidence": "expected" },
+      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1", "confidence": "expected" }
     ],
     "sources": [
       "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
