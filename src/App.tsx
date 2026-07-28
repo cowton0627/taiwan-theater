@@ -100,26 +100,36 @@ function OverlayCompare({
             ))}
             <line x1={cx - 9} y1={cy} x2={cx + 9} y2={cy} className="center-mark" />
             <line x1={cx} y1={cy - 9} x2={cx} y2={cy + 9} className="center-mark" />
-            {top.map((f, i) => {
-              const w = f.imageWidthM * scale;
-              const h = f.imageHeightM * scale;
-              return (
-                <rect
-                  key={f.screen.id}
-                  x={(width - w) / 2}
-                  y={(height - h) / 2}
-                  width={w}
-                  height={h}
-                  className={`overlay-rect overlay-rect-${i}`}
-                />
-              );
-            })}
+            {(() => {
+              // 成像尺寸相同的框會完全重合、互相遮蓋——
+              // 同尺寸的第 2 框起改用虛線並錯開起點，讓每廳顏色都可見
+              const sizeSeen = new Map<string, number>();
+              return top.map((f, i) => {
+                const w = f.imageWidthM * scale;
+                const h = f.imageHeightM * scale;
+                const key = `${f.imageWidthM.toFixed(2)}x${f.imageHeightM.toFixed(2)}`;
+                const dup = sizeSeen.get(key) ?? 0;
+                sizeSeen.set(key, dup + 1);
+                return (
+                  <rect
+                    key={f.screen.id}
+                    x={(width - w) / 2}
+                    y={(height - h) / 2}
+                    width={w}
+                    height={h}
+                    className={`overlay-rect overlay-rect-${i}`}
+                    strokeDasharray={dup > 0 ? '10 10' : undefined}
+                    strokeDashoffset={dup > 0 ? dup * 10 : undefined}
+                  />
+                );
+              });
+            })()}
           </svg>
           <ul className="overlay-legend">
             {top.map((f, i) => (
               <li key={f.screen.id}>
                 <span className={`swatch swatch-${i}`} />
-                {i + 1}. {f.screen.name}
+                {i + 1}. {f.screen.name}（{f.imageAreaM2.toFixed(0)} ㎡）
               </li>
             ))}
           </ul>
