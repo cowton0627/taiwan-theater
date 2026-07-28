@@ -13,7 +13,7 @@
 - [x] 4. 充實 `screens.json`：PTT Theater 板整理文全數收錄——11 間營運中 IMAX、品牌巨幕廳、兩座杜比影院、代表性 Atmos 廳，共 22 廳（2026-07-28；Atmos 廳仍可持續補）
 - [ ] 5. 逐廳查證尺寸、翻正 `verified` 旗標（2026-07-28 已翻正：美麗華 IMAX GT、美麗華杜比、台茂 IMAX）
 - [x] 9. data-plan §5-1：修正既有資料＋補 `seats` 欄位、移除海科館（收錄準則：只收商業影廳）、台南國賓改 closed（2026-07-28）
-- [ ] 10. data-plan §5-2：新增 A 組核心廳（青埔 LUXE、in89 LUXE、昕境國賓、置地國賓、ScreenX…）＋歇業紀錄（淡海巨幕等）
+- [x] 10. data-plan §5-2：新增 A 組核心廳 8 廳（青埔 LUXE、in89 LUXE、昕境國賓、置地國賓、樹林／欣欣／大巨蛋 ScreenX、ULTRA 4DX）＋淡海巨幕歇業紀錄，共 31 廳（2026-07-28；喜樂時代永和 XD 巨幕規格未明、暫未收）
 - [ ] 11. data-plan §5-3：schema 遷移 `audioTier`（roadmap 8 前置）
 
 ## 功能
