@@ -144,7 +144,7 @@
     "city": "台中市",
     "audioTier": "IMAX_5CH",
     "audio": "IMAX 6 聲道",
-    "seats": null,
+    "seats": 355,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11",
     "address": "台中市西屯區台灣大道三段251號13樓（Top City 大遠百）",
     "verified": false,
@@ -152,7 +152,7 @@
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
       "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：氙燈雙機 2K 未升級、6 聲道；亮度仍列第一集團"
     ],
-    "seatsNotes": "355（MovieGo）／381（部落格）兩說，待人工確認",
+    "seatsNotes": "暫採 MovieGo 現行 355（含 4 輪椅）；開幕報導稱「近 400」、另有 381 一說，待官方座位圖覆核",
     "priceNTD": 420,
     "priceNotes": "3D 480（二手 2026-03～05）",
     "notes": "氙燈雙機 2K、未升級雷射；2026/07 實測「又老又舊但很能打」"
@@ -199,7 +199,7 @@
     "city": "台南市",
     "audioTier": "IMAX_5CH",
     "audio": "IMAX 6 聲道",
-    "seats": null,
+    "seats": 390,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
     "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
     "verified": false,
@@ -207,7 +207,7 @@
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
       "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 台南指南：雙氙燈 2K 未升級、6 聲道"
     ],
-    "seatsNotes": "390＋4 無障礙（MovieGo）／426 兩說，待人工確認",
+    "seatsNotes": "390＋4 無障礙（MovieGo／訂票座位圖系；PTT 開幕實測 392 含身障）；開幕前宣傳稱 426 不採",
     "priceNTD": 410,
     "priceNotes": "3D 470（二手 2026-03～05）",
     "notes": "雙氙燈 2K、未升級雷射；2026/07 十廳簡評評為十間中表現最差（狀態衰退明顯）"
@@ -1125,8 +1125,8 @@
     "name": "高雄岡山秀泰 超級巨幕廳",
     "chain": "秀泰影城",
     "hallCategory": "PREMIUM",
-    "widthM": 22,
-    "heightM": 15,
+    "widthM": 20,
+    "heightM": 11,
     "projection": "Christie RGB 雷射",
     "brandLabel": "超級巨幕",
     "status": "operating",
@@ -1141,10 +1141,10 @@
     "booking": "https://www.showtimes.com.tw/cinemas/",
     "verified": false,
     "sources": [
-      "媒體：標稱寬 22m×高 15m、號稱南高屏最大銀幕",
-      "PTT 整理文推文區：實測約 20×11m（與標稱差距大，待查證）"
+      "PTT 整理文推文實測：約 20×11m（採用值）",
+      "Marie Claire／風傳媒開幕稿（2022/6）：「挑高 5 層樓、15 米高與寬 22 米」——15m 語意為廳挑高非銀幕高，22m 為宣傳寬度；「南高屏最大」無量化依據"
     ],
-    "notes": "標稱與論壇實測差距大（22×15 vs 20×11），此處採標稱、排名參考時注意"
+    "notes": "2022/6/23 開幕；官方宣傳 22m 寬、廳挑高 15m，媒體曾誤植為銀幕 22×15——採論壇實測 20×11"
   },
   {
     "id": "ambassador-kh-skmpark-atmos",
@@ -1191,5 +1191,49 @@
       "MLD 官網＋開眼（2026/7/29 實查）：營運中；南台灣最早引進 Atmos"
     ],
     "notes": "2025 商場調整不影響影城；銀幕尺寸待確認"
+  },
+  {
+    "id": "skcinemas-taichung-dva",
+    "name": "台中新光影城 杜比視界＋全景聲廳",
+    "chain": "新光影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "projection": "Dolby Vision 雷射",
+    "brandLabel": "DVA",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "DVA",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "booking": "https://www.skcinemas.com/",
+    "verified": false,
+    "sources": [
+      "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳，6/17《玩具總動員5》杜比版上映"
+    ],
+    "notes": "2026/6 啟用，台中首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證"
+  },
+  {
+    "id": "skcinemas-tainan-dva",
+    "name": "台南新光影城 杜比視界＋全景聲廳",
+    "chain": "新光影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "projection": "Dolby Vision 雷射",
+    "brandLabel": "DVA",
+    "status": "operating",
+    "region": "south",
+    "city": "台南市",
+    "audioTier": "DVA",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "booking": "https://www.skcinemas.com/",
+    "verified": false,
+    "sources": [
+      "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳"
+    ],
+    "notes": "2026/6 啟用，台南首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證"
   }
 ]
