@@ -163,3 +163,14 @@ U-1→roadmap 24、U-2 短期→25／長期→13、U-3＋U-4→26、U-5＋U-6→
 - F-1 的 ScreenX／4DX 版本建模為殘留缺口，已立項 roadmap 28。
 - U-9 數字更新：北部灰卡現為 9 張（LUXE 補尺寸 -1、新收威尼斯／百老匯 +2），roadmap 27 優先度上調。
 - F-2 註：美麗華 `cinema=imax` 時刻表 tab 經實測已回空列表（場次都在 standard），故美麗華兩廳深連結採 `cinema=standard`——原報告以 imax 深連結為正面範例的描述已過時。
+
+## F-4 回歸結果（2026-07-29，coding session 對部署站補測——QA 回歸表原缺此項）
+
+| 驗證點 | 結果 |
+|---|---|
+| 操作寫入 URL | ✅ `?film=dune-part-three-2026&region=north&sort=audio&sel=miramar-dazhi-imax-gt` |
+| F5 保留 | ✅ 選片／排序／地區／自選疊圖（1 廳）全數保留 |
+| 新分頁開連結還原 | ✅ 狀態完整還原（分享情境成立） |
+| 回預設網址變乾淨 | ✅ 回到根路徑、無殘留參數 |
+
+**F-4 關閉**。至此 F-1～F-9 全數關閉或有 roadmap 歸屬（F-1 殘留→28、F-6b→22）。
