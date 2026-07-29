@@ -20,8 +20,16 @@
     "address": "台北市中山區敬業三路22號6樓",
     "verified": true,
     "sources": [
-      "美麗華官網 IMAX 介紹頁（2026-07 實查）：28.4×20.54m 弧形銀幕、雙機 4K 雷射、12.1 聲道",
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：28.4×21.2m（高度與官網有出入，採官網）"
+      {
+        "label": "美麗華官網 IMAX 頁",
+        "note": "美麗華官網 IMAX 介紹頁（2026-07 實查）：28.4×20.54m 弧形銀幕、雙機 4K 雷射、12.1 聲道",
+        "url": "https://www.miramarcinemas.tw/Home/imaxcinema"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：28.4×21.2m（高度與官網有出入，採官網）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ],
     "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳、全台最大銀幕；2016/3 由數位 IMAX 升級"
   },
@@ -46,9 +54,21 @@
     "address": "新北市新店區中興路三段70號7樓（裕隆城）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie 雙北 IMAX 指南（2026/4）：IMAX with Laser（Laser XT）、21.4×11.6m",
-      "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：6 聲道、環繞表現明顯改善（疑重新調校，未證實）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "Enjoy Movie 雙北 IMAX 指南（2026/4）：IMAX with Laser（Laser XT）、21.4×11.6m",
+        "url": "https://enjoymovie.net/"
+      },
+      {
+        "label": "PTT movie《奧德賽》十廳簡評",
+        "note": "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：6 聲道、環繞表現明顯改善（疑重新調校，未證實）",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      }
     ],
     "notes": "2023/9/28 開幕即雷射；音響 6 聲道（開幕以來未升級），2026/07 實測環繞評價由負轉正"
   },
@@ -73,9 +93,21 @@
     "address": "新北市板橋區新站路28號10樓（Mega City 大遠百）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "PTT Theater 板升級情報（M.1669256337）：2022/12/14 由氙燈換裝 IMAX with Laser（Laser XT）",
-      "PTT movie《奧德賽》全台十間 IMAX 簡評（M.1785070745，2026/07）＋Threads：雷射升級未同步更新音響，實測仍 6 聲道"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT：板橋威秀 IMAX 升級雷射",
+        "note": "PTT Theater 板升級情報（M.1669256337）：2022/12/14 由氙燈換裝 IMAX with Laser（Laser XT）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1669256337.A.714.html"
+      },
+      {
+        "label": "PTT movie《奧德賽》十廳簡評",
+        "note": "PTT movie《奧德賽》全台十間 IMAX 簡評（M.1785070745，2026/07）＋Threads：雷射升級未同步更新音響，實測仍 6 聲道",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      }
     ],
     "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser（Laser XT）；音響未隨升級更新，2026/07 實測仍為 6 聲道"
   },
@@ -100,8 +132,16 @@
     "address": "桃園市蘆竹區南崁路一段112號7樓（台茂購物中心）",
     "verified": true,
     "sources": [
-      "官方開幕資料／美麗新官網：19×9.75m、325 席（2016/12 啟用，大桃園首座）；維基與 PTT 實測文引用一致",
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：17.8×9.8m（與官方數字有出入，採官方）"
+      {
+        "label": "美麗新官網 IMAX 介紹",
+        "note": "官方開幕資料／美麗新官網：19×9.75m、325 席（2016/12 啟用，大桃園首座）；維基與 PTT 實測文引用一致",
+        "url": "https://www.miranewcinemas.com/MiramarImaxAuro/imax/about2.aspx"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：17.8×9.8m（與官方數字有出入，採官方）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ],
     "notes": "氙燈數位雙機 2K、未升級雷射"
   },
@@ -126,8 +166,16 @@
     "address": "新竹市東區民權路176號4樓之3（巨城購物中心）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "開眼時刻表（2026/7/28 實查）：營運中；「拆除改 TITAN」為誤傳（混淆台中老虎城）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "開眼：台茂美麗新時刻表",
+        "note": "開眼時刻表（2026/7/28 實查）：營運中；「拆除改 TITAN」為誤傳（混淆台中老虎城）",
+        "url": "https://www.atmovies.com.tw/showtime/t03301/a03/"
+      }
     ],
     "notes": "氙燈數位、未升級雷射"
   },
@@ -149,8 +197,16 @@
     "address": "台中市西屯區台灣大道三段251號13樓（Top City 大遠百）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：氙燈雙機 2K 未升級、6 聲道；亮度仍列第一集團"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT movie《奧德賽》十廳簡評",
+        "note": "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：氙燈雙機 2K 未升級、6 聲道；亮度仍列第一集團",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      }
     ],
     "seatsNotes": "暫採 MovieGo 現行 355（含 4 輪椅）；開幕報導稱「近 400」、另有 381 一說，待官方座位圖覆核",
     "priceNTD": 420,
@@ -175,11 +231,31 @@
     "address": "嘉義市東區民族路328號",
     "verified": true,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
-      "官方 FB 規格（PTT M.1639584549 轉述）：21.5×12.3m、12.1 聲道、CoLA 單機雙鏡 4K",
-      "PTT《奧德賽》十廳簡評（2026/07）：評為全台十間之最",
-      "in89 官方 IMAX 特刊 PDF：21.49×12.31m（2026-07 稽核，尺寸翻正）；12.1 聲道之直接官方原頁仍待取得"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT：嘉義 in89 IMAX/LUXE 規格",
+        "note": "官方 FB 規格（PTT M.1639584549 轉述）：21.5×12.3m、12.1 聲道、CoLA 單機雙鏡 4K",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1639584549.A.E4B.html"
+      },
+      {
+        "label": "PTT movie《奧德賽》十廳簡評",
+        "note": "PTT《奧德賽》十廳簡評（2026/07）：評為全台十間之最",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      },
+      {
+        "label": "in89 官方 IMAX 特刊（PDF）",
+        "note": "in89 官方 IMAX 特刊 PDF：21.49×12.31m（2026-07 稽核，尺寸翻正）；12.1 聲道之直接官方原頁仍待取得",
+        "url": "https://imax.in89cinemax.com/wp-content/uploads/2022/05/IMAX%E7%89%B9%E5%88%8A.pdf"
+      }
     ],
     "seatsNotes": "PTT 票價情報 292 席（官網未列，待確認）",
     "priceNTD": 420,
@@ -204,8 +280,16 @@
     "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 台南指南：雙氙燈 2K 未升級、6 聲道"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 台南指南：雙氙燈 2K 未升級、6 聲道",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "seatsNotes": "390＋4 無障礙（MovieGo／訂票座位圖系；PTT 開幕實測 392 含身障）；開幕前宣傳稱 426 不採",
     "priceNTD": 410,
@@ -230,8 +314,16 @@
     "address": "高雄市苓雅區三多四路21號13樓（大遠百）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 高雄指南：IMAX with Laser XT 單機 4K（2022 年底升級）、6 聲道"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 高雄指南：IMAX with Laser XT 單機 4K（2022 年底升級）、6 聲道",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "seatsNotes": "MovieGo／enjoymovie 一致 271 席（含 3 無障礙）",
     "priceNTD": 450,
@@ -256,10 +348,26 @@
     "address": "花蓮縣吉安鄉南濱路一段503號3樓（新天堂樂園）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
-      "PTT《奧德賽》十廳簡評（2026/07）：CoLA 單機雙鏡 4K、12 聲道；全台唯一懸空式銀幕（論壇）",
-      "威秀官方花蓮據點頁：IMAX 雷射、12.1 聲道（官方；銀幕尺寸官方未列、維持論壇值）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "PTT movie《奧德賽》十廳簡評",
+        "note": "PTT《奧德賽》十廳簡評（2026/07）：CoLA 單機雙鏡 4K、12 聲道；全台唯一懸空式銀幕（論壇）",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      },
+      {
+        "label": "威秀官網：花蓮新天堂樂園",
+        "note": "威秀官方花蓮據點頁：IMAX 雷射、12.1 聲道（官方；銀幕尺寸官方未列、維持論壇值）",
+        "url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21"
+      }
     ],
     "seatsNotes": "MovieGo：368 席（含 4 無障礙）",
     "priceNTD": 400,
@@ -288,9 +396,21 @@
     "address": "台北市信義區松仁路58號10樓（遠百信義 A13）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "MUVIE CINEMAS 官方宣傳：TITAN 配置 Dolby Atmos（待核）",
-      "La Vie／自由時報開幕報導：TITAN 銀幕寬 22m×高 12m、RGB 高亮度雷射；全影城 THX 認證"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "威秀官網：MUVIE 台北松仁",
+        "note": "MUVIE CINEMAS 官方宣傳：TITAN 配置 Dolby Atmos（待核）",
+        "url": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23"
+      },
+      {
+        "label": "La Vie：MUVIE 開幕報導",
+        "note": "La Vie／自由時報開幕報導：TITAN 銀幕寬 22m×高 12m、RGB 高亮度雷射；全影城 THX 認證",
+        "url": "https://www.wowlavie.com/article/ae2000097"
+      }
     ],
     "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核"
   },
@@ -316,8 +436,15 @@
     "address": "台北市萬華區武昌街二段85號",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "輕旅行／PTT：A 廳 Spectro 巨幕 20×10m、Dolby 7.1"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "輕旅行／PTT（原文未定位）",
+        "note": "輕旅行／PTT：A 廳 Spectro 巨幕 20×10m、Dolby 7.1"
+      }
     ]
   },
   {
@@ -341,7 +468,11 @@
     "address": "高雄市前鎮區中華五路789號8樓（夢時代）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ]
   },
   {
@@ -361,8 +492,16 @@
     "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "國賓官網義大頁：銀幕寬 20m、全院 Dolby 7.1＋Harkness 透聲銀幕；是否有 Atmos 查無證據（待確認）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "國賓官網：高雄義大",
+        "note": "國賓官網義大頁：銀幕寬 20m、全院 Dolby 7.1＋Harkness 透聲銀幕；是否有 Atmos 查無證據（待確認）",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a4"
+      }
     ],
     "brandLabel": "巨幕廳",
     "seatsNotes": "全店 10 廳 1,764 席；8 廳單廳席數未查得",
@@ -386,8 +525,16 @@
     "booking": "https://www.ambassador.com.tw/",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "udn／中央社（2025/6）：台南國賓一館 2024/12/31、二館 2025/6/30 租約到期歇業；官網 2026 據點名單已無台南"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "udn：台南國賓二館熄燈",
+        "note": "udn／中央社（2025/6）：台南國賓一館 2024/12/31、二館 2025/6/30 租約到期歇業；官網 2026 據點名單已無台南",
+        "url": "https://travel.udn.com/travel/story/7208/8790816"
+      }
     ],
     "notes": "已歇業（一館 2024/12/31、二館 2025/6/30），保留供歷史紀錄"
   },
@@ -410,7 +557,11 @@
     "address": "台中市南屯區文心南路289號7樓",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ],
     "notes": "LED 直顯銀幕（非投影）"
   },
@@ -434,7 +585,11 @@
     "address": "金門縣金湖鎮中山路8-8號3樓（風獅爺商店街）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ]
   },
   {
@@ -459,8 +614,16 @@
     "address": "桃園市中壢區春德路107號（置地廣場桃園）",
     "verified": false,
     "sources": [
-      "中時／工商時報開幕報導（2020/12）：全台首座杜比影院、322 席、對比 1,000,000:1",
-      "UpToGo 等部落格：銀幕約 20×10m（官方未公布，論壇估計）"
+      {
+        "label": "工商時報：全台首座杜比影院開幕",
+        "note": "中時／工商時報開幕報導（2020/12）：全台首座杜比影院、322 席、對比 1,000,000:1",
+        "url": "https://www.ctee.com.tw/news/20201204700832-439901"
+      },
+      {
+        "label": "UpToGo：青埔新光整理",
+        "note": "UpToGo 等部落格：銀幕約 20×10m（官方未公布，論壇估計）",
+        "url": "https://uptogo.com.tw/%E5%A8%9B%E6%A8%82/%E9%9B%BB%E5%BD%B1/%E9%9D%92%E5%9F%94%E6%96%B0%E5%85%89%E5%BD%B1%E5%9F%8E/"
+      }
     ],
     "notes": "全台第一座 Dolby Cinema（2020/12/3 啟用）；銀幕尺寸為論壇估計、官方未公布"
   },
@@ -486,9 +649,21 @@
     "address": "台北市中山區敬業三路22號6樓",
     "verified": false,
     "sources": [
-      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文無法穩定引用、官網介紹頁未列尺寸——尺寸不翻正；電話詢問 14×7m 旁證，PTT M.1729059093）",
-      "美麗華官方團劃頁（groupticket2）：Dolby Cinema 303 席",
-      "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）"
+      {
+        "label": "PTT：美麗華杜比廳討論",
+        "note": "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文無法穩定引用、官網介紹頁未列尺寸——尺寸不翻正；電話詢問 14×7m 旁證，PTT M.1729059093）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1729059093.A.E9F.html"
+      },
+      {
+        "label": "美麗華官網團體劃位頁",
+        "note": "美麗華官方團劃頁（groupticket2）：Dolby Cinema 303 席",
+        "url": "https://www.miramarcinemas.tw/Home/groupticket2"
+      },
+      {
+        "label": "美麗華官網 Dolby Cinema 頁",
+        "note": "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）",
+        "url": "https://www.miramarcinemas.tw/Home/dolbycinema"
+      }
     ],
     "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度"
   },
@@ -512,8 +687,16 @@
     "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Dolby 2024/4 新聞稿：DVA＝Dolby Vision+Atmos 開放授權層級；JazzNews 秀泰結盟報導"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "Dolby 官方新聞稿（2024/4）",
+        "note": "Dolby 2024/4 新聞稿：DVA＝Dolby Vision+Atmos 開放授權層級；JazzNews 秀泰結盟報導",
+        "url": "https://news.dolby.com/en-WW/236229-dolby-expanding-the-best-way-to-experience-movies-by-making-dolby-vision-and-dolby-atmos-available-to-all-premium-theater-exhibitors/"
+      }
     ],
     "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布"
   },
@@ -534,8 +717,16 @@
     "booking": "https://www.in89.com.tw/",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "新聞報導：西門 in89（前身豪華大戲院）2026/05/31 結束營業"
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "ETtoday：西門 in89 熄燈",
+        "note": "新聞報導：西門 in89（前身豪華大戲院）2026/05/31 結束營業",
+        "url": "https://star.ettoday.net/news/3169103"
+      }
     ],
     "notes": "2026/05/31 歇業，保留供歷史紀錄"
   },
@@ -561,9 +752,21 @@
     "address": "台北市萬華區成都路88號",
     "verified": true,
     "sources": [
-      "國賓官方影城介紹頁：22×12m Harkness 銀幕、雙機 Christie 4K RGB 純雷射、最高 90,000 流明（2026-07 稽核確認，尺寸翻正）",
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "維基／PTT：867 席（席次仍二手）"
+      {
+        "label": "國賓官網：國賓大戲院",
+        "note": "國賓官方影城介紹頁：22×12m Harkness 銀幕、雙機 Christie 4K RGB 純雷射、最高 90,000 流明（2026-07 稽核確認，尺寸翻正）",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_b1"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "維基：國賓影城",
+        "note": "維基／PTT：867 席（席次仍二手）",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%B3%93%E5%BD%B1%E5%9F%8E"
+      }
     ],
     "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證"
   },
@@ -589,8 +792,16 @@
     "address": "桃園市中壢區春德路107號（置地廣場桃園）",
     "verified": false,
     "sources": [
-      "新光官方 CMS（wp.skcinemas.com/luxe_intro）：台灣第一套雙機 RGB 4K 雷射 LUXE、RealD 終極銀幕 92% 反射率、Dolby Atmos",
-      "ETtoday 等開幕媒體稿（2020/7）：寬 17m × 高 7m 曲面銀幕、322 席（尺寸疑出自官方新聞稿，官方頁面未直接標示）"
+      {
+        "label": "新光影城官網 LUXE 介紹",
+        "note": "新光官方 CMS（wp.skcinemas.com/luxe_intro）：台灣第一套雙機 RGB 4K 雷射 LUXE、RealD 終極銀幕 92% 反射率、Dolby Atmos",
+        "url": "https://wp.skcinemas.com/luxe_intro"
+      },
+      {
+        "label": "ETtoday：青埔新光開幕報導",
+        "note": "ETtoday 等開幕媒體稿（2020/7）：寬 17m × 高 7m 曲面銀幕、322 席（尺寸疑出自官方新聞稿，官方頁面未直接標示）",
+        "url": "https://fashion.ettoday.net/news/1760163"
+      }
     ],
     "notes": "與杜比影院同館；「全球第 300 座／台灣第 4 座終極銀幕」為新光方說法、查無 RealD 官方佐證"
   },
@@ -611,8 +822,16 @@
     "booking": "https://www.in89.com.tw/",
     "verified": false,
     "sources": [
-      "維基百科：2019 台灣首座 LUXE UltimateScreen",
-      "新聞報導：西門 in89（前身豪華大戲院）2026/05/31 結束營業"
+      {
+        "label": "維基：新光影城",
+        "note": "維基百科：2019 台灣首座 LUXE UltimateScreen",
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%85%89%E5%BD%B1%E5%9F%8E"
+      },
+      {
+        "label": "ETtoday：西門 in89 熄燈",
+        "note": "新聞報導：西門 in89（前身豪華大戲院）2026/05/31 結束營業",
+        "url": "https://star.ettoday.net/news/3169103"
+      }
     ],
     "notes": "台灣第一座 LUXE（2019）；2026/05/31 隨影城歇業，保留供歷史紀錄；LUXE 廳音響配置未查得"
   },
@@ -636,8 +855,15 @@
     "address": "新北市林口區文化三路一段402巷2號4樓（昕境廣場）",
     "verified": false,
     "sources": [
-      "國賓官網影城介紹頁（2026-07 實查）：8 廳 943 席、全廳 Dolby Surround 7.1、配備 Dolby Atmos、Harkness 透聲銀幕",
-      "論壇：另有 Barco Auro 11.1 之說（官方頁未載，未證實）"
+      {
+        "label": "國賓官網：林口昕境",
+        "note": "國賓官網影城介紹頁（2026-07 實查）：8 廳 943 席、全廳 Dolby Surround 7.1、配備 Dolby Atmos、Harkness 透聲銀幕",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a9"
+      },
+      {
+        "label": "論壇（原串未定位）",
+        "note": "論壇：另有 Barco Auro 11.1 之說（官方頁未載，未證實）"
+      }
     ],
     "notes": "2015/2 開幕；論壇稱同館有 Auro 11.1（官方頁未提及，待查證）"
   },
@@ -661,8 +887,16 @@
     "address": "桃園市八德區介壽路一段728號3樓（置地生活廣場）",
     "verified": false,
     "sources": [
-      "維基百科：Dolby Atmos 廳 ×2、D-BOX 36 席",
-      "國賓官網 2026 據點名單：營運中"
+      {
+        "label": "維基：國賓影城",
+        "note": "維基百科：Dolby Atmos 廳 ×2、D-BOX 36 席",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%B3%93%E5%BD%B1%E5%9F%8E"
+      },
+      {
+        "label": "國賓官網據點列表",
+        "note": "國賓官網 2026 據點名單：營運中",
+        "url": "https://www.ambassador.com.tw/home/TheaterList"
+      }
     ],
     "notes": "維基載 Atmos 廳共 2 廳，此筆代表收錄；廳號與規格待官方查證"
   },
@@ -687,7 +921,11 @@
     "address": "新北市樹林區樹新路40-6號",
     "verified": false,
     "sources": [
-      "MovieGo／媒體：ScreenX 270° 三面投影；全廳 Christie Vive Audio"
+      {
+        "label": "MovieGo：樹林秀泰",
+        "note": "MovieGo／媒體：ScreenX 270° 三面投影；全廳 Christie Vive Audio",
+        "url": "https://moviego.funorange.com.tw/theater/112"
+      }
     ],
     "notes": "ScreenX 為 270° 三面投影特殊畫幅，主銀幕尺寸未公布"
   },
@@ -711,8 +949,15 @@
     "address": "台北市中山區林森北路247號",
     "verified": false,
     "sources": [
-      "LINE TODAY 影廳整理；開眼時刻表（2026）：營運中",
-      "注意：歇業的是西門今日／東南亞／板橋秀泰，欣欣仍營運"
+      {
+        "label": "開眼：欣欣秀泰時刻表",
+        "note": "LINE TODAY 影廳整理；開眼時刻表（2026）：營運中",
+        "url": "https://www.atmovies.com.tw/showtime/t02d03/a02/"
+      },
+      {
+        "label": "本站查證備註",
+        "note": "注意：歇業的是西門今日／東南亞／板橋秀泰，欣欣仍營運"
+      }
     ],
     "notes": "林森北路；ScreenX 270° 三面投影，主銀幕尺寸未公布"
   },
@@ -736,7 +981,11 @@
     "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
-      "Cool3c／JazzNews 開幕報導（2025/10）：全台獨家 4DX＋ScreenX 雙系統"
+      {
+        "label": "Cool3c：大巨蛋秀泰開幕",
+        "note": "Cool3c／JazzNews 開幕報導（2025/10）：全台獨家 4DX＋ScreenX 雙系統",
+        "url": "https://www.cool3c.com/article/244669"
+      }
     ],
     "notes": "2025/10 開幕；動感座椅＋270° 三面投影雙系統，銀幕尺寸未公布"
   },
@@ -760,7 +1009,11 @@
     "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
-      "Cool3c／JazzNews 開幕報導（2025/10）：台北市最大 ScreenX"
+      {
+        "label": "JazzNews：大巨蛋秀泰開幕",
+        "note": "Cool3c／JazzNews 開幕報導（2025/10）：台北市最大 ScreenX",
+        "url": "https://jazznews.com.tw/howtime-taipei-dome-open/"
+      }
     ],
     "notes": "2025/10 開幕；270° 三面投影，主銀幕尺寸未公布"
   },
@@ -781,8 +1034,16 @@
     "address": "桃園市中壢區九和一街48號3樓之2",
     "verified": false,
     "sources": [
-      "開眼時刻表（2026/7/28 實查）：營運中、當日有 Atmos 場次標示",
-      "PTT Theater 板整理串：7、8 廳雙 Atmos（2014 加裝，當時號稱全台唯一雙 Atmos 廳影城）——廳號未經官方證實"
+      {
+        "label": "開眼：中壢威尼斯時刻表",
+        "note": "開眼時刻表（2026/7/28 實查）：營運中、當日有 Atmos 場次標示",
+        "url": "https://www.atmovies.com.tw/showtime/t03303/a03/"
+      },
+      {
+        "label": "PTT Theater 巨幕資料整理串",
+        "note": "PTT Theater 板整理串：7、8 廳雙 Atmos（2014 加裝，當時號稱全台唯一雙 Atmos 廳影城）——廳號未經官方證實",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      }
     ],
     "notes": "中壢在地獨立影城；銀幕尺寸與座位數待確認"
   },
@@ -807,8 +1068,16 @@
     "address": "新竹縣竹北市自強南路36號3～5樓（享平方）",
     "verified": false,
     "sources": [
-      "百老匯官網 about：旗艦廳 Dolby Atmos（杜比首款自行研發主聲道揚聲器）、RGB 純雷射",
-      "開眼時刻表（2026/7/28 實查）：營運中；PTT 整理：＝第 8 廳（未官方證實）"
+      {
+        "label": "百老匯影城官網 about",
+        "note": "百老匯官網 about：旗艦廳 Dolby Atmos（杜比首款自行研發主聲道揚聲器）、RGB 純雷射",
+        "url": "https://www.broadway-cineplex.com.tw/about.html"
+      },
+      {
+        "label": "開眼：竹北百老匯時刻表",
+        "note": "開眼時刻表（2026/7/28 實查）：營運中；PTT 整理：＝第 8 廳（未官方證實）",
+        "url": "https://www.atmovies.com.tw/showtime/t03510/a35/"
+      }
     ],
     "notes": "2022/12/14 開幕，新竹縣首座首輪影城；全店 14 廳 1,238 席；旗艦廳尺寸與座位待確認"
   },
@@ -830,7 +1099,11 @@
     "booking": "https://www.miranewcinemas.com/",
     "verified": false,
     "sources": [
-      "維基百科：25×13.5m、RGB 4K 純雷射、Dolby Atmos 42 聲道、463 席；2024/12/30 隨影城停業（租約糾紛）"
+      {
+        "label": "維基：美麗新影城",
+        "note": "維基百科：25×13.5m、RGB 4K 純雷射、Dolby Atmos 42 聲道、463 席；2024/12/30 隨影城停業（租約糾紛）",
+        "url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E9%BA%97%E6%96%B0%E5%BD%B1%E5%9F%8E"
+      }
     ],
     "notes": "曾為全台最大 Dolby Atmos 巨幕；2024/12/30 歇業，保留供歷史紀錄"
   },
@@ -855,8 +1128,16 @@
     "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
     "verified": false,
     "sources": [
-      "PTT Theater（M.1736311742，2025/1）：TITAN 開始放映；威秀官網：全店 10 廳＝1 TITAN＋7 數位＋2 GOLD CLASS",
-      "enjoymovie 台中指南（2026/04）：銀幕寬約 15.4m（非官方）、Barco 4K RGB 雷射"
+      {
+        "label": "PTT：老虎城 TITAN 開始放映",
+        "note": "PTT Theater（M.1736311742，2025/1）：TITAN 開始放映；威秀官網：全店 10 廳＝1 TITAN＋7 數位＋2 GOLD CLASS",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1736311742.A.AE4.html"
+      },
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "enjoymovie 台中指南（2026/04）：銀幕寬約 15.4m（非官方）、Barco 4K RGB 雷射",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "notes": "原老虎城 IMAX 廳址改裝、2025/1/10 啟用（原 IMAX 結束年份兩說待查）；論壇評音效平平、賣點在舒適度"
   },
@@ -866,7 +1147,7 @@
     "chain": "秀泰影城",
     "hallCategory": "PREMIUM",
     "widthM": 22,
-    "heightM": 15,
+    "heightM": null,
     "projection": "Christie 4K RGB 雷射",
     "brandLabel": "巨幕廳",
     "status": "operating",
@@ -880,9 +1161,13 @@
     "booking": "https://www.showtimes.com.tw/cinemas/53/",
     "verified": false,
     "sources": [
-      "媒體報導：寬 22m×高 15m 台中最大銀幕、Christie 4K RGB 雷射、Dolby 7.1"
+      {
+        "label": "秀泰官網（廳高 15 米、寬 22 米）",
+        "note": "媒體報導：寬 22m×高 15m 台中最大銀幕、Christie 4K RGB 雷射、Dolby 7.1",
+        "url": "https://www.showtimes.com.tw/cinemas/53/"
+      }
     ],
-    "notes": "標稱尺寸；PTT 整理文推文區稱秀泰巨幕實際約標稱 80–90%，待查證",
+    "notes": "秀泰官網：「廳高 15 米（約五層樓）、寬 22 米」——15m 為廳挑高非銀幕高（同岡山誤植模式），銀幕高未公布、退出排名待查",
     "address": "台中市東區南京路76號"
   },
   {
@@ -904,7 +1189,11 @@
     "booking": "https://www.showtimes.com.tw/cinemas/53/",
     "verified": false,
     "sources": [
-      "媒體報導（2024/7 啟用）"
+      {
+        "label": "食尚玩家：秀泰 ScreenX 開幕",
+        "note": "媒體報導（2024/7 啟用）",
+        "url": "https://supertaste.tvbs.com.tw/hot/350124"
+      }
     ],
     "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
     "address": "台中市東區南京路76號"
@@ -930,7 +1219,11 @@
     "address": "台中市南屯區文心南路289號7樓",
     "verified": false,
     "sources": [
-      "食尚玩家等媒體（2024/7/3 開幕）：270° 總寬約 66m、高約 12m"
+      {
+        "label": "食尚玩家：秀泰 ScreenX 開幕",
+        "note": "食尚玩家等媒體（2024/7/3 開幕）：270° 總寬約 66m、高約 12m",
+        "url": "https://supertaste.tvbs.com.tw/hot/350124"
+      }
     ],
     "notes": "ScreenX＋4K 雷射；270° 總寬約 66m（非主銀幕尺寸）"
   },
@@ -952,8 +1245,15 @@
     "booking": "https://www.skcinemas.com/sessions?c=1003",
     "verified": false,
     "sources": [
-      "Mobile01／媒體（2016/6）：全球首座 Atmos＋MX4D 組合、4K＋HFR；全店另有第二座 Atmos 廳",
-      "開眼（2026/7/29 實查）：營運中——2025/2 新光三越氣爆停業、2025/9/27 復業"
+      {
+        "label": "yam：台中新光 MX4D 登場",
+        "note": "Mobile01／媒體（2016/6）：全球首座 Atmos＋MX4D 組合、4K＋HFR；全店另有第二座 Atmos 廳",
+        "url": "https://n.yam.com/Article/20160622760520/"
+      },
+      {
+        "label": "開眼時刻表（2026/7/29 實查）",
+        "note": "開眼（2026/7/29 實查）：營運中——2025/2 新光三越氣爆停業、2025/9/27 復業"
+      }
     ],
     "notes": "新光三越中港店 13–14F；2025 氣爆停業逾半年後已復業",
     "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
@@ -977,7 +1277,11 @@
     "booking": "https://www.vscinemas.com.tw/",
     "verified": false,
     "sources": [
-      "開眼（2026/7/29 實查）：營運中；原「大魯閣新時代威秀」，商場 2025 由遠雄接手、2026 更名 iFG（更名非歇業）"
+      {
+        "label": "開眼：iFG 遠雄威秀時刻表",
+        "note": "開眼（2026/7/29 實查）：營運中；原「大魯閣新時代威秀」，商場 2025 由遠雄接手、2026 更名 iFG（更名非歇業）",
+        "url": "https://www.atmovies.com.tw/showtime/t04409/a04/"
+      }
     ],
     "notes": "台中市東區復興路四段 186 號 4 樓",
     "address": "台中市東區復興路四段186號4樓（iFG 遠雄廣場）"
@@ -1000,7 +1304,10 @@
     "booking": "https://www.showtimes.com.tw/cinemas/59/",
     "verified": false,
     "sources": [
-      "食尚玩家（2020/1 開幕）：巨幕寬 20m、約 4 層樓高"
+      {
+        "label": "食尚玩家（原文未定位）",
+        "note": "食尚玩家（2020/1 開幕）：巨幕寬 20m、約 4 層樓高"
+      }
     ],
     "notes": "銀幕高未公布",
     "address": "台中市后里區月眉東路二段181號3樓（麗寶 Outlet）"
@@ -1026,7 +1333,11 @@
     "booking": "https://www.srm.com.tw/product.php?_path=product_showtimes",
     "verified": false,
     "sources": [
-      "enjoymovie 台中指南（2026/04）；開眼：營運中"
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "enjoymovie 台中指南（2026/04）；開眼：營運中",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "notes": "中區獨立老字號；銀幕尺寸未公布",
     "address": "台中市中區中華路一段58號"
@@ -1049,7 +1360,11 @@
     "booking": "https://www.srm.com.tw/product.php?_path=product_showtimes",
     "verified": false,
     "sources": [
-      "enjoymovie 台中指南（2026/04）"
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "enjoymovie 台中指南（2026/04）",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "notes": "",
     "address": "台中市中區中華路一段58號"
@@ -1075,7 +1390,11 @@
     "address": "嘉義市東區民族路328號",
     "verified": false,
     "sources": [
-      "in89 官網設備頁＋PTT 規格文（M.1639584549）：20.5×10.5m、雷射 4K、Atmos"
+      {
+        "label": "PTT：嘉義 in89 IMAX/LUXE 規格",
+        "note": "in89 官網設備頁＋PTT 規格文（M.1639584549）：20.5×10.5m、雷射 4K、Atmos",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1639584549.A.E4B.html"
+      }
     ],
     "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳"
   },
@@ -1099,7 +1418,11 @@
     "booking": "https://www.skcinemas.com/sessions?c=1002",
     "verified": false,
     "sources": [
-      "enjoymovie 台南指南（2026/04）：LUXE: A RealD Experience、Atmos 53.3 聲道"
+      {
+        "label": "Enjoy Movie 影廳指南",
+        "note": "enjoymovie 台南指南（2026/04）：LUXE: A RealD Experience、Atmos 53.3 聲道",
+        "url": "https://enjoymovie.net/"
+      }
     ],
     "notes": "小西門；銀幕尺寸未公布",
     "address": "台南市中西區西門路一段658-1號（新光三越小西門）"
@@ -1124,7 +1447,11 @@
     "address": "高雄市前鎮區中華五路789號8樓（夢時代）",
     "verified": false,
     "sources": [
-      "媒體（2024/7/3 啟用）"
+      {
+        "label": "食尚玩家：秀泰 ScreenX 開幕",
+        "note": "媒體（2024/7/3 啟用）",
+        "url": "https://supertaste.tvbs.com.tw/hot/350124"
+      }
     ],
     "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布"
   },
@@ -1149,8 +1476,15 @@
     "booking": "https://www.showtimes.com.tw/cinemas/84/",
     "verified": false,
     "sources": [
-      "PTT 整理文推文實測：約 20×11m（採用值）",
-      "Marie Claire／風傳媒開幕稿（2022/6）：「挑高 5 層樓、15 米高與寬 22 米」——15m 語意為廳挑高非銀幕高，22m 為宣傳寬度；「南高屏最大」無量化依據"
+      {
+        "label": "PTT Theater 巨幕資料整理串（推文）",
+        "note": "PTT 整理文推文實測：約 20×11m（採用值）",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "Marie Claire／風傳媒（原文未定位）",
+        "note": "Marie Claire／風傳媒開幕稿（2022/6）：「挑高 5 層樓、15 米高與寬 22 米」——15m 語意為廳挑高非銀幕高，22m 為宣傳寬度；「南高屏最大」無量化依據"
+      }
     ],
     "notes": "2022/6/23 開幕；官方宣傳 22m 寬、廳挑高 15m，媒體曾誤植為銀幕 22×15——採論壇實測 20×11",
     "address": "高雄市岡山區捷安路1巷2號4樓"
@@ -1174,7 +1508,11 @@
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6",
     "verified": false,
     "sources": [
-      "國賓官網 2026 名單＋開眼（仍名「國賓大魯閣草衙道影城」）：營運中、Atmos 廳 ×2＋D-BOX"
+      {
+        "label": "國賓官網據點列表",
+        "note": "國賓官網 2026 名單＋開眼（仍名「國賓大魯閣草衙道影城」）：營運中、Atmos 廳 ×2＋D-BOX",
+        "url": "https://www.ambassador.com.tw/home/TheaterList"
+      }
     ],
     "notes": "前鎮草衙；廳號與規格待官方查證",
     "address": "高雄市前鎮區中山四路100號3樓（SKM Park）"
@@ -1198,7 +1536,11 @@
     "booking": "https://www.mldcinema.com.tw/TimeList.php",
     "verified": false,
     "sources": [
-      "MLD 官網＋開眼（2026/7/29 實查）：營運中；南台灣最早引進 Atmos"
+      {
+        "label": "MLD Cinema 官網",
+        "note": "MLD 官網＋開眼（2026/7/29 實查）：營運中；南台灣最早引進 Atmos",
+        "url": "https://mldcinema.com.tw/index.php"
+      }
     ],
     "notes": "2025 商場調整不影響影城；銀幕尺寸待確認",
     "address": "高雄市前鎮區忠勤路8號"
@@ -1221,7 +1563,11 @@
     "booking": "https://www.skcinemas.com/sessions?c=1003",
     "verified": false,
     "sources": [
-      "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳，6/17《玩具總動員5》杜比版上映"
+      {
+        "label": "鏡週刊：新光台中/台南杜比廳",
+        "note": "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳，6/17《玩具總動員5》杜比版上映",
+        "url": "https://www.mirrormedia.mg/story/20260610-191ent-174019"
+      }
     ],
     "notes": "2026/6 啟用，台中首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
     "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
@@ -1244,7 +1590,11 @@
     "booking": "https://www.skcinemas.com/sessions?c=1002",
     "verified": false,
     "sources": [
-      "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳"
+      {
+        "label": "鏡週刊：新光台中/台南杜比廳",
+        "note": "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳",
+        "url": "https://www.mirrormedia.mg/story/20260610-191ent-174019"
+      }
     ],
     "notes": "2026/6 啟用，台南首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
     "address": "台南市中西區西門路一段658-1號（新光三越小西門）"

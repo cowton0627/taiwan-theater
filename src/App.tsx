@@ -140,6 +140,30 @@ function CityLink({ s }: { s: Screen }) {
   );
 }
 
+/** 資料來源與查證展開區（roadmap 33）：每筆來源可點、附完整引用句 */
+function SourcesFold({ sources }: { sources: Screen['sources'] }) {
+  if (!sources || sources.length === 0) return null;
+  return (
+    <details className="sources-fold">
+      <summary>資料來源與查證（{sources.length}）</summary>
+      <ul>
+        {sources.map((r, i) => (
+          <li key={i}>
+            {r.url ? (
+              <a href={r.url} target="_blank" rel="noreferrer">
+                {r.label}
+              </a>
+            ) : (
+              <span>{r.label}</span>
+            )}
+            {r.note && r.note !== r.label && <span className="src-note">──{r.note}</span>}
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
 /** 杜比影院類別徽章＝整廳認證，染認證綠 */
 function categoryBadgeClass(s: Screen) {
   return s.hallCategory === 'DOLBY_CINEMA' ? 'badge tier-cert' : 'badge';
@@ -653,6 +677,7 @@ export default function App() {
               {film.runtimeMin != null && film.largeFormatMin == null && ` ・ 片長 ${film.runtimeMin} 分鐘`}
             </p>
             {film.formatNotes && <p className="film-meta film-format">{film.formatNotes}</p>}
+            <SourcesFold sources={film.sources} />
           </div>
         )}
         <div className="control-divider" />
@@ -887,6 +912,7 @@ export default function App() {
                     </a>
                     {fit.screen.notes && ` ・ ${fit.screen.notes}`}
                   </p>
+                  <SourcesFold sources={fit.screen.sources} />
                 </div>
                 {sortMode === 'score' ? (
                   <div className="card-area" title="綜合得分（口碑分尚未接入）">
@@ -956,6 +982,7 @@ export default function App() {
                     </a>
                     {s.notes && ` ・ ${s.notes}`}
                   </p>
+                  <SourcesFold sources={s.sources} />
                 </div>
               </article>
                 ))}
@@ -964,6 +991,18 @@ export default function App() {
           </div>
         </section>
       )}
+
+      <section className="method" id="method">
+        <h2 className="region-title">資料來源與方法</h2>
+        <ul className="method-list">
+          <li>收錄準則：只收商業影廳的特殊廳（IMAX／杜比影院／DVA／LUXE／巨幕／ScreenX／代表性 Atmos 廳）；歇業廳保留紀錄不顯示。</li>
+          <li>計算方式：以「畫幅投影在銀幕上的最大內接矩形」求有效成像面積；一般廳同時發行兩版時取較大者並標註不確定性。</li>
+          <li>來源優先序：官方（官網／官方文件）＞ 2025 後媒體 ＞ 論壇整理與實測；每筆資料附來源，點各卡片「資料來源與查證」可見。</li>
+          <li>查證原則：尺寸經官方公布或丈量才標已驗證；查不到的音效標「音效未查證」、不硬填；來源衝突並列各說法不隱藏。</li>
+          <li>票價為平日 2D 全票參考值（含查價時點），不計入任何排序。</li>
+          <li>音效層級與綜合評比分值為本站預設（見排序說明），非實測音質。</li>
+        </ul>
+      </section>
 
       {toast && (
         <div className="toast" role="status">
@@ -974,6 +1013,7 @@ export default function App() {
       <footer>
         <p>
           本站不含即時場次——各廳是否排映特定影片與格式，請以影城官網為準。
+          <a href="#method">資料來源與方法</a>。
           銀幕尺寸為社群流傳資料、尚待逐廳查證；歡迎透過 GitHub issue 提供丈量或官方來源。
           比較方法啟發自{' '}
           <a href="https://github.com/rexx/theater-screen-size-2" target="_blank" rel="noreferrer">

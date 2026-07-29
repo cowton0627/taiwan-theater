@@ -32,10 +32,26 @@
       }
     ],
     "sources": [
-      "官方格式頁 odysseymovie.com/explore-formats：Every frame shot with IMAX Film Cameras、IMAX 70mm 全片 1.43:1",
-      "Forbes 格式解析（2026/7/17）：GT 雷射 1.43、數位 IMAX 1.90、70mm 2.20、35mm 2.39；原生混音 5.1",
-      "Collider：片長 172 分鐘",
-      "Threads @moviekitaoji 台灣觀影指南"
+      {
+        "label": "《奧德賽》官方格式頁",
+        "note": "官方格式頁 odysseymovie.com/explore-formats：Every frame shot with IMAX Film Cameras、IMAX 70mm 全片 1.43:1",
+        "url": "https://www.odysseymovie.com/explore-formats/"
+      },
+      {
+        "label": "Forbes：奧德賽格式指南",
+        "note": "Forbes 格式解析（2026/7/17）：GT 雷射 1.43、數位 IMAX 1.90、70mm 2.20、35mm 2.39；原生混音 5.1",
+        "url": "https://www.forbes.com/sites/bennyhareven/2026/07/17/which-cinema-format-is-best-for-christopher-nolans-the-odyssey/"
+      },
+      {
+        "label": "Collider：奧德賽片長",
+        "note": "Collider：片長 172 分鐘",
+        "url": "https://collider.com/christopher-nolan-the-odyssey-runtime-confirmed-2-hours-52-minutes/"
+      },
+      {
+        "label": "Threads @moviekitaoji",
+        "note": "Threads @moviekitaoji 台灣觀影指南",
+        "url": "https://www.threads.com/@moviekitaoji"
+      }
     ]
   },
   {
@@ -68,11 +84,30 @@
       }
     ],
     "sources": [
-      "PTT Theater 板情報（2026/7）：台灣無 IMAX 版，IMAX 檔期由奧德賽／沙丘 3 獨占；與 Variety「1.90 版僅部分國際市場」相符",
-      "TheDirect 版本整理（2026/7）：2.39 基準、七種版本含 ScreenX/4DX/Dolby Cinema；原生 ScreenX 拍攝",
-      "Wikipedia／索尼台灣官網：片長 145 分鐘、台灣 7/29 上映、攝影 Brett Pawlak；攝影機型無公開可靠出處",
-      "2026-07-29 稽核：BBFC 有 Shot for ScreenX 分級紀錄（官方間接）；「唯一 2.39 基準」無片商第一方頁支持，補 Flat 1.90 版標 reported",
-      "2026-07-29 首日抽查（開眼）：板橋/新竹巨城/台中大遠百/高雄大遠百四據點 IMAX 廳均排《奧德賽》，蜘蛛人僅數位/3D/4DX/GC——支持全台無 IMAX 版"
+      {
+        "label": "PTT：蜘蛛人／復5 無 IMAX 版情報",
+        "note": "PTT Theater 板情報（2026/7）：台灣無 IMAX 版，IMAX 檔期由奧德賽／沙丘 3 獨占；與 Variety「1.90 版僅部分國際市場」相符",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1781971387.A.1C9.html"
+      },
+      {
+        "label": "TheDirect：重生日七種版本",
+        "note": "TheDirect 版本整理（2026/7）：2.39 基準、七種版本含 ScreenX/4DX/Dolby Cinema；原生 ScreenX 拍攝",
+        "url": "https://thedirect.com/article/spider-man-brand-new-day-theaters-release-versions"
+      },
+      {
+        "label": "Wikipedia：Brand New Day",
+        "note": "Wikipedia／索尼台灣官網：片長 145 分鐘、台灣 7/29 上映、攝影 Brett Pawlak；攝影機型無公開可靠出處",
+        "url": "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day"
+      },
+      {
+        "label": "BBFC 分級頁",
+        "note": "2026-07-29 稽核：BBFC 有 Shot for ScreenX 分級紀錄（官方間接）；「唯一 2.39 基準」無片商第一方頁支持，補 Flat 1.90 版標 reported",
+        "url": "https://www.bbfc.co.uk/release/spider-man-brand-new-day-q29sbgvjdglvbjpwwc0xmtezmty0"
+      },
+      {
+        "label": "開眼當日場次快照（無穩定連結）",
+        "note": "2026-07-29 首日抽查（開眼）：板橋/新竹巨城/台中大遠百/高雄大遠百四據點 IMAX 廳均排《奧德賽》，蜘蛛人僅數位/3D/4DX/GC——支持全台無 IMAX 版"
+      }
     ]
   },
   {
@@ -105,9 +140,21 @@
       }
     ],
     "sources": [
-      "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
-      "ScreenRant 引 Variety 更正：非全片 IMAX",
-      "YMCinema（2025/8）：本集以底片為主要載體"
+      {
+        "label": "MPA：Villeneuve 沙丘3 訪談",
+        "note": "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
+        "url": "https://www.motionpictures.org/2026/03/denis-villeneuve-on-filming-dune-part-three-as-a-more-tense-more-muscular-imax-film/"
+      },
+      {
+        "label": "ScreenRant：沙丘3 非全片 IMAX",
+        "note": "ScreenRant 引 Variety 更正：非全片 IMAX",
+        "url": "https://screenrant.com/dune-3-messiah-movie-imax-cameras-filming-update/"
+      },
+      {
+        "label": "YMCinema：沙丘3 改用底片",
+        "note": "YMCinema（2025/8）：本集以底片為主要載體",
+        "url": "https://ymcinema.com/2025/08/20/dune-part-three-shot-on-film/"
+      }
     ]
   }
 ]

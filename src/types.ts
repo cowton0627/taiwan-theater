@@ -9,6 +9,19 @@ export type HallCategory =
 export type Region = 'north' | 'central' | 'south' | 'east';
 
 /**
+ * 結構化資料來源（roadmap 33）：卡片可顯示可點連結。
+ * url 省略＝該來源本質上無穩定連結（電話詢問、FB 擋外連、當日場次快照）；
+ * note 保留完整原句（引用重點、採用值與異說），零資訊損失。
+ */
+export interface SourceRef {
+  /** 顯示名，例：「美麗華官網 IMAX 頁」 */
+  label: string;
+  url?: string;
+  /** 完整原句／引用重點 */
+  note?: string;
+}
+
+/**
  * 音效認證／系統層級，排序即優劣參考（roadmap 8 的排序依據）。
  * 區分重點：DOLBY_CINEMA 是整廳認證；DVA 只授權 Vision+Atmos 技術（2024 起的新層級）；
  * ATMOS 是音響系統授權安裝。未查證的廳以保守下限 SURROUND_5_1 標記。
@@ -77,7 +90,7 @@ export interface Screen {
   address?: string;
   /** 尺寸是否經過查證（丈量紀錄、官方公布） */
   verified: boolean;
-  sources: string[];
+  sources: SourceRef[];
   notes?: string;
 }
 
@@ -112,7 +125,7 @@ export interface Film {
   /** 畫幅／格式補充說明（顯示於片名下方） */
   formatNotes?: string;
   versions: FilmVersion[];
-  sources: string[];
+  sources: SourceRef[];
 }
 
 /** 一個畫幅在一面銀幕上的實際成像 */

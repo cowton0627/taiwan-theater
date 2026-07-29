@@ -674,3 +674,43 @@ footer {
     min-width: 0;
   }
 }
+
+/* 資料來源與查證展開區（roadmap 33） */
+.sources-fold {
+  margin-top: 0.35rem;
+  font-size: 0.76rem;
+}
+
+.sources-fold summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.sources-fold ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.sources-fold li {
+  margin-bottom: 0.15rem;
+}
+
+.src-note {
+  opacity: 0.85;
+}
+
+.method {
+  margin-top: 2.2rem;
+}
+
+.method-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.method-list li {
+  margin-bottom: 0.3rem;
+}
