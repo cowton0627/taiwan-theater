@@ -81,15 +81,24 @@ header h1 {
   font-weight: 600;
 }
 
+/* 說明文字與操作 chips 分層：註記塊（左細線＋淡底＋內縮） */
+.control-note {
+  margin: 0.35rem 0 0.75rem;
+  padding: 0.5rem 0.8rem;
+  border-left: 2px solid var(--accent-dim);
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 0 8px 8px 0;
+}
+
 .film-meta {
   color: var(--muted);
-  font-size: 0.88rem;
-  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .film-format {
-  margin-top: 0.25rem;
-  font-size: 0.82rem;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
 }
 
 .overlay-section {
@@ -296,7 +305,7 @@ header h1 {
 
 .sort-basis {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 

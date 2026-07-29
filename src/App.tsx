@@ -542,7 +542,7 @@ export default function App() {
           )}
         </div>
         {film && (
-          <>
+          <div className="control-note">
             <p className="film-meta">
               《{film.title}》{film.titleEn}（{film.year}）
               {film.shotOn && ` ・ ${film.shotOn}`}
@@ -555,7 +555,7 @@ export default function App() {
               {film.runtimeMin != null && film.largeFormatMin == null && ` ・ 片長 ${film.runtimeMin} 分鐘`}
             </p>
             {film.formatNotes && <p className="film-meta film-format">{film.formatNotes}</p>}
-          </>
+          </div>
         )}
         <div className="control-group">
           <span className="control-label">品牌</span>
@@ -595,10 +595,12 @@ export default function App() {
           </button>
         </div>
         {sortMode === 'audio' && (
-          <p className="sort-basis">
-            排序依據（本站預設）：Dolby Cinema ＞ DVA ＞ IMAX 12 聲道 ＞ IMAX 5 聲道 ＞ Atmos ＞
-            7.1 ＞ 5.1——此為認證／系統規格層級，非實測音質；同層級內按成像面積。
-          </p>
+          <div className="control-note">
+            <p className="sort-basis">
+              排序依據（本站預設）：Dolby Cinema ＞ DVA ＞ IMAX 12 聲道 ＞ IMAX 5 聲道 ＞ Atmos ＞
+              7.1 ＞ 5.1——此為認證／系統規格層級，非實測音質；同層級內按成像面積。
+            </p>
+          </div>
         )}
         <div className="control-group">
           <span className="control-label">地區</span>
