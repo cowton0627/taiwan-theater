@@ -726,3 +726,27 @@ footer {
   color: var(--text);
   font-weight: 600;
 }
+
+/* 錨點反饋：方法區緊貼 footer、點擊後幾乎不捲動，用閃爍高亮給明確回饋 */
+html {
+  scroll-behavior: smooth;
+}
+
+.method {
+  scroll-margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.method:target {
+  animation: method-flash 1.6s ease-out 1;
+}
+
+@keyframes method-flash {
+  0% { background: rgba(216, 178, 114, 0.16); box-shadow: 0 0 0 2px var(--gold-dim); }
+  100% { background: transparent; box-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .method:target { animation: none; background: rgba(216, 178, 114, 0.1); }
+}
