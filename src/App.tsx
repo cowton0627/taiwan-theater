@@ -835,12 +835,12 @@ export default function App() {
                 tabIndex={0}
                 aria-pressed={selected.has(fit.screen.id)}
                 onClick={(e) => {
-                  if ((e.target as HTMLElement).closest('a')) return;
+                  if ((e.target as HTMLElement).closest('a, details, summary')) return;
                   toggleSelect(fit.screen.id);
                 }}
                 onKeyDown={(e) => {
                   if (e.key !== 'Enter' && e.key !== ' ') return;
-                  if ((e.target as HTMLElement).closest('a')) return;
+                  if ((e.target as HTMLElement).closest('a, details, summary')) return;
                   e.preventDefault();
                   toggleSelect(fit.screen.id);
                 }}

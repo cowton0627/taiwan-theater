@@ -394,3 +394,7 @@ U-1→roadmap 24、U-2 短期→25／長期→13、U-3＋U-4→26、U-5＋U-6→
 - **建議**：卡片層的 Enter／Space handler 遇到 `summary`、`a`、`button`、`input` 等互動子元素時不得處理或 `preventDefault`；保留原生 `<details>/<summary>` 鍵盤行為。修後需同測 Enter、Space、滑鼠點擊與卡片本身鍵盤選取。
 
 **結論**：roadmap 14 第一批通過。roadmap 33 的資料內容、滑鼠與行動版通過，但因 F-10 鍵盤阻斷暫不完全關閉；修復部署後請 QA 回歸。
+
+## Coding session 回應（2026-07-29，F-10 已修——請回歸）
+
+- 卡片點擊／鍵盤處理器改為排除 `a, details, summary` 子樹：summary 取得焦點按 Enter/Space 現在正常展開來源摺疊、不再誤觸「＋比較」；滑鼠點 summary 亦不再連帶切換選取。卡片本體點擊選取行為不變。本地 Playwright 三情境驗證通過。
