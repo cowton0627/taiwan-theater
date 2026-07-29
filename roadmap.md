@@ -15,8 +15,8 @@
 - [x] 9. data-plan §5-1：修正既有資料＋補 `seats` 欄位、移除海科館（收錄準則：只收商業影廳）、台南國賓改 closed（2026-07-28）
 - [x] 10. data-plan §5-2：新增 A 組核心廳 8 廳（青埔 LUXE、in89 LUXE、昕境國賓、置地國賓、樹林／欣欣／大巨蛋 ScreenX、ULTRA 4DX）＋淡海巨幕歇業紀錄，共 31 廳（2026-07-28；喜樂時代永和 XD 巨幕規格未明、暫未收）
 - [x] 11. data-plan §5-3：schema 遷移 `audioTier`（八級：DOLBY_CINEMA→SURROUND_5_1；移除 `atmos` 布林改由 `hasAtmos()` 推導；未查證廳保守標 SURROUND_5_1）（2026-07-28）
-- [ ] 15. 中南部／東部盤點：照北部方法論（IMAX 現況＋集團缺漏＋歇業複核）；已知線索——台中老虎城 IMAX 已拆改 TITAN（2025/1）、秀泰台中/高雄 DVA 計畫、義大/夢時代待複核
-- [ ] 16. data-plan B 組體驗型廳（4DX／GOLD CLASS／B.O.X.／MUCROWN／金鑽…）＋既有廳 `seats` 補全（南部 IMAX 多為 null）——座位資訊前置。盤點清單來源：Threads @moviekitaoji 2025/8 特殊影廳規格指南（含 MX4D／D-BOX、「維修中／即將開幕」狀態對 15 也有用；規格在圖片內需人工轉錄、寫入標 verified:false）
+- [x] 15. 中南部／東部盤點完成（2026-07-29）：更新 6 筆（聲道/席次/評語，含嘉義=全台最佳、台南南紡=最差、高雄=Laser XT）＋新增 15 廳（老虎城 TITAN、站前/岡山/麗寶巨幕、三座 ScreenX、台中新光 Atmos+MX4D（氣爆已復業）、iFG 遠雄 Atmos、日日新兩廳、嘉義 LUXE、台南新光 LUXE、SKM Park、MLD），共 48 廳。註：秀泰中南部 DVA 仍規劃中未開；大魯閣新時代=更名 iFG 非歇業；台南真善美（2024/8 歇）與全美（2025/3 暫停）無特殊廳不入庫；新增廳的訂票深連結待補（沿用 18 的方法）
+- [ ] 16. data-plan B 組體驗型廳（4DX／GOLD CLASS／B.O.X.／MUCROWN／金鑽…）＋既有廳 `seats` 補全——座位資訊前置。中南部 B 組清單已由 15 盤點備妥（台南大遠百 4DX、高雄大遠百 4DX 92 席、GOLD CLASS：老虎城/南紡/高雄大遠百各 ×2、義大金鑽 ×2、花蓮 A+ 42 席…）；**注意新竹大遠百 4DX 已於 2026/4 移除**。來源另有 Threads @moviekitaoji 2025/8 指南（需人工轉錄、verified:false）
 
 ## 功能
 

@@ -133,14 +133,17 @@
     "region": "central",
     "city": "台中市",
     "audioTier": "IMAX_5CH",
-    "audio": "IMAX 音響",
+    "audio": "IMAX 6 聲道",
     "seats": null,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11",
     "address": "台中市西屯區台灣大道三段251號13樓（Top City 大遠百）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
-    ]
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "PTT movie《奧德賽》十廳簡評（M.1785070745，2026/07）：氙燈雙機 2K 未升級、6 聲道；亮度仍列第一集團"
+    ],
+    "seatsNotes": "355（MovieGo）／381（部落格）兩說，待人工確認",
+    "notes": "氙燈雙機 2K、未升級雷射；2026/07 實測「又老又舊但很能打」"
   },
   {
     "id": "in89-chiayi-imax",
@@ -154,15 +157,19 @@
     "region": "south",
     "city": "嘉義市",
     "audioTier": "IMAX_12CH",
-    "audio": "IMAX 12 聲道",
-    "seats": null,
+    "audio": "IMAX 12.1 聲道",
+    "seats": 292,
     "booking": "https://www.in89cinemax.com/film_list.aspx?TheaterId=17",
     "address": "嘉義市東區民族路328號",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道"
-    ]
+      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
+      "官方 FB 規格（PTT M.1639584549 轉述）：21.5×12.3m、12.1 聲道、CoLA 單機雙鏡 4K",
+      "PTT《奧德賽》十廳簡評（2026/07）：評為全台十間之最"
+    ],
+    "seatsNotes": "PTT 票價情報 292 席（官網未列，待確認）",
+    "notes": "IMAX with Laser（CoLA）；2026/07 十廳簡評評為全台最佳（畫質亮度第一集團、低頻渾厚）"
   },
   {
     "id": "vieshow-tainan-imax",
@@ -176,14 +183,17 @@
     "region": "south",
     "city": "台南市",
     "audioTier": "IMAX_5CH",
-    "audio": "IMAX 音響",
+    "audio": "IMAX 6 聲道",
     "seats": null,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
     "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
-    ]
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 台南指南：雙氙燈 2K 未升級、6 聲道"
+    ],
+    "seatsNotes": "390＋4 無障礙（MovieGo）／426 兩說，待人工確認",
+    "notes": "雙氙燈 2K、未升級雷射；2026/07 十廳簡評評為十間中表現最差（狀態衰退明顯）"
   },
   {
     "id": "vieshow-kaohsiung-fe-imax",
@@ -197,14 +207,17 @@
     "region": "south",
     "city": "高雄市",
     "audioTier": "IMAX_5CH",
-    "audio": "IMAX 音響",
-    "seats": null,
+    "audio": "IMAX 6 聲道",
+    "seats": 271,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
     "address": "高雄市苓雅區三多四路21號13樓（大遠百）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
-    ]
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 高雄指南：IMAX with Laser XT 單機 4K（2022 年底升級）、6 聲道"
+    ],
+    "seatsNotes": "MovieGo／enjoymovie 一致 271 席（含 3 無障礙）",
+    "notes": "2022 年底由氙燈升級 IMAX with Laser（XT）；亮度實測僅第二集團、重低音猛烈"
   },
   {
     "id": "vieshow-hualien-imax",
@@ -218,15 +231,18 @@
     "region": "east",
     "city": "花蓮縣",
     "audioTier": "IMAX_12CH",
-    "audio": "IMAX 12 聲道",
-    "seats": null,
+    "audio": "IMAX 12.1 聲道",
+    "seats": 368,
     "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
     "address": "花蓮縣吉安鄉南濱路一段503號3樓（新天堂樂園）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道"
-    ]
+      "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
+      "PTT《奧德賽》十廳簡評（2026/07）：CoLA 單機雙鏡 4K、12 聲道；全台唯一懸空式銀幕（論壇）"
+    ],
+    "seatsNotes": "MovieGo：368 席（含 4 無障礙）",
+    "notes": "IMAX with Laser（CoLA，與嘉義同規格）；論壇稱全台唯一懸空式銀幕；座位區離銀幕較遠"
   },
   {
     "id": "muvie-titan",
@@ -310,15 +326,19 @@
     "status": "operating",
     "region": "south",
     "city": "高雄市",
-    "audioTier": "SURROUND_5_1",
-    "audio": "多聲道",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby 7.1",
     "seats": null,
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c",
     "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
     "verified": false,
     "sources": [
-      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
-    ]
+      "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
+      "國賓官網義大頁：銀幕寬 20m、全院 Dolby 7.1＋Harkness 透聲銀幕；是否有 Atmos 查無證據（待確認）"
+    ],
+    "brandLabel": "巨幕廳",
+    "seatsNotes": "全店 10 廳 1,764 席；8 廳單廳席數未查得",
+    "notes": "義大世界；另有金鑽貴賓廳 ×2"
   },
   {
     "id": "ambassador-tainan-a",
@@ -756,5 +776,335 @@
       "維基百科：25×13.5m、RGB 4K 純雷射、Dolby Atmos 42 聲道、463 席；2024/12/30 隨影城停業（租約糾紛）"
     ],
     "notes": "曾為全台最大 Dolby Atmos 巨幕；2024/12/30 歇業，保留供歷史紀錄"
+  },
+  {
+    "id": "muvie-tigercity-titan",
+    "name": "台中 MUVIE TIGER CITY TITAN 廳",
+    "chain": "威秀影城（MUVIE）",
+    "hallCategory": "PREMIUM",
+    "widthM": 15.4,
+    "heightM": null,
+    "projection": "Barco 4K RGB 雷射",
+    "brandLabel": "MUVIE TITAN",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "QSC 四迴路 7.1",
+    "seats": 233,
+    "seatsNotes": "233 席（含 3 無障礙）、排距 130cm（enjoymovie）",
+    "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
+    "verified": false,
+    "sources": [
+      "PTT Theater（M.1736311742，2025/1）：TITAN 開始放映；威秀官網：全店 10 廳＝1 TITAN＋7 數位＋2 GOLD CLASS",
+      "enjoymovie 台中指南（2026/04）：銀幕寬約 15.4m（非官方）、Barco 4K RGB 雷射"
+    ],
+    "notes": "原老虎城 IMAX 廳址改裝、2025/1/10 啟用（原 IMAX 結束年份兩說待查）；論壇評音效平平、賣點在舒適度"
+  },
+  {
+    "id": "showtime-taichung-station-giant",
+    "name": "台中站前秀泰 巨幕廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": 22,
+    "heightM": 15,
+    "projection": "Christie 4K RGB 雷射",
+    "brandLabel": "巨幕廳",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby 7.1",
+    "seats": null,
+    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "verified": false,
+    "sources": [
+      "媒體報導：寬 22m×高 15m 台中最大銀幕、Christie 4K RGB 雷射、Dolby 7.1"
+    ],
+    "notes": "標稱尺寸；PTT 整理文推文區稱秀泰巨幕實際約標稱 80–90%，待查證"
+  },
+  {
+    "id": "showtime-taichung-station-screenx",
+    "name": "台中站前秀泰 ScreenX 廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "ScreenX",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "多聲道",
+    "seats": null,
+    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "verified": false,
+    "sources": [
+      "媒體報導（2024/7 啟用）"
+    ],
+    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布"
+  },
+  {
+    "id": "showtime-taichung-wenxin-screenx",
+    "name": "台中文心秀泰 ScreenX 廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "ScreenX",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "多聲道",
+    "seats": 300,
+    "seatsNotes": "約 300 席（媒體）",
+    "booking": "https://www.showtimes.com.tw/cinemas/56/",
+    "address": "台中市南屯區文心南路289號7樓",
+    "verified": false,
+    "sources": [
+      "食尚玩家等媒體（2024/7/3 開幕）：270° 總寬約 66m、高約 12m"
+    ],
+    "notes": "ScreenX＋4K 雷射；270° 總寬約 66m（非主銀幕尺寸）"
+  },
+  {
+    "id": "skcinemas-taichung-hall3-atmos",
+    "name": "台中新光影城 3 廳（Atmos＋MX4D）",
+    "chain": "新光影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos（41.3 聲道）＋MX4D",
+    "seats": null,
+    "booking": "https://www.skcinemas.com/",
+    "verified": false,
+    "sources": [
+      "Mobile01／媒體（2016/6）：全球首座 Atmos＋MX4D 組合、4K＋HFR；全店另有第二座 Atmos 廳",
+      "開眼（2026/7/29 實查）：營運中——2025/2 新光三越氣爆停業、2025/9/27 復業"
+    ],
+    "notes": "新光三越中港店 13–14F；2025 氣爆停業逾半年後已復業"
+  },
+  {
+    "id": "vieshow-taichung-ifg-atmos",
+    "name": "台中 iFG 遠雄威秀 杜比全景聲廳（7 廳）",
+    "chain": "威秀影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "seatsNotes": "全店 9 廳 1,781 席",
+    "booking": "https://www.vscinemas.com.tw/",
+    "verified": false,
+    "sources": [
+      "開眼（2026/7/29 實查）：營運中；原「大魯閣新時代威秀」，商場 2025 由遠雄接手、2026 更名 iFG（更名非歇業）"
+    ],
+    "notes": "台中市東區復興路四段 186 號 4 樓"
+  },
+  {
+    "id": "showtime-taichung-lihpao-giant",
+    "name": "台中麗寶秀泰 巨幕廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": 20,
+    "heightM": null,
+    "brandLabel": "巨幕廳",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "多聲道",
+    "seats": null,
+    "seatsNotes": "全店 10 廳 808 席",
+    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "verified": false,
+    "sources": [
+      "食尚玩家（2020/1 開幕）：巨幕寬 20m、約 4 層樓高"
+    ],
+    "notes": "銀幕高未公布"
+  },
+  {
+    "id": "ririxin-taichung-supreme",
+    "name": "台中日日新影城 至尊廳",
+    "chain": "日日新影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "projection": "Barco 4K",
+    "brandLabel": "至尊廳",
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "QSC 三路音響",
+    "seats": 700,
+    "seatsNotes": "enjoymovie 台中指南：700 席",
+    "booking": "https://www.atmovies.com.tw/showtime/a04/",
+    "verified": false,
+    "sources": [
+      "enjoymovie 台中指南（2026/04）；開眼：營運中"
+    ],
+    "notes": "中區獨立老字號；銀幕尺寸未公布"
+  },
+  {
+    "id": "ririxin-taichung-6a-atmos",
+    "name": "台中日日新影城 6A 廳（Atmos）",
+    "chain": "日日新影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "central",
+    "city": "台中市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos（QSC 38 支環繞）",
+    "seats": 180,
+    "booking": "https://www.atmovies.com.tw/showtime/a04/",
+    "verified": false,
+    "sources": [
+      "enjoymovie 台中指南（2026/04）"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "in89-chiayi-luxe",
+    "name": "嘉義 in89 豪華影城 LUXE 廳",
+    "chain": "in89",
+    "hallCategory": "PREMIUM",
+    "widthM": 20.5,
+    "heightM": 10.5,
+    "projection": "4K 雷射",
+    "brandLabel": "LUXE",
+    "status": "operating",
+    "region": "south",
+    "city": "嘉義市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "booking": "https://www.in89cinemax.com/film_list.aspx?TheaterId=17",
+    "address": "嘉義市東區民族路328號",
+    "verified": false,
+    "sources": [
+      "in89 官網設備頁＋PTT 規格文（M.1639584549）：20.5×10.5m、雷射 4K、Atmos"
+    ],
+    "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳"
+  },
+  {
+    "id": "skcinemas-tainan-luxe",
+    "name": "台南新光影城 LUXE 廳",
+    "chain": "新光影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "LUXE",
+    "status": "operating",
+    "region": "south",
+    "city": "台南市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos（53.3 聲道）",
+    "seats": 432,
+    "seatsNotes": "enjoymovie 台南指南：432 席",
+    "booking": "https://www.skcinemas.com/",
+    "verified": false,
+    "sources": [
+      "enjoymovie 台南指南（2026/04）：LUXE: A RealD Experience、Atmos 53.3 聲道"
+    ],
+    "notes": "小西門；銀幕尺寸未公布"
+  },
+  {
+    "id": "showtime-kaohsiung-dreammall-screenx",
+    "name": "高雄夢時代秀泰 ScreenX 廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "ScreenX",
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "多聲道",
+    "seats": null,
+    "booking": "https://www.showtimes.com.tw/cinemas/87/",
+    "address": "高雄市前鎮區中華五路789號8樓（夢時代）",
+    "verified": false,
+    "sources": [
+      "媒體（2024/7/3 啟用）"
+    ],
+    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布"
+  },
+  {
+    "id": "showtime-kaohsiung-gangshan-giant",
+    "name": "高雄岡山秀泰 超級巨幕廳",
+    "chain": "秀泰影城",
+    "hallCategory": "PREMIUM",
+    "widthM": 22,
+    "heightM": 15,
+    "projection": "Christie RGB 雷射",
+    "brandLabel": "超級巨幕",
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby 7.1",
+    "seats": null,
+    "seatsNotes": "全店 13 廳",
+    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "verified": false,
+    "sources": [
+      "媒體：標稱寬 22m×高 15m、號稱南高屏最大銀幕",
+      "PTT 整理文推文區：實測約 20×11m（與標稱差距大，待查證）"
+    ],
+    "notes": "標稱與論壇實測差距大（22×15 vs 20×11），此處採標稱、排名參考時注意"
+  },
+  {
+    "id": "ambassador-kh-skmpark-atmos",
+    "name": "高雄 SKM Park 國賓 杜比全景聲廳（×2）",
+    "chain": "國賓影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "seatsNotes": "全店 10 廳 1,856 席",
+    "booking": "https://www.ambassador.com.tw/home/TheaterList",
+    "verified": false,
+    "sources": [
+      "國賓官網 2026 名單＋開眼（仍名「國賓大魯閣草衙道影城」）：營運中、Atmos 廳 ×2＋D-BOX"
+    ],
+    "notes": "前鎮草衙；廳號與規格待官方查證"
+  },
+  {
+    "id": "mld-kaohsiung-atmos",
+    "name": "高雄 MLD 台鋁影城 Dolby Atmos 廳",
+    "chain": "MLD 台鋁影城",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos（64 聲道）",
+    "seats": null,
+    "seatsNotes": "全店 10 廳 1,445 席",
+    "booking": "https://mldcinema.com.tw/",
+    "verified": false,
+    "sources": [
+      "MLD 官網＋開眼（2026/7/29 實查）：營運中；南台灣最早引進 Atmos"
+    ],
+    "notes": "2025 商場調整不影響影城；銀幕尺寸待確認"
   }
 ]
