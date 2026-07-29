@@ -31,6 +31,36 @@ const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
 /** 「其他」chip 的哨兵值：涵蓋所有單廳小品牌 */
 const OTHER_CHAINS = '__other__';
 
+/** 城市 chips 的地理順序（北→南→東→離島）；不在表內的城市排最後 */
+const CITY_ORDER = [
+  '基隆市',
+  '台北市',
+  '新北市',
+  '桃園市',
+  '新竹市',
+  '新竹縣',
+  '苗栗縣',
+  '台中市',
+  '彰化縣',
+  '南投縣',
+  '雲林縣',
+  '嘉義市',
+  '嘉義縣',
+  '台南市',
+  '高雄市',
+  '屏東縣',
+  '宜蘭縣',
+  '花蓮縣',
+  '台東縣',
+  '澎湖縣',
+  '金門縣',
+  '連江縣',
+];
+const cityOrder = (c: string) => {
+  const i = CITY_ORDER.indexOf(c);
+  return i === -1 ? CITY_ORDER.length : i;
+};
+
 /** 頁面載入時的 URL 參數——所有狀態的初始值來源（可分享、F5 不歸零） */
 const INIT_PARAMS = new URLSearchParams(window.location.search);
 
@@ -355,17 +385,17 @@ export default function App() {
 
   const film = films.find((f) => f.id === filmId) ?? null;
 
-  /** 已選地區內的城市選項（依廳數排序）；未選地區時不展開城市層 */
+  /** 已選地區內的城市選項（依地理位置北→南排序）；未選地區時不展開城市層 */
   const cityOptions = useMemo(() => {
     if (regions.size === 0) return [];
-    const counts = new Map<string, number>();
+    const set = new Set<string>();
     for (const s of screens) {
       if (s.status !== 'operating' || !regions.has(s.region)) continue;
-      counts.set(s.city, (counts.get(s.city) ?? 0) + 1);
+      set.add(s.city);
     }
-    return Array.from(counts.entries())
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'))
-      .map(([c]) => c);
+    return Array.from(set).sort(
+      (a, b) => cityOrder(a) - cityOrder(b) || a.localeCompare(b, 'zh-Hant'),
+    );
   }, [regions]);
 
   /** 只採計目前地區範圍內的城市選取——切換地區時殘留選取自動失效 */
