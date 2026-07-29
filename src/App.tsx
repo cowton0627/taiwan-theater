@@ -514,6 +514,37 @@ export default function App() {
     [fits, selected],
   );
 
+  /** 決策摘要一行（UI-REVIEW P0-1）：把數據翻成結論，隨選片／篩選／排序更新 */
+  const insight = useMemo(() => {
+    if (ranked.length === 0) return null;
+    const top = ranked[0];
+    const scoped = regions.size > 0 || chains.size > 0 || activeCities.size > 0;
+    const scope = scoped ? '目前篩選範圍內' : '全台';
+    const caveat = !top.screen.verified ? '（第 1 名尺寸待驗證）' : '';
+    if (sortMode === 'score') {
+      const t = scoreMap.get(top.screen.id)?.total ?? 0;
+      const tt = Number.isInteger(t) ? t : t.toFixed(1);
+      const areaTop = fits[0];
+      const extra =
+        areaTop && areaTop.screen.id !== top.screen.id
+          ? `；成像最大為 ${areaTop.screen.name}（${areaTop.imageAreaM2.toFixed(0)} ㎡）`
+          : '';
+      return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，口碑分未接入）${extra}${caveat}`;
+    }
+    if (sortMode === 'audio') {
+      return `${scope}音效層級最高：${top.screen.name}（${AUDIO_TIER_LABELS[top.screen.audioTier]}）；成像最大仍為 ${fits[0].screen.name}（${fits[0].imageAreaM2.toFixed(0)} ㎡）`;
+    }
+    const subject = film ? `《${film.title}》` : `${customRatio}:1 畫幅`;
+    const base = `${subject}在${scope}，${top.screen.name} 的有效成像最大（${top.imageAreaM2.toFixed(0)} ㎡）`;
+    if (ranked.length === 1) return `${base}${caveat}`;
+    const times = top.imageAreaM2 / ranked[1].imageAreaM2;
+    const cmp =
+      times < 1.05
+        ? `，與第二名 ${ranked[1].screen.name} 相當`
+        : `，是第二名的 ${times.toFixed(1)} 倍`;
+    return `${base}${cmp}${caveat}`;
+  }, [ranked, fits, sortMode, scoreMap, film, customRatio, regions, chains, activeCities]);
+
   const toggleSelect = (id: string) => {
     if (!selected.has(id) && selected.size >= 6) {
       showToast('自選比較已達 6 廳上限，請先取消一廳再加入');
@@ -702,6 +733,8 @@ export default function App() {
         )}
       </section>
 
+      {insight && <p className="insight">{insight}</p>}
+
       <OverlayCompare
         fits={fits}
         selected={selectedFits}
@@ -727,10 +760,7 @@ export default function App() {
         <section key={group.region} className="region-group">
           <h2 className="region-title">
             {REGION_LABELS[group.region]}
-            <span className="region-count">
-              {group.fits.length} 廳
-              {group.unsized.length > 0 && `（另 ${group.unsized.length} 廳尺寸未公布）`}
-            </span>
+            <span className="region-count">{group.fits.length} 廳</span>
             {sortMode === 'audio' && (
               <span
                 className="sort-note"
@@ -849,7 +879,21 @@ export default function App() {
                 )}
               </article>
             ))}
-            {group.unsized.map((s) => (
+            {group.unsized.length > 0 && (
+              <details className="unsized-fold">
+                <summary>資料徵集中：{group.unsized.length} 廳尚無銀幕尺寸</summary>
+                <p className="unsized-cta">
+                  知道這些廳的官方尺寸或丈量數據嗎？歡迎到{' '}
+                  <a
+                    href="https://github.com/cowton0627/taiwan-theater/issues"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub issue
+                  </a>{' '}
+                  提供來源。
+                </p>
+                {group.unsized.map((s) => (
               <article key={s.id} className="card card-unsized">
                 <div className="rank">–</div>
                 <div className="card-body">
@@ -875,7 +919,9 @@ export default function App() {
                   </p>
                 </div>
               </article>
-            ))}
+                ))}
+              </details>
+            )}
           </div>
         </section>
       ))}

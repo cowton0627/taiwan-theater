@@ -334,6 +334,43 @@ header h1 {
   padding: 2rem 0;
 }
 
+/* 決策摘要一行（UI-REVIEW P0-1）：把數據翻成結論 */
+.insight {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border-left: 3px solid var(--gold);
+  background: var(--panel);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+}
+
+/* 「尺寸未公布」灰卡摺疊（U-9） */
+.unsized-fold {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+}
+
+.unsized-fold summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.unsized-fold[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+.unsized-fold .card {
+  margin-top: 0.6rem;
+}
+
+.unsized-cta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .sort-basis {
   margin: 0;
   font-size: 0.8rem;
