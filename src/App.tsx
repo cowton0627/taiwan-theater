@@ -249,8 +249,9 @@ function OverlayCompare({
                 const y = (height - h) / 2;
                 const stateClass =
                   hovered === null ? '' : hovered === i ? ' hot' : ' dim';
+                const lead = i === 0 ? ' lead' : '';
                 return (
-                  <g key={f.screen.id} className={`overlay-item${stateClass}`}>
+                  <g key={f.screen.id} className={`overlay-item${lead}${stateClass}`}>
                     <rect
                       x={x}
                       y={y}

@@ -1,12 +1,16 @@
 :root {
   color-scheme: dark;
-  --bg: #0e1116;
-  --panel: #161b24;
-  --border: #2a3242;
-  --text: #e6e9ef;
-  --muted: #97a0b0;
-  --accent: #e8b23a;
-  --accent-dim: #8a6a24;
+  /* 放映廳方向：絨黑帶暖的暗底，「銀幕光」暖紙白做主 accent */
+  --bg: #141013;
+  --panel: #1d1719;
+  --border: #3a2f2d;
+  --text: #ece7de;
+  --muted: #a39a8e;
+  --accent: #f0e9dc;
+  --accent-dim: #857a68;
+  /* 廳品牌金（柔和老膠片金，與銀幕光區隔） */
+  --gold: #cfa96e;
+  --gold-dim: #6e5a3d;
 }
 
 * {
@@ -77,8 +81,9 @@ header h1 {
 .chip.active {
   background: var(--accent);
   border-color: var(--accent);
-  color: #17130a;
+  color: #141013;
   font-weight: 600;
+  box-shadow: 0 0 10px rgba(240, 233, 220, 0.18);
 }
 
 /* 說明文字與操作 chips 分層：註記塊（左細線＋淡底＋內縮） */
@@ -165,13 +170,13 @@ header h1 {
 }
 
 .grid-line {
-  stroke: #4d5a72;
+  stroke: #453c38;
   stroke-width: 1;
   stroke-dasharray: 4 4;
 }
 
 .center-mark {
-  stroke: #aeb7c6;
+  stroke: #b3a99d;
   stroke-width: 1.5;
 }
 
@@ -193,40 +198,46 @@ header h1 {
   stroke-width: 3.5;
 }
 
+/* 簽名元素：最大成像框＝暗廳裡發光的銀幕 */
+.overlay-item.lead .overlay-rect {
+  fill: rgba(240, 233, 220, 0.04);
+  filter: drop-shadow(0 0 16px rgba(240, 233, 220, 0.22));
+}
+
 .overlay-num {
   font-size: 11px;
   font-weight: 700;
 }
 
-.overlay-num-0 { fill: #e8b23a; }
-.overlay-num-1 { fill: #5ac8fa; }
-.overlay-num-2 { fill: #7ed957; }
-.overlay-num-3 { fill: #ff7e79; }
-.overlay-num-4 { fill: #c792ea; }
+.overlay-num-0 { fill: #d9b36c; }
+.overlay-num-1 { fill: #8ab4d4; }
+.overlay-num-2 { fill: #8fc98f; }
+.overlay-num-3 { fill: #d98b85; }
+.overlay-num-4 { fill: #b39dd4; }
 .overlay-num-5 { fill: #8d99ae; }
 
 .person-mark circle {
   fill: none;
-  stroke: #aeb7c6;
+  stroke: #b3a99d;
   stroke-width: 1.5;
 }
 
 .person-mark line {
-  stroke: #aeb7c6;
+  stroke: #b3a99d;
   stroke-width: 1.5;
   stroke-linecap: round;
 }
 
 .person-mark .person-label {
-  fill: #aeb7c6;
+  fill: #b3a99d;
   font-size: 10px;
 }
 
-.overlay-rect-0 { stroke: #e8b23a; }
-.overlay-rect-1 { stroke: #5ac8fa; }
-.overlay-rect-2 { stroke: #7ed957; }
-.overlay-rect-3 { stroke: #ff7e79; }
-.overlay-rect-4 { stroke: #c792ea; }
+.overlay-rect-0 { stroke: #d9b36c; }
+.overlay-rect-1 { stroke: #8ab4d4; }
+.overlay-rect-2 { stroke: #8fc98f; }
+.overlay-rect-3 { stroke: #d98b85; }
+.overlay-rect-4 { stroke: #b39dd4; }
 .overlay-rect-5 { stroke: #8d99ae; }
 
 .overlay-legend {
@@ -253,11 +264,11 @@ header h1 {
   display: inline-block;
 }
 
-.swatch-0 { background: #e8b23a; }
-.swatch-1 { background: #5ac8fa; }
-.swatch-2 { background: #7ed957; }
-.swatch-3 { background: #ff7e79; }
-.swatch-4 { background: #c792ea; }
+.swatch-0 { background: #d9b36c; }
+.swatch-1 { background: #8ab4d4; }
+.swatch-2 { background: #8fc98f; }
+.swatch-3 { background: #d98b85; }
+.swatch-4 { background: #b39dd4; }
 .swatch-5 { background: #8d99ae; }
 
 .region-group {
@@ -286,15 +297,15 @@ header h1 {
 .sort-note {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #5ac8fa;
-  border: 1px solid #2c5a70;
+  color: #8ab4d4;
+  border: 1px solid #435565;
   border-radius: 999px;
   padding: 0.05rem 0.55rem;
   letter-spacing: normal;
 }
 
 .rank.rank-audio {
-  color: #5ac8fa;
+  color: #8ab4d4;
 }
 
 .empty-state {
@@ -383,6 +394,7 @@ header h1 {
   color: var(--accent);
   min-width: 1.6rem;
   text-align: center;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
 .card-body {
@@ -410,19 +422,19 @@ header h1 {
 
 .badge.atmos,
 .badge.tier-atmos {
-  color: #5ac8fa;
-  border-color: #2c5a70;
+  color: #8ab4d4;
+  border-color: #435565;
 }
 
 /* 整廳認證級（Dolby Cinema / DVA） */
 .badge.tier-cert {
-  color: #7ed957;
-  border-color: #3c6b2e;
+  color: #8fc98f;
+  border-color: #465c46;
 }
 
 .badge.tier-imax {
-  color: #5ac8fa;
-  border-color: #2c5a70;
+  color: #8ab4d4;
+  border-color: #435565;
 }
 
 .badge.tier-basic {
@@ -437,14 +449,14 @@ header h1 {
 }
 
 .badge.brand {
-  color: var(--accent);
-  border-color: var(--accent-dim);
+  color: var(--gold);
+  border-color: var(--gold-dim);
 }
 
 /* 認證綠優先於品牌金（杜比影院／DVA 品牌徽章） */
 .badge.brand.tier-cert {
-  color: #7ed957;
-  border-color: #3c6b2e;
+  color: #8fc98f;
+  border-color: #465c46;
 }
 
 .card-unsized {
@@ -452,8 +464,8 @@ header h1 {
 }
 
 .badge.unverified {
-  color: #ffb454;
-  border-color: #6e5121;
+  color: #d9b36c;
+  border-color: #63512f;
 }
 
 .dims {
@@ -466,7 +478,7 @@ header h1 {
   color: var(--text);
 }
 
-/* 成像面積＝卡片主視覺（U-6） */
+/* 成像面積＝卡片主視覺（U-6）；等寬數字＝放映機讀數感 */
 .card-area {
   min-width: 4.4rem;
   text-align: right;
@@ -475,6 +487,8 @@ header h1 {
   color: var(--accent);
   line-height: 1.1;
   white-space: nowrap;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 .card-area .unit {
@@ -486,7 +500,7 @@ header h1 {
 
 /* 「待驗證」由徽章降為行內註記（U-5） */
 .unverified-note {
-  color: #ffb454;
+  color: #d9b36c;
   font-size: 0.8rem;
 }
 
@@ -496,14 +510,14 @@ header h1 {
   color: var(--muted);
 }
 
-.badge-legend .lg-cert { color: #7ed957; }
-.badge-legend .lg-imax { color: #5ac8fa; }
-.badge-legend .lg-brand { color: var(--accent); }
+.badge-legend .lg-cert { color: #8fc98f; }
+.badge-legend .lg-imax { color: #8ab4d4; }
+.badge-legend .lg-brand { color: var(--gold); }
 .badge-legend .lg-basic { color: var(--muted); }
 .badge-legend .lg-unknown { color: var(--muted); border-bottom: 1px dashed var(--border); }
 
 .bar-track {
-  background: #0a0d12;
+  background: #0d0a0b;
   border-radius: 4px;
   height: 6px;
   margin: 0.4rem 0;
