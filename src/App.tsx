@@ -138,6 +138,8 @@ function OverlayCompare({
   audioSorted: boolean;
 }) {
   const [open, setOpen] = useState(true);
+  /** 圖例 hover 中的項目——對應線框高亮、其餘淡出（色弱輔助之一，另有線框序號） */
+  const [hovered, setHovered] = useState<number | null>(null);
   const comparing = selected.length > 0;
   const top = (comparing ? selected : fits).slice(0, 6);
   if (top.length === 0) return null;
@@ -204,7 +206,8 @@ function OverlayCompare({
             <line x1={cx} y1={cy - 9} x2={cx} y2={cy + 9} className="center-mark" />
             {(() => {
               // 成像尺寸相同的框會完全重合、互相遮蓋——
-              // 同尺寸的第 2 框起改用虛線並錯開起點，讓每廳顏色都可見
+              // 同尺寸的第 2 框起改用虛線並錯開起點，讓每廳顏色都可見；
+              // 每框左上角掛序號（同尺寸者橫向錯開），色弱也能對回圖例
               const sizeSeen = new Map<string, number>();
               return top.map((f, i) => {
                 const w = f.imageWidthM * scale;
@@ -212,24 +215,60 @@ function OverlayCompare({
                 const key = `${f.imageWidthM.toFixed(2)}x${f.imageHeightM.toFixed(2)}`;
                 const dup = sizeSeen.get(key) ?? 0;
                 sizeSeen.set(key, dup + 1);
+                const x = (width - w) / 2;
+                const y = (height - h) / 2;
+                const stateClass =
+                  hovered === null ? '' : hovered === i ? ' hot' : ' dim';
                 return (
-                  <rect
-                    key={f.screen.id}
-                    x={(width - w) / 2}
-                    y={(height - h) / 2}
-                    width={w}
-                    height={h}
-                    className={`overlay-rect overlay-rect-${i}`}
-                    strokeDasharray={dup > 0 ? '10 10' : undefined}
-                    strokeDashoffset={dup > 0 ? dup * 10 : undefined}
-                  />
+                  <g key={f.screen.id} className={`overlay-item${stateClass}`}>
+                    <rect
+                      x={x}
+                      y={y}
+                      width={w}
+                      height={h}
+                      className={`overlay-rect overlay-rect-${i}`}
+                      strokeDasharray={dup > 0 ? '10 10' : undefined}
+                      strokeDashoffset={dup > 0 ? dup * 10 : undefined}
+                    />
+                    <text
+                      x={x + 6 + dup * 16}
+                      y={y + 15}
+                      className={`overlay-num overlay-num-${i}`}
+                    >
+                      {i + 1}
+                    </text>
+                  </g>
                 );
               });
+            })()}
+            {(() => {
+              // 1.7m 人形比例參照：站在最高成像框的底緣、置中偏右避開中心十字
+              const personH = 1.7 * scale;
+              const yFeet = (height + maxHm * scale) / 2;
+              const px = cx + gridStep * 0.6;
+              const headR = personH * 0.13;
+              return (
+                <g className="person-mark">
+                  <title>身高 1.7m 比例參照</title>
+                  <circle cx={px} cy={yFeet - personH + headR} r={headR} />
+                  <line x1={px} y1={yFeet - personH + headR * 2} x2={px} y2={yFeet - personH * 0.32} />
+                  <line x1={px - headR} y1={yFeet - personH * 0.62} x2={px + headR} y2={yFeet - personH * 0.62} />
+                  <line x1={px} y1={yFeet - personH * 0.32} x2={px - headR} y2={yFeet} />
+                  <line x1={px} y1={yFeet - personH * 0.32} x2={px + headR} y2={yFeet} />
+                  <text x={px + headR + 4} y={yFeet - personH * 0.45} className="person-label">
+                    1.7m
+                  </text>
+                </g>
+              );
             })()}
           </svg>
           <ul className="overlay-legend">
             {top.map((f, i) => (
-              <li key={f.screen.id}>
+              <li
+                key={f.screen.id}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+              >
                 <span className={`swatch swatch-${i}`} />
                 {i + 1}. {f.screen.name}（{f.imageAreaM2.toFixed(0)} ㎡）
               </li>
@@ -600,6 +639,16 @@ export default function App() {
         <p className="empty-state">目前的品牌／地區組合下沒有影廳，請調整篩選條件。</p>
       )}
 
+      {grouped.length > 0 && (
+        <p className="badge-legend">
+          徽章色：<span className="lg-cert">綠＝整廳認證級</span> ・{' '}
+          <span className="lg-imax">藍＝沉浸音效／IMAX 聲道</span> ・{' '}
+          <span className="lg-brand">金＝廳品牌</span> ・{' '}
+          <span className="lg-basic">灰＝基本聲道</span> ・{' '}
+          <span className="lg-unknown">虛線＝音效未查證</span>
+        </p>
+      )}
+
       {grouped.map((group) => (
         <section key={group.region} className="region-group">
           <h2 className="region-title">
@@ -651,11 +700,6 @@ export default function App() {
                       <span className="badge">{fit.screen.projection}</span>
                     )}
                     <AudioTierBadge s={fit.screen} />
-                    {!fit.screen.verified && (
-                      <span className="badge unverified" title="尺寸為社群流傳值，尚未查證">
-                        待驗證
-                      </span>
-                    )}
                   </h3>
                   <p className="dims">
                     {fit.version.label}
@@ -667,9 +711,14 @@ export default function App() {
                     {fit.version.confidence === 'reported' && '（畫幅為媒體報導值）'}
                     {fit.version.confidence === 'expected' && '（畫幅未定，此為預期值）'}
                     ・ 銀幕 {fit.screen.widthM}×{fit.screen.heightM}m ・ 成像{' '}
-                    {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m ={' '}
-                    <strong>{fit.imageAreaM2.toFixed(0)} ㎡</strong>（銀幕利用率{' '}
+                    {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m（利用率{' '}
                     {(fit.screenUsage * 100).toFixed(0)}%）
+                    {!fit.screen.verified && (
+                      <span className="unverified-note" title="尺寸為社群流傳值，尚未查證">
+                        {' '}
+                        ・尺寸待驗證
+                      </span>
+                    )}
                   </p>
                   <div className="bar-track">
                     <div
@@ -684,6 +733,10 @@ export default function App() {
                     </a>
                     {fit.screen.notes && ` ・ ${fit.screen.notes}`}
                   </p>
+                </div>
+                <div className="card-area" title="有效成像面積">
+                  {fit.imageAreaM2.toFixed(0)}
+                  <span className="unit">㎡</span>
                 </div>
               </article>
             ))}
