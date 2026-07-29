@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
+import { scoreScreen } from './lib/score';
+import type { ScoreResult } from './lib/score';
 import { AUDIO_TIER_ORDER, isSized } from './types';
 import type { AudioTier, Film, FitResult, HallCategory, Region, Screen } from './types';
 
@@ -355,10 +357,11 @@ export default function App() {
   const [selected, setSelected] = useState<Set<string>>(() =>
     initSetParam<string>('sel', (v) => screens.some((s) => s.id === v)),
   );
-  /** 排序：成像面積（預設）或音效層級優先（同層級內仍按面積） */
-  const [sortMode, setSortMode] = useState<'area' | 'audio'>(
-    INIT_PARAMS.get('sort') === 'audio' ? 'audio' : 'area',
-  );
+  /** 排序：成像面積（預設）／音效層級／綜合評比 */
+  const [sortMode, setSortMode] = useState<'area' | 'audio' | 'score'>(() => {
+    const v = INIT_PARAMS.get('sort');
+    return v === 'audio' || v === 'score' ? v : 'area';
+  });
 
   /** 狀態 → URL（replaceState 不塞瀏覽紀錄；預設值省略、保持網址乾淨） */
   useEffect(() => {
@@ -437,16 +440,30 @@ export default function App() {
     return results;
   }, [film, customRatio, pool]);
 
+  /** 得分卡：以面積名次（目前篩選範圍）＋廳規格計分；口碑分待 roadmap 14 */
+  const scoreMap = useMemo(() => {
+    const m = new Map<string, ScoreResult>();
+    fits.forEach((f, i) => m.set(f.screen.id, scoreScreen(f, i, film)));
+    return m;
+  }, [fits, film]);
+
   /** 排名列表的顯示順序；疊圖不受排序模式影響、永遠按面積取前 6 */
   const ranked = useMemo(() => {
     if (sortMode === 'area') return fits;
+    if (sortMode === 'score') {
+      return [...fits].sort((a, b) => {
+        const diff =
+          (scoreMap.get(b.screen.id)?.total ?? 0) - (scoreMap.get(a.screen.id)?.total ?? 0);
+        return diff !== 0 ? diff : b.imageAreaM2 - a.imageAreaM2;
+      });
+    }
     return [...fits].sort((a, b) => {
       const tierDiff =
         AUDIO_TIER_ORDER.indexOf(a.screen.audioTier) -
         AUDIO_TIER_ORDER.indexOf(b.screen.audioTier);
       return tierDiff !== 0 ? tierDiff : b.imageAreaM2 - a.imageAreaM2;
     });
-  }, [fits, sortMode]);
+  }, [fits, sortMode, scoreMap]);
 
   const maxArea = fits[0]?.imageAreaM2 ?? 1;
 
@@ -625,7 +642,24 @@ export default function App() {
           >
             音效層級
           </button>
+          <button
+            className={sortMode === 'score' ? 'chip active' : 'chip'}
+            onClick={() => setSortMode('score')}
+            title="逐項得分卡：格式能力／認證／沉浸音效／投影＋面積名次分，每分附依據"
+          >
+            綜合評比
+          </button>
         </div>
+        {sortMode === 'score' && (
+          <div className="control-note">
+            <p className="sort-basis">
+              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
+              +0.5 ・ 沉浸音效 +1 ・ 雷射投影 +1（雙機／RGB 再 +0.5）・
+              成像面積名次（目前篩選範圍）第 1/2/3 名 +3/+2/+1 ・ 放映本片最大畫幅版 +1。
+              未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。
+            </p>
+          </div>
+        )}
         {sortMode === 'audio' && (
           <div className="control-note">
             <p className="sort-basis">
@@ -699,6 +733,11 @@ export default function App() {
                 音效層級排序
               </span>
             )}
+            {sortMode === 'score' && (
+              <span className="sort-note sort-note-score" title="逐項得分卡排序，明細見各卡片">
+                綜合評比排序
+              </span>
+            )}
           </h2>
           <div className="ranking">
             {group.fits.map((fit, i) => (
@@ -754,6 +793,14 @@ export default function App() {
                       </span>
                     )}
                   </p>
+                  {sortMode === 'score' && scoreMap.get(fit.screen.id) && (
+                    <p className="score-line">
+                      {scoreMap
+                        .get(fit.screen.id)!
+                        .items.map((it) => (it.unknown ? `${it.label}？` : `${it.label} +${it.pts}`))
+                        .join(' ・ ')}
+                    </p>
+                  )}
                   <div className="bar-track">
                     <div
                       className="bar"
@@ -762,16 +809,31 @@ export default function App() {
                   </div>
                   <p className="meta">
                     {fit.screen.chain} ・ <CityLink s={fit.screen} /> ・{' '}
+                    {fit.screen.priceNTD != null && (
+                      <span className="price" title={fit.screen.priceNotes ?? '全票價僅供參考，不計入排序'}>
+                        全票 {fit.screen.priceNTD} 元 ・{' '}
+                      </span>
+                    )}
                     <a href={fit.screen.booking} target="_blank" rel="noreferrer">
                       查場次
                     </a>
                     {fit.screen.notes && ` ・ ${fit.screen.notes}`}
                   </p>
                 </div>
-                <div className="card-area" title="有效成像面積">
-                  {fit.imageAreaM2.toFixed(0)}
-                  <span className="unit">㎡</span>
-                </div>
+                {sortMode === 'score' ? (
+                  <div className="card-area" title="綜合得分（口碑分尚未接入）">
+                    {(() => {
+                      const t = scoreMap.get(fit.screen.id)?.total ?? 0;
+                      return Number.isInteger(t) ? t : t.toFixed(1);
+                    })()}
+                    <span className="unit">分</span>
+                  </div>
+                ) : (
+                  <div className="card-area" title="有效成像面積">
+                    {fit.imageAreaM2.toFixed(0)}
+                    <span className="unit">㎡</span>
+                  </div>
+                )}
               </article>
             ))}
             {group.unsized.map((s) => (
@@ -788,6 +850,11 @@ export default function App() {
                   </h3>
                   <p className="meta">
                     未納入成像排名 ・ {s.chain} ・ <CityLink s={s} /> ・{' '}
+                    {s.priceNTD != null && (
+                      <span className="price" title={s.priceNotes ?? '全票價僅供參考，不計入排序'}>
+                        全票 {s.priceNTD} 元 ・{' '}
+                      </span>
+                    )}
                     <a href={s.booking} target="_blank" rel="noreferrer">
                       查場次
                     </a>
@@ -810,7 +877,11 @@ export default function App() {
         <p>
           本站不含即時場次——各廳是否排映特定影片與格式，請以影城官網為準。
           銀幕尺寸為社群流傳資料、尚待逐廳查證；歡迎透過 GitHub issue 提供丈量或官方來源。
-          比較方法啟發自 rexx/theater-screen-size-2。
+          比較方法啟發自{' '}
+          <a href="https://github.com/rexx/theater-screen-size-2" target="_blank" rel="noreferrer">
+            rexx/theater-screen-size-2
+          </a>
+          。
         </p>
       </footer>
     </main>

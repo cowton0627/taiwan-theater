@@ -308,6 +308,17 @@ header h1 {
   color: #7db9e3;
 }
 
+.score-line {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.sort-note-score {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
 .empty-state {
   color: var(--muted);
   text-align: center;

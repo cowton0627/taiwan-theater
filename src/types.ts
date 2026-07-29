@@ -63,6 +63,10 @@ export interface Screen {
   seats: number | null;
   /** 座位數來源與異說註記 */
   seatsNotes?: string;
+  /** 該廳全票價（平日成人 2D，NTD）；顯示參考、不計入評比；未收集為缺省 */
+  priceNTD?: number | null;
+  /** 票價備註：假日／3D 差價、價格時點 */
+  priceNotes?: string;
   /** 訂票 / 場次查詢頁（分店深連結優先，其次分店介紹頁） */
   booking: string;
   /** 完整地址（供 Google Maps 連結）；未收集為缺省 */
