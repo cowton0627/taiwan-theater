@@ -548,6 +548,9 @@ export default function App() {
               {f.title}
             </button>
           ))}
+        </div>
+        <div className="control-group">
+          <span className="control-label">自訂</span>
           <button
             className={film === null ? 'chip active' : 'chip'}
             onClick={() => setFilmId('custom')}
@@ -607,27 +610,7 @@ export default function App() {
             {film.formatNotes && <p className="film-meta film-format">{film.formatNotes}</p>}
           </div>
         )}
-        <div className="control-group">
-          <span className="control-label">品牌</span>
-          {MAJOR_CHAINS.map((c) => (
-            <button
-              key={c}
-              className={chains.has(c) ? 'chip active' : 'chip'}
-              onClick={() => toggleChain(c)}
-            >
-              {c}
-            </button>
-          ))}
-          {MINOR_CHAINS.size > 0 && (
-            <button
-              className={chains.has(OTHER_CHAINS) ? 'chip active' : 'chip'}
-              onClick={() => toggleChain(OTHER_CHAINS)}
-              title={`單廳品牌：${Array.from(MINOR_CHAINS).join('、')}`}
-            >
-              其他
-            </button>
-          )}
-        </div>
+        <div className="control-divider" />
         <div className="control-group">
           <span className="control-label">排序</span>
           <button
@@ -669,6 +652,28 @@ export default function App() {
             </p>
           </div>
         )}
+        <div className="control-divider" />
+        <div className="control-group">
+          <span className="control-label">品牌</span>
+          {MAJOR_CHAINS.map((c) => (
+            <button
+              key={c}
+              className={chains.has(c) ? 'chip active' : 'chip'}
+              onClick={() => toggleChain(c)}
+            >
+              {chains.has(c) ? `✓ ${c}` : c}
+            </button>
+          ))}
+          {MINOR_CHAINS.size > 0 && (
+            <button
+              className={chains.has(OTHER_CHAINS) ? 'chip active' : 'chip'}
+              onClick={() => toggleChain(OTHER_CHAINS)}
+              title={`單廳品牌：${Array.from(MINOR_CHAINS).join('、')}`}
+            >
+              {chains.has(OTHER_CHAINS) ? '✓ 其他' : '其他'}
+            </button>
+          )}
+        </div>
         <div className="control-group">
           <span className="control-label">地區</span>
           {(Object.keys(REGION_LABELS) as Region[]).map((r) => (
@@ -677,7 +682,7 @@ export default function App() {
               className={regions.has(r) ? 'chip active' : 'chip'}
               onClick={() => toggleRegion(r)}
             >
-              {REGION_LABELS[r]}
+              {regions.has(r) ? `✓ ${REGION_LABELS[r]}` : REGION_LABELS[r]}
             </button>
           ))}
         </div>
@@ -690,7 +695,7 @@ export default function App() {
                 className={activeCities.has(c) ? 'chip active' : 'chip'}
                 onClick={() => toggleCity(c)}
               >
-                {c}
+                {activeCities.has(c) ? `✓ ${c}` : c}
               </button>
             ))}
           </div>
@@ -774,6 +779,13 @@ export default function App() {
                       <span className="badge">{fit.screen.projection}</span>
                     )}
                     <AudioTierBadge s={fit.screen} />
+                    <span
+                      className={
+                        selected.has(fit.screen.id) ? 'compare-pill on' : 'compare-pill'
+                      }
+                    >
+                      {selected.has(fit.screen.id) ? '✓ 比較中' : '＋比較'}
+                    </span>
                   </h3>
                   <p className="dims">
                     {fit.version.label}
