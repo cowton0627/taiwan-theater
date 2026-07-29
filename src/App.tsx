@@ -886,6 +886,13 @@ export default function App() {
                       </span>
                     )}
                   </p>
+                  {(fit.screen.bestRows || fit.screen.communityNotes) && (
+                    <p className="community-line">
+                      {fit.screen.bestRows && <strong>💺 推薦座位 {fit.screen.bestRows}</strong>}
+                      {fit.screen.bestRows && fit.screen.communityNotes && ' ・ '}
+                      {fit.screen.communityNotes}
+                    </p>
+                  )}
                   {sortMode === 'score' && scoreMap.get(fit.screen.id) && (
                     <p className="score-line">
                       {scoreMap
@@ -982,6 +989,13 @@ export default function App() {
                     </a>
                     {s.notes && ` ・ ${s.notes}`}
                   </p>
+                  {(s.bestRows || s.communityNotes) && (
+                    <p className="community-line">
+                      {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
+                      {s.bestRows && s.communityNotes && ' ・ '}
+                      {s.communityNotes}
+                    </p>
+                  )}
                   <SourcesFold sources={s.sources} />
                 </div>
               </article>

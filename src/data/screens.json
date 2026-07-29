@@ -29,9 +29,16 @@
         "label": "PTT Theater 巨幕資料整理串",
         "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉：28.4×21.2m（高度與官網有出入，採官網）",
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "口碑：Dcard 選位討論（多帖交叉）",
+        "url": "https://www.dcard.tw/f/movie/p/255004462",
+        "note": "鬼滅／泰勒絲／電影版三處獨立共識 I–K 置中；2026-07 逐條核對"
       }
     ],
-    "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳、全台最大銀幕；2016/3 由數位 IMAX 升級"
+    "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳、全台最大銀幕；2016/3 由數位 IMAX 升級",
+    "bestRows": "I–K 排置中",
+    "communityNotes": "Dcard/PTT 跨帖共識：I–K 排置中最佳（H–L 可接受），F 排以前過近易不適。"
   },
   {
     "id": "vieshow-xindian-yulon-imax",
@@ -70,7 +77,8 @@
         "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
       }
     ],
-    "notes": "2023/9/28 開幕即雷射；音響 6 聲道（開幕以來未升級），2026/07 實測環繞評價由負轉正"
+    "notes": "2023/9/28 開幕即雷射；音響 6 聲道（開幕以來未升級），2026/07 實測環繞評價由負轉正",
+    "communityNotes": "選位社群意見分歧：有推前段 F 排求包覆、也有主張 J/K 之後；全廳 14 排——分歧未收斂，不給推薦值。"
   },
   {
     "id": "vieshow-banqiao-imax",
@@ -107,9 +115,15 @@
         "label": "PTT movie《奧德賽》十廳簡評",
         "note": "PTT movie《奧德賽》全台十間 IMAX 簡評（M.1785070745，2026/07）＋Threads：雷射升級未同步更新音響，實測仍 6 聲道",
         "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html"
+      },
+      {
+        "label": "口碑：PTT 板橋 IMAX 選位請益",
+        "note": "PTT 全文核對（2022）：G–I 可、H 最多人推；原文代碼 M.1654064596（板別後綴未補全，暫無直連）"
       }
     ],
-    "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser（Laser XT）；音響未隨升級更新，2026/07 實測仍為 6 聲道"
+    "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser（Laser XT）；音響未隨升級更新，2026/07 實測仍為 6 聲道",
+    "bestRows": "F–I 排（G/H 最穩）",
+    "communityNotes": "共識帶 F–I、G/H 最穩（H 為伸腿排）；F 有人覺得易暈、前 4 排過近。"
   },
   {
     "id": "milihsin-taimall-imax",
@@ -410,9 +424,16 @@
         "label": "La Vie：MUVIE 開幕報導",
         "note": "La Vie／自由時報開幕報導：TITAN 銀幕寬 22m×高 12m、RGB 高亮度雷射；全影城 THX 認證",
         "url": "https://www.wowlavie.com/article/ae2000097"
+      },
+      {
+        "label": "口碑：Dcard 泰坦選位討論",
+        "url": "https://www.dcard.tw/f/movie/p/253620664",
+        "note": "2023/10 泰勒絲檔選位討論；PTT 2025 推文多數選 G；2026-07 核對"
       }
     ],
-    "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核"
+    "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核",
+    "bestRows": "G–I 排（中後段）",
+    "communityNotes": "PTT/Dcard 多數推 G 排置中、中後段原則；全廳 14 排。"
   },
   {
     "id": "luxcine-ximen-giant",
@@ -623,9 +644,16 @@
         "label": "UpToGo：青埔新光整理",
         "note": "UpToGo 等部落格：銀幕約 20×10m（官方未公布，論壇估計）",
         "url": "https://uptogo.com.tw/%E5%A8%9B%E6%A8%82/%E9%9B%BB%E5%BD%B1/%E9%9D%92%E5%9F%94%E6%96%B0%E5%85%89%E5%BD%B1%E5%9F%8E/"
+      },
+      {
+        "label": "口碑：Dcard 杜比影院七個理由",
+        "url": "https://www.dcard.tw/f/movie/p/235220512",
+        "note": "「G排剛好是和銀幕平視的排數」；另 PTT 杜比廳討論同結論；2026-07 核對"
       }
     ],
-    "notes": "全台第一座 Dolby Cinema（2020/12/3 啟用）；銀幕尺寸為論壇估計、官方未公布"
+    "notes": "全台第一座 Dolby Cinema（2020/12/3 啟用）；銀幕尺寸為論壇估計、官方未公布",
+    "bestRows": "G 排（H–J 亦佳）",
+    "communityNotes": "G 排與銀幕平視、前無人頭，為共識皇帝位；多篇 PTT/Dcard 交叉：亮度、色彩、對比為全台頂標，整體評價普遍高於美麗華杜比。"
   },
   {
     "id": "miramar-dazhi-dolby",
@@ -663,9 +691,15 @@
         "label": "美麗華官網 Dolby Cinema 頁",
         "note": "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）",
         "url": "https://www.miramarcinemas.tw/Home/dolbycinema"
+      },
+      {
+        "label": "口碑：@aedwarda 開幕實測",
+        "url": "https://www.dcard.tw/@aedwarda/post/257047179",
+        "note": "2024/10 超認真SNG實測；2026-07 核對（自估尺寸不採）"
       }
     ],
-    "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度"
+    "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度",
+    "communityNotes": "@aedwarda 開幕實測：畫質出色、音質偏悶；PTT 同期評「畫質很棒、但跟青埔比各方面差一點、螢幕偏小」。"
   },
   {
     "id": "showtime-dome-dva",
@@ -696,9 +730,14 @@
         "label": "Dolby 官方新聞稿（2024/4）",
         "note": "Dolby 2024/4 新聞稿：DVA＝Dolby Vision+Atmos 開放授權層級；JazzNews 秀泰結盟報導",
         "url": "https://news.dolby.com/en-WW/236229-dolby-expanding-the-best-way-to-experience-movies-by-making-dolby-vision-and-dolby-atmos-available-to-all-premium-theater-exhibitors/"
+      },
+      {
+        "label": "口碑：PTT 大巨蛋 DVA 實測",
+        "note": "PTT 全文核對（空心地板／鄰廳震動／寬約 11.6m）；原文代碼 M.1761233847（後綴未補全，暫無直連）"
       }
     ],
-    "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布"
+    "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布",
+    "communityNotes": "口碑（2025/10–12）：空心木地板令低頻無法從地板傳導、隔壁廳震動滲入（8 廳尤甚）、銀幕偏小（PTT 實測約寬 11.6m）、Dcard 有畫面偏暗評價。"
   },
   {
     "id": "in89-ximen-coach",
@@ -766,9 +805,16 @@
         "label": "維基：國賓影城",
         "note": "維基／PTT：867 席（席次仍二手）",
         "url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%B3%93%E5%BD%B1%E5%9F%8E"
+      },
+      {
+        "label": "口碑：D-BOX 觀影實測（林人青）",
+        "url": "https://linrenching.net/11517/badboys4/",
+        "note": "19–20 排 D-BOX「不會太遠、視野很讚」全文核實；11–13 排結論出自 PTT 兩篇實測（2024/03、2025/12）"
       }
     ],
-    "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證"
+    "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證",
+    "bestRows": "11–13 排",
+    "communityNotes": "改裝後 PTT 實測共識 11–13 排（11 排有「皇帝位」之評、13 排實測最佳、16 排偏遠）；D-BOX 位於 19–20 排共 18 席，廳體大視野仍佳。"
   },
   {
     "id": "skcinemas-taoyuan-luxe",
@@ -801,9 +847,15 @@
         "label": "ETtoday：青埔新光開幕報導",
         "note": "ETtoday 等開幕媒體稿（2020/7）：寬 17m × 高 7m 曲面銀幕、322 席（尺寸疑出自官方新聞稿，官方頁面未直接標示）",
         "url": "https://fashion.ettoday.net/news/1760163"
+      },
+      {
+        "label": "口碑：Dcard 三廳一日橫評",
+        "url": "https://www.dcard.tw/f/taylor_swift/p/253775285",
+        "note": "青埔杜比／LUXE／大直 IMAX 一日三刷（2023/11）；2026-07 核對存在性"
       }
     ],
-    "notes": "與杜比影院同館；「全球第 300 座／台灣第 4 座終極銀幕」為新光方說法、查無 RealD 官方佐證"
+    "notes": "與杜比影院同館；「全球第 300 座／台灣第 4 座終極銀幕」為新光方說法、查無 RealD 官方佐證",
+    "communityNotes": "LUXE 低頻全台最強（PTT「北部低頻控首選」），但低音強時偶爾壓過其他聲音；Dcard 一日三刷橫評：對比較低但有電影感。"
   },
   {
     "id": "in89-ximen-luxe",
@@ -927,7 +979,9 @@
         "url": "https://moviego.funorange.com.tw/theater/112"
       }
     ],
-    "notes": "ScreenX 為 270° 三面投影特殊畫幅，主銀幕尺寸未公布"
+    "notes": "ScreenX 為 270° 三面投影特殊畫幅，主銀幕尺寸未公布",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
   },
   {
     "id": "showtime-xinxin-screenx",
@@ -959,7 +1013,9 @@
         "note": "注意：歇業的是西門今日／東南亞／板橋秀泰，欣欣仍營運"
       }
     ],
-    "notes": "林森北路；ScreenX 270° 三面投影，主銀幕尺寸未公布"
+    "notes": "林森北路；ScreenX 270° 三面投影，主銀幕尺寸未公布",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面（巴哈實例：13–15 排）。"
   },
   {
     "id": "showtime-dome-ultra4dx",
@@ -1015,7 +1071,9 @@
         "url": "https://jazznews.com.tw/howtime-taipei-dome-open/"
       }
     ],
-    "notes": "2025/10 開幕；270° 三面投影，主銀幕尺寸未公布"
+    "notes": "2025/10 開幕；270° 三面投影，主銀幕尺寸未公布",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面；大巨蛋 10 廳側幕遭出入口裁切、有負評。"
   },
   {
     "id": "venice-zhongli-atmos",
@@ -1196,7 +1254,9 @@
       }
     ],
     "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
-    "address": "台中市東區南京路76號"
+    "address": "台中市東區南京路76號",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
   },
   {
     "id": "showtime-taichung-wenxin-screenx",
@@ -1225,7 +1285,9 @@
         "url": "https://supertaste.tvbs.com.tw/hot/350124"
       }
     ],
-    "notes": "ScreenX＋4K 雷射；270° 總寬約 66m（非主銀幕尺寸）"
+    "notes": "ScreenX＋4K 雷射；270° 總寬約 66m（非主銀幕尺寸）",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
   },
   {
     "id": "skcinemas-taichung-hall3-atmos",
@@ -1453,7 +1515,9 @@
         "url": "https://supertaste.tvbs.com.tw/hot/350124"
       }
     ],
-    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布"
+    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
+    "bestRows": "中後段置中",
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
   },
   {
     "id": "showtime-kaohsiung-gangshan-giant",

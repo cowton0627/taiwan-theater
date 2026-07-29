@@ -80,6 +80,10 @@ export interface Screen {
   seats: number | null;
   /** 座位數來源與異說註記 */
   seatsNotes?: string;
+  /** 社群口碑摘要（roadmap 14：經逐條開連結核對後才入庫，出處在 sources 的「口碑：」條目） */
+  communityNotes?: string;
+  /** 推薦座位排（跨帖共識；意見分歧或無可靠來源則缺省） */
+  bestRows?: string;
   /** 該廳全票價（平日成人 2D，NTD）；顯示參考、不計入評比；未收集為缺省 */
   priceNTD?: number | null;
   /** 票價備註：假日／3D 差價、價格時點 */

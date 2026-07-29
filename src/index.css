@@ -714,3 +714,15 @@ footer {
 .method-list li {
   margin-bottom: 0.3rem;
 }
+
+/* 口碑與推薦座位（roadmap 14；經逐條核對才入庫） */
+.community-line {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.community-line strong {
+  color: var(--text);
+  font-weight: 600;
+}
