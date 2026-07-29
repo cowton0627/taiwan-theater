@@ -443,7 +443,8 @@ export default function App() {
   /** 得分卡：以面積名次（目前篩選範圍）＋廳規格計分；口碑分待 roadmap 14 */
   const scoreMap = useMemo(() => {
     const m = new Map<string, ScoreResult>();
-    fits.forEach((f, i) => m.set(f.screen.id, scoreScreen(f, i, film)));
+    const max = fits[0]?.imageAreaM2 ?? 0;
+    fits.forEach((f) => m.set(f.screen.id, scoreScreen(f, max, film)));
     return m;
   }, [fits, film]);
 
@@ -655,7 +656,7 @@ export default function App() {
             <p className="sort-basis">
               得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
               +0.5 ・ 沉浸音效 +1 ・ 雷射投影 +1（雙機／RGB 再 +0.5）・
-              成像面積名次（目前篩選範圍）第 1/2/3 名 +3/+2/+1 ・ 放映本片最大畫幅版 +1。
+              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
               未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。
             </p>
           </div>
