@@ -169,7 +169,8 @@ function OverlayCompare({
   /** 下方列表正以音效層級排序——疊圖需自我聲明不隨之變動 */
   audioSorted: boolean;
 }) {
-  const [open, setOpen] = useState(true);
+  /** 行動版預設收合（U-1：首屏讓位給決策摘要與第一張卡） */
+  const [open, setOpen] = useState(() => !window.matchMedia('(max-width: 640px)').matches);
   /** 圖例 hover 中的項目——對應線框高亮、其餘淡出（色弱輔助之一，另有線框序號） */
   const [hovered, setHovered] = useState<number | null>(null);
   const comparing = selected.length > 0;
@@ -328,6 +329,10 @@ export default function App() {
     const v = parseFloat(INIT_PARAMS.get('ratio') ?? '');
     return !Number.isNaN(v) && v >= 0.5 && v <= 4 ? String(v) : '2.39';
   });
+  /** 行動版控制列：選完收成一行摘要（U-1／UI-REVIEW P0-2）；桌面恆展開 */
+  const [controlsOpen, setControlsOpen] = useState(
+    () => !window.matchMedia('(max-width: 640px)').matches,
+  );
   /** 短暫回饋訊息（如自選達上限） */
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<number | undefined>(undefined);
@@ -568,6 +573,25 @@ export default function App() {
       </header>
 
       <section className="controls">
+        {!controlsOpen && (
+          <div className="controls-summary">
+            <span>
+              {film ? film.title : `${customRatio}:1`} ·{' '}
+              {regions.size === 0
+                ? '全台'
+                : Array.from(regions)
+                    .map((r) => REGION_LABELS[r])
+                    .join('／')}{' '}
+              · {sortMode === 'area' ? '成像面積' : sortMode === 'audio' ? '音效層級' : '綜合評比'}
+              {chains.size + activeCities.size > 0 && `（＋${chains.size + activeCities.size} 篩選）`}
+            </span>
+            <button className="chip" onClick={() => setControlsOpen(true)}>
+              修改
+            </button>
+          </div>
+        )}
+        {controlsOpen && (
+          <>
         <div className="control-group">
           <span className="control-label">片單</span>
           {films.map((f) => (
@@ -730,6 +754,11 @@ export default function App() {
               </button>
             ))}
           </div>
+        )}
+        <button className="controls-collapse" onClick={() => setControlsOpen(false)}>
+          收合條件 ▲
+        </button>
+          </>
         )}
       </section>
 

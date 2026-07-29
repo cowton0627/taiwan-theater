@@ -88,6 +88,34 @@ header h1 {
   box-shadow: 0 0 10px rgba(216, 178, 114, 0.22);
 }
 
+/* 行動版控制列收合（U-1）：選完收成一行摘要 */
+.controls-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.controls-collapse {
+  display: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  border-top: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 0.45rem 0 0.1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .controls-collapse {
+    display: block;
+  }
+}
+
 /* 控制列語意分組：選內容｜排列｜濾清單（U-4） */
 .control-divider {
   border-top: 1px solid var(--border);
