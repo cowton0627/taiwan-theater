@@ -896,6 +896,20 @@ export default function App() {
                     })()}
                     <span className="unit">分</span>
                   </div>
+                ) : sortMode === 'audio' ? (
+                  <div
+                    className="card-area card-area-audio"
+                    title="音效層級序位（8＝最高；認證／規格層級排序，非實測音質；未查證顯示？）"
+                  >
+                    {fit.screen.audioTier === 'SURROUND_5_1' ? (
+                      '？'
+                    ) : (
+                      <>
+                        {AUDIO_TIER_ORDER.length - AUDIO_TIER_ORDER.indexOf(fit.screen.audioTier)}
+                        <span className="unit">／8 級</span>
+                      </>
+                    )}
+                  </div>
                 ) : (
                   <div className="card-area" title="有效成像面積">
                     {fit.imageAreaM2.toFixed(0)}

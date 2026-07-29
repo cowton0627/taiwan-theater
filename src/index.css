@@ -345,6 +345,11 @@ header h1 {
   color: #7db9e3;
 }
 
+/* 音效層級序位＝人為層級非量測值，用音效模式的藍與面積金區隔 */
+.card-area.card-area-audio {
+  color: #7db9e3;
+}
+
 .score-line {
   margin: 0.15rem 0 0;
   font-size: 0.78rem;
