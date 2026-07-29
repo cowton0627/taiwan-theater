@@ -225,3 +225,16 @@ U-1→roadmap 24、U-2 短期→25／長期→13、U-3＋U-4→26、U-5＋U-6→
 - **27 灰卡摺疊**：各區 `<details>`「資料徵集中：N 廳尚無銀幕尺寸」預設收合＋GitHub issue CTA；區標題的「另 N 廳」字樣已移除。
 - **23 og meta**：og:title/description/url/image（`/og.png` 1200×630）＋twitter card；SEO title 帶任務詞（U-12 落地：主標不動）。驗證可用 Threads/LINE 貼上連結看預覽卡。
 - 連同前次 26（U-3／U-13）一起回歸即可；data-audit 六筆修正也已上線（杜比 303 席、鉅院翻正、嘉義精確值、奧德賽音效待確認、蜘蛛人 Flat 1.90）。
+
+## QA 回歸結果：roadmap 25／27／23（2026-07-29，Codex／Playwright 實測部署站）
+
+| 驗證點 | 結果 | 證據 |
+|---|---|---|
+| 25 成像面積摘要 | ✅ 通過 | 預設全台顯示「美麗華大直 IMAX 有效成像最大（564㎡），是第二名 2.1 倍」；切北部後即改為「目前篩選範圍內」且倍數依範圍更新為 2.2 倍 |
+| 25 三種排序同步 | ✅ 通過 | 切音效排序顯示「音效層級最高：桃園新光杜比影院」並另交代成像最大廳；切綜合評比顯示「美麗華大直 IMAX（5.5 分，口碑分未接入）」；未把三種排序混成同一結論 |
+| 27 灰卡預設收合 | ✅ 通過 | 北部實測為關閉的 `<details>`，摘要「資料徵集中：9 廳尚無銀幕尺寸」；未公布尺寸的卡片仍完整存在於展開內容，沒有從 UI 刪除 |
+| 27 徵集入口與行動版 | ✅ 通過 | 收合內容有「GitHub issue」外連，含 `target="_blank"`／`rel="noreferrer"`；390×844 viewport 實測文件寬與 viewport 同為 390px，無橫向溢出 |
+| 23 SEO／分享 metadata | ✅ 通過（結構） | title 為「台灣影廳畫幅模擬器｜IMAX・杜比影院・巨幕廳推薦比較」；`description`、`og:title`、`og:description`、`og:url`、`og:image`、`twitter:card=summary_large_image` 皆存在 |
+| 23 分享圖片可存取 | ✅ 通過 | `https://cowton0627.github.io/taiwan-theater/og.png` 回應 HTTP 200、`image/png`、64,091 bytes；本輪驗證公開資源與標籤，未代替 Threads／LINE crawler cache 做平台端預覽判定 |
+
+**結論**：roadmap 25、27、23 部署版通過；U-2、U-8 對應的本批驗收可關閉，U-12 的「保留主標、SEO 任務化」方向已落地。本輪未新增 F／U 發現。

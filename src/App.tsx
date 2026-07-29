@@ -161,13 +161,13 @@ function OverlayCompare({
   fits,
   selected,
   onClear,
-  audioSorted,
+  listResorted,
 }: {
   fits: FitResult[];
   selected: FitResult[];
   onClear: () => void;
-  /** 下方列表正以音效層級排序——疊圖需自我聲明不隨之變動 */
-  audioSorted: boolean;
+  /** 下方列表以音效層級／綜合評比重排——疊圖需自我聲明固定按面積 */
+  listResorted: boolean;
 }) {
   /** 行動版預設收合（U-1：首屏讓位給決策摘要與第一張卡） */
   const [open, setOpen] = useState(() => !window.matchMedia('(max-width: 640px)').matches);
@@ -215,8 +215,8 @@ function OverlayCompare({
           </button>
         ) : (
           <span className="overlay-hint">
-            {audioSorted
-              ? '疊圖固定顯示面積前 6，不隨音效排序變動'
+            {listResorted
+              ? '疊圖固定顯示面積前 6，不隨排序模式變動'
               : '點下方卡片可自選比較（最多 6 廳）'}
           </span>
         )}
@@ -473,18 +473,8 @@ export default function App() {
 
   const maxArea = fits[0]?.imageAreaM2 ?? 1;
 
-  /** 依地區分組（固定北→中→南→東順序）；區內排名 + 尺寸未公布清單 */
-  const grouped = useMemo(
-    () =>
-      (Object.keys(REGION_LABELS) as Region[])
-        .map((r) => ({
-          region: r,
-          fits: ranked.filter((f) => f.screen.region === r),
-          unsized: pool.filter((s) => s.region === r && !isSized(s)),
-        }))
-        .filter((g) => g.fits.length > 0 || g.unsized.length > 0),
-    [ranked, pool],
-  );
+  /** 尺寸未公布廳（單一清單；地區語意交給篩選器，避免多個「第 1 名」歧義） */
+  const unsized = useMemo(() => pool.filter((s) => !isSized(s)), [pool]);
 
   const toggleRegion = (r: Region) => {
     setRegions((prev) => {
@@ -768,14 +758,14 @@ export default function App() {
         fits={fits}
         selected={selectedFits}
         onClear={() => setSelected(new Set())}
-        audioSorted={sortMode === 'audio'}
+        listResorted={sortMode !== 'area'}
       />
 
-      {grouped.length === 0 && (
+      {pool.length === 0 && (
         <p className="empty-state">目前的品牌／地區組合下沒有影廳，請調整篩選條件。</p>
       )}
 
-      {grouped.length > 0 && (
+      {pool.length > 0 && (
         <p className="badge-legend">
           徽章色：<span className="lg-cert">綠＝整廳認證級</span> ・{' '}
           <span className="lg-imax">藍＝沉浸音效／IMAX 聲道</span> ・{' '}
@@ -785,11 +775,16 @@ export default function App() {
         </p>
       )}
 
-      {grouped.map((group) => (
-        <section key={group.region} className="region-group">
+      {pool.length > 0 && (
+        <section className="region-group">
           <h2 className="region-title">
-            {REGION_LABELS[group.region]}
-            <span className="region-count">{group.fits.length} 廳</span>
+            排名
+            <span className="region-count">
+              {ranked.length} 廳
+              {regions.size === 0 && activeCities.size === 0 && chains.size === 0
+                ? '（全台）'
+                : '（目前篩選範圍）'}
+            </span>
             {sortMode === 'audio' && (
               <span
                 className="sort-note"
@@ -805,7 +800,7 @@ export default function App() {
             )}
           </h2>
           <div className="ranking">
-            {group.fits.map((fit, i) => (
+            {ranked.map((fit, i) => (
               <article
                 key={fit.screen.id}
                 className={selected.has(fit.screen.id) ? 'card selectable selected' : 'card selectable'}
@@ -908,9 +903,9 @@ export default function App() {
                 )}
               </article>
             ))}
-            {group.unsized.length > 0 && (
+            {unsized.length > 0 && (
               <details className="unsized-fold">
-                <summary>資料徵集中：{group.unsized.length} 廳尚無銀幕尺寸</summary>
+                <summary>資料徵集中：{unsized.length} 廳尚無銀幕尺寸</summary>
                 <p className="unsized-cta">
                   知道這些廳的官方尺寸或丈量數據嗎？歡迎到{' '}
                   <a
@@ -922,7 +917,7 @@ export default function App() {
                   </a>{' '}
                   提供來源。
                 </p>
-                {group.unsized.map((s) => (
+                {unsized.map((s) => (
               <article key={s.id} className="card card-unsized">
                 <div className="rank">–</div>
                 <div className="card-body">
@@ -953,7 +948,7 @@ export default function App() {
             )}
           </div>
         </section>
-      ))}
+      )}
 
       {toast && (
         <div className="toast" role="status">
