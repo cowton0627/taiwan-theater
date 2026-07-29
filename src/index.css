@@ -6,9 +6,9 @@
   --border: #3a2f2d;
   --text: #ece7de;
   --muted: #a39a8e;
-  --accent: #f0e9dc;
-  --accent-dim: #857a68;
-  /* 廳品牌金（柔和老膠片金，與銀幕光區隔） */
+  /* 互動與強調統一用膠片金；暖白（--text）只作文字與疊圖銀幕光暈 */
+  --accent: #d8b272;
+  --accent-dim: #8a6f42;
   --gold: #d8b272;
   --gold-dim: #8a6f42;
 }
@@ -83,7 +83,7 @@ header h1 {
   border-color: var(--accent);
   color: #141013;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(240, 233, 220, 0.18);
+  box-shadow: 0 0 10px rgba(216, 178, 114, 0.22);
 }
 
 /* 說明文字與操作 chips 分層：註記塊（左細線＋淡底＋內縮） */
