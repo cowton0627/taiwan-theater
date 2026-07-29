@@ -877,12 +877,13 @@
     "seats": null,
     "priceNTD": 410,
     "priceNotes": "2025-10 整理",
-    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "booking": "https://www.showtimes.com.tw/cinemas/53/",
     "verified": false,
     "sources": [
       "媒體報導：寬 22m×高 15m 台中最大銀幕、Christie 4K RGB 雷射、Dolby 7.1"
     ],
-    "notes": "標稱尺寸；PTT 整理文推文區稱秀泰巨幕實際約標稱 80–90%，待查證"
+    "notes": "標稱尺寸；PTT 整理文推文區稱秀泰巨幕實際約標稱 80–90%，待查證",
+    "address": "台中市東區南京路76號"
   },
   {
     "id": "showtime-taichung-station-screenx",
@@ -900,12 +901,13 @@
     "seats": null,
     "priceNTD": 460,
     "priceNotes": "2025-10 整理",
-    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "booking": "https://www.showtimes.com.tw/cinemas/53/",
     "verified": false,
     "sources": [
       "媒體報導（2024/7 啟用）"
     ],
-    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布"
+    "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
+    "address": "台中市東區南京路76號"
   },
   {
     "id": "showtime-taichung-wenxin-screenx",
@@ -947,13 +949,14 @@
     "seats": null,
     "priceNTD": 540,
     "priceNotes": "全新光最貴廳型（2025-02 整理）",
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1003",
     "verified": false,
     "sources": [
       "Mobile01／媒體（2016/6）：全球首座 Atmos＋MX4D 組合、4K＋HFR；全店另有第二座 Atmos 廳",
       "開眼（2026/7/29 實查）：營運中——2025/2 新光三越氣爆停業、2025/9/27 復業"
     ],
-    "notes": "新光三越中港店 13–14F；2025 氣爆停業逾半年後已復業"
+    "notes": "新光三越中港店 13–14F；2025 氣爆停業逾半年後已復業",
+    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
   },
   {
     "id": "vieshow-taichung-ifg-atmos",
@@ -976,7 +979,8 @@
     "sources": [
       "開眼（2026/7/29 實查）：營運中；原「大魯閣新時代威秀」，商場 2025 由遠雄接手、2026 更名 iFG（更名非歇業）"
     ],
-    "notes": "台中市東區復興路四段 186 號 4 樓"
+    "notes": "台中市東區復興路四段 186 號 4 樓",
+    "address": "台中市東區復興路四段186號4樓（iFG 遠雄廣場）"
   },
   {
     "id": "showtime-taichung-lihpao-giant",
@@ -993,12 +997,13 @@
     "audio": "多聲道",
     "seats": null,
     "seatsNotes": "全店 10 廳 808 席",
-    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "booking": "https://www.showtimes.com.tw/cinemas/59/",
     "verified": false,
     "sources": [
       "食尚玩家（2020/1 開幕）：巨幕寬 20m、約 4 層樓高"
     ],
-    "notes": "銀幕高未公布"
+    "notes": "銀幕高未公布",
+    "address": "台中市后里區月眉東路二段181號3樓（麗寶 Outlet）"
   },
   {
     "id": "ririxin-taichung-supreme",
@@ -1018,12 +1023,13 @@
     "seatsNotes": "enjoymovie 台中指南：700 席",
     "priceNTD": 230,
     "priceNotes": "官方不分廳：2D 230／3D 320，150 分以上 +10（官網 2026-07）",
-    "booking": "https://www.atmovies.com.tw/showtime/a04/",
+    "booking": "https://www.srm.com.tw/product.php?_path=product_showtimes",
     "verified": false,
     "sources": [
       "enjoymovie 台中指南（2026/04）；開眼：營運中"
     ],
-    "notes": "中區獨立老字號；銀幕尺寸未公布"
+    "notes": "中區獨立老字號；銀幕尺寸未公布",
+    "address": "台中市中區中華路一段58號"
   },
   {
     "id": "ririxin-taichung-6a-atmos",
@@ -1040,12 +1046,13 @@
     "seats": 180,
     "priceNTD": 230,
     "priceNotes": "官方不分廳：2D 230／3D 320（官網 2026-07）",
-    "booking": "https://www.atmovies.com.tw/showtime/a04/",
+    "booking": "https://www.srm.com.tw/product.php?_path=product_showtimes",
     "verified": false,
     "sources": [
       "enjoymovie 台中指南（2026/04）"
     ],
-    "notes": ""
+    "notes": "",
+    "address": "台中市中區中華路一段58號"
   },
   {
     "id": "in89-chiayi-luxe",
@@ -1089,12 +1096,13 @@
     "seatsNotes": "enjoymovie 台南指南：432 席",
     "priceNTD": 350,
     "priceNotes": "2025-02 整理",
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1002",
     "verified": false,
     "sources": [
       "enjoymovie 台南指南（2026/04）：LUXE: A RealD Experience、Atmos 53.3 聲道"
     ],
-    "notes": "小西門；銀幕尺寸未公布"
+    "notes": "小西門；銀幕尺寸未公布",
+    "address": "台南市中西區西門路一段658-1號（新光三越小西門）"
   },
   {
     "id": "showtime-kaohsiung-dreammall-screenx",
@@ -1138,13 +1146,14 @@
     "seatsNotes": "全店 13 廳",
     "priceNTD": 400,
     "priceNotes": "2023 開幕 340 已調漲（2025-10 整理）",
-    "booking": "https://www.showtimes.com.tw/cinemas/",
+    "booking": "https://www.showtimes.com.tw/cinemas/84/",
     "verified": false,
     "sources": [
       "PTT 整理文推文實測：約 20×11m（採用值）",
       "Marie Claire／風傳媒開幕稿（2022/6）：「挑高 5 層樓、15 米高與寬 22 米」——15m 語意為廳挑高非銀幕高，22m 為宣傳寬度；「南高屏最大」無量化依據"
     ],
-    "notes": "2022/6/23 開幕；官方宣傳 22m 寬、廳挑高 15m，媒體曾誤植為銀幕 22×15——採論壇實測 20×11"
+    "notes": "2022/6/23 開幕；官方宣傳 22m 寬、廳挑高 15m，媒體曾誤植為銀幕 22×15——採論壇實測 20×11",
+    "address": "高雄市岡山區捷安路1巷2號4樓"
   },
   {
     "id": "ambassador-kh-skmpark-atmos",
@@ -1162,12 +1171,13 @@
     "seatsNotes": "全店 10 廳 1,856 席",
     "priceNTD": 310,
     "priceNotes": "Atmos 3D 370（官網 2026-07）",
-    "booking": "https://www.ambassador.com.tw/home/TheaterList",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6",
     "verified": false,
     "sources": [
       "國賓官網 2026 名單＋開眼（仍名「國賓大魯閣草衙道影城」）：營運中、Atmos 廳 ×2＋D-BOX"
     ],
-    "notes": "前鎮草衙；廳號與規格待官方查證"
+    "notes": "前鎮草衙；廳號與規格待官方查證",
+    "address": "高雄市前鎮區中山四路100號3樓（SKM Park）"
   },
   {
     "id": "mld-kaohsiung-atmos",
@@ -1185,12 +1195,13 @@
     "seatsNotes": "全店 10 廳 1,445 席",
     "priceNTD": 290,
     "priceNotes": "官方不分廳：2D 290／3D 350（官網 2026-07）",
-    "booking": "https://mldcinema.com.tw/",
+    "booking": "https://www.mldcinema.com.tw/TimeList.php",
     "verified": false,
     "sources": [
       "MLD 官網＋開眼（2026/7/29 實查）：營運中；南台灣最早引進 Atmos"
     ],
-    "notes": "2025 商場調整不影響影城；銀幕尺寸待確認"
+    "notes": "2025 商場調整不影響影城；銀幕尺寸待確認",
+    "address": "高雄市前鎮區忠勤路8號"
   },
   {
     "id": "skcinemas-taichung-dva",
@@ -1207,12 +1218,13 @@
     "audioTier": "DVA",
     "audio": "Dolby Atmos",
     "seats": null,
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1003",
     "verified": false,
     "sources": [
       "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳，6/17《玩具總動員5》杜比版上映"
     ],
-    "notes": "2026/6 啟用，台中首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證"
+    "notes": "2026/6 啟用，台中首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
+    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
   },
   {
     "id": "skcinemas-tainan-dva",
@@ -1229,11 +1241,12 @@
     "audioTier": "DVA",
     "audio": "Dolby Atmos",
     "seats": null,
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1002",
     "verified": false,
     "sources": [
       "鏡週刊（2026/6/10）等多源：新光於台中、台南接力開出在地首座杜比視界＋全景聲影廳"
     ],
-    "notes": "2026/6 啟用，台南首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證"
+    "notes": "2026/6 啟用，台南首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
+    "address": "台南市中西區西門路一段658-1號（新光三越小西門）"
   }
 ]
