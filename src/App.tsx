@@ -667,7 +667,7 @@ export default function App() {
           <button
             className={sortMode === 'audio' ? 'chip active' : 'chip'}
             onClick={() => setSortMode('audio')}
-            title="音效層級優先（Dolby Cinema > DVA > IMAX 12 > IMAX 5 > Atmos > 7.1 > 5.1），同層級內按面積"
+            title="音效層級優先（Dolby Cinema > DVA > IMAX 12 > Atmos > Auro > IMAX 5 > 7.1 > 5.1），同層級內按面積"
           >
             音效層級
           </button>
@@ -692,8 +692,8 @@ export default function App() {
         {sortMode === 'audio' && (
           <div className="control-note">
             <p className="sort-basis">
-              排序依據（本站預設）：Dolby Cinema ＞ DVA ＞ IMAX 12 聲道 ＞ IMAX 5 聲道 ＞ Atmos ＞
-              7.1 ＞ 5.1——此為認證／系統規格層級，非實測音質；同層級內按成像面積。
+              排序依據（本站預設，以沉浸聲場為主軸）：Dolby Cinema ＞ DVA ＞ IMAX 12 聲道 ＞
+              Atmos ＞ Auro 11.1 ＞ IMAX 5 聲道 ＞ 7.1 ＞ 5.1——此為認證／系統規格層級，非實測音質；同層級內按成像面積。
             </p>
           </div>
         )}
@@ -789,7 +789,7 @@ export default function App() {
             {sortMode === 'audio' && (
               <span
                 className="sort-note"
-                title="Dolby Cinema ＞ DVA ＞ IMAX 12 ＞ IMAX 5 ＞ Atmos ＞ 7.1 ＞ 5.1（認證／規格層級，非實測音質）"
+                title="Dolby Cinema ＞ DVA ＞ IMAX 12 ＞ Atmos ＞ Auro ＞ IMAX 5 ＞ 7.1 ＞ 5.1（認證／規格層級，非實測音質）"
               >
                 音效層級排序
               </span>

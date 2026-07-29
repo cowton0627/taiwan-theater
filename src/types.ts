@@ -23,13 +23,17 @@ export type AudioTier =
   | 'SURROUND_7_1'
   | 'SURROUND_5_1';
 
+/**
+ * 2026-07-29 調整：Atmos／Auro 移到 IMAX 5 聲道之上——以「沉浸聲場」為主軸，
+ * 與得分卡的沉浸音效分完全同向（原順序造成 IMAX 5 聲道序位高於 Atmos、分數卻相反的矛盾）。
+ */
 export const AUDIO_TIER_ORDER: AudioTier[] = [
   'DOLBY_CINEMA',
   'DVA',
   'IMAX_12CH',
-  'IMAX_5CH',
   'ATMOS',
   'AURO_11_1',
+  'IMAX_5CH',
   'SURROUND_7_1',
   'SURROUND_5_1',
 ];
