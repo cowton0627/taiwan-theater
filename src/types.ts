@@ -63,8 +63,10 @@ export interface Screen {
   seats: number | null;
   /** 座位數來源與異說註記 */
   seatsNotes?: string;
-  /** 訂票 / 場次查詢頁 */
+  /** 訂票 / 場次查詢頁（分店深連結優先，其次分店介紹頁） */
   booking: string;
+  /** 完整地址（供 Google Maps 連結）；未收集為缺省 */
+  address?: string;
   /** 尺寸是否經過查證（丈量紀錄、官方公布） */
   verified: boolean;
   sources: string[];

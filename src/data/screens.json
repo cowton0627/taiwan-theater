@@ -14,7 +14,8 @@
     "audio": "IMAX 12.1 聲道",
     "seats": 404,
     "seatsNotes": "2D 404 席／3D 362 席（維基百科）",
-    "booking": "https://www.miramarcinemas.tw/Timetable/Index?cinema=imax",
+    "booking": "https://www.miramarcinemas.tw/Timetable/Index?cinema=standard",
+    "address": "台北市中山區敬業三路22號6樓",
     "verified": true,
     "sources": [
       "美麗華官網 IMAX 介紹頁（2026-07 實查）：28.4×20.54m 弧形銀幕、雙機 4K 雷射、12.1 聲道",
@@ -37,7 +38,8 @@
     "audio": "IMAX 6 聲道",
     "seats": 352,
     "seatsNotes": "維基百科／Enjoy Movie 指南",
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=28",
+    "address": "新北市新店區中興路三段70號7樓（裕隆城）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -61,7 +63,8 @@
     "audio": "IMAX 6 聲道",
     "seats": 404,
     "seatsNotes": "Enjoy Movie 指南／MovieGo",
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=4",
+    "address": "新北市板橋區新站路28號10樓（Mega City 大遠百）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -85,7 +88,8 @@
     "audio": "IMAX 音響",
     "seats": 325,
     "seatsNotes": "官網 325；維基作 329（含 4 輪椅席）",
-    "booking": "https://www.miranewcinemas.com/",
+    "booking": "https://www.miranewcinemas.com/booking/timetable",
+    "address": "桃園市蘆竹區南崁路一段112號7樓（台茂購物中心）",
     "verified": true,
     "sources": [
       "官方開幕資料／美麗新官網：19×9.75m、325 席（2016/12 啟用，大桃園首座）；維基與 PTT 實測文引用一致",
@@ -108,7 +112,8 @@
     "audio": "IMAX 音響",
     "seats": 300,
     "seatsNotes": "約 300 席（MovieGo）",
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=9",
+    "address": "新竹市東區民權路176號4樓之3（巨城購物中心）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -130,7 +135,8 @@
     "audioTier": "IMAX_5CH",
     "audio": "IMAX 音響",
     "seats": null,
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=11",
+    "address": "台中市西屯區台灣大道三段251號13樓（Top City 大遠百）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -150,7 +156,8 @@
     "audioTier": "IMAX_12CH",
     "audio": "IMAX 12 聲道",
     "seats": null,
-    "booking": "https://www.in89.com.tw/",
+    "booking": "https://www.in89cinemax.com/film_list.aspx?TheaterId=17",
+    "address": "嘉義市東區民族路328號",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -171,7 +178,8 @@
     "audioTier": "IMAX_5CH",
     "audio": "IMAX 音響",
     "seats": null,
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+    "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -191,7 +199,8 @@
     "audioTier": "IMAX_5CH",
     "audio": "IMAX 音響",
     "seats": null,
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+    "address": "高雄市苓雅區三多四路21號13樓（大遠百）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -211,7 +220,8 @@
     "audioTier": "IMAX_12CH",
     "audio": "IMAX 12 聲道",
     "seats": null,
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+    "address": "花蓮縣吉安鄉南濱路一段503號3樓（新天堂樂園）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -234,7 +244,8 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "seatsNotes": "MUVIE 全館 8 廳 1,147 席；TITAN 單廳席數未查得",
-    "booking": "https://www.vscinemas.com.tw/",
+    "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
+    "address": "台北市信義區松仁路58號10樓（遠百信義 A13）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -259,7 +270,8 @@
     "audio": "Dolby 7.1",
     "seats": null,
     "seatsNotes": "近 800 席（媒體遊記，未證實）",
-    "booking": "https://www.luxcine.com.tw/",
+    "booking": "https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes",
+    "address": "台北市萬華區武昌街二段85號",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -281,7 +293,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/87/",
+    "address": "高雄市前鎮區中華五路789號8樓（夢時代）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -300,7 +313,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道",
     "seats": null,
-    "booking": "https://www.ambassador.com.tw/",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c",
+    "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -342,7 +356,8 @@
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/56/",
+    "address": "台中市南屯區文心南路289號7樓",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -363,7 +378,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道",
     "seats": null,
-    "booking": "https://www.goldenlion.com.tw/",
+    "booking": "https://cinemax.windlion.com.tw/movies.php",
+    "address": "金門縣金湖鎮中山路8-8號3樓（風獅爺商店街）",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）"
@@ -385,7 +401,8 @@
     "audio": "Dolby Atmos",
     "seats": 322,
     "seatsNotes": "開幕媒體報導 322；另有 335（Marie Claire）/343（維基）異說",
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1004",
+    "address": "桃園市中壢區春德路107號（置地廣場桃園）",
     "verified": false,
     "sources": [
       "中時／工商時報開幕報導（2020/12）：全台首座杜比影院、322 席、對比 1,000,000:1",
@@ -409,7 +426,8 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "seatsNotes": "官方未公布；303 一說（論壇未證實）",
-    "booking": "https://www.miramarcinemas.tw/",
+    "booking": "https://www.miramarcinemas.tw/Timetable/Index?cinema=standard",
+    "address": "台北市中山區敬業三路22號6樓",
     "verified": true,
     "sources": [
       "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文全文未能直接複核；另有網友電話詢問影城得 14×7m 獨立旁證，PTT M.1729059093）",
@@ -431,7 +449,8 @@
     "audioTier": "DVA",
     "audio": "Dolby Atmos",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -477,7 +496,8 @@
     "audio": "Dolby Atmos",
     "seats": 867,
     "seatsNotes": "維基／媒體：867 席",
-    "booking": "https://www.ambassador.com.tw/",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e",
+    "address": "台北市萬華區成都路88號",
     "verified": false,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
@@ -502,7 +522,8 @@
     "audio": "Dolby Atmos",
     "seats": 328,
     "seatsNotes": "328（票務）／322（開幕稿）／323（維基）各說；官方未公開逐廳座位數；第 8 排為紅色雙人沙發",
-    "booking": "https://www.skcinemas.com/",
+    "booking": "https://www.skcinemas.com/sessions?c=1004",
+    "address": "桃園市中壢區春德路107號（置地廣場桃園）",
     "verified": false,
     "sources": [
       "新光官方 CMS（wp.skcinemas.com/luxe_intro）：台灣第一套雙機 RGB 4K 雷射 LUXE、RealD 終極銀幕 92% 反射率、Dolby Atmos",
@@ -546,7 +567,8 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "seatsNotes": "全館 8 廳 943 席（官網）；Atmos 廳廳號與席數官方頁未載明",
-    "booking": "https://www.ambassador.com.tw/",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=9383c5fa-b4f3-4ba8-ba7a-c25c7df95fd0",
+    "address": "新北市林口區文化三路一段402巷2號4樓（昕境廣場）",
     "verified": false,
     "sources": [
       "國賓官網影城介紹頁（2026-07 實查）：8 廳 943 席、全廳 Dolby Surround 7.1、配備 Dolby Atmos、Harkness 透聲銀幕",
@@ -568,7 +590,8 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "seatsNotes": "全館 8 廳 1,636 席（維基）；Atmos 廳單廳席數未查得",
-    "booking": "https://www.ambassador.com.tw/",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=8fda9934-73d4-4c14-b1c4-386c2b81045c",
+    "address": "桃園市八德區介壽路一段728號3樓（置地生活廣場）",
     "verified": false,
     "sources": [
       "維基百科：Dolby Atmos 廳 ×2、D-BOX 36 席",
@@ -591,7 +614,8 @@
     "audio": "Christie Vive Audio",
     "seats": null,
     "seatsNotes": "全館 12 廳 1,581 席（MovieGo）",
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/54/",
+    "address": "新北市樹林區樹新路40-6號",
     "verified": false,
     "sources": [
       "MovieGo／媒體：ScreenX 270° 三面投影；全廳 Christie Vive Audio"
@@ -612,7 +636,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/2/",
+    "address": "台北市中山區林森北路247號",
     "verified": false,
     "sources": [
       "LINE TODAY 影廳整理；開眼時刻表（2026）：營運中",
@@ -634,7 +659,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道（Harman 劇院音響）",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
       "Cool3c／JazzNews 開幕報導（2025/10）：全台獨家 4DX＋ScreenX 雙系統"
@@ -655,7 +681,8 @@
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道（Harman 劇院音響）",
     "seats": null,
-    "booking": "https://www.showtimes.com.tw/",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "address": "台北市信義區光復南路105號2樓",
     "verified": false,
     "sources": [
       "Cool3c／JazzNews 開幕報導（2025/10）：台北市最大 ScreenX"
@@ -676,6 +703,7 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "booking": "https://www.venice-cinemas.com.tw/showtime.php",
+    "address": "桃園市中壢區九和一街48號3樓之2",
     "verified": false,
     "sources": [
       "開眼時刻表（2026/7/28 實查）：營運中、當日有 Atmos 場次標示",
@@ -699,6 +727,7 @@
     "audio": "Dolby Atmos",
     "seats": null,
     "booking": "https://www.broadway-cineplex.com.tw/book.html?obj=Zhubei",
+    "address": "新竹縣竹北市自強南路36號3～5樓（享平方）",
     "verified": false,
     "sources": [
       "百老匯官網 about：旗艦廳 Dolby Atmos（杜比首款自行研發主聲道揚聲器）、RGB 純雷射",

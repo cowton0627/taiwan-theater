@@ -93,6 +93,21 @@ function AudioTierBadge({ s }: { s: Screen }) {
   );
 }
 
+/** 城市顯示：有地址時連到 Google Maps 搜尋，否則純文字 */
+function CityLink({ s }: { s: Screen }) {
+  if (!s.address) return <>{s.city}</>;
+  return (
+    <a
+      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`}
+      target="_blank"
+      rel="noreferrer"
+      title={s.address}
+    >
+      {s.city} 📍
+    </a>
+  );
+}
+
 /** 杜比影院類別徽章＝整廳認證，染認證綠 */
 function categoryBadgeClass(s: Screen) {
   return s.hallCategory === 'DOLBY_CINEMA' ? 'badge tier-cert' : 'badge';
@@ -663,7 +678,7 @@ export default function App() {
                     />
                   </div>
                   <p className="meta">
-                    {fit.screen.chain} ・ {fit.screen.city} ・{' '}
+                    {fit.screen.chain} ・ <CityLink s={fit.screen} /> ・{' '}
                     <a href={fit.screen.booking} target="_blank" rel="noreferrer">
                       查場次
                     </a>
@@ -685,7 +700,7 @@ export default function App() {
                     <span className="badge unverified">尺寸未公布</span>
                   </h3>
                   <p className="meta">
-                    未納入成像排名 ・ {s.chain} ・ {s.city} ・{' '}
+                    未納入成像排名 ・ {s.chain} ・ <CityLink s={s} /> ・{' '}
                     <a href={s.booking} target="_blank" rel="noreferrer">
                       查場次
                     </a>
