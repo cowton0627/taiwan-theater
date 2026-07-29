@@ -772,6 +772,7 @@ export default function App() {
           <span className="lg-brand">金＝廳品牌</span> ・{' '}
           <span className="lg-basic">灰＝基本聲道</span> ・{' '}
           <span className="lg-unknown">虛線＝音效未查證</span>
+          （顏色僅區分規格類別，不代表等級或加分）
         </p>
       )}
 
