@@ -565,6 +565,7 @@ export default function App() {
                     const v = parseFloat(e.target.value);
                     if (!Number.isNaN(v) && v >= 0.5 && v <= 4) setCustomRatio(v);
                   }}
+                  onBlur={() => setRatioInput(String(customRatio))}
                   aria-label="自訂畫幅比例（0.5–4）"
                 />
                 :1
