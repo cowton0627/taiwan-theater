@@ -162,8 +162,8 @@
     "name": "嘉義 in89 豪華影城 IMAX 廳",
     "chain": "in89",
     "hallCategory": "IMAX",
-    "widthM": 21.5,
-    "heightM": 12.3,
+    "widthM": 21.49,
+    "heightM": 12.31,
     "projection": "雷射",
     "status": "operating",
     "region": "south",
@@ -173,12 +173,13 @@
     "seats": 292,
     "booking": "https://www.in89cinemax.com/film_list.aspx?TheaterId=17",
     "address": "嘉義市東區民族路328號",
-    "verified": false,
+    "verified": true,
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
       "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
       "官方 FB 規格（PTT M.1639584549 轉述）：21.5×12.3m、12.1 聲道、CoLA 單機雙鏡 4K",
-      "PTT《奧德賽》十廳簡評（2026/07）：評為全台十間之最"
+      "PTT《奧德賽》十廳簡評（2026/07）：評為全台十間之最",
+      "in89 官方 IMAX 特刊 PDF：21.49×12.31m（2026-07 稽核，尺寸翻正）；12.1 聲道之直接官方原頁仍待取得"
     ],
     "seatsNotes": "PTT 票價情報 292 席（官網未列，待確認）",
     "priceNTD": 420,
@@ -257,7 +258,8 @@
     "sources": [
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
       "Enjoy Movie／PTT：IMAX 商業雷射（CoLa）12 聲道",
-      "PTT《奧德賽》十廳簡評（2026/07）：CoLA 單機雙鏡 4K、12 聲道；全台唯一懸空式銀幕（論壇）"
+      "PTT《奧德賽》十廳簡評（2026/07）：CoLA 單機雙鏡 4K、12 聲道；全台唯一懸空式銀幕（論壇）",
+      "威秀官方花蓮據點頁：IMAX 雷射、12.1 聲道（官方；銀幕尺寸官方未列、維持論壇值）"
     ],
     "seatsNotes": "MovieGo：368 席（含 4 無障礙）",
     "priceNTD": 400,
@@ -476,15 +478,16 @@
     "city": "台北市",
     "audioTier": "DOLBY_CINEMA",
     "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "官方未公布；303 一說（論壇未證實）",
+    "seats": 303,
+    "seatsNotes": "美麗華官方團劃／包廳頁：303 席（2026-07 稽核確認）",
     "priceNTD": 460,
     "priceNotes": "3D 560（官網 2026-07）",
     "booking": "https://www.miramarcinemas.tw/Timetable/Index?cinema=standard",
     "address": "台北市中山區敬業三路22號6樓",
-    "verified": true,
+    "verified": false,
     "sources": [
-      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文全文未能直接複核；另有網友電話詢問影城得 14×7m 獨立旁證，PTT M.1729059093）",
+      "美麗華官方 FB 規格說明：銀幕 14.8×7.0m（原文無法穩定引用、官網介紹頁未列尺寸——尺寸不翻正；電話詢問 14×7m 旁證，PTT M.1729059093）",
+      "美麗華官方團劃頁（groupticket2）：Dolby Cinema 303 席",
       "美麗華官網杜比影院頁：Dolby Vision 雙 4K 雷射、對比 1,000,000:1（2024/10/22 開幕，台灣第二座）"
     ],
     "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度"
@@ -556,13 +559,13 @@
     "priceNotes": "3D 450、早場 320（官網 2026-07）",
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e",
     "address": "台北市萬華區成都路88號",
-    "verified": false,
+    "verified": true,
     "sources": [
+      "國賓官方影城介紹頁：22×12m Harkness 銀幕、雙機 Christie 4K RGB 純雷射、最高 90,000 流明（2026-07 稽核確認，尺寸翻正）",
       "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
-      "國賓官網鉅院廳活動頁：雙機 Christie 4K RGB 純雷射、最高 90,000 流明、營業中（2026 官網名單）",
-      "維基／PTT 好評文：22×12m、867 席、號稱全球第二大 Dolby Atmos 影廳"
+      "維基／PTT：867 席（席次仍二手）"
     ],
-    "notes": "西門町；號稱全球第二大 Dolby Atmos 影廳；22×12m 為業者宣傳整數、未經丈量"
+    "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證"
   },
   {
     "id": "skcinemas-taoyuan-luxe",

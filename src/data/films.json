@@ -5,15 +5,31 @@
     "titleEn": "The Odyssey",
     "year": 2026,
     "shotOn": "IMAX 65mm 底片（全片）",
-    "audio": "5.1 聲道（無 Dolby Atmos）",
+    "audio": "音效格式待確認（媒體稱原生 5.1、無 Atmos，無官方確認）",
     "runtimeMin": 172,
     "largeFormatMin": 172,
     "formatNotes": "影史首部全片 IMAX 底片拍攝——1.43:1 廳全片滿幅，不像星際效應／奧本海默只有部分片段切換",
     "versions": [
-      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（完整畫幅）" },
-      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1" },
-      { "hallCategory": "STANDARD", "ratio": 1.85, "label": "一般廳 Flat 1.85:1" },
-      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1" }
+      {
+        "hallCategory": "IMAX_GT",
+        "ratio": 1.43,
+        "label": "IMAX GT 1.43:1（完整畫幅）"
+      },
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "數位 IMAX 1.90:1"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 1.85,
+        "label": "一般廳 Flat 1.85:1"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1"
+      }
     ],
     "sources": [
       "官方格式頁 odysseymovie.com/explore-formats：Every frame shot with IMAX Film Cameras、IMAX 70mm 全片 1.43:1",
@@ -30,15 +46,32 @@
     "shotOn": "數位攝影（機型未公布；非 IMAX 底片）",
     "runtimeMin": 145,
     "largeFormatMin": null,
-    "formatNotes": "台灣 2026/7/29 上映、確定無 IMAX 版（IMAX 檔期由奧德賽獨占）；全片 2.39:1 基準；首部原生 ScreenX 拍攝的好萊塢片（ScreenX／4DX 有專屬版本）；國際部分市場的 IMAX 1.90 擴展版不含台灣",
+    "formatNotes": "台灣 2026/7/29 上映、確定無 IMAX 版（IMAX 檔期由奧德賽獨占）；一般發行以 2.39:1 為主（另有 Flat 1.90 母帶之說，僅媒體來源、待證）；首部原生 ScreenX 拍攝的好萊塢片（ScreenX／4DX 有專屬版本）；國際部分市場的 IMAX 1.90 擴展版不含台灣",
     "versions": [
-      { "hallCategory": "DOLBY_CINEMA", "ratio": 2.39, "label": "杜比影院版 Scope 2.39:1", "confidence": "reported" },
-      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1", "confidence": "reported" }
+      {
+        "hallCategory": "DOLBY_CINEMA",
+        "ratio": 2.39,
+        "label": "杜比影院版 Scope 2.39:1",
+        "confidence": "reported"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "reported"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 1.9,
+        "label": "一般廳 Flat 1.90:1",
+        "confidence": "reported"
+      }
     ],
     "sources": [
       "PTT Theater 板情報（2026/7）：台灣無 IMAX 版，IMAX 檔期由奧德賽／沙丘 3 獨占；與 Variety「1.90 版僅部分國際市場」相符",
       "TheDirect 版本整理（2026/7）：2.39 基準、七種版本含 ScreenX/4DX/Dolby Cinema；原生 ScreenX 拍攝",
-      "Wikipedia／索尼台灣官網：片長 145 分鐘、台灣 7/29 上映、攝影 Brett Pawlak；攝影機型無公開可靠出處"
+      "Wikipedia／索尼台灣官網：片長 145 分鐘、台灣 7/29 上映、攝影 Brett Pawlak；攝影機型無公開可靠出處",
+      "2026-07-29 稽核：BBFC 有 Shot for ScreenX 分級紀錄（官方間接）；「唯一 2.39 基準」無片商第一方頁支持，補 Flat 1.90 版標 reported"
     ]
   },
   {
@@ -51,9 +84,24 @@
     "largeFormatMin": null,
     "formatNotes": "2026/12/18 上映；「全片 IMAX」為 IMAX CEO 口誤、Variety 已更正；IMAX 底片段落理論可達 1.43:1，比例配置未公告（以下版本為預期值）；攝影 Linus Sandgren（非前兩集的 Greig Fraser）",
     "versions": [
-      { "hallCategory": "IMAX_GT", "ratio": 1.43, "label": "IMAX GT 1.43:1（底片段落）", "confidence": "expected" },
-      { "hallCategory": "IMAX", "ratio": 1.9, "label": "數位 IMAX 1.90:1", "confidence": "expected" },
-      { "hallCategory": "STANDARD", "ratio": 2.39, "label": "一般廳 Scope 2.39:1", "confidence": "expected" }
+      {
+        "hallCategory": "IMAX_GT",
+        "ratio": 1.43,
+        "label": "IMAX GT 1.43:1（底片段落）",
+        "confidence": "expected"
+      },
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "數位 IMAX 1.90:1",
+        "confidence": "expected"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "expected"
+      }
     ],
     "sources": [
       "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
