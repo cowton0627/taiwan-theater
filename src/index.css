@@ -483,6 +483,7 @@ header h1 {
 /* 比較 affordance pill（U-3） */
 .compare-pill {
   margin-left: auto;
+  background: transparent;
   font-size: 0.72rem;
   font-weight: 600;
   border: 1px solid var(--border);
@@ -490,6 +491,7 @@ header h1 {
   padding: 0.08rem 0.55rem;
   color: var(--muted);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .card.selectable:hover .compare-pill {
@@ -589,6 +591,109 @@ header h1 {
   color: var(--muted);
 }
 
+/* 第一層只留一般觀眾可直接做決定的一句結論。 */
+.key-takeaway {
+  margin: 0.05rem 0 0.2rem;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+/* roadmap 32＋34：技術規格、計分與來源統一收進同一層漸進展開。 */
+.evidence-fold {
+  margin-top: 0.45rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.evidence-fold > summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.evidence-fold[open] > summary {
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0 0 0.45rem;
+}
+
+.spec-field {
+  min-width: 0;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.spec-field dt {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.spec-field dd {
+  margin: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.spec-field.spec-unknown dd {
+  color: var(--muted);
+}
+
+.evidence-note {
+  margin: 0.2rem 0;
+}
+
+.score-breakdown {
+  margin-top: 0.55rem;
+  padding: 0.5rem 0.6rem;
+  border-left: 2px solid var(--gold-dim);
+  background: rgba(216, 178, 114, 0.05);
+}
+
+.score-breakdown-head,
+.score-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.score-breakdown-head a {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.score-breakdown ul {
+  list-style: none;
+  margin: 0.3rem 0 0;
+  padding: 0;
+}
+
+.score-breakdown li {
+  padding: 0.1rem 0;
+  border-top: 1px solid rgba(58, 47, 45, 0.55);
+}
+
+.score-points {
+  color: var(--gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.score-unknown {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .dims strong {
   color: var(--text);
 }
@@ -673,11 +778,15 @@ footer {
     margin-left: auto;
     min-width: 0;
   }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 資料來源與查證展開區（roadmap 33） */
 .sources-fold {
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
   font-size: 0.76rem;
 }
 

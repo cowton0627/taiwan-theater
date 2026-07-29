@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
@@ -100,31 +101,6 @@ const AUDIO_TIER_LABELS: Record<AudioTier, string> = {
   SURROUND_5_1: '音效未查證',
 };
 
-const AUDIO_TIER_CLASS: Record<AudioTier, string> = {
-  DOLBY_CINEMA: 'tier-cert',
-  DVA: 'tier-cert',
-  IMAX_12CH: 'tier-imax',
-  IMAX_5CH: 'tier-imax',
-  ATMOS: 'tier-atmos',
-  AURO_11_1: 'tier-atmos',
-  SURROUND_7_1: 'tier-basic',
-  SURROUND_5_1: 'tier-unknown',
-};
-
-/**
- * 音效層級徽章；與 hallCategory／brandLabel 重複時不重掛
- * （該情況由 categoryBadgeClass／brandBadgeClass 把既有徽章染成認證綠）
- */
-function AudioTierBadge({ s }: { s: Screen }) {
-  if (s.audioTier === 'DOLBY_CINEMA' && s.hallCategory === 'DOLBY_CINEMA') return null;
-  if (s.audioTier === 'DVA' && s.brandLabel === 'DVA') return null;
-  return (
-    <span className={`badge ${AUDIO_TIER_CLASS[s.audioTier]}`} title={s.audio}>
-      {AUDIO_TIER_LABELS[s.audioTier]}
-    </span>
-  );
-}
-
 /** 城市顯示：有地址時連到 Google Maps 搜尋，否則純文字 */
 function CityLink({ s }: { s: Screen }) {
   if (!s.address) return <>{s.city}</>;
@@ -164,16 +140,29 @@ function SourcesFold({ sources }: { sources: Screen['sources'] }) {
   );
 }
 
-/** 杜比影院類別徽章＝整廳認證，染認證綠 */
-function categoryBadgeClass(s: Screen) {
-  return s.hallCategory === 'DOLBY_CINEMA' ? 'badge tier-cert' : 'badge';
+/** 廳型欄位合併類別與品牌，避免「杜比影院／Dolby Cinema」同義資訊重複。 */
+function hallTypeLabel(s: Screen) {
+  if (s.hallCategory === 'DOLBY_CINEMA') return '杜比影院';
+  if (s.brandLabel === 'DVA') return 'DVA 特殊廳';
+  if (s.brandLabel) return `${s.brandLabel}（${CATEGORY_LABELS[s.hallCategory]}）`;
+  return CATEGORY_LABELS[s.hallCategory];
 }
 
-/** DVA 品牌徽章＝認證級授權，染認證綠；其餘維持品牌金 */
-function brandBadgeClass(s: Screen) {
-  return s.brandLabel === 'DVA' || s.brandLabel === 'Dolby Cinema'
-    ? 'badge brand tier-cert'
-    : 'badge brand';
+function SpecField({
+  label,
+  children,
+  className = '',
+}: {
+  label: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`spec-field ${className}`}>
+      <dt>{label}</dt>
+      <dd>{children}</dd>
+    </div>
+  );
 }
 
 /**
@@ -495,8 +484,6 @@ export default function App() {
     });
   }, [fits, sortMode, scoreMap]);
 
-  const maxArea = fits[0]?.imageAreaM2 ?? 1;
-
   /** 尺寸未公布廳（單一清單；地區語意交給篩選器，避免多個「第 1 名」歧義） */
   const unsized = useMemo(() => pool.filter((s) => !isSized(s)), [pool]);
 
@@ -706,12 +693,13 @@ export default function App() {
         </div>
         {sortMode === 'score' && (
           <div className="control-note">
-            <p className="sort-basis">
-              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
-              +0.5 ・ 沉浸音效 +1 ・ 雷射投影 +1（雙機／RGB 再 +0.5）・
-              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
-              未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。
-            </p>
+	            <p className="sort-basis">
+	              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
+	              +0.5 ・ 沉浸音效 +1 ・ 雷射投影 +1（雙機／RGB 再 +0.5）・
+	              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
+	              未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。{' '}
+	              <a href="#score-method">查看完整評分方式</a>
+	            </p>
           </div>
         )}
         {sortMode === 'audio' && (
@@ -791,17 +779,6 @@ export default function App() {
       )}
 
       {pool.length > 0 && (
-        <p className="badge-legend">
-          徽章色：<span className="lg-cert">綠＝整廳認證級</span> ・{' '}
-          <span className="lg-imax">藍＝沉浸音效／IMAX 聲道</span> ・{' '}
-          <span className="lg-brand">金＝廳品牌</span> ・{' '}
-          <span className="lg-basic">灰＝基本聲道</span> ・{' '}
-          <span className="lg-unknown">虛線＝音效未查證</span>
-          （顏色僅區分規格類別，不代表等級或加分）
-        </p>
-      )}
-
-      {pool.length > 0 && (
         <section className="region-group">
           <h2 className="region-title">
             排名
@@ -833,94 +810,117 @@ export default function App() {
                 title="點擊加入／移除疊圖比較"
                 role="button"
                 tabIndex={0}
-                aria-pressed={selected.has(fit.screen.id)}
-                onClick={(e) => {
-                  if ((e.target as HTMLElement).closest('a, details, summary')) return;
-                  toggleSelect(fit.screen.id);
-                }}
-                onKeyDown={(e) => {
-                  if (e.key !== 'Enter' && e.key !== ' ') return;
-                  if ((e.target as HTMLElement).closest('a, details, summary')) return;
+	                aria-pressed={selected.has(fit.screen.id)}
+	                onClick={(e) => {
+	                  if ((e.target as HTMLElement).closest('a, button, input, details, summary')) return;
+	                  toggleSelect(fit.screen.id);
+	                }}
+	                onKeyDown={(e) => {
+	                  if (e.key !== 'Enter' && e.key !== ' ') return;
+	                  if ((e.target as HTMLElement).closest('a, button, input, details, summary')) return;
                   e.preventDefault();
                   toggleSelect(fit.screen.id);
                 }}
               >
-                <div className={sortMode === 'audio' ? 'rank rank-audio' : 'rank'}>{i + 1}</div>
-                <div className="card-body">
-                  <h3>
-                    {fit.screen.name}
-                    <span className={categoryBadgeClass(fit.screen)}>
-                      {CATEGORY_LABELS[fit.screen.hallCategory]}
-                    </span>
-                    {fit.screen.brandLabel && (
-                      <span className={brandBadgeClass(fit.screen)}>{fit.screen.brandLabel}</span>
-                    )}
-                    {fit.screen.projection && (
-                      <span className="badge">{fit.screen.projection}</span>
-                    )}
-                    <AudioTierBadge s={fit.screen} />
-                    <span
-                      className={
-                        selected.has(fit.screen.id) ? 'compare-pill on' : 'compare-pill'
-                      }
-                    >
-                      {selected.has(fit.screen.id) ? '✓ 比較中' : '＋比較'}
-                    </span>
-                  </h3>
-                  <p className="dims">
-                    {fit.version.label}
-                    {fit.versionFallback &&
-                      fit.screen.hallCategory !== 'PREMIUM' &&
-                      fit.screen.hallCategory !== 'STANDARD' &&
-                      '（本片無此廳型專屬版本）'}
-                    {fit.versionUncertain && '（此廳排映版本依影城而定，以較大者計）'}
-                    {fit.version.confidence === 'reported' && '（畫幅為媒體報導值）'}
-                    {fit.version.confidence === 'expected' && '（畫幅未定，此為預期值）'}
-                    ・ 銀幕 {fit.screen.widthM}×{fit.screen.heightM}m ・ 成像{' '}
-                    {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m（利用率{' '}
-                    {(fit.screenUsage * 100).toFixed(0)}%）
-                    {!fit.screen.verified && (
-                      <span className="unverified-note" title="尺寸為社群流傳值，尚未查證">
-                        {' '}
-                        ・尺寸待驗證
-                      </span>
-                    )}
-                  </p>
-                  {(fit.screen.bestRows || fit.screen.communityNotes) && (
-                    <p className="community-line">
-                      {fit.screen.bestRows && <strong>💺 推薦座位 {fit.screen.bestRows}</strong>}
-                      {fit.screen.bestRows && fit.screen.communityNotes && ' ・ '}
-                      {fit.screen.communityNotes}
-                    </p>
-                  )}
-                  {sortMode === 'score' && scoreMap.get(fit.screen.id) && (
-                    <p className="score-line">
-                      {scoreMap
-                        .get(fit.screen.id)!
-                        .items.map((it) => (it.unknown ? `${it.label}？` : `${it.label} +${it.pts}`))
-                        .join(' ・ ')}
-                    </p>
-                  )}
-                  <div className="bar-track">
-                    <div
-                      className="bar"
-                      style={{ width: `${(fit.imageAreaM2 / maxArea) * 100}%` }}
-                    />
-                  </div>
-                  <p className="meta">
-                    {fit.screen.chain} ・ <CityLink s={fit.screen} /> ・{' '}
-                    {fit.screen.priceNTD != null && (
-                      <span className="price" title={fit.screen.priceNotes ?? '全票價僅供參考，不計入排序'}>
-                        全票 {fit.screen.priceNTD} 元 ・{' '}
-                      </span>
-                    )}
-                    <a href={fit.screen.booking} target="_blank" rel="noreferrer">
-                      查場次
-                    </a>
-                    {fit.screen.notes && ` ・ ${fit.screen.notes}`}
-                  </p>
-                  <SourcesFold sources={fit.screen.sources} />
-                </div>
+	                <div className={sortMode === 'audio' ? 'rank rank-audio' : 'rank'}>{i + 1}</div>
+	                <div className="card-body">
+	                  <h3>
+	                    {fit.screen.name}
+	                    <button
+	                      type="button"
+	                      className={
+	                        selected.has(fit.screen.id) ? 'compare-pill on' : 'compare-pill'
+	                      }
+	                      aria-pressed={selected.has(fit.screen.id)}
+	                      onClick={(e) => {
+	                        e.stopPropagation();
+	                        toggleSelect(fit.screen.id);
+	                      }}
+	                    >
+	                      {selected.has(fit.screen.id) ? '✓ 比較中' : '＋比較'}
+	                    </button>
+	                  </h3>
+	                  <p className="key-takeaway">
+	                    {fit.version.label}
+	                    {fit.versionFallback &&
+	                      fit.screen.hallCategory !== 'PREMIUM' &&
+	                      fit.screen.hallCategory !== 'STANDARD' &&
+	                      '；本片無此廳型專屬版本'}
+	                    {fit.versionUncertain && '；實際版本依影城排映'}
+	                  </p>
+	                  <p className="meta">
+	                    <CityLink s={fit.screen} /> ・{' '}
+	                    {fit.screen.priceNTD != null && (
+	                      <span className="price" title={fit.screen.priceNotes ?? '全票價僅供參考，不計入排序'}>
+	                        全票 {fit.screen.priceNTD} 元 ・{' '}
+	                      </span>
+	                    )}
+	                    {fit.screen.priceNTD == null && <span className="price">票價待確認 ・ </span>}
+	                    <a href={fit.screen.booking} target="_blank" rel="noreferrer">
+	                      查場次
+	                    </a>
+	                  </p>
+	                  <details className="evidence-fold">
+	                    <summary>規格與依據</summary>
+	                    <dl className="spec-grid">
+	                      <SpecField label="廳型">{hallTypeLabel(fit.screen)}</SpecField>
+	                      <SpecField label="投影">{fit.screen.projection ?? '未公布'}</SpecField>
+	                      <SpecField
+	                        label="音效"
+	                        className={fit.screen.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
+	                      >
+	                        {AUDIO_TIER_LABELS[fit.screen.audioTier]}
+	                        {fit.screen.audio && `（${fit.screen.audio}）`}
+	                      </SpecField>
+	                    </dl>
+	                    <p className="dims">
+	                      銀幕 {fit.screen.widthM}×{fit.screen.heightM}m ・ 成像{' '}
+	                      {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m ・ 銀幕利用率{' '}
+	                      {(fit.screenUsage * 100).toFixed(0)}%
+	                    </p>
+	                    <p className="evidence-note">
+	                      版本：{fit.version.label}
+	                      {fit.versionFallback &&
+	                        fit.screen.hallCategory !== 'PREMIUM' &&
+	                        fit.screen.hallCategory !== 'STANDARD' &&
+	                        '（本片無此廳型專屬版本）'}
+	                      {fit.versionUncertain && '（此廳排映版本依影城而定，以較大者計）'}
+	                      {fit.version.confidence === 'reported' && '（畫幅為媒體報導值）'}
+	                      {fit.version.confidence === 'expected' && '（畫幅未定，此為預期值）'}
+	                    </p>
+	                    <p className="evidence-note">
+	                      查證狀態：
+	                      {fit.screen.verified ? '銀幕尺寸已查證' : '銀幕尺寸待驗證'}
+	                      {fit.screen.notes && ` ・ ${fit.screen.notes}`}
+	                    </p>
+	                    {sortMode === 'score' && scoreMap.get(fit.screen.id) && (
+	                      <div className="score-breakdown">
+	                        <div className="score-breakdown-head">
+	                          <strong>綜合評比分項</strong>
+	                          <a href="#score-method">評分方式</a>
+	                        </div>
+	                        <ul>
+	                          {scoreMap.get(fit.screen.id)!.items.map((it) => (
+	                            <li key={it.label}>
+	                              <span>{it.label}</span>
+	                              <span className={it.unknown ? 'score-unknown' : 'score-points'}>
+	                                {it.unknown ? '待確認' : it.pts > 0 ? `+${it.pts}` : '不加分'}
+	                              </span>
+	                            </li>
+	                          ))}
+	                        </ul>
+	                      </div>
+	                    )}
+	                    {(fit.screen.bestRows || fit.screen.communityNotes) && (
+	                      <p className="community-line">
+	                        {fit.screen.bestRows && <strong>💺 推薦座位 {fit.screen.bestRows}</strong>}
+	                        {fit.screen.bestRows && fit.screen.communityNotes && ' ・ '}
+	                        {fit.screen.communityNotes}
+	                      </p>
+	                    )}
+	                    <SourcesFold sources={fit.screen.sources} />
+	                  </details>
+	                </div>
                 {sortMode === 'score' ? (
                   <div className="card-area" title="綜合得分（口碑分尚未接入）">
                     {(() => {
@@ -968,36 +968,50 @@ export default function App() {
                 {unsized.map((s) => (
               <article key={s.id} className="card card-unsized">
                 <div className="rank">–</div>
-                <div className="card-body">
-                  <h3>
-                    {s.name}
-                    <span className={categoryBadgeClass(s)}>{CATEGORY_LABELS[s.hallCategory]}</span>
-                    {s.brandLabel && <span className={brandBadgeClass(s)}>{s.brandLabel}</span>}
-                    {s.projection && <span className="badge">{s.projection}</span>}
-                    <AudioTierBadge s={s} />
-                    <span className="badge unverified">尺寸未公布</span>
-                  </h3>
-                  <p className="meta">
-                    未納入成像排名 ・ {s.chain} ・ <CityLink s={s} /> ・{' '}
-                    {s.priceNTD != null && (
-                      <span className="price" title={s.priceNotes ?? '全票價僅供參考，不計入排序'}>
-                        全票 {s.priceNTD} 元 ・{' '}
-                      </span>
-                    )}
-                    <a href={s.booking} target="_blank" rel="noreferrer">
-                      查場次
-                    </a>
-                    {s.notes && ` ・ ${s.notes}`}
-                  </p>
-                  {(s.bestRows || s.communityNotes) && (
-                    <p className="community-line">
-                      {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
-                      {s.bestRows && s.communityNotes && ' ・ '}
-                      {s.communityNotes}
-                    </p>
-                  )}
-                  <SourcesFold sources={s.sources} />
-                </div>
+	                <div className="card-body">
+	                  <h3>
+	                    {s.name}
+	                  </h3>
+	                  <p className="key-takeaway">銀幕尺寸尚未公布，暫不納入成像排名</p>
+	                  <p className="meta">
+	                    <CityLink s={s} /> ・{' '}
+	                    {s.priceNTD != null && (
+	                      <span className="price" title={s.priceNotes ?? '全票價僅供參考，不計入排序'}>
+	                        全票 {s.priceNTD} 元 ・{' '}
+	                      </span>
+	                    )}
+	                    {s.priceNTD == null && <span className="price">票價待確認 ・ </span>}
+	                    <a href={s.booking} target="_blank" rel="noreferrer">
+	                      查場次
+	                    </a>
+	                  </p>
+	                  <details className="evidence-fold">
+	                    <summary>規格與依據</summary>
+	                    <dl className="spec-grid">
+	                      <SpecField label="廳型">{hallTypeLabel(s)}</SpecField>
+	                      <SpecField label="投影">{s.projection ?? '未公布'}</SpecField>
+	                      <SpecField
+	                        label="音效"
+	                        className={s.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
+	                      >
+	                        {AUDIO_TIER_LABELS[s.audioTier]}
+	                        {s.audio && `（${s.audio}）`}
+	                      </SpecField>
+	                    </dl>
+	                    <p className="evidence-note">
+	                      查證狀態：銀幕尺寸尚無可核對資料
+	                      {s.notes && ` ・ ${s.notes}`}
+	                    </p>
+	                    {(s.bestRows || s.communityNotes) && (
+	                      <p className="community-line">
+	                        {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
+	                        {s.bestRows && s.communityNotes && ' ・ '}
+	                        {s.communityNotes}
+	                      </p>
+	                    )}
+	                    <SourcesFold sources={s.sources} />
+	                  </details>
+	                </div>
               </article>
                 ))}
               </details>
@@ -1014,7 +1028,9 @@ export default function App() {
           <li>來源優先序：官方（官網／官方文件）＞ 2025 後媒體 ＞ 論壇整理與實測；每筆資料附來源，點各卡片「資料來源與查證」可見。</li>
           <li>查證原則：尺寸經官方公布或丈量才標已驗證；查不到的音效標「音效未查證」、不硬填；來源衝突並列各說法不隱藏。</li>
           <li>票價為平日 2D 全票參考值（含查價時點），不計入任何排序。</li>
-          <li>音效層級與綜合評比分值為本站預設（見排序說明），非實測音質。</li>
+	          <li id="score-method">
+	            評分方式：綜合評比由格式能力、認證、沉浸音效、投影、目前範圍內的成像面積比例與本片版本逐項加總；未知資料標「待確認」且不視為較差，相關能力不重複計分，口碑分尚未接入。各卡展開「規格與依據」可看實際加分與來源；分數是本站透明的決策輔助，不是實測音質。
+	          </li>
         </ul>
       </section>
 
