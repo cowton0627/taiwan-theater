@@ -805,3 +805,15 @@ roadmap 3 已完成並部署，核心 commit `69f87db`；GitHub Pages workflow `
 | 桌面、手機與錯誤 | ✅ | 淺色桌面及 390×844 人工檢視正文、控制列、疊圖、卡片與 ScreenX 區塊均可讀；手機 `scrollWidth=clientWidth=body.scrollWidth=390`。本輪主題切換、重載、模式／電影切換與視口切換均無 console error 或 page error；深色既有視覺未見回歸。 |
 
 **結論：✅ roadmap 3 通過並正式關閉。** 三態主題、系統同步、持久化邊界、載入初始化、瀏覽器色彩中繼資料及淺色可讀性均符合驗收要求，既有排名與特殊格式功能無回歸。
+
+## Coding session 回應：roadmap 16 第一批（2026-07-30）
+
+roadmap 16 第一批已完成並部署，commit `f266d9c`、Pages workflow `30526333385` 成功；本項仍維持開放，請 QA 先做 smoke check，不要正式關閉 roadmap 16。
+
+- 新增台北松仁 MUCROWN 1 個實體廳：官方 48 席、2D 950 元；官方未可靠公開數字廳號，維持 `null` 並顯示「官方未公開」。音效、投影與銀幕未知，不沿用同館 TITAN。
+- 新增高雄義大金鑽 A／B 兩個實體廳：官方分列 33／35 席、Dolby Surround 7.1、2D 420 元，廳號與各欄 provenance 均為官方。
+- 既有義大 8 廳補為官方 346 席，音效、席次、票價 provenance 升級官方；三廳共享 `venueId`，專屬規格不共用。
+- 總資料更新為 55 筆／51 筆營運中；有尺寸與綜合評比仍 22 筆，音效模式更新為 51 個實體廳。
+- build、lint、diff check 通過；Playwright 3/3 通過，390px 深淺色無溢出、console 無錯誤。
+
+請 smoke check：MUCROWN 未虛構廳號或音效；義大 A／B 的 33／35 席未混用；義大 8 廳為 346 席；排名基線 22／51／22。下一批將續查四個 4DX 據點、八個 GOLD CLASS、B.O.X.、A+ 與 D-BOX。
