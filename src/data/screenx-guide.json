@@ -1,0 +1,262 @@
+[
+  {
+    "id": "showtime-dome-screenx-10",
+    "name": "台北大巨蛋秀泰 ScreenX 10 廳",
+    "chain": "秀泰影城",
+    "region": "north",
+    "city": "台北市",
+    "address": "台北市信義區光復南路105號2樓",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "priceNTD": 520,
+    "priceNotes": "大巨蛋 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 11×6m", "evidence": "community" },
+    "totalWidth": { "evidence": "unknown" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "社群實測指出側幕受出入口與逃生門切割；主銀幕尺寸為實測約值。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：10 廳主銀幕約 11×6m；逃生門造成側幕缺口，音效表現為個人觀感"
+      },
+      {
+        "label": "大巨蛋秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/91/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-dome-screenx-2",
+    "name": "台北大巨蛋秀泰 ScreenX 2 廳",
+    "chain": "秀泰影城",
+    "region": "north",
+    "city": "台北市",
+    "address": "台北市信義區光復南路105號2樓",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "priceNTD": 520,
+    "priceNotes": "大巨蛋 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "evidence": "unknown" },
+    "totalWidth": { "evidence": "unknown" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "社群實測指出主銀幕亮度足，但側幕仍受逃生門影響；沒有可靠尺寸值。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：2 廳側幕完整度與影音為個人觀感；未提供可靠尺寸"
+      },
+      {
+        "label": "大巨蛋秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/91/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-xinxin-screenx-1",
+    "name": "台北欣欣秀泰 ScreenX 1 廳",
+    "chain": "秀泰影城",
+    "region": "north",
+    "city": "台北市",
+    "address": "台北市中山區林森北路247號",
+    "booking": "https://www.showtimes.com.tw/cinemas/2/",
+    "priceNTD": 430,
+    "priceNotes": "2025-10 ScreenX 全票參考值",
+    "bestRows": "13–15 排置中",
+    "mainScreen": { "value": "約 16.45×7m", "evidence": "community" },
+    "totalWidth": { "value": "約 54m", "evidence": "community" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "主銀幕寬為社群依畫面反推值；三面總寬不可當成正面銀幕寬。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：高約 7m、三面總寬約 54m、主銀幕反推約 16.45m"
+      },
+      {
+        "label": "欣欣秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/2/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-shulin-screenx-1",
+    "name": "樹林秀泰 ScreenX 巨幕 1 廳",
+    "chain": "秀泰影城",
+    "region": "north",
+    "city": "新北市",
+    "address": "新北市樹林區樹新路40-6號",
+    "booking": "https://www.showtimes.com.tw/cinemas/54/",
+    "priceNTD": 450,
+    "priceNotes": "2025-10 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "totalWidth": { "value": "約 72m", "evidence": "community" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "value": "Christie Vive Audio", "evidence": "media" },
+    "notes": "尺寸為社群實測約值；三面總寬不可當成正面銀幕寬。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 22×12m、三面總寬約 72m"
+      },
+      {
+        "label": "MovieGo：樹林秀泰",
+        "url": "https://moviego.funorange.com.tw/theater/112",
+        "note": "媒體整理：ScreenX 270° 三面投影、Christie Vive Audio"
+      }
+    ]
+  },
+  {
+    "id": "showtime-taichung-station-screenx-1",
+    "name": "台中站前秀泰 ScreenX 巨幕 1 廳",
+    "chain": "秀泰影城",
+    "region": "central",
+    "city": "台中市",
+    "address": "台中市東區南京路76號",
+    "booking": "https://www.showtimes.com.tw/cinemas/53/",
+    "priceNTD": 460,
+    "priceNotes": "2025-10 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "totalWidth": { "value": "約 66m", "evidence": "community" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "尺寸為社群實測約值；主銀幕亮度與音效描述只作個人觀感。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 22×12m、三面總寬約 66m"
+      },
+      {
+        "label": "站前秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/53/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-taichung-wenxin-screenx-1",
+    "name": "台中文心秀泰 ScreenX 巨幕 1 廳",
+    "chain": "秀泰影城",
+    "region": "central",
+    "city": "台中市",
+    "address": "台中市南屯區文心南路289號7樓",
+    "booking": "https://www.showtimes.com.tw/cinemas/56/",
+    "priceNTD": 460,
+    "priceNotes": "2025-10 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "totalWidth": { "value": "約 66m", "evidence": "media" },
+    "projection": { "value": "4K 雷射", "evidence": "media" },
+    "audio": { "evidence": "unknown" },
+    "notes": "三面總寬與 4K 雷射為媒體開幕資料；主銀幕約值另由社群實測支持。",
+    "sources": [
+      {
+        "label": "食尚玩家：秀泰 ScreenX 開幕",
+        "url": "https://supertaste.tvbs.com.tw/hot/350124",
+        "note": "媒體開幕報導：270°、4K 雷射、三面總寬約 66m、高約 12m"
+      },
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 22×12m、三面總寬約 66m"
+      }
+    ]
+  },
+  {
+    "id": "showtime-chiayi-screenx-1",
+    "name": "嘉義秀泰 ScreenX 巨幕 1 廳",
+    "chain": "秀泰影城",
+    "region": "south",
+    "city": "嘉義市",
+    "address": "嘉義市西區文化路299號",
+    "booking": "https://www.showtimes.com.tw/cinemas/9/",
+    "priceNTD": null,
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "totalWidth": { "value": "約 75m", "evidence": "community" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "尺寸為社群實測約值；票價、投影與聲道待官方資料。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 22×12m、三面總寬約 75m"
+      },
+      {
+        "label": "嘉義秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/9/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-kaohsiung-dreammall-screenx-12",
+    "name": "高雄夢時代秀泰 ScreenX 12 廳",
+    "chain": "秀泰影城",
+    "region": "south",
+    "city": "高雄市",
+    "address": "高雄市前鎮區中華五路789號8樓",
+    "booking": "https://www.showtimes.com.tw/cinemas/87/",
+    "priceNTD": 430,
+    "priceNotes": "2025-10 ScreenX 全票參考值",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 14.8×8m", "evidence": "community" },
+    "totalWidth": { "value": "約 49m", "evidence": "community" },
+    "projection": { "evidence": "unknown" },
+    "audio": { "evidence": "unknown" },
+    "notes": "主銀幕寬為社群反推約值；環繞定位描述為個人觀感，不據此推定聲道規格。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 14.8×8m、三面總寬約 49m"
+      },
+      {
+        "label": "夢時代秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/87/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  },
+  {
+    "id": "showtime-kaohsiung-gangshan-screenx-1",
+    "name": "高雄岡山秀泰 ScreenX 巨幕 1 廳",
+    "chain": "秀泰影城",
+    "region": "south",
+    "city": "高雄市",
+    "address": "高雄市岡山區捷安路1巷2號4樓",
+    "booking": "https://www.showtimes.com.tw/cinemas/84/",
+    "priceNTD": 400,
+    "priceNotes": "巨幕廳全票參考值；ScreenX 場次請以官網為準",
+    "bestRows": "中後段置中",
+    "mainScreen": { "value": "約 20×11m", "evidence": "community" },
+    "totalWidth": { "value": "約 71m", "evidence": "community" },
+    "projection": { "value": "Christie RGB 雷射", "evidence": "community" },
+    "audio": { "value": "Dolby 7.1", "evidence": "community" },
+    "notes": "主銀幕與三面總寬為社群實測；投影、音效沿用本站既有二手資料，仍待官方逐欄確認。",
+    "sources": [
+      {
+        "label": "PTT：全台 ScreenX 逐廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
+        "note": "2026-03 實測：主銀幕約 20×11m、三面總寬約 71m"
+      },
+      {
+        "label": "岡山秀泰官方頁",
+        "url": "https://www.showtimes.com.tw/cinemas/84/",
+        "note": "分店場次與訂票入口"
+      }
+    ]
+  }
+]

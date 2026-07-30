@@ -115,6 +115,44 @@ export interface FilmVersion {
   confidence?: 'official' | 'reported' | 'expected';
 }
 
+export type EvidenceLevel = 'official' | 'media' | 'community' | 'unknown';
+
+export interface SpecialFormatRelease {
+  format: 'SCREENX';
+  market: 'TW';
+  /** 原生協作拍攝或後期轉製；目前只建模已確認的 Shot for ScreenX。 */
+  production: 'shot_for_screenx';
+  /** 官方只確認選定場景，不能推定為全片三面畫面。 */
+  sceneScope: 'selected_scenes';
+  label: string;
+  sources: SourceRef[];
+}
+
+export interface GuideValue {
+  value?: string;
+  evidence: EvidenceLevel;
+}
+
+/** ScreenX 第一階段選擇指南；與正面銀幕排名資料分離，不參與 fit／score。 */
+export interface ScreenXGuideEntry {
+  id: string;
+  name: string;
+  chain: string;
+  region: Region;
+  city: string;
+  address?: string;
+  booking: string;
+  priceNTD?: number | null;
+  priceNotes?: string;
+  bestRows?: string;
+  mainScreen: GuideValue;
+  totalWidth: GuideValue;
+  projection: GuideValue;
+  audio: GuideValue;
+  notes?: string;
+  sources: SourceRef[];
+}
+
 export interface Film {
   id: string;
   title: string;
@@ -129,6 +167,7 @@ export interface Film {
   /** 畫幅／格式補充說明（顯示於片名下方） */
   formatNotes?: string;
   versions: FilmVersion[];
+  specialFormats?: SpecialFormatRelease[];
   sources: SourceRef[];
 }
 

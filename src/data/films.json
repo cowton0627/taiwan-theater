@@ -83,6 +83,32 @@
         "confidence": "reported"
       }
     ],
+    "specialFormats": [
+      {
+        "format": "SCREENX",
+        "market": "TW",
+        "production": "shot_for_screenx",
+        "sceneScope": "selected_scenes",
+        "label": "Shot for SCREENX（選定場景多機直接拍攝）",
+        "sources": [
+          {
+            "label": "Shot for SCREENX 官方製作頁",
+            "url": "https://www.screenx4dx.com/shot-for-screenx-spider-man-jp",
+            "note": "SCREENX 官方專題頁；部分環境可能有反機器人限制"
+          },
+          {
+            "label": "秀泰：Shot for SCREENX 製作說明",
+            "url": "https://ste.kje-event.com.tw/news/ins.php?index_id=272",
+            "note": "秀泰活動頁明示選定場景採多機直接拍攝，並非全片三面畫面"
+          },
+          {
+            "label": "秀泰：《蜘蛛人：重生日》SCREENX 場次活動",
+            "url": "https://www.showtimes.com.tw/programs/12770/",
+            "note": "秀泰官方列出台灣 7/29 SCREENX 版本與各影城票價依據"
+          }
+        ]
+      }
+    ],
     "sources": [
       {
         "label": "PTT：蜘蛛人／復5 無 IMAX 版情報",

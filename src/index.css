@@ -377,6 +377,153 @@ header h1 {
   font-size: 0.92rem;
 }
 
+/* U-17：特殊格式指南獨立於正面銀幕排名，不使用名次／分數視覺。 */
+.screenx-guide {
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid #38536b;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #111d28, var(--panel));
+}
+
+.screenx-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.screenx-head h2,
+.screenx-kicker {
+  margin: 0;
+}
+
+.screenx-kicker {
+  color: #7db9e3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.screenx-no-rank,
+.evidence-level {
+  border: 1px solid #49677e;
+  border-radius: 999px;
+  color: #a9c8dd;
+  font-size: 0.68rem;
+  padding: 0.12rem 0.5rem;
+  white-space: nowrap;
+}
+
+.screenx-intro,
+.screenx-width-note,
+.screenx-scope,
+.screenx-empty {
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.screenx-intro {
+  margin: 0.7rem 0 0.35rem;
+}
+
+.screenx-width-note {
+  margin: 0;
+  color: #f2c779;
+}
+
+.screenx-scope,
+.screenx-empty {
+  color: var(--muted);
+}
+
+.screenx-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.screenx-card {
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: rgba(8, 13, 18, 0.62);
+}
+
+.screenx-card h3,
+.screenx-seat {
+  margin: 0;
+}
+
+.screenx-card .meta {
+  margin: 0.35rem 0;
+}
+
+.screenx-seat {
+  font-size: 0.8rem;
+}
+
+.guide-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0.65rem 0;
+}
+
+.guide-field {
+  min-width: 0;
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.guide-field dt {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.guide-field dd {
+  margin: 0.15rem 0 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.guide-field-unknown dd,
+.evidence-unknown {
+  color: var(--muted);
+}
+
+.evidence-official {
+  color: #9cd4a6;
+  border-color: #426a49;
+}
+
+.evidence-media {
+  color: #b9b5e7;
+  border-color: #5e5985;
+}
+
+.evidence-community {
+  color: #e4bd83;
+  border-color: #735e3d;
+}
+
+@media (max-width: 640px) {
+  .screenx-head {
+    display: block;
+  }
+
+  .screenx-no-rank {
+    display: inline-block;
+    margin-top: 0.45rem;
+  }
+
+  .screenx-grid,
+  .guide-spec-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 「尺寸未公布」灰卡摺疊（U-9） */
 .unsized-fold {
   border: 1px dashed var(--border);

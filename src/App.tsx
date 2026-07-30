@@ -2,14 +2,27 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
+import screenXGuideData from './data/screenx-guide.json';
 import { customVersion, fitFilm, fitImage } from './lib/fit';
 import { scoreScreen } from './lib/score';
 import type { ScoreResult } from './lib/score';
 import { AUDIO_TIER_ORDER, isSized } from './types';
-import type { AudioTier, Film, FitResult, HallCategory, Region, Screen } from './types';
+import type {
+  AudioTier,
+  EvidenceLevel,
+  Film,
+  FitResult,
+  GuideValue,
+  HallCategory,
+  Region,
+  Screen,
+  ScreenXGuideEntry,
+  SpecialFormatRelease,
+} from './types';
 
 const screens = screensData as Screen[];
 const films = filmsData as Film[];
+const screenXGuide = screenXGuideData as ScreenXGuideEntry[];
 
 const REGION_LABELS: Record<Region, string> = {
   north: '北部',
@@ -137,6 +150,117 @@ function SourcesFold({ sources }: { sources: Screen['sources'] }) {
         ))}
       </ul>
     </details>
+  );
+}
+
+const EVIDENCE_LABELS: Record<EvidenceLevel, string> = {
+  official: '官方資料',
+  media: '媒體資料',
+  community: '社群實測',
+  unknown: '待確認',
+};
+
+function GuideField({ label, field }: { label: string; field: GuideValue }) {
+  return (
+    <div className={field.evidence === 'unknown' ? 'guide-field guide-field-unknown' : 'guide-field'}>
+      <dt>{label}</dt>
+      <dd>{field.value ?? '待確認'}</dd>
+      <span className={`evidence-level evidence-${field.evidence}`}>
+        {EVIDENCE_LABELS[field.evidence]}
+      </span>
+    </div>
+  );
+}
+
+function ScreenXGuide({
+  film,
+  release,
+  entries,
+  filtered,
+}: {
+  film: Film;
+  release: SpecialFormatRelease;
+  entries: ScreenXGuideEntry[];
+  filtered: boolean;
+}) {
+  return (
+    <section className="screenx-guide" aria-labelledby="screenx-guide-title">
+      <div className="screenx-head">
+        <div>
+          <p className="screenx-kicker">本片特殊格式推薦</p>
+          <h2 id="screenx-guide-title">ScreenX 選擇指南</h2>
+        </div>
+        <span className="screenx-no-rank">獨立指南・不排名／不計分</span>
+      </div>
+      <p className="screenx-intro">
+        《{film.title}》已確認為 Shot for SCREENX；官方只確認<strong>選定場景</strong>
+        以多機直接拍攝，不代表全片都有三面畫面。推薦依據是本片的 ScreenX 專屬製作，
+        不是正面銀幕面積。
+      </p>
+      <p className="screenx-width-note">
+        三面總寬＝主銀幕＋兩側延伸畫面，不能當成主銀幕寬，也不會代入本站正面成像面積。
+      </p>
+      <SourcesFold sources={release.sources} />
+
+      {entries.length === 0 ? (
+        <p className="screenx-empty">
+          目前的地區／城市／品牌篩選下沒有 ScreenX 據點，指南仍不會用其他廳型代替。
+        </p>
+      ) : (
+        <>
+          <p className="screenx-scope">
+            {entries.length} 個據點{filtered ? '（目前篩選範圍）' : '（全台）'}；未查證欄位保留
+            「待確認」，不自行推定。
+          </p>
+          <div className="screenx-grid">
+            {entries.map((entry) => (
+              <article className="screenx-card" key={entry.id}>
+                <h3>{entry.name}</h3>
+                <p className="meta">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      entry.address ?? entry.name,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={entry.address}
+                  >
+                    {entry.city} 📍
+                  </a>{' '}
+                  ・{' '}
+                  {entry.priceNTD != null ? (
+                    <span className="price" title={entry.priceNotes}>
+                      全票 {entry.priceNTD} 元
+                    </span>
+                  ) : (
+                    <span className="price">票價待確認</span>
+                  )}{' '}
+                  ・{' '}
+                  <a href={entry.booking} target="_blank" rel="noreferrer">
+                    查場次
+                  </a>
+                </p>
+                <p className="screenx-seat">
+                  <strong>💺 建議座位：</strong>
+                  {entry.bestRows ?? '待確認'}
+                </p>
+                <details className="evidence-fold">
+                  <summary>規格與依據</summary>
+                  <dl className="guide-spec-grid">
+                    <GuideField label="主銀幕" field={entry.mainScreen} />
+                    <GuideField label="三面總寬" field={entry.totalWidth} />
+                    <GuideField label="投影" field={entry.projection} />
+                    <GuideField label="音效" field={entry.audio} />
+                  </dl>
+                  {entry.notes && <p className="evidence-note">{entry.notes}</p>}
+                  <SourcesFold sources={entry.sources} />
+                </details>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+    </section>
   );
 }
 
@@ -491,6 +615,9 @@ export default function App() {
   }, [filmId, customRatio, regions, chains, sortMode, cities, selected]);
 
   const film = films.find((f) => f.id === filmId) ?? null;
+  const screenXRelease =
+    film?.specialFormats?.find((release) => release.format === 'SCREENX' && release.market === 'TW') ??
+    null;
 
   /** 已選地區內的城市選項（依地理位置北→南排序）；未選地區時不展開城市層 */
   const cityOptions = useMemo(() => {
@@ -523,6 +650,19 @@ export default function App() {
             chains.has(chainKey(s.chain)) ||
             (chains.has(OTHER_CHAINS) && MINOR_CHAINS.has(chainKey(s.chain))),
         ),
+    [regions, chains, activeCities],
+  );
+
+  const screenXEntries = useMemo(
+    () =>
+      screenXGuide.filter(
+        (entry) =>
+          (regions.size === 0 || regions.has(entry.region)) &&
+          (activeCities.size === 0 || activeCities.has(entry.city)) &&
+          (chains.size === 0 ||
+            chains.has(chainKey(entry.chain)) ||
+            (chains.has(OTHER_CHAINS) && MINOR_CHAINS.has(chainKey(entry.chain)))),
+      ),
     [regions, chains, activeCities],
   );
 
@@ -898,6 +1038,15 @@ export default function App() {
       </section>
 
       {insight && <p className="insight">{insight}</p>}
+
+      {film && screenXRelease && (
+        <ScreenXGuide
+          film={film}
+          release={screenXRelease}
+          entries={screenXEntries}
+          filtered={regions.size > 0 || chains.size > 0 || activeCities.size > 0}
+        />
+      )}
 
       <OverlayCompare
         fits={fits}
