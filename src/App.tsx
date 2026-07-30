@@ -825,9 +825,9 @@ export default function App() {
           <div className="control-note">
 	            <p className="sort-basis">
 	              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
-	              +0.5 ・ 沉浸音效 +1 ・ 雷射投影 +1（雙機／RGB 再 +0.5）・
+	              +0.5 ・ 已查證沉浸音效 +1 ・ 雷射投影 +1（雙機或 RGB 再 +0.5，不重複累加）・
 	              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
-	              未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。{' '}
+	              認證／授權分與沉浸音效能力分分開計算；未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。{' '}
 	              <a href="#score-method">查看完整評分方式</a>
 	            </p>
           </div>
@@ -1126,7 +1126,16 @@ export default function App() {
           <li>查證原則：尺寸經官方公布或丈量才標已驗證；查不到的音效標「音效未查證」、不硬填；來源衝突並列各說法不隱藏。</li>
           <li>票價為平日 2D 全票參考值（含查價時點），不計入任何排序。</li>
 	          <li id="score-method">
-	            評分方式：綜合評比由格式能力、認證、沉浸音效、投影、目前範圍內的成像面積比例與本片版本逐項加總；未知資料標「待確認」且不視為較差，相關能力不重複計分，口碑分尚未接入。各卡展開「規格與依據」可看實際加分與來源；分數是本站透明的決策輔助，不是實測音質。
+	            沉浸音效 +1：限已查證的 Dolby Atmos、IMAX 12 聲道，或其他具有高度／頭頂聲道或物件式三維定位的系統；IMAX 5 聲道、5.1、7.1 不計。Dolby Cinema 的認證 +1、DVA 的授權 +0.5，皆與其 Atmos 沉浸音效能力 +1 分開計算。
+	          </li>
+	          <li>
+	            投影：雷射 +1；已查證為雙機或 RGB 雷射者再 +0.5，此進階加成不重複累加。LED 放映維持 +1；其他投影規格不加分。未查證項目顯示「待確認」，不視為設備較差也不默認加分。
+	          </li>
+	          <li>
+	            其他分項：可放映 1.43 +1、目前範圍內成像面積比例 0–2、本片最大畫幅版 +1（已得 1.43 能力者不重複）。口碑分尚未接入。各卡展開「規格與依據」可看總分的逐項加總與來源；本站分數是透明的決策輔助，不是實測音質。定義依據：{' '}
+	            <a href="https://www.imax.com/news/imax-launches-next-generation-imax-laser-experience-enhance-blockbuster-moviegoing-amc" target="_blank" rel="noreferrer">IMAX 12 聲道官方說明</a>
+	            {' '}・{' '}
+	            <a href="https://professional.dolby.com/cinema/dolby-atmos/" target="_blank" rel="noreferrer">Dolby Atmos 官方說明</a>
 	          </li>
         </ul>
       </section>
