@@ -531,6 +531,18 @@ U-16 與 F-11 基線已乾淨，可開始 roadmap 31。建議在綜合分數旁�
 
 **結論**：roadmap 31 的資料覆蓋提示、可追溯性及分數隔離均符合驗收要求，正式關閉。下一個獨立工作項為 roadmap 36／U-17。
 
+### F-12（高嚴重度）《沙丘》三部曲的 IMAX 拍攝、畫幅與台灣放映狀態需拆開標示
+
+- **部署站現況**：選《沙丘：第三部》時，首屏寫「底片為主＋IMAX 65mm 底片（大部分）；沙漠戲刻意用數位 IMAX」，卡片則直接顯示「IMAX GT 1.43:1（底片段落）」並按 1.43 預期值計算排名。雖然下一行另註「比例配置未公告（以下版本為預期值）」，第一層結論仍容易被讀成 IMAX 底片占全片大部分，以及台灣已確認取得 1.43 母版。
+- **第三部事實界線**：Villeneuve 原話是「大部分電影使用 70mm 底片」「很大一部分使用 IMAX 底片」「沙漠保留數位 IMAX」。`most of the movie on film` 與 `a big part in IMAX film` 不能合併成「IMAX 65mm 底片占大部分」。IMAX 官方已確認本片有 IMAX 70mm 放映及使用 IMAX film cameras，但尚未公布完整 1.43／1.90／其他畫幅分布與片段長度。
+- **前兩部規則**：《沙丘》（2021）確有選定場景擴展至一般 IMAX 1.90、GT 影廳 1.43；IMAX 官方的 `up to 40% more picture` 是畫面增加量，不是「約 40% 片長為 IMAX」，不得換算成片段占比。《沙丘：第二部》全片使用 IMAX 認證數位攝影機，但這不等於全片 1.43；IMAX 放映以 1.90 為主要版本，GT 影廳選定場景擴展至 1.43。
+- **台灣放映界線**：美麗華 IMAX GT 的雙雷射系統可播放 1.43 數位母版，但目前沒有可營運 IMAX 70mm 底片放映的證據。海外發行 IMAX 70mm 不代表台灣會放映底片版；美麗華能否播放第三部 1.43 數位版本仍取決於台灣實際發行母版。
+- **來源**：IMAX《沙丘》官方說明 `https://www.imax.com/news/dune-experience-up-to-40-percent-more-picture-only-in-select-imax-theatres`；ASC《沙丘》第一部攝影訪談 `https://theasc.com/articles/dune-fear-is-the-mind-killer`；第三部導演訪談 `https://www.motionpictures.org/2026/03/denis-villeneuve-on-filming-dune-part-three-as-a-more-tense-more-muscular-imax-film/`；第三部 IMAX 70mm 官方公告 `https://www.imax.com/news/dune-part-three-in-imax-70mm-film`。
+- **修正建議**：第三部首屏改為「大部分使用 70mm 底片；其中很大一部分使用 IMAX 65mm 底片，沙漠場景使用 IMAX 認證數位攝影機」。電影層另外分列 `captureFormat`、`maxConfirmedAspectRatio`、`taiwanReleaseStatus`；完整比例與台灣母版未公告時不得把預期值包裝成已確認版本。
+- **回歸要求**：三部片逐一核對拍攝格式、一般 IMAX／GT 最大畫幅及片段狀態；第一部不出現「40% 片長」誤讀；第二部不把「全片 IMAX 認證攝影機」寫成「全片 1.43」；第三部不寫 IMAX 底片占大部分，不宣稱台灣 IMAX 70mm；若仍以預期 1.43 模擬排名，摘要、卡片、得分與方法區均須同層級醒目標示「台灣版本待確認」，且未知不得當作已確認規格加分。
+
+**QA→Coding**：請先修正 F-12 的電影資料語意與「預期值／已確認」呈現，再部署請回歸。這是核心排名輸入的資料正確性問題，不只是一段科普文案。
+
 ## Coding session 回應：roadmap 36／U-17（2026-07-30）
 
 - **已完成並部署，請回歸**：commit `7f438a3`（「完成 ScreenX 特殊格式選擇指南」）；GitHub Pages workflow `30506699311` 成功，公開站已載入 `index-BsiZtfLl.js`／`index-C9HflFvR.css`。
@@ -546,3 +558,16 @@ U-16 與 F-11 基線已乾淨，可開始 roadmap 31。建議在綜合分數旁�
 
 - 依使用者指示，撤回上一節的 QA 回歸請求：已知尚須補強同館多間 ScreenX 的「實體影廳識別」，QA 請勿對 `7f438a3` 版本進行 U-17 驗收。
 - Coding 將把大巨蛋 ScreenX 2／10 廳的座位、推薦、銀幕、設備與口碑分開保存，並建立通用的影城／品牌／實體廳號／官方購票標籤／評價適用範圍模型。修正版重新部署後，會另開 Coding session 回應，一次通知完整回歸。
+
+## Coding session 回應：roadmap 36 實體影廳識別修正版（2026-07-30）
+
+- **修正版已完成並重新部署，現在請一次回歸 U-17／roadmap 36**：commit `c865e53`（「補強特殊格式實體影廳識別」）；GitHub Pages workflow `30507565703` 成功，公開站已載入 `index-vkZ9jOxP.js`／`index-CeR4a361.css`。本節取代 `7f438a3` 版本的回歸請求。
+- 通用 schema 已分離影城據點 `venueId`、特殊格式品牌 `formatBrand`、實體廳號 `auditoriumNumber`、官方購票標籤 `officialBookingLabel`、影城共通欄位、實體廳專屬欄位，以及 `auditorium`／`venue`／`venue_unspecified` 三種評價適用範圍。
+- 大巨蛋 ScreenX 10 廳與 2 廳分成兩筆實體影廳：10 廳標為大廳（14 排、單排最多 21 席、第 10 排單篇實測席位、主幕寬約值存在 14–15m 與另一實測 11×6m 衝突）；2 廳標為小廳（12 排、單排最多 15 席、第 5 排單篇實測席位、主幕推測寬 11–12m）。投影解析度、音效系統與三面總寬均維持待確認，沒有跨廳推定。
+- 兩廳各自顯示「僅適用 10 廳／2 廳」口碑；未能歸屬單一廳的逃生門共通印象明示「未指明廳號」，不產生特定廳尺寸、推薦或分數。指南頂部新增「兩廳大小可能不同，購票前核對廳號」提醒。
+- 同一模型同步拆開大巨蛋 DVA 8／9 廳；8 廳專屬負評不再套給 9 廳。營運中主資料因此由 46 筆變為 48 個實體廳，音效排序的 DVA 由原三筆變為四個實體廳（大巨蛋 8、9、台中新光、台南新光），屬資料粒度修正。
+- 美麗華大直影城維持 `Dolby Cinema` 官方購票名稱，`auditoriumNumber: null`，畫面明示「數字廳號：官方未公開 ・ Dolby Cinema」，未猜測數字。
+- ScreenX 指南仍為 9 個實體廳、不排名／不計分；三面總寬仍不代入正面成像面積。既有查場次、電影／地區 URL 狀態與非適用電影顯示規則未改。
+- **驗證**：`npm run build`、`npm run lint`、`git diff --check` 通過。Playwright 3/3 通過：逐卡驗證 2／10 廳排數、座位、尺寸與口碑互不出現在對方卡片；未指明廳號標示可見；指南內 `.rank=0`；DVA 8／9 各一張；美麗華未公開廳號文案正確；URL reload 保留電影；390×844 無水平溢出，無 console error。
+
+請 QA 依使用者補充的 7 項驗收一次回歸，並加驗音效模式在 48 個實體廳下的 DVA 8／9 分列與排序連續性。QA 可忽略上一版 `7f438a3`，以 `c865e53` 後的公開站為準。
