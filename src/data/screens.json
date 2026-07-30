@@ -651,6 +651,7 @@
     "id": "vieshow-tainan-imax",
     "name": "台南南紡威秀 IMAX 廳",
     "chain": "威秀影城",
+    "venueId": "vieshow-tainan-nanfang",
     "hallCategory": "IMAX",
     "widthM": 21.8,
     "heightM": 12.2,
@@ -750,6 +751,7 @@
     "id": "vieshow-kaohsiung-fe-imax",
     "name": "高雄大遠百威秀 IMAX 廳",
     "chain": "威秀影城",
+    "venueId": "vieshow-kaohsiung-fe",
     "hallCategory": "IMAX",
     "widthM": 15.9,
     "heightM": 8.2,
@@ -2919,6 +2921,7 @@
     "id": "muvie-tigercity-titan",
     "name": "台中 MUVIE TIGER CITY TITAN 廳",
     "chain": "威秀影城（MUVIE）",
+    "venueId": "vieshow-muvie-taichung-tigercity",
     "hallCategory": "PREMIUM",
     "widthM": 15.4,
     "heightM": null,
@@ -4296,6 +4299,922 @@
       "auditoriumNumber": {
         "level": "official",
         "note": "國賓官網明列 B 廳"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-hsinchu-fe-goldclass-1",
+    "name": "新竹大遠百威秀 GOLD CLASS 1 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-hsinchu-fe",
+    "city": "新竹市",
+    "region": "north",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
+    "address": "新竹市東區西大路323號8樓（新竹大遠百）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC1",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 52,
+    "seatsNotes": "威秀官方席次表：GC1 52 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC1 52 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC1 52 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC1"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-hsinchu-fe-goldclass-2",
+    "name": "新竹大遠百威秀 GOLD CLASS 2 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-hsinchu-fe",
+    "city": "新竹市",
+    "region": "north",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=7",
+    "address": "新竹市東區西大路323號8樓（新竹大遠百）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC2",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 35,
+    "seatsNotes": "威秀官方席次表：GC2 35 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC2 35 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC2 35 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC2"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "muvie-tigercity-goldclass-1",
+    "name": "台中 MUVIE TIGER CITY GOLD CLASS 1 廳",
+    "chain": "威秀影城（MUVIE）",
+    "venueId": "vieshow-muvie-taichung-tigercity",
+    "city": "台中市",
+    "region": "central",
+    "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
+    "address": "台中市西屯區河南路三段120-1號4樓（TIGER CITY）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC1",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 31,
+    "seatsNotes": "威秀官方席次表：GC1 31 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC1 31 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC1 31 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC1"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "muvie-tigercity-goldclass-2",
+    "name": "台中 MUVIE TIGER CITY GOLD CLASS 2 廳",
+    "chain": "威秀影城（MUVIE）",
+    "venueId": "vieshow-muvie-taichung-tigercity",
+    "city": "台中市",
+    "region": "central",
+    "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=12",
+    "address": "台中市西屯區河南路三段120-1號4樓（TIGER CITY）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC2",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 41,
+    "seatsNotes": "威秀官方席次表：GC2 41 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC2 41 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC2 41 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC2"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-tainan-nanfang-goldclass-1",
+    "name": "台南南紡威秀 GOLD CLASS 1 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-tainan-nanfang",
+    "city": "台南市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+    "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC1",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 40,
+    "seatsNotes": "威秀官方席次表：GC1 40 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC1 40 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC1 40 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC1"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-tainan-nanfang-goldclass-2",
+    "name": "台南南紡威秀 GOLD CLASS 2 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-tainan-nanfang",
+    "city": "台南市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=16",
+    "address": "台南市東區中華東路一段366號5樓（南紡購物中心 A1）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC2",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 40,
+    "seatsNotes": "威秀官方席次表：GC2 40 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC2 40 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC2 40 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC2"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-kaohsiung-fe-goldclass-1",
+    "name": "高雄大遠百威秀 GOLD CLASS 1 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-kaohsiung-fe",
+    "city": "高雄市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+    "address": "高雄市苓雅區三多四路21號13樓（高雄大遠百）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC1",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 32,
+    "seatsNotes": "威秀官方席次表：GC1 32 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC1 32 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC1 32 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC1"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-kaohsiung-fe-goldclass-2",
+    "name": "高雄大遠百威秀 GOLD CLASS 2 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-kaohsiung-fe",
+    "city": "高雄市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+    "address": "高雄市苓雅區三多四路21號13樓（高雄大遠百）",
+    "formatBrand": "GOLD CLASS",
+    "auditoriumNumber": "GC2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "GC2",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "GOLD CLASS",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 30,
+    "seatsNotes": "威秀官方席次表：GC2 30 席",
+    "priceNTD": 650,
+    "priceNotes": "威秀官方 2026 團劃資料：GOLD CLASS 2D 全票 650 元；3D 750 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方頂級影廳資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "GOLD CLASS 實體廳與席次：GC2 30 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "現行 GOLD CLASS 據點與票價"
+      },
+      {
+        "label": "威秀 GOLD CLASS 官方頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=3",
+        "note": "現行映演品牌與據點"
+      }
+    ],
+    "notes": "頂級座椅與餐飲服務；銀幕、投影、音效尚待逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：GC2 30 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：2D 650 元、3D 750 元"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "威秀官方席次表明列 GC2"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-taipei-xinyi-4dx",
+    "name": "台北信義威秀 4DX 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-taipei-xinyi",
+    "city": "台北市",
+    "region": "north",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=1",
+    "address": "台北市信義區松壽路20號",
+    "formatBrand": "4DX",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "4DX",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "4DX",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": null,
+    "seatsNotes": "現行官方資料未能可靠對應單廳席次",
+    "priceNTD": 570,
+    "priceNotes": "威秀官方 2026 團劃資料：4DX 2D 全票 570 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀 4DX 官方據點頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=1",
+        "note": "2026 現行四個 4DX 據點之一"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "4DX 2D 全票 570 元；新竹大遠百已不在現行據點"
+      }
+    ],
+    "notes": "動感座椅與環境特效，不代表額外畫面；廳號、席次、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "現行官方資料未能可靠對應單廳席次"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：4DX 2D 全票 570 元"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方購票標籤為 4DX，未取得可靠數字廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-linkou-mitsui-4dx",
+    "name": "林口 MITSUI OUTLET PARK 威秀 4DX 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-linkou-mitsui",
+    "city": "新北市",
+    "region": "north",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=13",
+    "address": "新北市林口區文化三路一段356號3樓（MITSUI OUTLET PARK）",
+    "formatBrand": "4DX",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "4DX",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "4DX",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": null,
+    "seatsNotes": "現行官方資料未能可靠對應單廳席次",
+    "priceNTD": 540,
+    "priceNotes": "威秀官方 2026 團劃資料：4DX 2D 全票 540 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀 4DX 官方據點頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=1",
+        "note": "2026 現行四個 4DX 據點之一"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "4DX 2D 全票 540 元；新竹大遠百已不在現行據點"
+      }
+    ],
+    "notes": "動感座椅與環境特效，不代表額外畫面；廳號、席次、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "現行官方資料未能可靠對應單廳席次"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：4DX 2D 全票 540 元"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方購票標籤為 4DX，未取得可靠數字廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-tainan-fe-4dx",
+    "name": "台南大遠百威秀 4DX 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-tainan-fe",
+    "city": "台南市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=14",
+    "address": "台南市中西區公園路60號5樓（台南大遠百）",
+    "formatBrand": "4DX",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "4DX",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "4DX",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": null,
+    "seatsNotes": "現行官方資料未能可靠對應單廳席次",
+    "priceNTD": 520,
+    "priceNotes": "威秀官方 2026 團劃資料：4DX 2D 全票 520 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀 4DX 官方據點頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=1",
+        "note": "2026 現行四個 4DX 據點之一"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "4DX 2D 全票 520 元；新竹大遠百已不在現行據點"
+      }
+    ],
+    "notes": "動感座椅與環境特效，不代表額外畫面；廳號、席次、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "現行官方資料未能可靠對應單廳席次"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：4DX 2D 全票 520 元"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方購票標籤為 4DX，未取得可靠數字廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "vieshow-kaohsiung-fe-4dx",
+    "name": "高雄大遠百威秀 4DX 廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-kaohsiung-fe",
+    "city": "高雄市",
+    "region": "south",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=18",
+    "address": "高雄市苓雅區三多四路21號13樓（高雄大遠百）",
+    "formatBrand": "4DX",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "4DX",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "4DX",
+    "status": "operating",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": null,
+    "seatsNotes": "現行官方資料未能可靠對應單廳席次",
+    "priceNTD": 540,
+    "priceNotes": "威秀官方 2026 團劃資料：4DX 2D 全票 540 元",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀 4DX 官方據點頁",
+        "url": "https://www.vscinemas.com.tw/brand/index.aspx?A=1",
+        "note": "2026 現行四個 4DX 據點之一"
+      },
+      {
+        "label": "威秀官方 2026 團劃資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "4DX 2D 全票 540 元；新竹大遠百已不在現行據點"
+      }
+    ],
+    "notes": "動感座椅與環境特效，不代表額外畫面；廳號、席次、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館其他影廳推定"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "現行官方資料未能可靠對應單廳席次"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026：4DX 2D 全票 540 元"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方購票標籤為 4DX，未取得可靠數字廳號"
       },
       "bestRows": {
         "level": "unknown",
