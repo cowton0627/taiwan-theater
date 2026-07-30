@@ -953,6 +953,7 @@
     "id": "muvie-titan",
     "name": "台北松仁 MUVIE CINEMAS TITAN 廳",
     "chain": "威秀影城（MUVIE）",
+    "venueId": "vieshow-muvie-taipei-songren",
     "hallCategory": "PREMIUM",
     "widthM": 22,
     "heightM": 12,
@@ -1188,6 +1189,7 @@
     "id": "ambassador-eda-8",
     "name": "高雄義大國賓 8 廳",
     "chain": "國賓影城",
+    "venueId": "ambassador-kaohsiung-eda",
     "hallCategory": "PREMIUM",
     "widthM": 20,
     "heightM": 8,
@@ -1196,7 +1198,7 @@
     "city": "高雄市",
     "audioTier": "SURROUND_7_1",
     "audio": "Dolby 7.1",
-    "seats": null,
+    "seats": 346,
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c",
     "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
     "verified": false,
@@ -1213,7 +1215,7 @@
       }
     ],
     "brandLabel": "巨幕廳",
-    "seatsNotes": "全店 10 廳 1,764 席；8 廳單廳席數未查得",
+    "seatsNotes": "官方影城介紹：8 廳 346 席，含 4 席無障礙座位",
     "priceNTD": 290,
     "priceNotes": "巨幕與一般廳同價、無加價；3D +60（官網 2026-07）",
     "notes": "義大世界；另有金鑽貴賓廳 ×2",
@@ -1227,16 +1229,16 @@
         "note": "投影規格尚未取得"
       },
       "audio": {
-        "level": "secondary_consensus",
-        "note": "既有來源支持，尚待逐欄升級官方引用"
+        "level": "official",
+        "note": "國賓官網：全院 Dolby Surround 7.1"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "國賓官網：8 廳 346 席，含 4 席無障礙座位"
       },
       "price": {
-        "level": "secondary_consensus",
-        "note": "巨幕與一般廳同價、無加價；3D +60（官網 2026-07）"
+        "level": "official",
+        "note": "國賓官網：巨幕與一般廳同價、3D 加價 60 元（2026-07）"
       },
       "auditoriumNumber": {
         "level": "unknown",
@@ -4093,6 +4095,215 @@
       "communityNotes": {
         "level": "unknown",
         "note": "尚無策展口碑"
+      }
+    }
+  },
+  {
+    "id": "muvie-songren-mucrown",
+    "name": "台北松仁 MUVIE CINEMAS MUCROWN 廳",
+    "chain": "威秀影城（MUVIE）",
+    "venueId": "vieshow-muvie-taipei-songren",
+    "formatBrand": "MUCROWN",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "MUCROWN",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "MUCROWN",
+    "status": "operating",
+    "region": "north",
+    "city": "台北市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 48,
+    "seatsNotes": "威秀官方 2025 影城廣告資料：MUCROWN 1 廳、總座位數 48",
+    "priceNTD": 950,
+    "priceNotes": "威秀官方 2026 團劃資料：MUCROWN 2D 全票 950 元；3D 1,050 元",
+    "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
+    "address": "台北市信義區松仁路58號10樓（遠百信義 A13）",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方 2025 影城廣告資料",
+        "url": "https://www.vscinemas.com.tw/upload/advertisingagency/advertisingagency_20251202001.pdf",
+        "note": "台北松仁 MUCROWN 共 1 廳、48 席"
+      },
+      {
+        "label": "威秀官方 2026 團劃與票價資料",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260528001.pdf",
+        "note": "MUCROWN 現行票價與營運品牌；未可靠公開數字廳號"
+      }
+    ],
+    "notes": "約會／餐飲導向的頂級影廳；銀幕、投影、音效與數字廳號尚待官方逐欄查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效規格尚未取得，不由同館 TITAN 推定"
+      },
+      "seats": {
+        "level": "official",
+        "note": "威秀官方：1 廳共 48 席"
+      },
+      "price": {
+        "level": "official",
+        "note": "威秀官方 2026 團劃資料：2D 950 元、3D 1,050 元"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方購票品牌為 MUCROWN，未取得可靠數字廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "ambassador-eda-diamond-a",
+    "name": "高雄義大國賓 A 廳（金鑽貴賓廳）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-kaohsiung-eda",
+    "formatBrand": "金鑽貴賓廳",
+    "auditoriumNumber": "A",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "A 廳（金鑽貴賓廳）",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "金鑽貴賓廳",
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1",
+    "seats": 33,
+    "seatsNotes": "國賓官網：33 席，含 1 席無障礙座位",
+    "priceNTD": 420,
+    "priceNotes": "國賓官網 2026：金鑽貴賓廳數位 2D 全票 420 元；3D 480 元",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c",
+    "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
+    "verified": false,
+    "sources": [
+      {
+        "label": "國賓官網：高雄義大影城介紹",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a4",
+        "note": "A 廳為金鑽貴賓廳，33 席；全院 Dolby Surround 7.1，並列現行票價"
+      }
+    ],
+    "notes": "可調式沙發皮椅；銀幕與投影規格尚未公布",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "official",
+        "note": "國賓官網：全院 Dolby Surround 7.1"
+      },
+      "seats": {
+        "level": "official",
+        "note": "國賓官網：33 席，含 1 席無障礙座位"
+      },
+      "price": {
+        "level": "official",
+        "note": "國賓官網 2026 現行票價"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "國賓官網明列 A 廳"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
+      }
+    }
+  },
+  {
+    "id": "ambassador-eda-diamond-b",
+    "name": "高雄義大國賓 B 廳（金鑽貴賓廳）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-kaohsiung-eda",
+    "formatBrand": "金鑽貴賓廳",
+    "auditoriumNumber": "B",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "B 廳（金鑽貴賓廳）",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "金鑽貴賓廳",
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1",
+    "seats": 35,
+    "seatsNotes": "國賓官網：35 席，含 1 席無障礙座位",
+    "priceNTD": 420,
+    "priceNotes": "國賓官網 2026：金鑽貴賓廳數位 2D 全票 420 元；3D 480 元",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=ec07626b-b382-474e-be39-ad45eac5cd1c",
+    "address": "高雄市大樹區學城路一段12號3樓（義大世界）",
+    "verified": false,
+    "sources": [
+      {
+        "label": "國賓官網：高雄義大影城介紹",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a4",
+        "note": "B 廳為金鑽貴賓廳，35 席；全院 Dolby Surround 7.1，並列現行票價"
+      }
+    ],
+    "notes": "可調式沙發皮椅；銀幕與投影規格尚未公布",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "official",
+        "note": "國賓官網：全院 Dolby Surround 7.1"
+      },
+      "seats": {
+        "level": "official",
+        "note": "國賓官網：35 席，含 1 席無障礙座位"
+      },
+      "price": {
+        "level": "official",
+        "note": "國賓官網 2026 現行票價"
+      },
+      "auditoriumNumber": {
+        "level": "official",
+        "note": "國賓官網明列 B 廳"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無達證據門檻的策展口碑"
       }
     }
   }

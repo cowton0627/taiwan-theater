@@ -1511,7 +1511,7 @@ export default function App() {
       <section className="method" id="method">
         <h2 className="region-title">資料來源與方法</h2>
         <ul className="method-list">
-          <li>收錄準則：只收商業影廳的特殊廳（IMAX／杜比影院／DVA／LUXE／巨幕／ScreenX／代表性 Atmos 廳）；歇業廳保留紀錄不顯示。</li>
+          <li>收錄準則：只收商業影廳的特殊廳（IMAX／杜比影院／DVA／LUXE／巨幕／ScreenX／代表性 Atmos／4DX 與頂級座椅體驗廳）；歇業廳保留紀錄不顯示。</li>
           <li>計算方式：以「畫幅投影在銀幕上的最大內接矩形」求有效成像面積；一般廳同時發行兩版時取較大者並標註不確定性。</li>
           <li>來源優先序：官方（官網／官方文件）＞ 2025 後媒體 ＞ 論壇整理與實測；每筆資料附來源，點各卡片「資料來源與查證」可見。</li>
           <li>查證原則：尺寸經官方公布或丈量才標已驗證；查不到的音效標「音效未查證」、不硬填；來源衝突並列各說法不隱藏。</li>
