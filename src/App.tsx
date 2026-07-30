@@ -645,14 +645,16 @@ export default function App() {
     const top = ranked[0];
     const caveat = !top.screen.verified ? '（第 1 名尺寸待驗證）' : '';
     if (sortMode === 'score') {
-      const t = scoreMap.get(top.screen.id)?.total ?? 0;
+      const score = scoreMap.get(top.screen.id);
+      const t = score?.total ?? 0;
       const tt = Number.isInteger(t) ? t : t.toFixed(1);
+      const unknown = score?.unknownCount ?? 0;
       const areaTop = fits[0];
       const extra =
         areaTop && areaTop.screen.id !== top.screen.id
           ? `；成像最大為 ${areaTop.screen.name}（${areaTop.imageAreaM2.toFixed(0)} ㎡）`
           : '';
-      return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，口碑分未接入）${extra}${caveat}`;
+      return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，${unknown} 項待確認；口碑分未接入）${extra}${caveat}`;
     }
     const subject = film ? `《${film.title}》` : `${customRatio}:1 畫幅`;
     const base = `${subject}在${scope}，${top.screen.name} 的有效成像最大（${top.imageAreaM2.toFixed(0)} ㎡）`;
@@ -827,7 +829,7 @@ export default function App() {
 	              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
 	              +0.5 ・ 已查證沉浸音效 +1 ・ 雷射投影 +1（雙機或 RGB 再 +0.5，不重複累加）・
 	              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
-	              認證／授權分與沉浸音效能力分分開計算；未查證項目標「？」不扣分；網友口碑分（0–2）尚未接入。{' '}
+	              認證／授權分與沉浸音效能力分分開計算；分數旁的「N 項待確認」只統計得分卡未知輸入，與已確認分數分開、不影響排序；網友口碑分（0–2）尚未接入。{' '}
 	              <a href="#score-method">查看完整評分方式</a>
 	            </p>
           </div>
@@ -1064,12 +1066,20 @@ export default function App() {
 	                  </details>
 	                </div>
                 {sortMode === 'score' ? (
-                  <div className="card-area" title="綜合得分（口碑分尚未接入）">
-                    {(() => {
-                      const t = scoreMap.get(fit.screen.id)?.total ?? 0;
-                      return Number.isInteger(t) ? t : t.toFixed(1);
-                    })()}
-                    <span className="unit">分</span>
+                  <div
+                    className="card-area card-area-score"
+                    title="待確認數只統計得分卡的未知輸入；不扣分、不改變已確認分數與排序"
+                  >
+                    <div>
+                      {(() => {
+                        const t = scoreMap.get(fit.screen.id)?.total ?? 0;
+                        return Number.isInteger(t) ? t : t.toFixed(1);
+                      })()}
+                      <span className="unit">分</span>
+                    </div>
+                    <div className="score-coverage">
+                      {scoreMap.get(fit.screen.id)?.unknownCount ?? 0} 項待確認
+                    </div>
                   </div>
                 ) : sortMode === 'audio' ? (
                   <div

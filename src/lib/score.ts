@@ -23,6 +23,8 @@ export interface ScoreItem {
 
 export interface ScoreResult {
   total: number;
+  /** 得分卡輸入中尚未查證的項目數；獨立呈現，不改變已確認分數。 */
+  unknownCount: number;
   items: ScoreItem[];
 }
 
@@ -84,5 +86,9 @@ export function scoreScreen(fit: FitResult, maxArea: number, film: Film | null):
     }
   }
 
-  return { total: items.reduce((sum, it) => sum + it.pts, 0), items };
+  return {
+    total: items.reduce((sum, it) => sum + it.pts, 0),
+    unknownCount: items.filter((it) => it.unknown).length,
+    items,
+  };
 }

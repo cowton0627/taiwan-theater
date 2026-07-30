@@ -718,6 +718,19 @@ header h1 {
   margin-left: 2px;
 }
 
+.card-area-score {
+  min-width: 6.8rem;
+}
+
+.score-coverage {
+  margin-top: 0.25rem;
+  font-family: 'PingFang TC', 'Noto Sans TC', system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: normal;
+}
+
 /* 「待驗證」由徽章降為行內註記（U-5） */
 .unverified-note {
   color: #e0b76c;
