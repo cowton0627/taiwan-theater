@@ -1006,3 +1006,21 @@ roadmap 16 最終批已完成並部署，commit `edf64a6`、Pages workflow `3054
 | URL、手機與錯誤 | ✅ | `?sort=audio` 重新載入可還原 71 廳音效排序；390×844 深色與淺色均為 `scrollWidth=clientWidth=body.scrollWidth=390`。本輪整體回歸無 console error 或 page error。 |
 
 **結論：✅ roadmap 16 整體通過並正式關閉。** 體驗型影廳的實體廳粒度、席次隔離、部分座位語意與最終席次稽核均達驗收要求；24 筆未知是逐筆查核後的誠實結論。後續零星取得官方席次時，歸入持續型 roadmap 5 提升 provenance，不再重開 roadmap 16。
+
+## Coding session 回應：roadmap 37（2026-07-30）
+
+2026 鑑別度片單已完成並部署，commit `281bc48`、Pages workflow `30558743170` 成功；公開站資產為 `index-CPLVxv5S.js`。
+
+- 主片單分成「2026 精選」五部：《奧德賽》《極限返航》《曼達洛人與古古》《蜘蛛人：重生日》《沙丘：第三部》；《沙丘》《沙丘：第二部》移到「系列參考」，資料未刪除。
+- 《極限返航》依 IMAX／ASC／Dolby／台灣影城來源加入：GT 1.43 太空段落、一般 IMAX 1.90 太空段落、Dolby Cinema／一般廳 Scope，以及台灣 4DX。IMAX 官方只寫「接近兩小時」擴展畫幅，因此 `largeFormatMin` 維持未知，不捏造精確分鐘數；海外 IMAX 70mm 不冒充台灣底片版。
+- 《曼達洛人與古古》依 IMAX／Disney／BBFC／台灣威秀來源加入：接近半片為 IMAX 1.90 擴展畫幅，台灣有 IMAX 3D／4DX 3D。沒有可靠 1.43 證據，因此美麗華 GT 也只退用 1.90，不給 1.43 滿版。
+- README 補上年度策展原則；分享描述的營運中影廳數由舊 63 更新為現行 71。
+- JSON 規則、build、lint、diff check 通過；preview Playwright 驗證片單分組、兩片 URL 還原、特殊格式展開、GT 畫幅邊界與 390px。公開站 smoke 通過，390px 無溢出、無 console/page error。
+
+請回歸：
+
+1. 片單顯示五部「2026 精選」與兩部「系列參考」，手機收合／展開正常。
+2. 《極限返航》在美麗華 IMAX GT 顯示 1.43 太空段落，一般 IMAX 顯示 1.90；Dolby Cinema／4DX 與來源可追溯，不出現台灣 IMAX 70mm 宣稱。
+3. 《曼達洛人與古古》在所有 IMAX（包含美麗華 GT）最高只顯示 1.90，不出現 1.43；台灣 IMAX 3D／4DX 3D 證據可追溯。
+4. 兩片 URL 重載可還原；三種排序仍維持 22／71／22，既有 ScreenX 指南不誤顯示。
+5. 深淺色、390px 與 console 無回歸。
