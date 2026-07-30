@@ -165,6 +165,91 @@ function SpecField({
   );
 }
 
+function audioLevel(s: Screen) {
+  if (s.audioTier === 'SURROUND_5_1') return null;
+  return AUDIO_TIER_ORDER.length - AUDIO_TIER_ORDER.indexOf(s.audioTier);
+}
+
+/** 無銀幕尺寸卡：音效排序時進主排名，其餘模式留在資料徵集摺疊。 */
+function UnsizedScreenCard({
+  s,
+  rank,
+  audioRanking = false,
+}: {
+  s: Screen;
+  rank?: number;
+  audioRanking?: boolean;
+}) {
+  const level = audioLevel(s);
+  return (
+    <article className={audioRanking ? 'card card-audio-unsized' : 'card card-unsized'}>
+      <div className={audioRanking ? 'rank rank-audio' : 'rank'}>{rank ?? '–'}</div>
+      <div className="card-body">
+        <h3>{s.name}</h3>
+        <p className="key-takeaway">
+          {audioRanking
+            ? `${AUDIO_TIER_LABELS[s.audioTier]}；銀幕尺寸尚未公布`
+            : '銀幕尺寸尚未公布，暫不納入成像排名'}
+        </p>
+        <p className="meta">
+          <CityLink s={s} /> ・{' '}
+          {s.priceNTD != null ? (
+            <span className="price" title={s.priceNotes ?? '全票價僅供參考，不計入排序'}>
+              全票 {s.priceNTD} 元 ・{' '}
+            </span>
+          ) : (
+            <span className="price">票價待確認 ・ </span>
+          )}
+          <a href={s.booking} target="_blank" rel="noreferrer">
+            查場次
+          </a>
+        </p>
+        <details className="evidence-fold">
+          <summary>規格與依據</summary>
+          <dl className="spec-grid">
+            <SpecField label="廳型">{hallTypeLabel(s)}</SpecField>
+            <SpecField label="投影">{s.projection ?? '未公布'}</SpecField>
+            <SpecField
+              label="音效"
+              className={s.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
+            >
+              {AUDIO_TIER_LABELS[s.audioTier]}
+              {s.audio && `（${s.audio}）`}
+            </SpecField>
+          </dl>
+          <p className="evidence-note">
+            查證狀態：銀幕尺寸尚無可核對資料
+            {s.notes && ` ・ ${s.notes}`}
+          </p>
+          {(s.bestRows || s.communityNotes) && (
+            <p className="community-line">
+              {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
+              {s.bestRows && s.communityNotes && ' ・ '}
+              {s.communityNotes}
+            </p>
+          )}
+          <SourcesFold sources={s.sources} />
+        </details>
+      </div>
+      {audioRanking && (
+        <div
+          className="card-area card-area-audio"
+          title="音效層級序位（8＝最高；認證／規格層級排序，非實測音質；未查證顯示？）"
+        >
+          {level == null ? (
+            '？'
+          ) : (
+            <>
+              {level}
+              <span className="unit">／8 級</span>
+            </>
+          )}
+        </div>
+      )}
+    </article>
+  );
+}
+
 /**
  * 疊圖比較：前幾名影廳的成像框以同一公尺比例尺、水平＋垂直置中疊放，可收合。
  * 置中對齊呼應實際放映的裁切方式——不同畫幅版本是對稱地裁上下（或左右），
@@ -466,6 +551,11 @@ export default function App() {
     return m;
   }, [fits, film]);
 
+  const fitMap = useMemo(
+    () => new Map(fits.map((fit) => [fit.screen.id, fit])),
+    [fits],
+  );
+
   /** 排名列表的顯示順序；疊圖不受排序模式影響、永遠按面積取前 6 */
   const ranked = useMemo(() => {
     if (sortMode === 'area') return fits;
@@ -476,16 +566,34 @@ export default function App() {
         return diff !== 0 ? diff : b.imageAreaM2 - a.imageAreaM2;
       });
     }
-    return [...fits].sort((a, b) => {
-      const tierDiff =
-        AUDIO_TIER_ORDER.indexOf(a.screen.audioTier) -
-        AUDIO_TIER_ORDER.indexOf(b.screen.audioTier);
-      return tierDiff !== 0 ? tierDiff : b.imageAreaM2 - a.imageAreaM2;
-    });
+    return fits;
   }, [fits, sortMode, scoreMap]);
 
+  /**
+   * 音效排序不依賴銀幕尺寸：所有營運中且符合篩選的影廳都納入。
+   * 同層級先列有尺寸者並按面積排序，再列無尺寸者；未查證音效層級固定在最後。
+   */
+  const audioRanked = useMemo(
+    () =>
+      [...pool].sort((a, b) => {
+        const tierDiff =
+          AUDIO_TIER_ORDER.indexOf(a.audioTier) - AUDIO_TIER_ORDER.indexOf(b.audioTier);
+        if (tierDiff !== 0) return tierDiff;
+        const aFit = fitMap.get(a.id);
+        const bFit = fitMap.get(b.id);
+        if (aFit && !bFit) return -1;
+        if (!aFit && bFit) return 1;
+        if (aFit && bFit) return bFit.imageAreaM2 - aFit.imageAreaM2;
+        return a.name.localeCompare(b.name, 'zh-Hant');
+      }),
+    [pool, fitMap],
+  );
+
   /** 尺寸未公布廳（單一清單；地區語意交給篩選器，避免多個「第 1 名」歧義） */
-  const unsized = useMemo(() => pool.filter((s) => !isSized(s)), [pool]);
+  const unsized = useMemo(
+    () => (sortMode === 'audio' ? [] : pool.filter((s) => !isSized(s))),
+    [pool, sortMode],
+  );
 
   const toggleRegion = (r: Region) => {
     setRegions((prev) => {
@@ -522,10 +630,19 @@ export default function App() {
 
   /** 決策摘要一行（UI-REVIEW P0-1）：把數據翻成結論，隨選片／篩選／排序更新 */
   const insight = useMemo(() => {
-    if (ranked.length === 0) return null;
-    const top = ranked[0];
     const scoped = regions.size > 0 || chains.size > 0 || activeCities.size > 0;
     const scope = scoped ? '目前篩選範圍內' : '全台';
+    if (sortMode === 'audio') {
+      const top = audioRanked[0];
+      if (!top) return null;
+      const areaTop = fits[0];
+      const areaText = areaTop
+        ? `；成像最大仍為 ${areaTop.screen.name}（${areaTop.imageAreaM2.toFixed(0)} ㎡）`
+        : '；目前範圍沒有已公布銀幕尺寸的影廳';
+      return `${scope}音效層級最高：${top.name}（${AUDIO_TIER_LABELS[top.audioTier]}）${areaText}`;
+    }
+    if (ranked.length === 0) return null;
+    const top = ranked[0];
     const caveat = !top.screen.verified ? '（第 1 名尺寸待驗證）' : '';
     if (sortMode === 'score') {
       const t = scoreMap.get(top.screen.id)?.total ?? 0;
@@ -537,9 +654,6 @@ export default function App() {
           : '';
       return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，口碑分未接入）${extra}${caveat}`;
     }
-    if (sortMode === 'audio') {
-      return `${scope}音效層級最高：${top.screen.name}（${AUDIO_TIER_LABELS[top.screen.audioTier]}）；成像最大仍為 ${fits[0].screen.name}（${fits[0].imageAreaM2.toFixed(0)} ㎡）`;
-    }
     const subject = film ? `《${film.title}》` : `${customRatio}:1 畫幅`;
     const base = `${subject}在${scope}，${top.screen.name} 的有效成像最大（${top.imageAreaM2.toFixed(0)} ㎡）`;
     if (ranked.length === 1) return `${base}${caveat}`;
@@ -549,7 +663,18 @@ export default function App() {
         ? `，與第二名 ${ranked[1].screen.name} 相當`
         : `，是第二名的 ${times.toFixed(1)} 倍`;
     return `${base}${cmp}${caveat}`;
-  }, [ranked, fits, sortMode, scoreMap, film, customRatio, regions, chains, activeCities]);
+  }, [
+    ranked,
+    audioRanked,
+    fits,
+    sortMode,
+    scoreMap,
+    film,
+    customRatio,
+    regions,
+    chains,
+    activeCities,
+  ]);
 
   const toggleSelect = (id: string) => {
     if (!selected.has(id) && selected.size >= 6) {
@@ -563,6 +688,11 @@ export default function App() {
       return next;
     });
   };
+
+  const displayRanked: Array<FitResult | Screen> =
+    sortMode === 'audio'
+      ? audioRanked.map((s) => fitMap.get(s.id) ?? s)
+      : ranked;
 
   return (
     <main>
@@ -783,7 +913,7 @@ export default function App() {
           <h2 className="region-title">
             排名
             <span className="region-count">
-              {ranked.length} 廳
+              {displayRanked.length} 廳
               {regions.size === 0 && activeCities.size === 0 && chains.size === 0
                 ? '（全台）'
                 : '（目前篩選範圍）'}
@@ -803,7 +933,19 @@ export default function App() {
             )}
           </h2>
           <div className="ranking">
-            {ranked.map((fit, i) => (
+            {displayRanked.map((entry, i) => {
+              if (!('imageAreaM2' in entry)) {
+                return (
+                  <UnsizedScreenCard
+                    key={entry.id}
+                    s={entry}
+                    rank={i + 1}
+                    audioRanking
+                  />
+                );
+              }
+              const fit = entry;
+              return (
               <article
                 key={fit.screen.id}
                 className={selected.has(fit.screen.id) ? 'card selectable selected' : 'card selectable'}
@@ -950,7 +1092,8 @@ export default function App() {
                   </div>
                 )}
               </article>
-            ))}
+              );
+            })}
             {unsized.length > 0 && (
               <details className="unsized-fold">
                 <summary>資料徵集中：{unsized.length} 廳尚無銀幕尺寸</summary>
@@ -966,53 +1109,7 @@ export default function App() {
                   提供來源。
                 </p>
                 {unsized.map((s) => (
-              <article key={s.id} className="card card-unsized">
-                <div className="rank">–</div>
-	                <div className="card-body">
-	                  <h3>
-	                    {s.name}
-	                  </h3>
-	                  <p className="key-takeaway">銀幕尺寸尚未公布，暫不納入成像排名</p>
-	                  <p className="meta">
-	                    <CityLink s={s} /> ・{' '}
-	                    {s.priceNTD != null && (
-	                      <span className="price" title={s.priceNotes ?? '全票價僅供參考，不計入排序'}>
-	                        全票 {s.priceNTD} 元 ・{' '}
-	                      </span>
-	                    )}
-	                    {s.priceNTD == null && <span className="price">票價待確認 ・ </span>}
-	                    <a href={s.booking} target="_blank" rel="noreferrer">
-	                      查場次
-	                    </a>
-	                  </p>
-	                  <details className="evidence-fold">
-	                    <summary>規格與依據</summary>
-	                    <dl className="spec-grid">
-	                      <SpecField label="廳型">{hallTypeLabel(s)}</SpecField>
-	                      <SpecField label="投影">{s.projection ?? '未公布'}</SpecField>
-	                      <SpecField
-	                        label="音效"
-	                        className={s.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
-	                      >
-	                        {AUDIO_TIER_LABELS[s.audioTier]}
-	                        {s.audio && `（${s.audio}）`}
-	                      </SpecField>
-	                    </dl>
-	                    <p className="evidence-note">
-	                      查證狀態：銀幕尺寸尚無可核對資料
-	                      {s.notes && ` ・ ${s.notes}`}
-	                    </p>
-	                    {(s.bestRows || s.communityNotes) && (
-	                      <p className="community-line">
-	                        {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
-	                        {s.bestRows && s.communityNotes && ' ・ '}
-	                        {s.communityNotes}
-	                      </p>
-	                    )}
-	                    <SourcesFold sources={s.sources} />
-	                  </details>
-	                </div>
-              </article>
+                  <UnsizedScreenCard key={s.id} s={s} />
                 ))}
               </details>
             )}
