@@ -966,8 +966,8 @@
     "city": "台北市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "MUVIE 全館 8 廳 1,147 席；TITAN 單廳席數未查得",
+    "seats": 391,
+    "seatsNotes": "威秀官方 2026 團劃席次表：松仁 TITAN 對應 6 廳，共 391 席",
     "priceNTD": 470,
     "priceNotes": "來源分歧 440/450/470、採星展 2026-05，建議官網復核",
     "booking": "https://www.vscinemas.com.tw/theater/detail2.aspx?id=23",
@@ -993,6 +993,11 @@
         "label": "口碑：Dcard 泰坦選位討論",
         "url": "https://www.dcard.tw/f/movie/p/253620664",
         "note": "2023/10 泰勒絲檔選位討論；PTT 2025 推文多數選 G；2026-07 核對"
+      },
+      {
+        "label": "威秀官方 2026 團劃席次表",
+        "url": "https://www.vscinemas.com.tw/upload/biz/biz_20260127001.pdf",
+        "note": "松仁 6 廳 391 席；表內特殊廳列標示 TITAN"
       }
     ],
     "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核",
@@ -1012,16 +1017,16 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "松仁 TITAN（6 廳）391 席"
       },
       "price": {
         "level": "secondary_consensus",
         "note": "來源分歧 440/450/470、採星展 2026-05，建議官網復核"
       },
       "auditoriumNumber": {
-        "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "level": "official",
+        "note": "威秀官方席次表對應第 6 廳"
       },
       "bestRows": {
         "level": "secondary_consensus",
@@ -1072,8 +1077,8 @@
     "city": "台北市",
     "audioTier": "SURROUND_7_1",
     "audio": "Dolby 7.1",
-    "seats": null,
-    "seatsNotes": "近 800 席（媒體遊記，未證實）",
+    "seats": 808,
+    "seatsNotes": "文化部影視局國片院線表：樂聲 1 廳 808 席",
     "priceNTD": 310,
     "priceNotes": "3D +70、早場 250（官網 2026-07）",
     "booking": "https://www.luxcinema.com.tw/web/2020.php?type=ShowTimes",
@@ -1088,6 +1093,11 @@
       {
         "label": "輕旅行／PTT（原文未定位）",
         "note": "輕旅行／PTT：A 廳 Spectro 巨幕 20×10m、Dolby 7.1"
+      },
+      {
+        "label": "文化部影視局國片院線表",
+        "url": "https://file.moc.gov.tw/Download.ashx?n=5ZyL54mH6Zmi57ea5pig5ryU5aC05omA5Y%2BK5q%2BP5pel5pig5ryU542O5Yu15LiK6ZmQ6YeR6aGN6KGoKDExMC4xMS4zMOeJiCkucGRm&u=LzAwMS9VcGxvYWQvT2xkRmlsZXMvQWRtaW5VcGxvYWRzL2ZpbGVzLzIwMjIwMi82ZDhhOTNmZS1mMWZlLTQ1MjItYTJjMi1lMDUxZjIzMTU5MzgucGRm",
+        "note": "樂聲大戲院 1 廳 808 席"
       }
     ],
     "provenance": {
@@ -1104,8 +1114,8 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official_indirect",
+        "note": "政府國片院線表列 1 廳 808 席；巨幕廳與 1 廳的對應沿用既有資料"
       },
       "price": {
         "level": "secondary_consensus",
@@ -1333,7 +1343,8 @@
     "city": "台中市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
+    "seats": 263,
+    "seatsNotes": "文化部影視局國片院線表：文心秀泰 11 廳 263 席",
     "booking": "https://www.showtimes.com.tw/cinemas/56/",
     "address": "台中市南屯區文心南路289號7樓",
     "verified": false,
@@ -1342,6 +1353,11 @@
         "label": "PTT Theater 巨幕資料整理串",
         "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
+      },
+      {
+        "label": "文化部影視局國片院線表",
+        "url": "https://file.moc.gov.tw/Download.ashx?n=5ZyL54mH6Zmi57ea5pig5ryU5aC05omA5Y%2BK5q%2BP5pel5pig5ryU542O5Yu15LiK6ZmQ6YeR6aGN6KGoKDExMC4xMS4zMOeJiCkucGRm&u=LzAwMS9VcGxvYWQvT2xkRmlsZXMvQWRtaW5VcGxvYWRzL2ZpbGVzLzIwMjIwMi82ZDhhOTNmZS1mMWZlLTQ1MjItYTJjMi1lMDUxZjIzMTU5MzgucGRm",
+        "note": "台中文心秀泰 11 廳 263 席"
       }
     ],
     "notes": "LED 直顯銀幕（非投影）",
@@ -1359,8 +1375,8 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "政府國片院線表列 11 廳 263 席"
       },
       "price": {
         "level": "unknown",
@@ -2823,7 +2839,8 @@
     "city": "新竹縣",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
+    "seats": 281,
+    "seatsNotes": "百老匯官網：第 8 廳 281 席；社群實測確認旗艦巨幕為第 8 廳",
     "priceNTD": 330,
     "priceNotes": "巨幕 3D 400、另有 VIP 廳 480（2026-02 整理）",
     "booking": "https://www.broadway-cineplex.com.tw/book.html?obj=Zhubei",
@@ -2839,6 +2856,11 @@
         "label": "開眼：竹北百老匯時刻表",
         "note": "開眼時刻表（2026/7/28 實查）：營運中；PTT 整理：＝第 8 廳（未官方證實）",
         "url": "https://www.atmovies.com.tw/showtime/t03510/a35/"
+      },
+      {
+        "label": "PTT：竹北百老匯 8 廳巨幕實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1693586144.A.146.html",
+        "note": "實測確認旗艦巨幕為第 8 廳；官網席次表列第 8 廳 281 席"
       }
     ],
     "notes": "2022/12/14 開幕，新竹縣首座首輪影城；全店 14 廳 1,238 席；旗艦廳尺寸與座位待確認",
@@ -2856,16 +2878,16 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official_indirect",
+        "note": "官網列第 8 廳 281 席；旗艦廳＝8 廳由社群實測對應"
       },
       "price": {
         "level": "secondary_consensus",
         "note": "巨幕 3D 400、另有 VIP 廳 480（2026-02 整理）"
       },
       "auditoriumNumber": {
-        "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "level": "community",
+        "note": "社群實測對應為第 8 廳"
       },
       "bestRows": {
         "level": "unknown",
@@ -3388,14 +3410,19 @@
     "city": "台中市",
     "audioTier": "SURROUND_5_1",
     "audio": "多聲道",
-    "seats": null,
-    "seatsNotes": "全店 10 廳 808 席",
+    "seats": 278,
+    "seatsNotes": "文化部影視局國片院線表：麗寶秀泰 1 廳 278 席；巨幕廳對應 1 廳",
     "booking": "https://www.showtimes.com.tw/cinemas/59/",
     "verified": false,
     "sources": [
       {
         "label": "食尚玩家（原文未定位）",
         "note": "食尚玩家（2020/1 開幕）：巨幕寬 20m、約 4 層樓高"
+      },
+      {
+        "label": "文化部影視局國片院線表",
+        "url": "https://file.moc.gov.tw/Download.ashx?n=5ZyL54mH6Zmi57ea5pig5ryU5aC05omA5Y%2BK5q%2BP5pel5pig5ryU542O5Yu15LiK6ZmQ6YeR6aGN6KGoKDExMC4xMS4zMOeJiCkucGRm&u=LzAwMS9VcGxvYWQvT2xkRmlsZXMvQWRtaW5VcGxvYWRzL2ZpbGVzLzIwMjIwMi82ZDhhOTNmZS1mMWZlLTQ1MjItYTJjMi1lMDUxZjIzMTU5MzgucGRm",
+        "note": "台中麗寶秀泰 1 廳 278 席"
       }
     ],
     "notes": "銀幕高未公布",
@@ -3414,8 +3441,8 @@
         "note": "音效系統尚未查證"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official_indirect",
+        "note": "政府表列 1 廳 278 席；巨幕廳與 1 廳對應採既有開幕資料"
       },
       "price": {
         "level": "unknown",
@@ -3574,7 +3601,8 @@
     "city": "嘉義市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
+    "seats": 295,
+    "seatsNotes": "實體配置 295 席；線上訂票曾顯示 275 席、可選 247 席，差異為售票開放數",
     "priceNTD": 350,
     "priceNotes": "3D +60（官方票價表）",
     "booking": "https://www.in89cinemax.com/film_list.aspx?TheaterId=17",
@@ -3590,6 +3618,11 @@
         "label": "口碑：嘉義 in89 LUXE／IMAX 比較",
         "url": "https://www.ptt.cc/bbs/Theater/M.1726567735.A.917.html",
         "note": "多篇實測：G／H 排、畫面明亮、音效定位與低頻佳；銀幕直紋及座距偏窄"
+      },
+      {
+        "label": "PTT：嘉義 in89 LUXE 席次實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1655920101.A.067.html",
+        "note": "B–L 排實體配置共 295 席；線上訂票顯示 275 席、可選 247 席"
       }
     ],
     "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳",
@@ -3607,8 +3640,8 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "community",
+        "note": "實測逐排配置為 295 席；售票開放數另列，不混為實體席次"
       },
       "price": {
         "level": "secondary_consensus",
@@ -5576,20 +5609,21 @@
     "audioTier": "SURROUND_7_1",
     "audio": "Dolby Surround 7.1",
     "seats": null,
-    "seatsNotes": "整廳總席次尚未取得；第 11、12 排為 18 席 D-BOX",
+    "seatsNotes": "官方來源衝突：影城介紹／包廳單為 205 席，2026 場次頁顯示 208 席；第 11、12 排為 18 席 D-BOX",
     "priceNTD": 540,
     "priceNotes": "D-BOX 2D 全票 540 元",
     "booking": "https://www.ambassador.com.tw/home/theater_intro_a6",
     "address": "屏東縣屏東市仁愛路90號6樓（環球購物中心）",
     "verified": false,
     "sources": [
-      {"label": "國賓官網：屏東環球", "url": "https://www.ambassador.com.tw/home/theater_intro_a6", "note": "全館 Dolby Surround 7.1"},
+      {"label": "國賓官網：屏東環球", "url": "https://www.ambassador.com.tw/home/theater_intro_a6", "note": "1 廳 205 席；全館 Dolby Surround 7.1"},
+      {"label": "國賓 2026 場次頁", "url": "https://www.ambassador.com.tw/home/Showtime?DT=2026%2F07%2F10&ID=41aae717-4464-49f4-ac26-fec2d16acbd6", "note": "同一實體 1 廳顯示 208 席，與影城介紹／包廳單 205 席衝突"},
       {"label": "國賓 D-BOX 官方據點頁", "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html", "note": "1 廳第 11、12 排，D-BOX 18 席"}
     ],
     "notes": "18 席是 D-BOX 部分座位，不冒充整廳席次",
     "provenance": {
       "dimensions": {"level": "unknown"}, "projection": {"level": "unknown"},
-      "audio": {"level": "official"}, "seats": {"level": "unknown", "note": "僅知 D-BOX 18 席，整廳席次待確認"},
+      "audio": {"level": "official"}, "seats": {"level": "conflict", "note": "官方介紹／包廳單 205 席；2026 場次頁 208 席，未選邊；D-BOX 為其中 18 席"},
       "price": {"level": "official"}, "auditoriumNumber": {"level": "official"},
       "bestRows": {"level": "unknown"}, "communityNotes": {"level": "unknown"}
     }
