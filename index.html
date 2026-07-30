@@ -2,6 +2,28 @@
 <html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
+    <meta name="theme-color" content="#141013" />
+    <script>
+      (() => {
+        let preference = 'system';
+        try {
+          const stored = localStorage.getItem('taiwan-theater-theme');
+          if (stored === 'dark' || stored === 'light') preference = stored;
+        } catch {}
+        const resolved =
+          preference === 'system'
+            ? matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : preference;
+        document.documentElement.dataset.theme = resolved;
+        document.documentElement.dataset.themePreference = preference;
+        document.documentElement.style.colorScheme = resolved;
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', resolved === 'dark' ? '#141013' : '#f4f0e8');
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta

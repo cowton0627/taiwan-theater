@@ -42,6 +42,13 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
 const formatScore = (value: number) => String(Number(value.toFixed(2)));
+type ThemePreference = 'system' | 'dark' | 'light';
+const THEME_STORAGE_KEY = 'taiwan-theater-theme';
+
+function initialThemePreference(): ThemePreference {
+  const value = document.documentElement.dataset.themePreference;
+  return value === 'dark' || value === 'light' ? value : 'system';
+}
 
 /** 品牌分組鍵：子品牌歸入母集團（例：威秀影城（MUVIE）→ 威秀影城） */
 const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
@@ -667,6 +674,8 @@ function OverlayCompare({
 }
 
 export default function App() {
+  const [themePreference, setThemePreference] =
+    useState<ThemePreference>(initialThemePreference);
   const [filmId, setFilmId] = useState<string>(() => {
     const f = INIT_PARAMS.get('film');
     if (f === 'custom' || films.some((x) => x.id === f)) return f as string;
@@ -719,6 +728,31 @@ export default function App() {
     const v = INIT_PARAMS.get('sort');
     return v === 'audio' || v === 'score' ? v : 'area';
   });
+
+  /** 外觀偏好只屬於本機，不寫入分享 URL；system 會即時跟隨作業系統。 */
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const applyTheme = () => {
+      const resolved =
+        themePreference === 'system' ? (media.matches ? 'dark' : 'light') : themePreference;
+      document.documentElement.dataset.theme = resolved;
+      document.documentElement.dataset.themePreference = themePreference;
+      document.documentElement.style.colorScheme = resolved;
+      themeColor?.setAttribute('content', resolved === 'dark' ? '#141013' : '#f4f0e8');
+    };
+
+    applyTheme();
+    try {
+      if (themePreference === 'system') localStorage.removeItem(THEME_STORAGE_KEY);
+      else localStorage.setItem(THEME_STORAGE_KEY, themePreference);
+    } catch {
+      // 隱私模式或禁用儲存時仍可在本次頁面使用，不阻斷主功能。
+    }
+    if (themePreference !== 'system') return;
+    media.addEventListener('change', applyTheme);
+    return () => media.removeEventListener('change', applyTheme);
+  }, [themePreference]);
 
   /** 狀態 → URL（replaceState 不塞瀏覽紀錄；預設值省略、保持網址乾淨） */
   useEffect(() => {
@@ -973,7 +1007,28 @@ export default function App() {
   return (
     <main>
       <header className="site-header">
-        <h1>台灣影廳畫幅模擬器</h1>
+        <div className="site-header-top">
+          <h1>台灣影廳畫幅模擬器</h1>
+          <div className="theme-switcher" role="group" aria-label="外觀主題">
+            {(
+              [
+                ['system', '系統'],
+                ['dark', '深色'],
+                ['light', '淺色'],
+              ] as const
+            ).map(([value, label]) => (
+              <button
+                type="button"
+                key={value}
+                className={themePreference === value ? 'theme-option active' : 'theme-option'}
+                aria-pressed={themePreference === value}
+                onClick={() => setThemePreference(value)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
         <p className="subtitle">
           同一部片在不同影廳，實際看到的畫面有多大？依畫幅與銀幕尺寸計算有效成像面積。
         </p>

@@ -13,8 +13,98 @@
   --gold-dim: #8a6f42;
   /* 選取狀態專用色（銀幕光乳白）——與名次/數據的膠片金分離，解 U-3/U-13 語意撞色 */
   --select: #f0e9dc;
+  --select-ink: #141013;
+  --header-top: #24191c;
+  --curtain: #4b232a;
+  --active-ink: #141013;
+  --panel-hover: #251d20;
+  --note-bg: rgba(0, 0, 0, 0.22);
+  --spec-bg: rgba(0, 0, 0, 0.14);
+  --score-bg: rgba(216, 178, 114, 0.05);
+  --score-divider: rgba(58, 47, 45, 0.55);
+  --track: #0d0a0b;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --audio: #7db9e3;
+  --audio-border: #3d5a73;
+  --success: #86cf8e;
+  --success-border: #41603f;
+  --warning: #f2c779;
+  --warning-strong: #e0b76c;
+  --warning-border: #6e5a30;
+  --danger: #f3a6a6;
+  --screenx-border: #38536b;
+  --screenx-bg: #111d28;
+  --screenx-pill-border: #49677e;
+  --screenx-pill: #a9c8dd;
+  --screenx-card: rgba(8, 13, 18, 0.62);
+  --media: #b9b5e7;
+  --media-border: #5e5985;
+  --community: #e4bd83;
+  --community-border: #735e3d;
+  --grid: #453c38;
+  --overlay-neutral: #b3a99d;
+  --overlay-lead-fill: rgba(240, 233, 220, 0.04);
+  --overlay-lead-shadow: rgba(240, 233, 220, 0.22);
+  --series-0: #e0b76c;
+  --series-1: #7db9e3;
+  --series-2: #86cf8e;
+  --series-3: #e08d85;
+  --series-4: #b89ee0;
+  --series-5: #8d99ae;
   /* Display 字型只供片名式主標與關鍵數字，正文維持高可讀性的系統黑體。 */
   --font-display: 'Avenir Next Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f0e8;
+  --panel: #fffdf8;
+  --border: #cfc3b3;
+  --text: #2a231e;
+  --muted: #6f6459;
+  --accent: #81520d;
+  --accent-dim: #a3783c;
+  --gold: #81520d;
+  --gold-dim: #a3783c;
+  --select: #426b82;
+  --select-ink: #ffffff;
+  --header-top: #eadfd2;
+  --curtain: #a95760;
+  --active-ink: #ffffff;
+  --panel-hover: #f5eee4;
+  --note-bg: rgba(129, 82, 13, 0.07);
+  --spec-bg: rgba(112, 92, 72, 0.06);
+  --score-bg: rgba(129, 82, 13, 0.07);
+  --score-divider: rgba(129, 111, 91, 0.28);
+  --track: #ded5c8;
+  --shadow: rgba(63, 48, 34, 0.2);
+  --audio: #245f86;
+  --audio-border: #6b91aa;
+  --success: #2f6e3d;
+  --success-border: #78a27f;
+  --warning: #825600;
+  --warning-strong: #83540b;
+  --warning-border: #b6935d;
+  --danger: #9b3232;
+  --screenx-border: #8aa8bc;
+  --screenx-bg: #e7f1f6;
+  --screenx-pill-border: #789aae;
+  --screenx-pill: #315f79;
+  --screenx-card: rgba(255, 255, 255, 0.72);
+  --media: #5b548e;
+  --media-border: #9b96bd;
+  --community: #79500f;
+  --community-border: #b89b69;
+  --grid: #c6b9aa;
+  --overlay-neutral: #685e54;
+  --overlay-lead-fill: rgba(129, 82, 13, 0.05);
+  --overlay-lead-shadow: rgba(129, 82, 13, 0.18);
+  --series-0: #8a5708;
+  --series-1: #17658e;
+  --series-2: #377645;
+  --series-3: #a5423b;
+  --series-4: #6e54a1;
+  --series-5: #586477;
 }
 
 * {
@@ -42,7 +132,7 @@ main {
   padding: 1.15rem 1.35rem 1rem;
   border: 1px solid var(--border);
   border-radius: 4px 4px 14px 14px;
-  background: linear-gradient(180deg, #24191c 0%, var(--panel) 70%);
+  background: linear-gradient(180deg, var(--header-top) 0%, var(--panel) 70%);
   box-shadow: inset 0 -10px 24px rgba(0, 0, 0, 0.18);
 }
 
@@ -56,7 +146,7 @@ main {
   bottom: 0;
   width: 18%;
   opacity: 0.32;
-  background: linear-gradient(90deg, #4b232a, transparent);
+  background: linear-gradient(90deg, var(--curtain), transparent);
   clip-path: polygon(0 0, 100% 0, 48% 100%, 0 86%);
 }
 
@@ -75,6 +165,48 @@ main {
   letter-spacing: 0.03em;
   font-family: var(--font-display);
   font-weight: 750;
+}
+
+.site-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.theme-switcher {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--note-bg);
+}
+
+.theme-option {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.16rem 0.5rem;
+  font: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.theme-option:hover {
+  color: var(--text);
+}
+
+.theme-option.active {
+  background: var(--accent);
+  color: var(--active-ink);
+  font-weight: 700;
+}
+
+.theme-option:focus-visible {
+  outline: 2px solid var(--select);
+  outline-offset: 2px;
 }
 
 .subtitle {
@@ -121,7 +253,7 @@ main {
 .chip.active {
   background: var(--accent);
   border-color: var(--accent);
-  color: #141013;
+  color: var(--active-ink);
   font-weight: 600;
   box-shadow: 0 0 10px rgba(216, 178, 114, 0.22);
 }
@@ -166,7 +298,7 @@ main {
   margin: 0.35rem 0 0.75rem;
   padding: 0.5rem 0.8rem;
   border-left: 2px solid var(--accent-dim);
-  background: rgba(0, 0, 0, 0.22);
+  background: var(--note-bg);
   border-radius: 0 8px 8px 0;
 }
 
@@ -188,7 +320,7 @@ main {
 }
 
 .film-fact-warning {
-  color: #f2c779;
+  color: var(--warning);
 }
 
 .special-format-summary {
@@ -198,7 +330,7 @@ main {
 
 .special-format-summary summary {
   cursor: pointer;
-  color: #7db9e3;
+  color: var(--audio);
 }
 
 .special-format-summary ul {
@@ -219,7 +351,7 @@ main {
 }
 
 .release-confirmed {
-  color: #9cd4a6;
+  color: var(--success);
 }
 
 .overlay-section {
@@ -286,13 +418,13 @@ main {
 }
 
 .grid-line {
-  stroke: #453c38;
+  stroke: var(--grid);
   stroke-width: 1;
   stroke-dasharray: 4 4;
 }
 
 .center-mark {
-  stroke: #b3a99d;
+  stroke: var(--overlay-neutral);
   stroke-width: 1.5;
 }
 
@@ -316,8 +448,8 @@ main {
 
 /* 簽名元素：最大成像框＝暗廳裡發光的銀幕 */
 .overlay-item.lead .overlay-rect {
-  fill: rgba(240, 233, 220, 0.04);
-  filter: drop-shadow(0 0 16px rgba(240, 233, 220, 0.22));
+  fill: var(--overlay-lead-fill);
+  filter: drop-shadow(0 0 16px var(--overlay-lead-shadow));
 }
 
 .overlay-num {
@@ -325,36 +457,36 @@ main {
   font-weight: 700;
 }
 
-.overlay-num-0 { fill: #e0b76c; }
-.overlay-num-1 { fill: #7db9e3; }
-.overlay-num-2 { fill: #86cf8e; }
-.overlay-num-3 { fill: #e08d85; }
-.overlay-num-4 { fill: #b89ee0; }
-.overlay-num-5 { fill: #8d99ae; }
+.overlay-num-0 { fill: var(--series-0); }
+.overlay-num-1 { fill: var(--series-1); }
+.overlay-num-2 { fill: var(--series-2); }
+.overlay-num-3 { fill: var(--series-3); }
+.overlay-num-4 { fill: var(--series-4); }
+.overlay-num-5 { fill: var(--series-5); }
 
 .person-mark circle {
   fill: none;
-  stroke: #b3a99d;
+  stroke: var(--overlay-neutral);
   stroke-width: 1.5;
 }
 
 .person-mark line {
-  stroke: #b3a99d;
+  stroke: var(--overlay-neutral);
   stroke-width: 1.5;
   stroke-linecap: round;
 }
 
 .person-mark .person-label {
-  fill: #b3a99d;
+  fill: var(--overlay-neutral);
   font-size: 10px;
 }
 
-.overlay-rect-0 { stroke: #e0b76c; }
-.overlay-rect-1 { stroke: #7db9e3; }
-.overlay-rect-2 { stroke: #86cf8e; }
-.overlay-rect-3 { stroke: #e08d85; }
-.overlay-rect-4 { stroke: #b89ee0; }
-.overlay-rect-5 { stroke: #8d99ae; }
+.overlay-rect-0 { stroke: var(--series-0); }
+.overlay-rect-1 { stroke: var(--series-1); }
+.overlay-rect-2 { stroke: var(--series-2); }
+.overlay-rect-3 { stroke: var(--series-3); }
+.overlay-rect-4 { stroke: var(--series-4); }
+.overlay-rect-5 { stroke: var(--series-5); }
 
 .overlay-legend {
   list-style: none;
@@ -380,12 +512,12 @@ main {
   display: inline-block;
 }
 
-.swatch-0 { background: #e0b76c; }
-.swatch-1 { background: #7db9e3; }
-.swatch-2 { background: #86cf8e; }
-.swatch-3 { background: #e08d85; }
-.swatch-4 { background: #b89ee0; }
-.swatch-5 { background: #8d99ae; }
+.swatch-0 { background: var(--series-0); }
+.swatch-1 { background: var(--series-1); }
+.swatch-2 { background: var(--series-2); }
+.swatch-3 { background: var(--series-3); }
+.swatch-4 { background: var(--series-4); }
+.swatch-5 { background: var(--series-5); }
 
 .region-group {
   margin-bottom: 1.6rem;
@@ -413,20 +545,20 @@ main {
 .sort-note {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #7db9e3;
-  border: 1px solid #3d5a73;
+  color: var(--audio);
+  border: 1px solid var(--audio-border);
   border-radius: 999px;
   padding: 0.05rem 0.55rem;
   letter-spacing: normal;
 }
 
 .rank.rank-audio {
-  color: #7db9e3;
+  color: var(--audio);
 }
 
 /* 音效層級序位＝人為層級非量測值，用音效模式的藍與面積金區隔 */
 .card-area.card-area-audio {
-  color: #7db9e3;
+  color: var(--audio);
 }
 
 .score-line {
@@ -460,9 +592,9 @@ main {
 .screenx-guide {
   margin: 0 0 1.25rem;
   padding: 1rem;
-  border: 1px solid #38536b;
+  border: 1px solid var(--screenx-border);
   border-radius: 14px;
-  background: linear-gradient(145deg, #111d28, var(--panel));
+  background: linear-gradient(145deg, var(--screenx-bg), var(--panel));
 }
 
 .screenx-head {
@@ -478,7 +610,7 @@ main {
 }
 
 .screenx-kicker {
-  color: #7db9e3;
+  color: var(--audio);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -486,9 +618,9 @@ main {
 
 .screenx-no-rank,
 .evidence-level {
-  border: 1px solid #49677e;
+  border: 1px solid var(--screenx-pill-border);
   border-radius: 999px;
-  color: #a9c8dd;
+  color: var(--screenx-pill);
   font-size: 0.68rem;
   padding: 0.12rem 0.5rem;
   white-space: nowrap;
@@ -509,12 +641,12 @@ main {
 
 .screenx-width-note {
   margin: 0;
-  color: #f2c779;
+  color: var(--warning);
 }
 
 .screenx-auditorium-warning {
   margin: 0.25rem 0 0;
-  color: #f3a6a6;
+  color: var(--danger);
 }
 
 .screenx-scope,
@@ -533,7 +665,7 @@ main {
   padding: 0.85rem;
   border: 1px solid var(--border);
   border-radius: 11px;
-  background: rgba(8, 13, 18, 0.62);
+  background: var(--screenx-card);
 }
 
 .screenx-card h3,
@@ -591,18 +723,18 @@ main {
 }
 
 .evidence-official {
-  color: #9cd4a6;
-  border-color: #426a49;
+  color: var(--success);
+  border-color: var(--success-border);
 }
 
 .evidence-media {
-  color: #b9b5e7;
-  border-color: #5e5985;
+  color: var(--media);
+  border-color: var(--media-border);
 }
 
 .evidence-community {
-  color: #e4bd83;
-  border-color: #735e3d;
+  color: var(--community);
+  border-color: var(--community-border);
 }
 
 @media (max-width: 640px) {
@@ -688,7 +820,7 @@ main {
   border-radius: 999px;
   padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 18px var(--shadow);
   z-index: 10;
 }
 
@@ -730,7 +862,7 @@ main {
 
 /* hover 只背景微亮（U-13：實框留給選中） */
 .card.selectable:hover {
-  background: #251d20;
+  background: var(--panel-hover);
 }
 
 /* 選中＝銀幕光實框，與名次金分離（U-3） */
@@ -761,7 +893,7 @@ main {
 .compare-pill.on {
   background: var(--select);
   border-color: var(--select);
-  color: #141013;
+  color: var(--select-ink);
 }
 
 .rank {
@@ -799,19 +931,19 @@ main {
 
 .badge.atmos,
 .badge.tier-atmos {
-  color: #7db9e3;
-  border-color: #3d5a73;
+  color: var(--audio);
+  border-color: var(--audio-border);
 }
 
 /* 整廳認證級（Dolby Cinema / DVA） */
 .badge.tier-cert {
-  color: #86cf8e;
-  border-color: #41603f;
+  color: var(--success);
+  border-color: var(--success-border);
 }
 
 .badge.tier-imax {
-  color: #7db9e3;
-  border-color: #3d5a73;
+  color: var(--audio);
+  border-color: var(--audio-border);
 }
 
 .badge.tier-basic {
@@ -832,8 +964,8 @@ main {
 
 /* 認證綠優先於品牌金（杜比影院／DVA 品牌徽章） */
 .badge.brand.tier-cert {
-  color: #86cf8e;
-  border-color: #41603f;
+  color: var(--success);
+  border-color: var(--success-border);
 }
 
 .card-unsized {
@@ -841,8 +973,8 @@ main {
 }
 
 .badge.unverified {
-  color: #e0b76c;
-  border-color: #6e5a30;
+  color: var(--warning-strong);
+  border-color: var(--warning-border);
 }
 
 .dims {
@@ -891,7 +1023,7 @@ main {
   padding: 0.4rem 0.5rem;
   border: 1px solid var(--border);
   border-radius: 7px;
-  background: rgba(0, 0, 0, 0.14);
+  background: var(--spec-bg);
 }
 
 .spec-field dt {
@@ -917,7 +1049,7 @@ main {
   margin-top: 0.55rem;
   padding: 0.5rem 0.6rem;
   border-left: 2px solid var(--gold-dim);
-  background: rgba(216, 178, 114, 0.05);
+  background: var(--score-bg);
 }
 
 .score-breakdown-head,
@@ -940,7 +1072,7 @@ main {
 
 .score-breakdown li {
   padding: 0.1rem 0;
-  border-top: 1px solid rgba(58, 47, 45, 0.55);
+  border-top: 1px solid var(--score-divider);
 }
 
 .score-points {
@@ -993,7 +1125,7 @@ main {
 
 /* 「待驗證」由徽章降為行內註記（U-5） */
 .unverified-note {
-  color: #e0b76c;
+  color: var(--warning-strong);
   font-size: 0.8rem;
 }
 
@@ -1003,14 +1135,14 @@ main {
   color: var(--muted);
 }
 
-.badge-legend .lg-cert { color: #86cf8e; }
-.badge-legend .lg-imax { color: #7db9e3; }
+.badge-legend .lg-cert { color: var(--success); }
+.badge-legend .lg-imax { color: var(--audio); }
 .badge-legend .lg-brand { color: var(--gold); }
 .badge-legend .lg-basic { color: var(--muted); }
 .badge-legend .lg-unknown { color: var(--muted); border-bottom: 1px dashed var(--border); }
 
 .bar-track {
-  background: #0d0a0b;
+  background: var(--track);
   border-radius: 4px;
   height: 6px;
   margin: 0.4rem 0;
