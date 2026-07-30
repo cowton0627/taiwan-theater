@@ -787,3 +787,21 @@ roadmap 3 已完成並部署，核心 commit `69f87db`；GitHub Pages workflow `
 4. 淺色模式下正文、次要文字、金色名次、音效藍、認證／來源標籤、警示、選中框及 focus 均清楚可辨。
 5. 疊圖六色與圖例一一對應；ScreenX 指南不混入排名且各欄位可讀。
 6. 深色模式視覺不回歸；三種排序 22／48／22、390px、鍵盤與 console 均正常。
+
+## QA 回歸結果：roadmap 3 淺色模式（2026-07-30，部署站）
+
+| 驗證點 | 結果 | 部署站證據 |
+|---|---|---|
+| 系統模式首次載入 | ✅ | 清除 `taiwan-theater-theme` 後，以系統淺色載入時 `data-theme=light`、`color-scheme=light`、theme-color=`#f4f0e8`；系統深色時對應為 `dark`／`dark`／`#141013`。「系統」按鈕 `aria-pressed=true`，本機無覆寫值。 |
+| 系統即時跟隨 | ✅ | 頁面開啟期間將 `prefers-color-scheme` 由 light 改為 dark，`data-theme`、瀏覽器 `color-scheme`、theme-color 與頁面背景即時一起切換，無須重新載入。 |
+| 手動選擇與持久化 | ✅ | 點淺色後 localStorage=`light`，重新載入仍為淺色；點深色後 localStorage=`dark`，重新載入仍為深色。手動淺色時改變系統主題不會覆寫使用者選擇。 |
+| 切回系統 | ✅ | 點「系統」後 `taiwan-theater-theme` 立即刪除，按鈕狀態回到系統，並立即採用當時裝置深色設定。 |
+| 載入前初始化 | ✅ | 在 `DOMContentLoaded` 時點抽查：系統淺色首載已是 `data-theme=light`；預存手動深色後重新載入，在相同時點已是 `data-theme=dark`，且 color-scheme／theme-color 同步，未觀察到先亮後暗或先暗後亮。 |
+| URL 隔離與還原 | ✅ | 多次切換三種主題後，分享 URL 始終沒有 `theme` 參數；`?film=spiderman-brand-new-day-2026&sort=score&sel=miramar-dazhi-imax-gt` 重新載入仍可還原電影、排序與比較選取。 |
+| 淺色文字與語意色 | ✅ | 實測正文 `13.61:1`、次要文字 `5.67:1`、音效藍 `6.76:1`、官方綠標籤 `6.04:1`、待確認文字 `5.67:1`；皆達本輪 7:1／4.5:1 目標。淺色音效模式的名次與 `N／8` 同為藍色，選中框為藍灰 `rgb(66,107,130)`，與一般卡片邊框可辨。 |
+| 鍵盤 focus | ✅ | 以實際 Tab／Shift+Tab 聚焦主題按鈕時顯示藍灰色 2px 實線 outline、offset 2px；不是只靠顏色填滿表示，三個按鈕的 `aria-pressed` 狀態亦正確。 |
+| 疊圖六色 | ✅ | 淺色疊圖六個 `.overlay-rect-0…5` 依序使用棕金、藍、綠、紅、紫、藍灰六種獨立 stroke；格線與中心標記另用中性色，畫面與圖例可一一辨識。 |
+| ScreenX 與模式基線 | ✅ | 《蜘蛛人：重生日》仍顯示 `9 個實體廳（全台）`，指南內零個名次；成像面積／音效層級／綜合評比分別維持 22／48／22 個數字名次。 |
+| 桌面、手機與錯誤 | ✅ | 淺色桌面及 390×844 人工檢視正文、控制列、疊圖、卡片與 ScreenX 區塊均可讀；手機 `scrollWidth=clientWidth=body.scrollWidth=390`。本輪主題切換、重載、模式／電影切換與視口切換均無 console error 或 page error；深色既有視覺未見回歸。 |
+
+**結論：✅ roadmap 3 通過並正式關閉。** 三態主題、系統同步、持久化邊界、載入初始化、瀏覽器色彩中繼資料及淺色可讀性均符合驗收要求，既有排名與特殊格式功能無回歸。
