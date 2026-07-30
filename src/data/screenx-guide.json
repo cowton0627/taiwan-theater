@@ -26,6 +26,7 @@
       {
         "text": "側幕受出入口與逃生門切割；本文作者坐第 10 排伸腳排，心得只適用 10 廳。",
         "scope": "auditorium",
+        "evidence": "community",
         "auditoriumId": "showtime-dome-screenx-10",
         "sources": [
           {
@@ -37,6 +38,7 @@
       {
         "text": "逃生門造成側幕缺角多少影響觀影，但作者認為程度不大；此段未指明只屬哪一廳，不用來產生特定廳推薦或規格。",
         "scope": "venue_unspecified",
+        "evidence": "community",
         "sources": [
           {
             "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
@@ -90,6 +92,7 @@
       {
         "text": "本文作者坐第 5 排伸腳排；側邊各一組投影、環繞與低音配置不同於 10 廳，心得只適用 2 廳。",
         "scope": "auditorium",
+        "evidence": "community",
         "auditoriumId": "showtime-dome-screenx-2",
         "sources": [
           {
@@ -101,6 +104,7 @@
       {
         "text": "逃生門造成側幕缺角多少影響觀影，但作者認為程度不大；此段未指明只屬哪一廳，不用來產生特定廳推薦或規格。",
         "scope": "venue_unspecified",
+        "evidence": "community",
         "sources": [
           {
             "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",

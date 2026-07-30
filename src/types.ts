@@ -43,6 +43,8 @@ export interface SourceRef {
 export interface CommunityReview {
   text: string;
   scope: ReviewScope;
+  /** 每條心得自己的可信度；不得沿用同卡其他心得。 */
+  evidence: EvidenceLevel;
   /** scope=auditorium 時必須指向單一實體廳；未指明廳號不得填。 */
   auditoriumId?: string;
   sources: SourceRef[];

@@ -190,6 +190,23 @@ function ProvenanceTag({ screen, field }: { screen: Screen; field: ProvenanceFie
   );
 }
 
+function CommunityFields({ screen }: { screen: Screen }) {
+  return (
+    <div className="community-fields">
+      <p className="community-line">
+        <strong>💺 推薦座位：</strong>
+        {screen.bestRows ?? '待確認'}{' '}
+        <ProvenanceTag screen={screen} field="bestRows" />
+      </p>
+      <p className="community-line">
+        <strong>口碑：</strong>
+        {screen.communityNotes ?? '待確認'}{' '}
+        <ProvenanceTag screen={screen} field="communityNotes" />
+      </p>
+    </div>
+  );
+}
+
 function ScreenXGuide({
   film,
   release,
@@ -287,6 +304,9 @@ function ScreenXGuide({
                       {EVIDENCE_LABELS[entry.bestRowsEvidence]}
                     </span>
                   )}
+                  {!entry.bestRowsEvidence && entry.bestRows && (
+                    <span className="evidence-level evidence-community">社群實測</span>
+                  )}
                 </p>
                 <details className="evidence-fold">
                   <summary>規格與依據</summary>
@@ -310,6 +330,10 @@ function ScreenXGuide({
                         ）：
                       </strong>
                       {review.text}
+                      {' '}
+                      <span className={`evidence-level evidence-${review.evidence}`}>
+                        {EVIDENCE_LABELS[review.evidence]}
+                      </span>
                     </p>
                   ))}
                   <SourcesFold sources={entry.sources} />
@@ -456,13 +480,7 @@ function UnsizedScreenCard({
             查證狀態：銀幕尺寸尚無可核對資料
             {s.notes && ` ・ ${s.notes}`}
           </p>
-          {(s.bestRows || s.communityNotes) && (
-            <p className="community-line">
-              {s.bestRows && <strong>💺 推薦座位 {s.bestRows}</strong>}
-              {s.bestRows && s.communityNotes && ' ・ '}
-              {s.communityNotes}
-            </p>
-          )}
+          <CommunityFields screen={s} />
           <SourcesFold sources={s.sources} />
         </details>
       </div>
@@ -1368,13 +1386,7 @@ export default function App() {
 	                        </ul>
 	                      </div>
 	                    )}
-	                    {(fit.screen.bestRows || fit.screen.communityNotes) && (
-	                      <p className="community-line">
-	                        {fit.screen.bestRows && <strong>💺 推薦座位 {fit.screen.bestRows}</strong>}
-	                        {fit.screen.bestRows && fit.screen.communityNotes && ' ・ '}
-	                        {fit.screen.communityNotes}
-	                      </p>
-	                    )}
+	                    <CommunityFields screen={fit.screen} />
 	                    <SourcesFold sources={fit.screen.sources} />
 	                  </details>
 	                </div>

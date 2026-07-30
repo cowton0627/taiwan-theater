@@ -1050,6 +1050,22 @@ footer {
   color: var(--muted);
 }
 
+.community-fields {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+}
+
+.community-fields .community-line {
+  margin: 0;
+}
+
+.community-line .evidence-level {
+  display: inline-block;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
 .community-line strong {
   color: var(--text);
   font-weight: 600;

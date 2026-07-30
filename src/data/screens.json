@@ -65,12 +65,12 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源結論一致"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -143,8 +143,8 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "conflict",
+        "note": "前段包覆派與後段舒適派尚未收斂，不產生推薦值"
       }
     }
   },
@@ -218,12 +218,12 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源結論一致"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -800,12 +800,12 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源結論一致"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -1258,12 +1258,12 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源結論一致"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -1347,8 +1347,8 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -1636,12 +1636,12 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源結論一致"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -1715,8 +1715,8 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "community",
-        "note": "社群心得摘要"
+        "level": "secondary_consensus",
+        "note": "多個社群／二手來源交叉支持"
       }
     }
   },
@@ -2173,11 +2173,11 @@
       },
       "bestRows": {
         "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "note": "單篇實測席位，不是跨帖共識"
       },
       "communityNotes": {
         "level": "community",
-        "note": "社群心得摘要"
+        "note": "只適用此實體廳的單篇社群實測"
       }
     }
   },
@@ -2242,11 +2242,11 @@
       },
       "bestRows": {
         "level": "community",
-        "note": "社群實測推薦，不是官方規格"
+        "note": "單篇實測席位，不是跨帖共識"
       },
       "communityNotes": {
         "level": "community",
-        "note": "社群心得摘要"
+        "note": "只適用此實體廳的單篇社群實測"
       }
     }
   },
