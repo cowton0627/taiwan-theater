@@ -7,8 +7,25 @@ export type HallCategory =
   | 'STANDARD';    // 一般廳
 
 export type Region = 'north' | 'central' | 'south' | 'east';
-export type EvidenceLevel = 'official' | 'media' | 'community' | 'unknown';
+export type EvidenceLevel =
+  | 'official'
+  | 'official_indirect'
+  | 'secondary_consensus'
+  | 'media'
+  | 'community'
+  | 'conflict'
+  | 'stale'
+  | 'unknown';
 export type ReviewScope = 'auditorium' | 'venue' | 'venue_unspecified';
+export type ProvenanceField =
+  | 'dimensions'
+  | 'projection'
+  | 'audio'
+  | 'seats'
+  | 'price'
+  | 'auditoriumNumber'
+  | 'bestRows'
+  | 'communityNotes';
 
 /**
  * 結構化資料來源（roadmap 33）：卡片可顯示可點連結。
@@ -29,6 +46,13 @@ export interface CommunityReview {
   /** scope=auditorium 時必須指向單一實體廳；未指明廳號不得填。 */
   auditoriumId?: string;
   sources: SourceRef[];
+}
+
+export interface FieldProvenance {
+  level: EvidenceLevel;
+  sourceIndexes?: number[];
+  note?: string;
+  checkedAt?: string;
 }
 
 /**
@@ -115,6 +139,8 @@ export interface Screen {
   address?: string;
   /** 尺寸是否經過查證（丈量紀錄、官方公布） */
   verified: boolean;
+  /** roadmap 30：欄位各自的可信度；不得再把 verified 解讀為整張卡都已查證。 */
+  provenance?: Partial<Record<ProvenanceField, FieldProvenance>>;
   sources: SourceRef[];
   notes?: string;
 }
@@ -134,16 +160,31 @@ export interface FilmVersion {
   label: string;
   /** 畫幅資訊可信度：official=官方公布（預設）、reported=媒體報導、expected=上映前預期值 */
   confidence?: 'official' | 'reported' | 'expected';
+  /** 此版本是否已確認會在台灣發行；pending 只能作情境模擬。 */
+  taiwanStatus?: 'confirmed' | 'unavailable' | 'pending';
+  /** 全片／選定場景／尚未公布。 */
+  sceneScope?: 'full_film' | 'selected_scenes' | 'unknown';
 }
 
+export type SpecialFormat = 'SCREENX' | '4DX' | 'ULTRA_4DX' | 'MX4D' | 'D_BOX';
+
 export interface SpecialFormatRelease {
-  format: 'SCREENX';
+  format: SpecialFormat;
   market: 'TW';
-  /** 原生協作拍攝或後期轉製；目前只建模已確認的 Shot for ScreenX。 */
-  production: 'shot_for_screenx';
-  /** 官方只確認選定場景，不能推定為全片三面畫面。 */
-  sceneScope: 'selected_scenes';
+  releaseStatus: 'confirmed' | 'unavailable' | 'pending';
+  /** 原生協作拍攝、動感編碼或後期轉製；未知時不推定。 */
+  production?: 'shot_for_screenx' | 'motion_programmed' | 'converted' | 'unknown';
+  sceneScope?: 'full_film' | 'selected_scenes' | 'unknown';
   label: string;
+  experience?: string;
+  /** 對應影廳的 formatBrand／brandLabel，不新增 hallCategory。 */
+  applicableBrands: string[];
+  sources: SourceRef[];
+}
+
+export interface FilmFact {
+  label: string;
+  evidence: EvidenceLevel;
   sources: SourceRef[];
 }
 
@@ -186,6 +227,9 @@ export interface Film {
   titleEn: string;
   year: number;
   shotOn?: string;
+  captureFormat?: FilmFact;
+  maxConfirmedAspectRatio?: number | null;
+  taiwanReleaseStatus?: FilmFact;
   audio?: string;
   /** 全片片長（分鐘）；未公布 null */
   runtimeMin?: number | null;

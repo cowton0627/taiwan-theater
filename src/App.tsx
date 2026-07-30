@@ -14,6 +14,7 @@ import type {
   FitResult,
   GuideValue,
   HallCategory,
+  ProvenanceField,
   Region,
   Screen,
   ScreenXGuideEntry,
@@ -155,8 +156,12 @@ function SourcesFold({ sources }: { sources: Screen['sources'] }) {
 
 const EVIDENCE_LABELS: Record<EvidenceLevel, string> = {
   official: '官方資料',
+  official_indirect: '官方間接',
+  secondary_consensus: '二手一致',
   media: '媒體資料',
   community: '社群實測',
+  conflict: '來源衝突',
+  stale: '可能過時',
   unknown: '待確認',
 };
 
@@ -169,6 +174,19 @@ function GuideField({ label, field }: { label: string; field: GuideValue }) {
         {EVIDENCE_LABELS[field.evidence]}
       </span>
     </div>
+  );
+}
+
+function ProvenanceTag({ screen, field }: { screen: Screen; field: ProvenanceField }) {
+  const provenance = screen.provenance?.[field];
+  if (!provenance) return <span className="evidence-level evidence-unknown">待確認</span>;
+  return (
+    <span
+      className={`evidence-level evidence-${provenance.level}`}
+      title={provenance.note}
+    >
+      {EVIDENCE_LABELS[provenance.level]}
+    </span>
   );
 }
 
@@ -305,6 +323,35 @@ function ScreenXGuide({
   );
 }
 
+function SpecialFormatSummary({ releases }: { releases: SpecialFormatRelease[] }) {
+  if (releases.length === 0) return null;
+  return (
+    <details className="special-format-summary">
+      <summary>台灣特殊格式版本（{releases.length}）</summary>
+      <ul>
+        {releases.map((release) => (
+          <li key={release.format}>
+            <strong>{release.label}</strong>
+            {release.experience && `：${release.experience}`}
+            <span
+              className={`release-status release-${release.releaseStatus}`}
+            >
+              {release.releaseStatus === 'confirmed'
+                ? '台灣已確認'
+                : release.releaseStatus === 'unavailable'
+                  ? '台灣未發行'
+                  : '台灣待確認'}
+            </span>
+            <span className="format-brands">
+              適用品牌：{release.applicableBrands.join('、')}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
 /** 廳型欄位合併類別與品牌，避免「杜比影院／Dolby Cinema」同義資訊重複。 */
 function hallTypeLabel(s: Screen) {
   if (s.hallCategory === 'DOLBY_CINEMA') return '杜比影院';
@@ -385,13 +432,24 @@ function UnsizedScreenCard({
                 {s.officialBookingLabel && ` ・ ${s.officialBookingLabel}`}
               </SpecField>
             )}
-            <SpecField label="投影">{s.projection ?? '未公布'}</SpecField>
+            <SpecField label="投影">
+              {s.projection ?? '未公布'} <ProvenanceTag screen={s} field="projection" />
+            </SpecField>
             <SpecField
               label="音效"
               className={s.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
             >
               {AUDIO_TIER_LABELS[s.audioTier]}
               {s.audio && `（${s.audio}）`}
+              {' '}
+              <ProvenanceTag screen={s} field="audio" />
+            </SpecField>
+            <SpecField label="席次">
+              {s.seats ?? '未公布'} <ProvenanceTag screen={s} field="seats" />
+            </SpecField>
+            <SpecField label="票價">
+              {s.priceNTD != null ? `${s.priceNTD} 元` : '待確認'}{' '}
+              <ProvenanceTag screen={s} field="price" />
             </SpecField>
           </dl>
           <p className="evidence-note">
@@ -836,7 +894,9 @@ export default function App() {
     }
     if (ranked.length === 0) return null;
     const top = ranked[0];
-    const caveat = !top.screen.verified ? '（第 1 名尺寸待驗證）' : '';
+    const dimensionLevel = top.screen.provenance?.dimensions?.level;
+    const caveat =
+      dimensionLevel !== 'official' ? `（第 1 名尺寸：${EVIDENCE_LABELS[dimensionLevel ?? 'unknown']}）` : '';
     if (sortMode === 'score') {
       const score = scoreMap.get(top.screen.id);
       const t = score?.total ?? 0;
@@ -850,14 +910,16 @@ export default function App() {
       return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，${unknown} 項待確認；口碑分未接入）${extra}${caveat}`;
     }
     const subject = film ? `《${film.title}》` : `${customRatio}:1 畫幅`;
+    const simulation =
+      film?.taiwanReleaseStatus?.evidence === 'unknown' ? '（台灣版本待確認的情境模擬）' : '';
     const base = `${subject}在${scope}，${top.screen.name} 的有效成像最大（${top.imageAreaM2.toFixed(0)} ㎡）`;
-    if (ranked.length === 1) return `${base}${caveat}`;
+    if (ranked.length === 1) return `${base}${simulation}${caveat}`;
     const times = top.imageAreaM2 / ranked[1].imageAreaM2;
     const cmp =
       times < 1.05
         ? `，與第二名 ${ranked[1].screen.name} 相當`
         : `，是第二名的 ${times.toFixed(1)} 倍`;
-    return `${base}${cmp}${caveat}`;
+    return `${base}${cmp}${simulation}${caveat}`;
   }, [
     ranked,
     audioRanked,
@@ -989,6 +1051,31 @@ export default function App() {
               {film.runtimeMin != null && film.largeFormatMin == null && ` ・ 片長 ${film.runtimeMin} 分鐘`}
             </p>
             {film.formatNotes && <p className="film-meta film-format">{film.formatNotes}</p>}
+            {film.captureFormat && (
+              <p className="film-fact">
+                <strong>拍攝格式：</strong>
+                {film.captureFormat.label}{' '}
+                <span className={`evidence-level evidence-${film.captureFormat.evidence}`}>
+                  {EVIDENCE_LABELS[film.captureFormat.evidence]}
+                </span>
+              </p>
+            )}
+            {film.taiwanReleaseStatus && (
+              <p
+                className={
+                  film.taiwanReleaseStatus.evidence === 'unknown'
+                    ? 'film-fact film-fact-warning'
+                    : 'film-fact'
+                }
+              >
+                <strong>台灣放映狀態：</strong>
+                {film.taiwanReleaseStatus.label}{' '}
+                <span className={`evidence-level evidence-${film.taiwanReleaseStatus.evidence}`}>
+                  {EVIDENCE_LABELS[film.taiwanReleaseStatus.evidence]}
+                </span>
+              </p>
+            )}
+            <SpecialFormatSummary releases={film.specialFormats ?? []} />
             <SourcesFold sources={film.sources} />
           </div>
         )}
@@ -1188,6 +1275,7 @@ export default function App() {
 	                  </h3>
 	                  <p className="key-takeaway">
 	                    {fit.version.label}
+	                    {fit.version.taiwanStatus === 'pending' && '；台灣版本待確認（情境模擬）'}
 	                    {fit.versionFallback &&
 	                      fit.screen.hallCategory !== 'PREMIUM' &&
 	                      fit.screen.hallCategory !== 'STANDARD' &&
@@ -1218,13 +1306,26 @@ export default function App() {
 	                            ` ・ ${fit.screen.officialBookingLabel}`}
 	                        </SpecField>
 	                      )}
-	                      <SpecField label="投影">{fit.screen.projection ?? '未公布'}</SpecField>
+	                      <SpecField label="投影">
+	                        {fit.screen.projection ?? '未公布'}{' '}
+	                        <ProvenanceTag screen={fit.screen} field="projection" />
+	                      </SpecField>
 	                      <SpecField
 	                        label="音效"
 	                        className={fit.screen.audioTier === 'SURROUND_5_1' ? 'spec-unknown' : ''}
 	                      >
 	                        {AUDIO_TIER_LABELS[fit.screen.audioTier]}
 	                        {fit.screen.audio && `（${fit.screen.audio}）`}
+	                        {' '}
+	                        <ProvenanceTag screen={fit.screen} field="audio" />
+	                      </SpecField>
+	                      <SpecField label="席次">
+	                        {fit.screen.seats ?? '未公布'}{' '}
+	                        <ProvenanceTag screen={fit.screen} field="seats" />
+	                      </SpecField>
+	                      <SpecField label="票價">
+	                        {fit.screen.priceNTD != null ? `${fit.screen.priceNTD} 元` : '待確認'}{' '}
+	                        <ProvenanceTag screen={fit.screen} field="price" />
 	                      </SpecField>
 	                    </dl>
 	                    <p className="dims">
@@ -1241,10 +1342,12 @@ export default function App() {
 	                      {fit.versionUncertain && '（此廳排映版本依影城而定，以較大者計）'}
 	                      {fit.version.confidence === 'reported' && '（畫幅為媒體報導值）'}
 	                      {fit.version.confidence === 'expected' && '（畫幅未定，此為預期值）'}
+	                      {fit.version.taiwanStatus === 'pending' &&
+	                        '（不代表台灣已取得此母版，不計最大畫幅確認分）'}
 	                    </p>
 	                    <p className="evidence-note">
 	                      查證狀態：
-	                      {fit.screen.verified ? '銀幕尺寸已查證' : '銀幕尺寸待驗證'}
+	                      銀幕尺寸 <ProvenanceTag screen={fit.screen} field="dimensions" />
 	                      {fit.screen.notes && ` ・ ${fit.screen.notes}`}
 	                    </p>
 	                    {sortMode === 'score' && scoreMap.get(fit.screen.id) && (

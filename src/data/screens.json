@@ -38,7 +38,41 @@
     ],
     "notes": "全台唯一可放映 1.43:1 的 IMAX GT 雷射廳、全台最大銀幕；2016/3 由數位 IMAX 升級",
     "bestRows": "I–K 排置中",
-    "communityNotes": "Dcard/PTT 跨帖共識：I–K 排置中最佳（H–L 可接受），F 排以前過近易不適。"
+    "communityNotes": "Dcard/PTT 跨帖共識：I–K 排置中最佳（H–L 可接受），F 排以前過近易不適。",
+    "provenance": {
+      "dimensions": {
+        "level": "official",
+        "note": "舊 verified 僅代表銀幕尺寸已翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "2D 404 席／3D 362 席（維基百科）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 600；片長逾 2.5h 加 20（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "vieshow-xindian-yulon-imax",
@@ -78,7 +112,41 @@
       }
     ],
     "notes": "2023/9/28 開幕即雷射；音響 6 聲道（開幕以來未升級），2026/07 實測環繞評價由負轉正",
-    "communityNotes": "選位社群意見分歧：有推前段 F 排求包覆、也有主張 J/K 之後；全廳 14 排——分歧未收斂，不給推薦值。"
+    "communityNotes": "選位社群意見分歧：有推前段 F 排求包覆、也有主張 J/K 之後；全廳 14 排——分歧未收斂，不給推薦值。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "維基百科／Enjoy Movie 指南"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 530（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "vieshow-banqiao-imax",
@@ -123,7 +191,41 @@
     ],
     "notes": "2022/12/14 由氙燈數位升級 IMAX with Laser（Laser XT）；音響未隨升級更新，2026/07 實測仍為 6 聲道",
     "bestRows": "F–I 排（G/H 最穩）",
-    "communityNotes": "共識帶 F–I、G/H 最穩（H 為伸腿排）；F 有人覺得易暈、前 4 排過近。"
+    "communityNotes": "共識帶 F–I、G/H 最穩（H 為伸腿排）；F 有人覺得易暈、前 4 排過近。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "Enjoy Movie 指南／MovieGo"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 530（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "milihsin-taimall-imax",
@@ -157,7 +259,41 @@
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       }
     ],
-    "notes": "氙燈數位雙機 2K、未升級雷射"
+    "notes": "氙燈數位雙機 2K、未升級雷射",
+    "provenance": {
+      "dimensions": {
+        "level": "official",
+        "note": "舊 verified 僅代表銀幕尺寸已翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "官網 325；維基作 329（含 4 輪椅席）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 500（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-hsinchu-bigcity-imax",
@@ -191,7 +327,41 @@
         "url": "https://www.atmovies.com.tw/showtime/t03301/a03/"
       }
     ],
-    "notes": "氙燈數位、未升級雷射"
+    "notes": "氙燈數位、未升級雷射",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "約 300 席（MovieGo）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 500（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-taichung-topcity-imax",
@@ -225,7 +395,41 @@
     "seatsNotes": "暫採 MovieGo 現行 355（含 4 輪椅）；開幕報導稱「近 400」、另有 381 一說，待官方座位圖覆核",
     "priceNTD": 420,
     "priceNotes": "3D 480（二手 2026-03～05）",
-    "notes": "氙燈雙機 2K、未升級雷射；2026/07 實測「又老又舊但很能打」"
+    "notes": "氙燈雙機 2K、未升級雷射；2026/07 實測「又老又舊但很能打」",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "暫採 MovieGo 現行 355（含 4 輪椅）；開幕報導稱「近 400」、另有 381 一說，待官方座位圖覆核"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 480（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "in89-chiayi-imax",
@@ -274,7 +478,41 @@
     "seatsNotes": "PTT 票價情報 292 席（官網未列，待確認）",
     "priceNTD": 420,
     "priceNotes": "3D +60（官方票價表，效期標至 2026-12）",
-    "notes": "IMAX with Laser（CoLA）；2026/07 十廳簡評評為全台最佳（畫質亮度第一集團、低頻渾厚）"
+    "notes": "IMAX with Laser（CoLA）；2026/07 十廳簡評評為全台最佳（畫質亮度第一集團、低頻渾厚）",
+    "provenance": {
+      "dimensions": {
+        "level": "official",
+        "note": "舊 verified 僅代表銀幕尺寸已翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "PTT 票價情報 292 席（官網未列，待確認）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D +60（官方票價表，效期標至 2026-12）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-tainan-imax",
@@ -308,7 +546,41 @@
     "seatsNotes": "390＋4 無障礙（MovieGo／訂票座位圖系；PTT 開幕實測 392 含身障）；開幕前宣傳稱 426 不採",
     "priceNTD": 410,
     "priceNotes": "3D 470（二手 2026-03～05）",
-    "notes": "雙氙燈 2K、未升級雷射；2026/07 十廳簡評評為十間中表現最差（狀態衰退明顯）"
+    "notes": "雙氙燈 2K、未升級雷射；2026/07 十廳簡評評為十間中表現最差（狀態衰退明顯）",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "390＋4 無障礙（MovieGo／訂票座位圖系；PTT 開幕實測 392 含身障）；開幕前宣傳稱 426 不採"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 470（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-kaohsiung-fe-imax",
@@ -342,7 +614,41 @@
     "seatsNotes": "MovieGo／enjoymovie 一致 271 席（含 3 無障礙）",
     "priceNTD": 450,
     "priceNotes": "3D 510（二手 2026-03～05）",
-    "notes": "2022 年底由氙燈升級 IMAX with Laser（XT）；亮度實測僅第二集團、重低音猛烈"
+    "notes": "2022 年底由氙燈升級 IMAX with Laser（XT）；亮度實測僅第二集團、重低音猛烈",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "MovieGo／enjoymovie 一致 271 席（含 3 無障礙）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 510（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-hualien-imax",
@@ -386,7 +692,41 @@
     "seatsNotes": "MovieGo：368 席（含 4 無障礙）",
     "priceNTD": 400,
     "priceNotes": "3D 450（二手 2026-03～05）",
-    "notes": "IMAX with Laser（CoLA，與嘉義同規格）；論壇稱全台唯一懸空式銀幕；座位區離銀幕較遠"
+    "notes": "IMAX with Laser（CoLA，與嘉義同規格）；論壇稱全台唯一懸空式銀幕；座位區離銀幕較遠",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "MovieGo：368 席（含 4 無障礙）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 450（二手 2026-03～05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "muvie-titan",
@@ -433,7 +773,41 @@
     ],
     "notes": "全影城 THX 認證；22×12m 為業者宣傳整數、未經丈量；La Vie 報導稱隱藏式 7.1 聲道，TITAN 的 Atmos 配置待核",
     "bestRows": "G–I 排（中後段）",
-    "communityNotes": "PTT/Dcard 多數推 G 排置中、中後段原則；全廳 14 排。"
+    "communityNotes": "PTT/Dcard 多數推 G 排置中、中後段原則；全廳 14 排。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "來源分歧 440/450/470、採星展 2026-05，建議官網復核"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "luxcine-ximen-giant",
@@ -466,7 +840,41 @@
         "label": "輕旅行／PTT（原文未定位）",
         "note": "輕旅行／PTT：A 廳 Spectro 巨幕 20×10m、Dolby 7.1"
       }
-    ]
+    ],
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D +70、早場 250（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-kaohsiung-dreammall",
@@ -494,7 +902,41 @@
         "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       }
-    ]
+    ],
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-eda-8",
@@ -528,7 +970,41 @@
     "seatsNotes": "全店 10 廳 1,764 席；8 廳單廳席數未查得",
     "priceNTD": 290,
     "priceNotes": "巨幕與一般廳同價、無加價；3D +60（官網 2026-07）",
-    "notes": "義大世界；另有金鑽貴賓廳 ×2"
+    "notes": "義大世界；另有金鑽貴賓廳 ×2",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "巨幕與一般廳同價、無加價；3D +60（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-tainan-a",
@@ -557,7 +1033,41 @@
         "url": "https://travel.udn.com/travel/story/7208/8790816"
       }
     ],
-    "notes": "已歇業（一館 2024/12/31、二館 2025/6/30），保留供歷史紀錄"
+    "notes": "已歇業（一館 2024/12/31、二館 2025/6/30），保留供歷史紀錄",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-taichung-wenxin-11",
@@ -584,7 +1094,41 @@
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       }
     ],
-    "notes": "LED 直顯銀幕（非投影）"
+    "notes": "LED 直顯銀幕（非投影）",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "kinmen-golden-lion-a",
@@ -611,7 +1155,41 @@
         "note": "PTT Theater 板〈全台灣IMAX/巨幕廳資料整理〉（M.1577599080）",
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       }
-    ]
+    ],
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 430、早場 310（官方票價圖 2024-02）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "skcinemas-taoyuan-dolby",
@@ -653,7 +1231,41 @@
     ],
     "notes": "全台第一座 Dolby Cinema（2020/12/3 啟用）；銀幕尺寸為論壇估計、官方未公布",
     "bestRows": "G 排（H–J 亦佳）",
-    "communityNotes": "G 排與銀幕平視、前無人頭，為共識皇帝位；多篇 PTT/Dcard 交叉：亮度、色彩、對比為全台頂標，整體評價普遍高於美麗華杜比。"
+    "communityNotes": "G 排與銀幕平視、前無人頭，為共識皇帝位；多篇 PTT/Dcard 交叉：亮度、色彩、對比為全台頂標，整體評價普遍高於美麗華杜比。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "開幕媒體報導 322；另有 335（Marie Claire）/343（維基）異說"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-02 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "miramar-dazhi-dolby",
@@ -704,7 +1316,41 @@
       }
     ],
     "notes": "與 IMAX GT 同館——亞洲少數同時擁有兩者的影城；16.0×6.8m 之說為 Dcard 單一網友自估、疑混入改建前舊廳寬度",
-    "communityNotes": "@aedwarda 開幕實測：畫質出色、音質偏悶；PTT 同期評「畫質很棒、但跟青埔比各方面差一點、螢幕偏小」。"
+    "communityNotes": "@aedwarda 開幕實測：畫質出色、音質偏悶；PTT 同期評「畫質很棒、但跟青埔比各方面差一點、螢幕偏小」。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "美麗華官方團劃／包廳頁：303 席（2026-07 稽核確認）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 560（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "官方未公開數字廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-dome-dva-8",
@@ -747,7 +1393,41 @@
       }
     ],
     "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布",
-    "communityNotes": "8 廳專屬口碑（2025/10–12）：空心木地板令低頻無法從地板傳導、隔壁廳震動滲入；銀幕偏小（PTT 實測約寬 11.6m）。未指明廳號的畫面偏暗評價不作本廳專屬結論。"
+    "communityNotes": "8 廳專屬口碑（2025/10–12）：空心木地板令低頻無法從地板傳導、隔壁廳震動滲入；銀幕偏小（PTT 實測約寬 11.6m）。未指明廳號的畫面偏暗評價不作本廳專屬結論。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "一般廳 400（2025-10 開幕價，媒體）"
+      },
+      "auditoriumNumber": {
+        "level": "community",
+        "note": "實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-dome-dva-9",
@@ -784,7 +1464,41 @@
         "note": "現有來源不足以把 8 廳心得套用到 9 廳；只保留 DVA 共通授權資料"
       }
     ],
-    "notes": "DVA＝Dolby Vision＋Atmos 授權，非 Dolby Cinema 整廳認證；9 廳銀幕尺寸與專屬口碑待查證"
+    "notes": "DVA＝Dolby Vision＋Atmos 授權，非 Dolby Cinema 整廳認證；9 廳銀幕尺寸與專屬口碑待查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "一般廳 400（2025-10 開幕價，媒體）"
+      },
+      "auditoriumNumber": {
+        "level": "community",
+        "note": "實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "in89-ximen-coach",
@@ -814,7 +1528,41 @@
         "url": "https://star.ettoday.net/news/3169103"
       }
     ],
-    "notes": "2026/05/31 歇業，保留供歷史紀錄"
+    "notes": "2026/05/31 歇業，保留供歷史紀錄",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-taipei-grand",
@@ -861,7 +1609,41 @@
     ],
     "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證",
     "bestRows": "11–13 排",
-    "communityNotes": "改裝後 PTT 實測共識 11–13 排（11 排有「皇帝位」之評、13 排實測最佳、16 排偏遠）；D-BOX 位於 19–20 排共 18 席，廳體大視野仍佳。"
+    "communityNotes": "改裝後 PTT 實測共識 11–13 排（11 排有「皇帝位」之評、13 排實測最佳、16 排偏遠）；D-BOX 位於 19–20 排共 18 席，廳體大視野仍佳。",
+    "provenance": {
+      "dimensions": {
+        "level": "official",
+        "note": "舊 verified 僅代表銀幕尺寸已翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "維基／媒體：867 席"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D 450、早場 320（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "skcinemas-taoyuan-luxe",
@@ -902,7 +1684,41 @@
       }
     ],
     "notes": "與杜比影院同館；「全球第 300 座／台灣第 4 座終極銀幕」為新光方說法、查無 RealD 官方佐證",
-    "communityNotes": "LUXE 低頻全台最強（PTT「北部低頻控首選」），但低音強時偶爾壓過其他聲音；Dcard 一日三刷橫評：對比較低但有電影感。"
+    "communityNotes": "LUXE 低頻全台最強（PTT「北部低頻控首選」），但低音強時偶爾壓過其他聲音；Dcard 一日三刷橫評：對比較低但有電影感。",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "328（票務）／322（開幕稿）／323（維基）各說；官方未公開逐廳座位數；第 8 排為紅色雙人沙發"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-02 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "in89-ximen-luxe",
@@ -932,7 +1748,41 @@
         "url": "https://star.ettoday.net/news/3169103"
       }
     ],
-    "notes": "台灣第一座 LUXE（2019）；2026/05/31 隨影城歇業，保留供歷史紀錄；LUXE 廳音響配置未查得"
+    "notes": "台灣第一座 LUXE（2019）；2026/05/31 隨影城歇業，保留供歷史紀錄；LUXE 廳音響配置未查得",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-linkou-atmos",
@@ -964,7 +1814,41 @@
         "note": "論壇：另有 Barco Auro 11.1 之說（官方頁未載，未證實）"
       }
     ],
-    "notes": "2015/2 開幕；論壇稱同館有 Auro 11.1（官方頁未提及，待查證）"
+    "notes": "2015/2 開幕；論壇稱同館有 Auro 11.1（官方頁未提及，待查證）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "Atmos 3D 370（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-bade-atmos",
@@ -997,7 +1881,41 @@
         "url": "https://www.ambassador.com.tw/home/TheaterList"
       }
     ],
-    "notes": "維基載 Atmos 廳共 2 廳，此筆代表收錄；廳號與規格待官方查證"
+    "notes": "維基載 Atmos 廳共 2 廳，此筆代表收錄；廳號與規格待官方查證",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "Atmos 3D 390（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-shulin-screenx",
@@ -1028,7 +1946,41 @@
     ],
     "notes": "ScreenX 為 270° 三面投影特殊畫幅，主銀幕尺寸未公布",
     "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-xinxin-screenx",
@@ -1062,7 +2014,41 @@
     ],
     "notes": "林森北路；ScreenX 270° 三面投影，主銀幕尺寸未公布",
     "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面（巴哈實例：13–15 排）。"
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面（巴哈實例：13–15 排）。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理；開幕 410 已調漲"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-dome-ultra4dx",
@@ -1090,7 +2076,41 @@
         "url": "https://www.cool3c.com/article/244669"
       }
     ],
-    "notes": "2025/10 開幕；動感座椅＋270° 三面投影雙系統，銀幕尺寸未公布"
+    "notes": "2025/10 開幕；動感座椅＋270° 三面投影雙系統，銀幕尺寸未公布",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "全台獨家（2025-10）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-dome-screenx-10",
@@ -1125,7 +2145,41 @@
     ],
     "notes": "大廳；270° 三面投影，社群推測主銀幕寬約 14–15m，未採入正面成像排名",
     "bestRows": "第 10 排置中（單篇實測席位）",
-    "communityNotes": "僅適用 10 廳：共 14 排、單排最多 21 席；側幕遭出入口裁切。"
+    "communityNotes": "僅適用 10 廳：共 14 排、單排最多 21 席；側幕遭出入口裁切。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10"
+      },
+      "auditoriumNumber": {
+        "level": "community",
+        "note": "實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-dome-screenx-2",
@@ -1160,7 +2214,41 @@
     ],
     "notes": "小廳；社群推測主銀幕寬約 11–12m，未採入正面成像排名",
     "bestRows": "第 5 排置中（單篇實測席位）",
-    "communityNotes": "僅適用 2 廳：共 12 排、單排最多 15 席；配置與 10 廳不同。"
+    "communityNotes": "僅適用 2 廳：共 12 排、單排最多 15 席；配置與 10 廳不同。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10"
+      },
+      "auditoriumNumber": {
+        "level": "community",
+        "note": "實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "venice-zhongli-atmos",
@@ -1190,7 +2278,41 @@
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       }
     ],
-    "notes": "中壢在地獨立影城；銀幕尺寸與座位數待確認"
+    "notes": "中壢在地獨立影城；銀幕尺寸與座位數待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "broadway-zhubei-flagship",
@@ -1224,7 +2346,41 @@
         "url": "https://www.atmovies.com.tw/showtime/t03510/a35/"
       }
     ],
-    "notes": "2022/12/14 開幕，新竹縣首座首輪影城；全店 14 廳 1,238 席；旗艦廳尺寸與座位待確認"
+    "notes": "2022/12/14 開幕，新竹縣首座首輪影城；全店 14 廳 1,238 席；旗艦廳尺寸與座位待確認",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "巨幕 3D 400、另有 VIP 廳 480（2026-02 整理）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "milihsin-tamsui-giant",
@@ -1250,7 +2406,41 @@
         "url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E9%BA%97%E6%96%B0%E5%BD%B1%E5%9F%8E"
       }
     ],
-    "notes": "曾為全台最大 Dolby Atmos 巨幕；2024/12/30 歇業，保留供歷史紀錄"
+    "notes": "曾為全台最大 Dolby Atmos 巨幕；2024/12/30 歇業，保留供歷史紀錄",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "muvie-tigercity-titan",
@@ -1284,7 +2474,41 @@
         "url": "https://enjoymovie.net/"
       }
     ],
-    "notes": "原老虎城 IMAX 廳址改裝、2025/1/10 啟用（原 IMAX 結束年份兩說待查）；論壇評音效平平、賣點在舒適度"
+    "notes": "原老虎城 IMAX 廳址改裝、2025/1/10 啟用（原 IMAX 結束年份兩說待查）；論壇評音效平平、賣點在舒適度",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "233 席（含 3 無障礙）、排距 130cm（enjoymovie）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "與 2025-01 開幕價相同（二手 2026）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-taichung-station-giant",
@@ -1313,7 +2537,41 @@
       }
     ],
     "notes": "秀泰官網：「廳高 15 米（約五層樓）、寬 22 米」——15m 為廳挑高非銀幕高（同岡山誤植模式），銀幕高未公布、退出排名待查",
-    "address": "台中市東區南京路76號"
+    "address": "台中市東區南京路76號",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-taichung-station-screenx",
@@ -1343,7 +2601,41 @@
     "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
     "address": "台中市東區南京路76號",
     "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-taichung-wenxin-screenx",
@@ -1374,7 +2666,41 @@
     ],
     "notes": "ScreenX＋4K 雷射；270° 總寬約 66m（非主銀幕尺寸）",
     "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "約 300 席（媒體）"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "skcinemas-taichung-hall3-atmos",
@@ -1405,7 +2731,41 @@
       }
     ],
     "notes": "新光三越中港店 13–14F；2025 氣爆停業逾半年後已復業",
-    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
+    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "全新光最貴廳型（2025-02 整理）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "vieshow-taichung-ifg-atmos",
@@ -1433,7 +2793,41 @@
       }
     ],
     "notes": "台中市東區復興路四段 186 號 4 樓",
-    "address": "台中市東區復興路四段186號4樓（iFG 遠雄廣場）"
+    "address": "台中市東區復興路四段186號4樓（iFG 遠雄廣場）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "一般廳 340、Atmos 僅 +10（二手 2026-05）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-taichung-lihpao-giant",
@@ -1459,7 +2853,41 @@
       }
     ],
     "notes": "銀幕高未公布",
-    "address": "台中市后里區月眉東路二段181號3樓（麗寶 Outlet）"
+    "address": "台中市后里區月眉東路二段181號3樓（麗寶 Outlet）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ririxin-taichung-supreme",
@@ -1489,7 +2917,41 @@
       }
     ],
     "notes": "中區獨立老字號；銀幕尺寸未公布",
-    "address": "台中市中區中華路一段58號"
+    "address": "台中市中區中華路一段58號",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "enjoymovie 台中指南：700 席"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "官方不分廳：2D 230／3D 320，150 分以上 +10（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ririxin-taichung-6a-atmos",
@@ -1516,7 +2978,41 @@
       }
     ],
     "notes": "",
-    "address": "台中市中區中華路一段58號"
+    "address": "台中市中區中華路一段58號",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "官方不分廳：2D 230／3D 320（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "in89-chiayi-luxe",
@@ -1545,7 +3041,41 @@
         "url": "https://www.ptt.cc/bbs/Theater/M.1639584549.A.E4B.html"
       }
     ],
-    "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳"
+    "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "3D +60（官方票價表）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "skcinemas-tainan-luxe",
@@ -1574,7 +3104,41 @@
       }
     ],
     "notes": "小西門；銀幕尺寸未公布",
-    "address": "台南市中西區西門路一段658-1號（新光三越小西門）"
+    "address": "台南市中西區西門路一段658-1號（新光三越小西門）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "secondary_consensus",
+        "note": "enjoymovie 台南指南：432 席"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-02 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "showtime-kaohsiung-dreammall-screenx",
@@ -1604,7 +3168,41 @@
     ],
     "notes": "ScreenX 270° 三面投影，主銀幕尺寸未公布",
     "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。"
+    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面。",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "unknown",
+        "note": "音效系統尚未查證"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2025-10 整理"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "community",
+        "note": "社群實測推薦，不是官方規格"
+      },
+      "communityNotes": {
+        "level": "community",
+        "note": "社群心得摘要"
+      }
+    }
   },
   {
     "id": "showtime-kaohsiung-gangshan-giant",
@@ -1638,7 +3236,41 @@
       }
     ],
     "notes": "2022/6/23 開幕；官方宣傳 22m 寬、廳挑高 15m，媒體曾誤植為銀幕 22×15——採論壇實測 20×11",
-    "address": "高雄市岡山區捷安路1巷2號4樓"
+    "address": "高雄市岡山區捷安路1巷2號4樓",
+    "provenance": {
+      "dimensions": {
+        "level": "community",
+        "note": "既有尺寸尚未由官方來源翻正"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "2023 開幕 340 已調漲（2025-10 整理）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "ambassador-kh-skmpark-atmos",
@@ -1666,7 +3298,41 @@
       }
     ],
     "notes": "前鎮草衙；廳號與規格待官方查證",
-    "address": "高雄市前鎮區中山四路100號3樓（SKM Park）"
+    "address": "高雄市前鎮區中山四路100號3樓（SKM Park）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "Atmos 3D 370（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "mld-kaohsiung-atmos",
@@ -1694,7 +3360,41 @@
       }
     ],
     "notes": "2025 商場調整不影響影城；銀幕尺寸待確認",
-    "address": "高雄市前鎮區忠勤路8號"
+    "address": "高雄市前鎮區忠勤路8號",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "unknown",
+        "note": "投影規格尚未取得"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "secondary_consensus",
+        "note": "官方不分廳：2D 290／3D 350（官網 2026-07）"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "skcinemas-taichung-dva",
@@ -1721,7 +3421,41 @@
       }
     ],
     "notes": "2026/6 啟用，台中首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
-    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）"
+    "address": "台中市西屯區台灣大道三段301號（新光三越中港店）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   },
   {
     "id": "skcinemas-tainan-dva",
@@ -1748,6 +3482,40 @@
       }
     ],
     "notes": "2026/6 啟用，台南首座 DVA；廳號與規格待補；非 Dolby Cinema 整廳認證",
-    "address": "台南市中西區西門路一段658-1號（新光三越小西門）"
+    "address": "台南市中西區西門路一段658-1號（新光三越小西門）",
+    "provenance": {
+      "dimensions": {
+        "level": "unknown",
+        "note": "銀幕尺寸尚未取得"
+      },
+      "projection": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "audio": {
+        "level": "secondary_consensus",
+        "note": "既有來源支持，尚待逐欄升級官方引用"
+      },
+      "seats": {
+        "level": "unknown",
+        "note": "席次尚未取得"
+      },
+      "price": {
+        "level": "unknown",
+        "note": "現行票價尚未取得"
+      },
+      "auditoriumNumber": {
+        "level": "unknown",
+        "note": "尚未遷移實體廳號"
+      },
+      "bestRows": {
+        "level": "unknown",
+        "note": "尚無可靠推薦座位"
+      },
+      "communityNotes": {
+        "level": "unknown",
+        "note": "尚無策展口碑"
+      }
+    }
   }
 ]

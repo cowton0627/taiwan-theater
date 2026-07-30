@@ -49,7 +49,13 @@ export function scoreScreen(fit: FitResult, maxArea: number, film: Film | null):
   const s = fit.screen;
   const items: ScoreItem[] = [];
 
-  if (s.hallCategory === 'IMAX_GT') items.push({ label: '可放映 1.43:1', pts: 1 });
+  if (s.hallCategory === 'IMAX_GT') {
+    if (fit.version.confidence === 'expected' || fit.version.taiwanStatus === 'pending') {
+      items.push({ label: '台灣 1.43:1 版本待確認', pts: 0, unknown: true });
+    } else {
+      items.push({ label: '可放映 1.43:1', pts: 1 });
+    }
+  }
   if (s.audioTier === 'DOLBY_CINEMA') items.push({ label: '杜比影院整廳認證', pts: 1 });
   if (s.audioTier === 'DVA') items.push({ label: 'DVA 授權', pts: 0.5 });
   if (IMMERSIVE.has(s.audioTier)) {
@@ -78,12 +84,23 @@ export function scoreScreen(fit: FitResult, maxArea: number, film: Film | null):
   }
 
   // 已計「可放映 1.43」者不重複計最大畫幅版——同一優勢不三重計分
-  if (film && s.hallCategory !== 'IMAX_GT') {
+  if (
+    film &&
+    s.hallCategory !== 'IMAX_GT' &&
+    fit.version.confidence !== 'expected' &&
+    fit.version.taiwanStatus !== 'pending'
+  ) {
     const ratios = new Set(film.versions.map((v) => v.ratio));
     const min = Math.min(...film.versions.map((v) => v.ratio));
     if (ratios.size > 1 && fit.version.ratio === min) {
       items.push({ label: '放映本片最大畫幅版', pts: 1 });
     }
+  } else if (
+    film &&
+    s.hallCategory !== 'IMAX_GT' &&
+    (fit.version.confidence === 'expected' || fit.version.taiwanStatus === 'pending')
+  ) {
+    items.push({ label: '台灣最大畫幅版本待確認', pts: 0, unknown: true });
   }
 
   return {

@@ -35,7 +35,7 @@ npm run build    # 產出 dist/
 | `public/data/tmdb.json` | 台灣片單（階段二） | **尚未入庫**——workflow 目前停用（見下） |
 
 - 資料庫現況：**50 筆影廳（46 筆營運中、4 筆歇業保留歷史紀錄）**，涵蓋全台 IMAX、杜比影院、DVA、LUXE、巨幕、ScreenX 與代表性 Atmos 廳。
-- `verified` 欄位標記**銀幕尺寸**是否經官方公布或丈量查證：目前 4 筆為 `true`（美麗華 IMAX GT、台茂 IMAX、國賓鉅院廳、嘉義 in89 IMAX），其餘為社群流傳值待查。roadmap 30 規劃升級為**欄位級 provenance**（尺寸／音效／席次／票價各自標可信度）。
+- `provenance` 逐欄標記尺寸、投影、音效、席次、票價、廳號、推薦座位與口碑的可信度（官方／官方間接／二手一致／社群實測／來源衝突／待確認／已過時）。舊 `verified` 僅為尺寸相容欄位，不可解讀為整張卡都已查證。
 - **TMDB 狀態**：`update-tmdb.yml` 已停用（disabled），排程不會執行、無成功紀錄；啟用步驟＝repo Settings → Secrets 加 `TMDB_TOKEN`（v4 Read Access Token）→ `gh workflow enable "Update TMDB film list"`。啟用前 roadmap 7 不打勾。
 
 **徵求資料**：任何影廳的官方尺寸或丈量紀錄、音響聲道實測、座位數——請開 [GitHub issue](https://github.com/cowton0627/taiwan-theater/issues) 附來源，資料衝突會並列各說法不隱藏異議。

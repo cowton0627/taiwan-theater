@@ -87,9 +87,12 @@
       {
         "format": "SCREENX",
         "market": "TW",
+        "releaseStatus": "confirmed",
         "production": "shot_for_screenx",
         "sceneScope": "selected_scenes",
         "label": "Shot for SCREENX（選定場景多機直接拍攝）",
+        "experience": "270° 三面延伸畫面",
+        "applicableBrands": ["ScreenX"],
         "sources": [
           {
             "label": "Shot for SCREENX 官方製作頁",
@@ -105,6 +108,40 @@
             "label": "秀泰：《蜘蛛人：重生日》SCREENX 場次活動",
             "url": "https://www.showtimes.com.tw/programs/12770/",
             "note": "秀泰官方列出台灣 7/29 SCREENX 版本與各影城票價依據"
+          }
+        ]
+      },
+      {
+        "format": "4DX",
+        "market": "TW",
+        "releaseStatus": "confirmed",
+        "production": "motion_programmed",
+        "sceneScope": "full_film",
+        "label": "4DX 動感特效版",
+        "experience": "動感座椅與環境特效；不代表額外畫面",
+        "applicableBrands": ["4DX"],
+        "sources": [
+          {
+            "label": "秀泰：蜘蛛人特殊格式活動",
+            "url": "https://ste.kje-event.com.tw/news/ins.php?index_id=272",
+            "note": "台灣活動頁列出 4DX／ULTRA 4DX 專屬版本"
+          }
+        ]
+      },
+      {
+        "format": "ULTRA_4DX",
+        "market": "TW",
+        "releaseStatus": "confirmed",
+        "production": "motion_programmed",
+        "sceneScope": "selected_scenes",
+        "label": "ULTRA 4DX（4DX＋ScreenX）",
+        "experience": "動感座椅結合三面畫面；三面畫面只在選定場景出現",
+        "applicableBrands": ["ULTRA 4DX"],
+        "sources": [
+          {
+            "label": "秀泰：蜘蛛人特殊格式活動",
+            "url": "https://ste.kje-event.com.tw/news/ins.php?index_id=272",
+            "note": "台灣活動頁列出 ULTRA 4DX，並說明 ScreenX 為選定場景多機拍攝"
           }
         ]
       }
@@ -137,32 +174,186 @@
     ]
   },
   {
-    "id": "dune-part-three-2026",
-    "title": "沙丘：第三部",
-    "titleEn": "Dune: Part Three",
-    "year": 2026,
-    "shotOn": "底片為主＋IMAX 65mm 底片（大部分）；沙漠戲刻意用數位 IMAX",
-    "runtimeMin": null,
+    "id": "dune-part-one-2021",
+    "title": "沙丘",
+    "titleEn": "Dune: Part One",
+    "year": 2021,
+    "shotOn": "ARRI Alexa LF 數位攝影；為 2.39 與 IMAX 1.43 雙畫幅構圖",
+    "captureFormat": {
+      "label": "數位大格式攝影；選定場景為 IMAX 1.43 構圖",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "ASC：沙丘第一部攝影訪談",
+          "url": "https://theasc.com/article/dune-fear-is-the-mind-killer/",
+          "note": "攝影 Greig Fraser 明示同時為 2.39 與 1.43 IMAX presentation 構圖，1.43 用於選定場景"
+        }
+      ]
+    },
+    "maxConfirmedAspectRatio": 1.43,
+    "taiwanReleaseStatus": {
+      "label": "歷史上映；台灣 GT／一般 IMAX 實際版本仍以當年場次紀錄為準",
+      "evidence": "secondary_consensus",
+      "sources": []
+    },
+    "runtimeMin": 155,
     "largeFormatMin": null,
-    "formatNotes": "2026/12/18 上映；「全片 IMAX」為 IMAX CEO 口誤、Variety 已更正；IMAX 底片段落理論可達 1.43:1，比例配置未公告（以下版本為預期值）；攝影 Linus Sandgren（非前兩集的 Greig Fraser）",
+    "formatNotes": "選定場景在一般 IMAX 擴展至 1.90、GT 可至 1.43；IMAX 所稱「最多增加 40% 畫面」是畫面高度增加量，不是 40% 片長。",
     "versions": [
       {
         "hallCategory": "IMAX_GT",
         "ratio": 1.43,
-        "label": "IMAX GT 1.43:1（底片段落）",
-        "confidence": "expected"
+        "label": "IMAX GT 1.43:1（選定場景）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
       },
       {
         "hallCategory": "IMAX",
         "ratio": 1.9,
-        "label": "數位 IMAX 1.90:1",
-        "confidence": "expected"
+        "label": "一般 IMAX 1.90:1（選定場景）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
       },
       {
         "hallCategory": "STANDARD",
         "ratio": 2.39,
         "label": "一般廳 Scope 2.39:1",
-        "confidence": "expected"
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      }
+    ],
+    "sources": [
+      {
+        "label": "IMAX：沙丘最多增加 40% 畫面",
+        "url": "https://www.imax.com/news/dune-experience-up-to-40-percent-more-picture-only-in-select-imax-theatres",
+        "note": "up to 40% more picture 指畫面資訊增加量，不是片長比例"
+      },
+      {
+        "label": "ASC：沙丘第一部攝影訪談",
+        "url": "https://theasc.com/article/dune-fear-is-the-mind-killer/",
+        "note": "確認 2.39／1.43 雙構圖與選定 1.43 場景"
+      }
+    ]
+  },
+  {
+    "id": "dune-part-two-2024",
+    "title": "沙丘：第二部",
+    "titleEn": "Dune: Part Two",
+    "year": 2024,
+    "shotOn": "全片使用 IMAX 認證數位攝影機；不等於全片 1.43",
+    "captureFormat": {
+      "label": "全片 IMAX 認證數位攝影；放映画幅仍依版本與場景切換",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "IMAX：沙丘第二部格式說明",
+          "url": "https://www.imax.com/news/dune-part-two-filmed-for-imax",
+          "note": "Filmed for IMAX 描述拍攝系統，不代表全片以 1.43 放映"
+        }
+      ]
+    },
+    "maxConfirmedAspectRatio": 1.43,
+    "taiwanReleaseStatus": {
+      "label": "歷史上映；一般 IMAX 以 1.90 為主，GT 選定場景可至 1.43",
+      "evidence": "official_indirect",
+      "sources": []
+    },
+    "runtimeMin": 166,
+    "largeFormatMin": null,
+    "formatNotes": "全片使用 IMAX 認證數位攝影機不等於全片 1.43；一般 IMAX 主要為 1.90，GT 只有選定場景擴展至 1.43。",
+    "versions": [
+      {
+        "hallCategory": "IMAX_GT",
+        "ratio": 1.43,
+        "label": "IMAX GT 1.43:1（選定場景）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
+      },
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "一般 IMAX 1.90:1（主要版本）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      }
+    ],
+    "sources": [
+      {
+        "label": "IMAX：沙丘第二部 Filmed for IMAX",
+        "url": "https://www.imax.com/news/dune-part-two-filmed-for-imax",
+        "note": "全片 IMAX 認證數位攝影；GT 1.43 仍為選定場景"
+      }
+    ]
+  },
+  {
+    "id": "dune-part-three-2026",
+    "title": "沙丘：第三部",
+    "titleEn": "Dune: Part Three",
+    "year": 2026,
+    "shotOn": "大部分使用 70mm 底片；其中很大一部分使用 IMAX 65mm 底片；沙漠場景使用 IMAX 認證數位攝影機",
+    "captureFormat": {
+      "label": "大部分使用 70mm 底片；其中很大一部分為 IMAX 65mm，沙漠場景保留數位 IMAX",
+      "evidence": "official_indirect",
+      "sources": [
+        {
+          "label": "MPA：Villeneuve 沙丘3 訪談",
+          "url": "https://www.motionpictures.org/2026/03/denis-villeneuve-on-filming-dune-part-three-as-a-more-tense-more-muscular-imax-film/",
+          "note": "導演分別說 most of the movie on film in 70mm 與 a big part in IMAX film，不能合併成 IMAX 底片占大部分"
+        }
+      ]
+    },
+    "maxConfirmedAspectRatio": null,
+    "taiwanReleaseStatus": {
+      "label": "台灣 IMAX 母版與畫幅尚未公告；海外 IMAX 70mm 不代表台灣有底片版",
+      "evidence": "unknown",
+      "sources": [
+        {
+          "label": "IMAX：第三部 70mm 海外發行公告",
+          "url": "https://www.imax.com/news/dune-part-three-in-imax-70mm-film",
+          "note": "確認存在 IMAX 70mm 發行，但未列台灣可營運底片放映據點"
+        }
+      ]
+    },
+    "runtimeMin": null,
+    "largeFormatMin": null,
+    "formatNotes": "2026/12/18 上映；完整畫幅分布、片段長度及台灣 IMAX 母版均未公告。以下 1.43／1.90 僅為情境模擬，不代表台灣已確認取得；美麗華也沒有可營運 IMAX 70mm 底片放映的證據。",
+    "versions": [
+      {
+        "hallCategory": "IMAX_GT",
+        "ratio": 1.43,
+        "label": "IMAX GT 1.43:1（底片段落）",
+        "confidence": "expected",
+        "taiwanStatus": "pending",
+        "sceneScope": "unknown"
+      },
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "數位 IMAX 1.90:1",
+        "confidence": "expected",
+        "taiwanStatus": "pending",
+        "sceneScope": "unknown"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "expected",
+        "taiwanStatus": "pending",
+        "sceneScope": "unknown"
       }
     ],
     "sources": [
@@ -170,6 +361,11 @@
         "label": "MPA：Villeneuve 沙丘3 訪談",
         "note": "motionpictures.org 訪談（2026/3）：Villeneuve 首用 IMAX 底片機、a big part 為 IMAX 底片、沙漠戲保留數位 IMAX、攝影 Linus Sandgren",
         "url": "https://www.motionpictures.org/2026/03/denis-villeneuve-on-filming-dune-part-three-as-a-more-tense-more-muscular-imax-film/"
+      },
+      {
+        "label": "IMAX：沙丘3 IMAX 70mm 公告",
+        "note": "IMAX 官方確認海外 IMAX 70mm 發行與 IMAX film cameras；未確認台灣底片版或數位 1.43 母版",
+        "url": "https://www.imax.com/news/dune-part-three-in-imax-70mm-film"
       },
       {
         "label": "ScreenRant：沙丘3 非全片 IMAX",

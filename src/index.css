@@ -143,6 +143,47 @@ header h1 {
   font-size: 0.8rem;
 }
 
+.film-fact {
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.film-fact-warning {
+  color: #f2c779;
+}
+
+.special-format-summary {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.special-format-summary summary {
+  cursor: pointer;
+  color: #7db9e3;
+}
+
+.special-format-summary ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.special-format-summary li + li {
+  margin-top: 0.35rem;
+}
+
+.release-status,
+.format-brands {
+  display: inline-block;
+  margin-left: 0.45rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.release-confirmed {
+  color: #9cd4a6;
+}
+
 .overlay-section {
   margin-bottom: 1.4rem;
 }
