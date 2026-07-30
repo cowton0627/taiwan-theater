@@ -55,6 +55,238 @@
     ]
   },
   {
+    "id": "project-hail-mary-2026",
+    "title": "極限返航",
+    "titleEn": "Project Hail Mary",
+    "year": 2026,
+    "shotOn": "ARRI Alexa 65 數位大格式攝影；太空段落為 IMAX 擴展構圖",
+    "captureFormat": {
+      "label": "Filmed For IMAX；官方確認接近兩小時擴展畫幅，GT 版本含 1.43 場景",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "IMAX：《極限返航》格式頁",
+          "url": "https://www.imax.com/movie/project-hail-mary",
+          "note": "IMAX 官方明示 nearly two hours of Expanded Aspect Ratio，並提供 1.43 Scene Breakdown"
+        },
+        {
+          "label": "ASC：攝影 Greig Fraser 訪談",
+          "url": "https://theasc.com/news/project-hail-mary-cinematography-fraser-scooby-doo",
+          "note": "攝影訪談說明 Alexa 65 與多畫幅轉換的拍攝設計"
+        }
+      ]
+    },
+    "maxConfirmedAspectRatio": 1.43,
+    "taiwanReleaseStatus": {
+      "label": "台灣已上映 IMAX、4DX 與 Dolby Cinema；未見 IMAX 70mm 底片版",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "威秀：《極限返航》",
+          "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8582",
+          "note": "威秀官方電影頁列出台灣 IMAX／4DX 版本"
+        },
+        {
+          "label": "美麗華：《極限返航》場次紀錄",
+          "url": "https://www.miramarcinemas.tw/Movie/detail?id=356736a5-faa1-479b-af91-2bba52fac5fe&type=now",
+          "note": "美麗華官方電影頁保留 Dolby Cinema 場次紀錄"
+        }
+      ]
+    },
+    "audio": "Dolby 官方確認 Dolby Atmos／Dolby Vision 版本",
+    "runtimeMin": 156,
+    "largeFormatMin": null,
+    "formatNotes": "太空段落使用擴展畫幅、地球段落回到 Scope；IMAX 官方只公開「接近兩小時」而非精確分鐘數。美麗華 GT 可呈現 1.43 場景；一般 IMAX 以最高 1.90 顯示，不把海外 IMAX 70mm 當成台灣版本。",
+    "versions": [
+      {
+        "hallCategory": "IMAX_GT",
+        "ratio": 1.43,
+        "label": "IMAX GT 1.43:1（太空段落）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
+      },
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "一般 IMAX 1.90:1（太空段落）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
+      },
+      {
+        "hallCategory": "DOLBY_CINEMA",
+        "ratio": 2.39,
+        "label": "Dolby Cinema Scope 2.39:1",
+        "confidence": "reported",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "reported",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      }
+    ],
+    "specialFormats": [
+      {
+        "format": "4DX",
+        "market": "TW",
+        "releaseStatus": "confirmed",
+        "production": "motion_programmed",
+        "sceneScope": "full_film",
+        "label": "4DX 動感特效版",
+        "experience": "動感座椅與環境特效；不代表額外畫面",
+        "applicableBrands": ["4DX"],
+        "sources": [
+          {
+            "label": "威秀：《極限返航》IMAX／4DX 預售",
+            "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8582",
+            "note": "威秀官方頁確認台灣 4DX 版本"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "IMAX：《極限返航》官方格式頁",
+        "url": "https://www.imax.com/movie/project-hail-mary",
+        "note": "Filmed For IMAX、接近兩小時擴展畫幅、1.43 場景解析"
+      },
+      {
+        "label": "BBFC：《極限返航》IMAX 分級",
+        "url": "https://www.bbfc.co.uk/release/project-hail-mary-q29sbgvjdglvbjpwwc0xmtezmdq4",
+        "note": "BBFC 登錄 2D IMAX 157m40s；本站片長採 Dolby 官方 156 分鐘的影片標示"
+      },
+      {
+        "label": "Dolby：《極限返航》",
+        "url": "https://www.dolby.com/en-gb/experience/project-hail-mary/",
+        "note": "Dolby 官方電影頁；另由 Dolby Creator Talks 明示 Dolby Vision／Atmos"
+      },
+      {
+        "label": "Dolby Creator Talks：配樂訪談",
+        "url": "https://www.dolby.com/creator-lab/podcast/music-project-hail-mary-composer-daniel-pemberton/",
+        "note": "Dolby 官方明示本片戲院版本使用 Dolby Vision 與 Dolby Atmos"
+      },
+      {
+        "label": "威秀：《極限返航》台灣版本",
+        "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8582",
+        "note": "台灣 IMAX／4DX 版本證據"
+      }
+    ]
+  },
+  {
+    "id": "mandalorian-and-grogu-2026",
+    "title": "曼達洛人與古古",
+    "titleEn": "Star Wars: The Mandalorian and Grogu",
+    "year": 2026,
+    "shotOn": "IMAX 認證數位攝影機；接近半片採 IMAX 擴展畫幅",
+    "captureFormat": {
+      "label": "Filmed For IMAX；接近半片使用 IMAX 獨家擴展畫幅",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "IMAX：《曼達洛人與古古》上映報告",
+          "url": "https://www.imax.com/pr/imax-rockets-24-million-memorial-day-weekend-opening-mandalorian",
+          "note": "IMAX 官方明示以 IMAX 認證數位攝影機拍攝，nearly half 使用 exclusive expanded aspect ratio"
+        }
+      ]
+    },
+    "maxConfirmedAspectRatio": 1.9,
+    "taiwanReleaseStatus": {
+      "label": "台灣已上映 IMAX 3D、4DX 3D 與一般 2D／3D",
+      "evidence": "official",
+      "sources": [
+        {
+          "label": "威秀：《曼達洛人與古古》",
+          "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8602",
+          "note": "威秀官方頁列出一般 2D／3D、IMAX／4DX 版本"
+        },
+        {
+          "label": "威秀 IMAX 3D 場次紀錄",
+          "url": "https://www.vscinemas.com.tw/vsTicketing/ticketing/ticket.aspx?cinema=22%7CHL&movie=HO00017367",
+          "note": "台灣 IMAX 3D 場次證據"
+        }
+      ]
+    },
+    "audio": "Dolby 官方列入 Dolby Cinema 片單；台灣 Dolby Cinema 場次待確認",
+    "runtimeMin": 132,
+    "largeFormatMin": null,
+    "formatNotes": "IMAX 官方確認接近半片擴展畫幅，但未公開精確分鐘數，也沒有 1.43 證據；本站以一般 IMAX 1.90 建模，美麗華 GT 同樣只按 1.90 呈現，不虛構滿版 1.43。",
+    "versions": [
+      {
+        "hallCategory": "IMAX",
+        "ratio": 1.9,
+        "label": "IMAX 1.90:1（接近半片擴展）",
+        "confidence": "official",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "selected_scenes"
+      },
+      {
+        "hallCategory": "STANDARD",
+        "ratio": 2.39,
+        "label": "一般廳 Scope 2.39:1",
+        "confidence": "reported",
+        "taiwanStatus": "confirmed",
+        "sceneScope": "full_film"
+      }
+    ],
+    "specialFormats": [
+      {
+        "format": "4DX",
+        "market": "TW",
+        "releaseStatus": "confirmed",
+        "production": "motion_programmed",
+        "sceneScope": "full_film",
+        "label": "4DX 3D 動感特效版",
+        "experience": "3D 畫面結合動感座椅與環境特效；不代表額外畫幅",
+        "applicableBrands": ["4DX"],
+        "sources": [
+          {
+            "label": "威秀：《曼達洛人與古古》4DX 版本",
+            "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8602",
+            "note": "威秀官方頁列出台灣 4DX 版本"
+          },
+          {
+            "label": "威秀 4DX 3D 場次紀錄",
+            "url": "https://www.vscinemas.com.tw/vsTicketingN/ticketing/ticket.aspx?cinema=1%7CTP&movie=HO00017370",
+            "note": "台灣 4DX 3D 場次證據"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "IMAX：《曼達洛人與古古》官方說明",
+        "url": "https://www.imax.com/pr/imax-rockets-24-million-memorial-day-weekend-opening-mandalorian",
+        "note": "Filmed For IMAX；接近半片採 IMAX 獨家擴展畫幅"
+      },
+      {
+        "label": "Disney：《曼達洛人與古古》",
+        "url": "https://movies.disney.com/star-wars-the-mandalorian-and-grogu",
+        "note": "Disney 官方片長 2h12m 與院線上映資料"
+      },
+      {
+        "label": "BBFC：《曼達洛人與古古》IMAX 分級",
+        "url": "https://www.bbfc.co.uk/release/star-wars-the-mandalorian-and-grogu-q29sbgvjdglvbjpwwc0xmdmzmdg4",
+        "note": "BBFC 登錄 2D／3D IMAX 131 分鐘版本"
+      },
+      {
+        "label": "Dolby：《曼達洛人與古古》",
+        "url": "https://www.dolby.com/fr/experience/star-wars-the-mandalorian-and-grogu/",
+        "note": "Dolby 官方列入 Dolby Cinema 電影；不據此推定台灣曾排 Dolby Cinema"
+      },
+      {
+        "label": "威秀：《曼達洛人與古古》台灣版本",
+        "url": "https://www.vscinemas.com.tw/film/detail.aspx?id=8602",
+        "note": "台灣一般 2D／3D、IMAX／4DX 版本證據"
+      }
+    ]
+  },
+  {
     "id": "spiderman-brand-new-day-2026",
     "title": "蜘蛛人：重生日",
     "titleEn": "Spider-Man: Brand New Day",

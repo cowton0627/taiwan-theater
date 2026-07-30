@@ -237,7 +237,11 @@ main {
 .control-label {
   color: var(--muted);
   font-size: 0.85rem;
-  min-width: 2.6rem;
+  min-width: 4.6rem;
+}
+
+.control-group-reference {
+  margin-top: 0.55rem;
 }
 
 .chip {

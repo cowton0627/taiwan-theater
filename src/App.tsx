@@ -123,6 +123,20 @@ const AUDIO_TIER_LABELS: Record<AudioTier, string> = {
   SURROUND_5_1: '音效未查證',
 };
 
+const FEATURED_2026_FILM_IDS = [
+  'the-odyssey-2026',
+  'project-hail-mary-2026',
+  'mandalorian-and-grogu-2026',
+  'spiderman-brand-new-day-2026',
+  'dune-part-three-2026',
+] as const;
+const featured2026Films = FEATURED_2026_FILM_IDS.map((id) => films.find((film) => film.id === id)).filter(
+  (film): film is Film => film !== undefined,
+);
+const referenceFilms = films.filter(
+  (film) => !FEATURED_2026_FILM_IDS.some((featuredId) => featuredId === film.id),
+);
+
 /** 城市顯示：有地址時連到 Google Maps 搜尋，否則純文字 */
 function CityLink({ s }: { s: Screen }) {
   if (!s.address) return <>{s.city}</>;
@@ -1055,8 +1069,8 @@ export default function App() {
         {controlsOpen && (
           <>
         <div className="control-group">
-          <span className="control-label">片單</span>
-          {films.map((f) => (
+          <span className="control-label">2026 精選</span>
+          {featured2026Films.map((f) => (
             <button
               key={f.id}
               className={filmId === f.id ? 'chip active' : 'chip'}
@@ -1066,6 +1080,20 @@ export default function App() {
             </button>
           ))}
         </div>
+        {referenceFilms.length > 0 && (
+          <div className="control-group control-group-reference">
+            <span className="control-label">系列參考</span>
+            {referenceFilms.map((f) => (
+              <button
+                key={f.id}
+                className={filmId === f.id ? 'chip active' : 'chip'}
+                onClick={() => setFilmId(f.id)}
+              >
+                {f.title}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="control-group">
           <span className="control-label">自訂</span>
           <button
