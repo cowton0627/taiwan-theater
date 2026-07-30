@@ -57,6 +57,25 @@ export interface FieldProvenance {
   checkedAt?: string;
 }
 
+export type CommunityDimension =
+  | 'visualEnvironment'
+  | 'equipmentMaintenance'
+  | 'seatingComfort'
+  | 'soundTuning';
+export type CommunityRating = 'positive' | 'mixed' | 'negative' | 'unknown';
+
+export interface CommunityAssessmentItem {
+  rating: CommunityRating;
+  evidence: EvidenceLevel;
+  summary: string;
+  sourceIndexes?: number[];
+}
+
+export interface CommunityAssessment {
+  version: 1;
+  dimensions: Record<CommunityDimension, CommunityAssessmentItem>;
+}
+
 /**
  * 音效認證／系統層級，排序即優劣參考（roadmap 8 的排序依據）。
  * 區分重點：DOLBY_CINEMA 是整廳認證；DVA 只授權 Vision+Atmos 技術（2024 起的新層級）；
@@ -129,6 +148,8 @@ export interface Screen {
   communityNotes?: string;
   /** 有明確適用範圍的口碑；未指明廳號不得產生特定廳規格或推薦。 */
   communityReviews?: CommunityReview[];
+  /** roadmap 14：固定四面向的結構化口碑；自由文字不直接轉成分數。 */
+  communityAssessment?: CommunityAssessment;
   /** 推薦座位排（跨帖共識；意見分歧或無可靠來源則缺省） */
   bestRows?: string;
   /** 該廳全票價（平日成人 2D，NTD）；顯示參考、不計入評比；未收集為缺省 */

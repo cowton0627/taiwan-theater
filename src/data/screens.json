@@ -72,6 +72,31 @@
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "I–K 排跨帖共識"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
+      }
     }
   },
   {
@@ -145,6 +170,31 @@
       "communityNotes": {
         "level": "conflict",
         "note": "前段包覆派與後段舒適派尚未收斂，不產生推薦值"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "mixed",
+          "evidence": "conflict",
+          "summary": "前段與後段偏好未收斂"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -224,6 +274,31 @@
       "communityNotes": {
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "mixed",
+          "evidence": "secondary_consensus",
+          "summary": "G／H 最穩，近排易暈"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -426,8 +501,34 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "community",
+        "note": "單篇跨廳同片實測"
+      }
+    },
+    "communityNotes": "2026 同片實測：氙燈系統雖舊但亮度仍在第一集團，環繞維持水準；清晰度較以往稍退。",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "單篇：亮度第一集團"
+        },
+        "equipmentMaintenance": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：清晰度較以往稍退"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "單篇：環繞維持水準"
+        }
       }
     }
   },
@@ -473,6 +574,11 @@
         "label": "in89 官方 IMAX 特刊（PDF）",
         "note": "in89 官方 IMAX 特刊 PDF：21.49×12.31m（2026-07 稽核，尺寸翻正）；12.1 聲道之直接官方原頁仍待取得",
         "url": "https://imax.in89cinemax.com/wp-content/uploads/2022/05/IMAX%E7%89%B9%E5%88%8A.pdf"
+      },
+      {
+        "label": "口碑：嘉義 in89 IMAX／LUXE 比較",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1726567735.A.917.html",
+        "note": "H 排視野佳；IMAX 畫質明亮、音質清晰舒適，座距與高低差則有多篇負評"
       }
     ],
     "seatsNotes": "PTT 票價情報 292 席（官網未列，待確認）",
@@ -505,12 +611,39 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "unknown",
-        "note": "尚無可靠推薦座位"
+        "level": "secondary_consensus",
+        "note": "多篇實測落在 G／H 排"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "secondary_consensus",
+        "note": "2022–2026 多篇實測交叉"
+      }
+    },
+    "communityNotes": "多篇實測共識：4K 雷射畫質明亮、12 聲道包覆與低頻佳；H 排附近視野好，但座距偏窄、高低差不足。",
+    "bestRows": "G–H 排置中",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "多篇：畫質明亮清晰"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "negative",
+          "evidence": "secondary_consensus",
+          "summary": "多篇：座距窄、高低差不足"
+        },
+        "soundTuning": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "多篇：包覆、低頻與清晰度佳"
+        }
       }
     }
   },
@@ -541,6 +674,11 @@
         "label": "Enjoy Movie 影廳指南",
         "note": "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 台南指南：雙氙燈 2K 未升級、6 聲道",
         "url": "https://enjoymovie.net/"
+      },
+      {
+        "label": "口碑：2026 全台十間 IMAX 同片比較",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html",
+        "note": "同一作者以《奧德賽》於十間 IMAX 實看，比較亮度、清晰度、低頻、環繞與維護狀態"
       }
     ],
     "seatsNotes": "390＋4 無障礙（MovieGo／訂票座位圖系；PTT 開幕實測 392 含身障）；開幕前宣傳稱 426 不採",
@@ -577,8 +715,34 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "community",
+        "note": "單篇近期同片實測；歷年音效表現有變動"
+      }
+    },
+    "communityNotes": "2026 同片實測：亮度尚可，但清晰度衰退且偶有模糊，環繞受影響；較早實測對低頻評價有變動，維護狀態需持續追蹤。",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "negative",
+          "evidence": "community",
+          "summary": "單篇：清晰度衰退與模糊"
+        },
+        "equipmentMaintenance": {
+          "rating": "negative",
+          "evidence": "community",
+          "summary": "單篇：疑似維護衰退"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：低頻尚可、環繞清晰度不佳"
+        }
       }
     }
   },
@@ -609,6 +773,11 @@
         "label": "Enjoy Movie 影廳指南",
         "note": "PTT《奧德賽》十廳簡評（2026/07）＋enjoymovie 高雄指南：IMAX with Laser XT 單機 4K（2022 年底升級）、6 聲道",
         "url": "https://enjoymovie.net/"
+      },
+      {
+        "label": "口碑：2026 全台十間 IMAX 同片比較",
+        "url": "https://www.ptt.cc/bbs/movie/M.1785070745.A.8F8.html",
+        "note": "同一作者以《奧德賽》於十間 IMAX 實看，比較亮度、清晰度、低頻、環繞與維護狀態"
       }
     ],
     "seatsNotes": "MovieGo／enjoymovie 一致 271 席（含 3 無障礙）",
@@ -645,8 +814,34 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "secondary_consensus",
+        "note": "同片實測與其他南部影廳比較回覆交叉"
+      }
+    },
+    "communityNotes": "2026 同片實測：雷射 4K 亮度僅第二集團，低頻仍猛烈；另有多則心得指出座位高低差是硬傷。",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：雷射亮度僅第二集團"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "negative",
+          "evidence": "secondary_consensus",
+          "summary": "多來源：座位高低差不足"
+        },
+        "soundTuning": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "單篇：低頻猛烈"
+        }
       }
     }
   },
@@ -723,8 +918,34 @@
         "note": "尚無可靠推薦座位"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "community",
+        "note": "單篇跨廳同片實測"
+      }
+    },
+    "communityNotes": "2026 同片實測：亮度屬第一集團，但畫面有黑點待查；音色清晰、低頻渾厚，座椅共震感偏弱。",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：亮度佳但畫面有黑點"
+        },
+        "equipmentMaintenance": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：黑點來源待查"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇：音色清晰但共震偏弱"
+        }
       }
     }
   },
@@ -806,6 +1027,31 @@
       "communityNotes": {
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "G–I 排跨帖共識"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -1265,6 +1511,31 @@
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "亮度對比獲跨來源好評"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "G 排皇帝位共識"
+        },
+        "soundTuning": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "Atmos 與整體影音獲跨來源好評"
+        }
+      }
     }
   },
   {
@@ -1350,6 +1621,31 @@
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "畫質獲多來源肯定"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "mixed",
+          "evidence": "secondary_consensus",
+          "summary": "音質偏悶，評價不及青埔"
+        }
+      }
     }
   },
   {
@@ -1426,6 +1722,31 @@
       "communityNotes": {
         "level": "community",
         "note": "社群心得摘要"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "negative",
+          "evidence": "community",
+          "summary": "單篇實測：空心地板與鄰廳震動"
+        }
       }
     }
   },
@@ -1643,6 +1964,31 @@
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "11–13 排跨來源共識"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
+      }
     }
   },
   {
@@ -1717,6 +2063,31 @@
       "communityNotes": {
         "level": "secondary_consensus",
         "note": "多個社群／二手來源交叉支持"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "mixed",
+          "evidence": "secondary_consensus",
+          "summary": "畫面有電影感但對比較低"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "soundTuning": {
+          "rating": "mixed",
+          "evidence": "secondary_consensus",
+          "summary": "低頻強，偶爾蓋過其他聲音"
+        }
       }
     }
   },
@@ -1980,6 +2351,31 @@
         "level": "community",
         "note": "社群心得摘要"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "ScreenX 中後段置中通則"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
+      }
     }
   },
   {
@@ -2047,6 +2443,31 @@
       "communityNotes": {
         "level": "community",
         "note": "社群心得摘要"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "ScreenX 中後段置中通則"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -2179,6 +2600,31 @@
         "level": "community",
         "note": "只適用此實體廳的單篇社群實測"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "negative",
+          "evidence": "community",
+          "summary": "單篇實測：側幕受出入口裁切"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇第 10 排實測"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
+      }
     }
   },
   {
@@ -2247,6 +2693,31 @@
       "communityNotes": {
         "level": "community",
         "note": "只適用此實體廳的單篇社群實測"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "mixed",
+          "evidence": "community",
+          "summary": "單篇第 5 排實測"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -2635,6 +3106,31 @@
         "level": "community",
         "note": "社群心得摘要"
       }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "ScreenX 中後段置中通則"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
+      }
     }
   },
   {
@@ -2699,6 +3195,31 @@
       "communityNotes": {
         "level": "community",
         "note": "社群心得摘要"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "ScreenX 中後段置中通則"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },
@@ -3039,6 +3560,11 @@
         "label": "PTT：嘉義 in89 IMAX/LUXE 規格",
         "note": "in89 官網設備頁＋PTT 規格文（M.1639584549）：20.5×10.5m、雷射 4K、Atmos",
         "url": "https://www.ptt.cc/bbs/Theater/M.1639584549.A.E4B.html"
+      },
+      {
+        "label": "口碑：嘉義 in89 LUXE／IMAX 比較",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1726567735.A.917.html",
+        "note": "多篇實測：G／H 排、畫面明亮、音效定位與低頻佳；銀幕直紋及座距偏窄"
       }
     ],
     "notes": "與 IMAX 同館（影食匯）；另有 MX4D、COACH、親子廳",
@@ -3068,12 +3594,39 @@
         "note": "尚未遷移實體廳號"
       },
       "bestRows": {
-        "level": "unknown",
-        "note": "尚無可靠推薦座位"
+        "level": "secondary_consensus",
+        "note": "多篇實測 G／H 排視野佳"
       },
       "communityNotes": {
-        "level": "unknown",
-        "note": "尚無策展口碑"
+        "level": "secondary_consensus",
+        "note": "多篇 IMAX／LUXE 橫向實測"
+      }
+    },
+    "communityNotes": "多篇實測共識：畫面明亮、音場寬廣、定位與低頻層次佳；銀幕直紋在單色畫面可見，座距偏窄。",
+    "bestRows": "G–H 排置中",
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "mixed",
+          "evidence": "secondary_consensus",
+          "summary": "畫面明亮但銀幕直紋可見"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "negative",
+          "evidence": "secondary_consensus",
+          "summary": "多篇：座距偏窄"
+        },
+        "soundTuning": {
+          "rating": "positive",
+          "evidence": "secondary_consensus",
+          "summary": "多篇：音場、定位與低頻層次佳"
+        }
       }
     }
   },
@@ -3201,6 +3754,31 @@
       "communityNotes": {
         "level": "community",
         "note": "社群心得摘要"
+      }
+    },
+    "communityAssessment": {
+      "version": 1,
+      "dimensions": {
+        "visualEnvironment": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "equipmentMaintenance": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        },
+        "seatingComfort": {
+          "rating": "positive",
+          "evidence": "community",
+          "summary": "ScreenX 中後段置中通則"
+        },
+        "soundTuning": {
+          "rating": "unknown",
+          "evidence": "unknown",
+          "summary": "資料待確認"
+        }
       }
     }
   },

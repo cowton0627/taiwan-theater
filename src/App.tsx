@@ -41,6 +41,7 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 };
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
+const formatScore = (value: number) => String(Number(value.toFixed(2)));
 
 /** 品牌分組鍵：子品牌歸入母集團（例：威秀影城（MUVIE）→ 威秀影城） */
 const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
@@ -812,7 +813,7 @@ export default function App() {
     return results;
   }, [film, customRatio, pool]);
 
-  /** 得分卡：以面積名次（目前篩選範圍）＋廳規格計分；口碑分待 roadmap 14 */
+  /** 得分卡：面積、廳規格與符合證據門檻的四面向口碑分。 */
   const scoreMap = useMemo(() => {
     const m = new Map<string, ScoreResult>();
     const max = fits[0]?.imageAreaM2 ?? 0;
@@ -918,14 +919,14 @@ export default function App() {
     if (sortMode === 'score') {
       const score = scoreMap.get(top.screen.id);
       const t = score?.total ?? 0;
-      const tt = Number.isInteger(t) ? t : t.toFixed(1);
+      const tt = formatScore(t);
       const unknown = score?.unknownCount ?? 0;
       const areaTop = fits[0];
       const extra =
         areaTop && areaTop.screen.id !== top.screen.id
           ? `；成像最大為 ${areaTop.screen.name}（${areaTop.imageAreaM2.toFixed(0)} ㎡）`
           : '';
-      return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，${unknown} 項待確認；口碑分未接入）${extra}${caveat}`;
+      return `${scope}綜合評比最高：${top.screen.name}（${tt} 分，${unknown} 項待確認；含符合證據門檻的口碑分）${extra}${caveat}`;
     }
     const subject = film ? `《${film.title}》` : `${customRatio}:1 畫幅`;
     const simulation =
@@ -1127,7 +1128,7 @@ export default function App() {
 	              得分卡（本站預設分值，公式透明可調）：可放映 1.43 +1 ・ 杜比影院認證 +1 ・ DVA 授權
 	              +0.5 ・ 已查證沉浸音效 +1 ・ 雷射投影 +1（雙機或 RGB 再 +0.5，不重複累加）・
 	              成像面積比例 0–2（＝2×成像÷範圍內最大成像）・ 放映本片最大畫幅版 +1（1.43 廳不重複計）。
-	              認證／授權分與沉浸音效能力分分開計算；分數旁的「N 項待確認」只統計得分卡未知輸入，與已確認分數分開、不影響排序；網友口碑分（0–2）尚未接入。{' '}
+	              認證／授權分與沉浸音效能力分分開計算；分數旁的「N 項待確認」只統計得分卡未知輸入。口碑分 0–2 只採跨來源一致的四面向評估，單篇、衝突與缺資料不加也不扣。{' '}
 	              <a href="#score-method">查看完整評分方式</a>
 	            </p>
           </div>
@@ -1398,7 +1399,7 @@ export default function App() {
                     <div>
                       {(() => {
                         const t = scoreMap.get(fit.screen.id)?.total ?? 0;
-                        return Number.isInteger(t) ? t : t.toFixed(1);
+                        return formatScore(t);
                       })()}
                       <span className="unit">分</span>
                     </div>
@@ -1467,7 +1468,7 @@ export default function App() {
 	            投影：雷射 +1；已查證為雙機或 RGB 雷射者再 +0.5，此進階加成不重複累加。LED 放映維持 +1；其他投影規格不加分。未查證項目顯示「待確認」，不視為設備較差也不默認加分。
 	          </li>
 	          <li>
-	            其他分項：可放映 1.43 +1、目前範圍內成像面積比例 0–2、本片最大畫幅版 +1（已得 1.43 能力者不重複）。口碑分尚未接入。各卡展開「規格與依據」可看總分的逐項加總與來源；本站分數是透明的決策輔助，不是實測音質。定義依據：{' '}
+	            其他分項：可放映 1.43 +1、目前範圍內成像面積比例 0–2、本片最大畫幅版 +1（已得 1.43 能力者不重複）。口碑分 0–2：遮光／畫面干擾、設備維護、座椅排距、音效調校各最高 +0.5；正面 +0.5、混合 +0.25、負面 0。只有跨來源一致才進分，單篇社群、來源衝突或待確認只揭露狀態，不加也不扣。推薦座位本身不加分。各卡展開「規格與依據」可看逐項加總與來源；本站分數是透明的決策輔助，不是實測音質。定義依據：{' '}
 	            <a href="https://www.imax.com/news/imax-launches-next-generation-imax-laser-experience-enhance-blockbuster-moviegoing-amc" target="_blank" rel="noreferrer">IMAX 12 聲道官方說明</a>
 	            {' '}・{' '}
 	            <a href="https://professional.dolby.com/cinema/dolby-atmos/" target="_blank" rel="noreferrer">Dolby Atmos 官方說明</a>

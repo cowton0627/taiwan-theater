@@ -1,4 +1,5 @@
 import type { AudioTier, Film, FitResult } from '../types';
+import type { CommunityDimension, CommunityRating } from '../types';
 
 /**
  * 綜合得分卡（點數制）：每一分都有可引用依據，公式透明可調。
@@ -11,7 +12,8 @@ import type { AudioTier, Film, FitResult } from '../types';
  * - 面積分＝連續比例 0–2 分（2 ×成像÷範圍內最大成像，取 0.5 級距）——
  *   取代原名次 3/2/1 斷崖：面積有專屬排序模式，綜合評比中不該獨大
  * - 相關項去重：已得「可放映 1.43」者不重複計「放映最大畫幅版」（同一優勢）
- * - 口碑分（0–2）待 roadmap 14 接入，未接入前不計、UI 註明
+ * - 口碑分 0–2：遮光／畫面干擾、設備維護、座椅排距、音效調校各 0.5；
+ *   僅跨來源一致（secondary_consensus）進分，單篇／衝突／未知只顯示待確認
  * - 未查證（音效／投影）＝0 分＋「？」標記，缺資料不等於差
  */
 export interface ScoreItem {
@@ -42,6 +44,20 @@ const IMMERSIVE_LABEL: Partial<Record<AudioTier, string>> = {
   ATMOS: 'Dolby Atmos',
   IMAX_12CH: 'IMAX 12 聲道',
   AURO_11_1: 'Auro 11.1',
+};
+
+const COMMUNITY_LABELS: Record<CommunityDimension, string> = {
+  visualEnvironment: '口碑：遮光／畫面干擾',
+  equipmentMaintenance: '口碑：設備維護',
+  seatingComfort: '口碑：座椅排距',
+  soundTuning: '口碑：音效調校',
+};
+
+const COMMUNITY_POINTS: Record<CommunityRating, number> = {
+  positive: 0.5,
+  mixed: 0.25,
+  negative: 0,
+  unknown: 0,
 };
 
 /** maxArea＝目前篩選範圍內最大成像面積（㎡），作為面積比例分的分母 */
@@ -101,6 +117,23 @@ export function scoreScreen(fit: FitResult, maxArea: number, film: Film | null):
     (fit.version.confidence === 'expected' || fit.version.taiwanStatus === 'pending')
   ) {
     items.push({ label: '台灣最大畫幅版本待確認', pts: 0, unknown: true });
+  }
+
+  const assessment = s.communityAssessment;
+  if (!assessment) {
+    items.push({ label: '口碑資料待確認', pts: 0, unknown: true });
+  } else {
+    for (const [dimension, item] of Object.entries(assessment.dimensions) as Array<
+      [CommunityDimension, (typeof assessment.dimensions)[CommunityDimension]]
+    >) {
+      // 只有跨來源一致才進分；單篇、衝突與未知只揭露，不把缺資料當負評。
+      const eligible = item.evidence === 'secondary_consensus' && item.rating !== 'unknown';
+      items.push({
+        label: `${COMMUNITY_LABELS[dimension]}（${item.summary}）`,
+        pts: eligible ? COMMUNITY_POINTS[item.rating] : 0,
+        unknown: !eligible,
+      });
+    }
   }
 
   return {
