@@ -1444,7 +1444,15 @@ export default function App() {
 	                          {scoreMap.get(fit.screen.id)!.items.map((it) => (
 	                            <li key={it.label}>
 	                              <span>{it.label}</span>
-	                              <span className={it.unknown ? 'score-unknown' : 'score-points'}>
+	                              <span
+	                                className={
+	                                  it.unknown
+	                                    ? 'score-unknown'
+	                                    : it.pts > 0
+	                                      ? 'score-points'
+	                                      : 'score-zero'
+	                                }
+	                              >
 	                                {it.unknown ? '待確認' : it.pts > 0 ? `+${it.pts}` : '不加分'}
 	                              </span>
 	                            </li>

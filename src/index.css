@@ -1089,6 +1089,12 @@ main {
   white-space: nowrap;
 }
 
+.score-zero {
+  color: var(--text);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 .score-unknown {
   color: var(--muted);
   white-space: nowrap;
