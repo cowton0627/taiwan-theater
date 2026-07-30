@@ -1893,6 +1893,11 @@
     "id": "ambassador-taipei-grand",
     "name": "台北國賓大戲院 鉅院廳",
     "chain": "國賓影城",
+    "venueId": "ambassador-taipei-grand",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "國賓鉅院",
     "hallCategory": "PREMIUM",
     "widthM": 22,
     "heightM": 12,
@@ -1903,8 +1908,8 @@
     "city": "台北市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": 867,
-    "seatsNotes": "維基／媒體：867 席",
+    "seats": 737,
+    "seatsNotes": "國賓官方現行影城頁：鉅院 737 席，含無障礙 8 席；第 19、20 排另含 18 席 D-BOX",
     "priceNTD": 380,
     "priceNotes": "3D 450、早場 320（官網 2026-07）",
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=84b87b82-b936-4a39-b91f-e88328d33b4e",
@@ -1913,7 +1918,7 @@
     "sources": [
       {
         "label": "國賓官網：國賓大戲院",
-        "note": "國賓官方影城介紹頁：22×12m Harkness 銀幕、雙機 Christie 4K RGB 純雷射、最高 90,000 流明（2026-07 稽核確認，尺寸翻正）",
+        "note": "國賓官方影城介紹頁：22×12m Harkness 銀幕、雙機 Christie 4K RGB 純雷射、最高 90,000 流明；現行鉅院 737 席",
         "url": "https://www.ambassador.com.tw/home/theater_intro_b1"
       },
       {
@@ -1922,14 +1927,14 @@
         "url": "https://www.ptt.cc/bbs/Theater/M.1577599080.A.684.html"
       },
       {
-        "label": "維基：國賓影城",
-        "note": "維基／PTT：867 席（席次仍二手）",
-        "url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%B3%93%E5%BD%B1%E5%9F%8E"
-      },
-      {
         "label": "口碑：D-BOX 觀影實測（林人青）",
         "url": "https://linrenching.net/11517/badboys4/",
         "note": "19–20 排 D-BOX「不會太遠、視野很讚」全文核實；11–13 排結論出自 PTT 兩篇實測（2024/03、2025/12）"
+      },
+      {
+        "label": "國賓 D-BOX 官方據點頁",
+        "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html",
+        "note": "國賓鉅院第 19、20 排，D-BOX 共 18 席"
       }
     ],
     "notes": "西門町；國賓官方稱全台最大 Dolby Atmos 影廳（業者自稱）；「全球第二大」僅二手、待證",
@@ -1949,8 +1954,8 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "secondary_consensus",
-        "note": "維基／媒體：867 席"
+        "level": "official",
+        "note": "現行鉅院 737 席；D-BOX 為其中 18 席"
       },
       "price": {
         "level": "secondary_consensus",
@@ -1958,7 +1963,7 @@
       },
       "auditoriumNumber": {
         "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "note": "官方以「國賓鉅院」命名，未公開數字廳號"
       },
       "bestRows": {
         "level": "secondary_consensus",
@@ -2161,8 +2166,13 @@
   },
   {
     "id": "ambassador-linkou-atmos",
-    "name": "林口昕境國賓 Dolby Atmos 廳",
+    "name": "林口昕境國賓 2 廳（Atmos／D-BOX）",
     "chain": "國賓影城",
+    "venueId": "ambassador-linkou",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "2廳",
     "hallCategory": "STANDARD",
     "widthM": null,
     "heightM": null,
@@ -2171,8 +2181,8 @@
     "city": "新北市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "全館 8 廳 943 席（官網）；Atmos 廳廳號與席數官方頁未載明",
+    "seats": 192,
+    "seatsNotes": "國賓官方：2 廳共 192 席；其中第 10、11 排為 16 席 D-BOX",
     "priceNTD": 310,
     "priceNotes": "Atmos 3D 370（官網 2026-07）",
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=9383c5fa-b4f3-4ba8-ba7a-c25c7df95fd0",
@@ -2181,15 +2191,20 @@
     "sources": [
       {
         "label": "國賓官網：林口昕境",
-        "note": "國賓官網影城介紹頁（2026-07 實查）：8 廳 943 席、全廳 Dolby Surround 7.1、配備 Dolby Atmos、Harkness 透聲銀幕",
+        "note": "官方影城頁列 2 廳 192 席；官方 D-BOX 頁列 2 廳第 10、11 排共 16 席；2026 場次頁確認 2 廳放映 Atmos 版本",
         "url": "https://www.ambassador.com.tw/home/theater_intro_a9"
+      },
+      {
+        "label": "國賓 D-BOX 官方據點頁",
+        "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html",
+        "note": "林口昕境第 2 廳，第 10、11 排，D-BOX 共 16 席"
       },
       {
         "label": "論壇（原串未定位）",
         "note": "論壇：另有 Barco Auro 11.1 之說（官方頁未載，未證實）"
       }
     ],
-    "notes": "2015/2 開幕；論壇稱同館有 Auro 11.1（官方頁未提及，待查證）",
+    "notes": "D-BOX 只占 16 席，不等於整廳席次；銀幕與投影規格待確認",
     "provenance": {
       "dimensions": {
         "level": "unknown",
@@ -2204,16 +2219,16 @@
         "note": "既有來源支持，尚待逐欄升級官方引用"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "2 廳共 192 席；D-BOX 為其中 16 席"
       },
       "price": {
         "level": "secondary_consensus",
         "note": "Atmos 3D 370（官網 2026-07）"
       },
       "auditoriumNumber": {
-        "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "level": "official",
+        "note": "國賓官方列為第 2 廳"
       },
       "bestRows": {
         "level": "unknown",
@@ -2227,36 +2242,41 @@
   },
   {
     "id": "ambassador-bade-atmos",
-    "name": "桃園八德置地國賓 Dolby Atmos 廳",
+    "name": "桃園八德置地國賓 2 廳（D-BOX）",
     "chain": "國賓影城",
+    "venueId": "ambassador-bade",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "2",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "2廳",
     "hallCategory": "STANDARD",
     "widthM": null,
     "heightM": null,
     "status": "operating",
     "region": "north",
     "city": "桃園市",
-    "audioTier": "ATMOS",
-    "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "全館 8 廳 1,636 席（維基）；Atmos 廳單廳席數未查得",
-    "priceNTD": 330,
-    "priceNotes": "Atmos 3D 390（官網 2026-07）",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1（是否為 Atmos 待逐廳確認）",
+    "seats": 223,
+    "seatsNotes": "國賓官方：2 廳共 223 席；2、3 廳第 9、10 排合計 36 席 D-BOX，未公布逐廳分配",
+    "priceNTD": 560,
+    "priceNotes": "D-BOX 2D 全票 560 元（官網 2026）",
     "booking": "https://www.ambassador.com.tw/home/Showtime?ID=8fda9934-73d4-4c14-b1c4-386c2b81045c",
     "address": "桃園市八德區介壽路一段728號3樓（置地生活廣場）",
     "verified": false,
     "sources": [
       {
-        "label": "維基：國賓影城",
-        "note": "維基百科：Dolby Atmos 廳 ×2、D-BOX 36 席",
-        "url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%B3%93%E5%BD%B1%E5%9F%8E"
+        "label": "國賓官網：八德置地",
+        "note": "官方影城頁列 2 廳 223 席；全館設 7.1 並配有 Atmos，但未將 Atmos 逐廳對應",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a12"
       },
       {
-        "label": "國賓官網據點列表",
-        "note": "國賓官網 2026 據點名單：營運中",
-        "url": "https://www.ambassador.com.tw/home/TheaterList"
+        "label": "國賓 D-BOX 官方據點頁",
+        "note": "2、3 廳第 9、10 排合計 36 席 D-BOX，官方未拆逐廳席數",
+        "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html"
       }
     ],
-    "notes": "維基載 Atmos 廳共 2 廳，此筆代表收錄；廳號與規格待官方查證",
+    "notes": "2、3 廳分開保存；36 席是兩廳 D-BOX 合計，不寫入任一單廳整廳席次",
     "provenance": {
       "dimensions": {
         "level": "unknown",
@@ -2267,20 +2287,20 @@
         "note": "投影規格尚未取得"
       },
       "audio": {
-        "level": "secondary_consensus",
-        "note": "既有來源支持，尚待逐欄升級官方引用"
+        "level": "official_indirect",
+        "note": "官方確認全館 7.1、另有 Atmos，但未逐廳對應；本廳保守標 7.1"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "2 廳共 223 席；D-BOX 逐廳數待確認"
       },
       "price": {
-        "level": "secondary_consensus",
-        "note": "Atmos 3D 390（官網 2026-07）"
+        "level": "official",
+        "note": "D-BOX 2D 全票 560 元"
       },
       "auditoriumNumber": {
-        "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "level": "official",
+        "note": "國賓官方列為第 2 廳"
       },
       "bestRows": {
         "level": "unknown",
@@ -3857,8 +3877,13 @@
   },
   {
     "id": "ambassador-kh-skmpark-atmos",
-    "name": "高雄 SKM Park 國賓 杜比全景聲廳（×2）",
+    "name": "高雄 SKM Park 國賓 9 廳（Atmos／D-BOX）",
     "chain": "國賓影城",
+    "venueId": "ambassador-kh-skmpark",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "9",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "9廳",
     "hallCategory": "STANDARD",
     "widthM": null,
     "heightM": null,
@@ -3867,20 +3892,25 @@
     "city": "高雄市",
     "audioTier": "ATMOS",
     "audio": "Dolby Atmos",
-    "seats": null,
-    "seatsNotes": "全店 10 廳 1,856 席",
-    "priceNTD": 310,
-    "priceNotes": "Atmos 3D 370（官網 2026-07）",
-    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=41aae717-4464-49f4-ac26-fec2d16acbd6",
+    "seats": 206,
+    "seatsNotes": "國賓官方：9 廳共 206 席；9、10 廳第 10、11 排合計 32 席 D-BOX，未公布逐廳分配",
+    "priceNTD": 540,
+    "priceNotes": "D-BOX 2D 全票 540 元（官網 2026）",
+    "booking": "https://www.ambassador.com.tw/home/theater_intro_a11",
     "verified": false,
     "sources": [
       {
-        "label": "國賓官網據點列表",
-        "note": "國賓官網 2026 名單＋開眼（仍名「國賓大魯閣草衙道影城」）：營運中、Atmos 廳 ×2＋D-BOX",
-        "url": "https://www.ambassador.com.tw/home/TheaterList"
+        "label": "國賓官網：高雄 SKM Park",
+        "note": "官方列 9 廳 206 席、全館兩廳 Atmos",
+        "url": "https://www.ambassador.com.tw/home/theater_intro_a11"
+      },
+      {
+        "label": "國賓 D-BOX 官方據點頁",
+        "note": "9、10 廳第 10、11 排合計 32 席 D-BOX，官方未拆逐廳席數",
+        "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html"
       }
     ],
-    "notes": "前鎮草衙；廳號與規格待官方查證",
+    "notes": "9、10 廳分開保存；32 席是兩廳 D-BOX 合計，不套用為單廳 D-BOX 數",
     "address": "高雄市前鎮區中山四路100號3樓（SKM Park）",
     "provenance": {
       "dimensions": {
@@ -3892,20 +3922,20 @@
         "note": "投影規格尚未取得"
       },
       "audio": {
-        "level": "secondary_consensus",
-        "note": "既有來源支持，尚待逐欄升級官方引用"
+        "level": "official_indirect",
+        "note": "官方確認全館兩廳 Atmos 且 D-BOX 在 9、10 廳，視為同兩實體廳"
       },
       "seats": {
-        "level": "unknown",
-        "note": "席次尚未取得"
+        "level": "official",
+        "note": "9 廳共 206 席；D-BOX 逐廳數待確認"
       },
       "price": {
-        "level": "secondary_consensus",
-        "note": "Atmos 3D 370（官網 2026-07）"
+        "level": "official",
+        "note": "D-BOX 2D 全票 540 元"
       },
       "auditoriumNumber": {
-        "level": "unknown",
-        "note": "尚未遷移實體廳號"
+        "level": "official",
+        "note": "國賓官方列為第 9 廳"
       },
       "bestRows": {
         "level": "unknown",
@@ -5224,6 +5254,344 @@
         "level": "unknown",
         "note": "尚無達證據門檻的策展口碑"
       }
+    }
+  },
+  {
+    "id": "skc-taoyuan-box-sealy",
+    "name": "桃園青埔新光影城 Sealy Cinema 席伊麗廳",
+    "chain": "新光影城",
+    "venueId": "skc-taoyuan-qingpu",
+    "formatBrand": "B.O.X. Sealy Cinema",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "Sealy Cinema 席伊麗廳",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "B.O.X. Sealy",
+    "status": "operating",
+    "region": "north",
+    "city": "桃園市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 38,
+    "seatsNotes": "19 組雙人電動床，共 38 席（二手一致）",
+    "booking": "https://www.skcinemas.com/",
+    "address": "桃園市中壢區春德路107號",
+    "verified": false,
+    "sources": [
+      {
+        "label": "桃園市政府觀光導覽：桃園新光影城",
+        "url": "https://travel.tycg.gov.tw/zh-tw/consume/detail/3010",
+        "note": "官方觀光資料確認青埔新光影城自創 B.O.X. 體驗品牌"
+      },
+      {
+        "label": "Cosmopolitan 開幕報導",
+        "url": "https://www.cosmopolitan.com/tw/lifestyle/travel/g33271053/shin-kong-cinemas-0710/",
+        "note": "Sealy Cinema 共 38 席"
+      }
+    ],
+    "notes": "B.O.X. 三個實體廳分開保存；數字廳號、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {"level": "unknown", "note": "銀幕尺寸尚未取得"},
+      "projection": {"level": "unknown", "note": "投影規格尚未取得"},
+      "audio": {"level": "unknown", "note": "音效規格尚未取得"},
+      "seats": {"level": "secondary_consensus", "note": "多篇開幕資料一致為 38 席"},
+      "price": {"level": "unknown", "note": "現行票價待確認"},
+      "auditoriumNumber": {"level": "unknown", "note": "官方購票品牌可辨識，數字廳號未可靠公開"},
+      "bestRows": {"level": "unknown", "note": "尚無可靠推薦座位"},
+      "communityNotes": {"level": "unknown", "note": "尚無達證據門檻的策展口碑"}
+    }
+  },
+  {
+    "id": "skc-taoyuan-box-osim",
+    "name": "桃園青埔新光影城 OSIM Cinema 天王廳",
+    "chain": "新光影城",
+    "venueId": "skc-taoyuan-qingpu",
+    "formatBrand": "B.O.X. OSIM Cinema",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "OSIM Cinema 天王廳",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "B.O.X. OSIM",
+    "status": "operating",
+    "region": "north",
+    "city": "桃園市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 31,
+    "seatsNotes": "OSIM 天王按摩椅 31 席（二手一致；早期報導有 30 張說法）",
+    "booking": "https://www.skcinemas.com/",
+    "address": "桃園市中壢區春德路107號",
+    "verified": false,
+    "sources": [
+      {
+        "label": "桃園市政府觀光導覽：桃園新光影城",
+        "url": "https://travel.tycg.gov.tw/zh-tw/consume/detail/3010",
+        "note": "官方觀光資料確認 B.O.X. 與 OSIM 體驗"
+      },
+      {
+        "label": "新光影城資料整理",
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%85%89%E5%BD%B1%E5%9F%8E",
+        "note": "OSIM Cinema 31 席；開幕媒體曾寫 30 張，保留異說"
+      }
+    ],
+    "notes": "B.O.X. 三個實體廳分開保存；數字廳號、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {"level": "unknown", "note": "銀幕尺寸尚未取得"},
+      "projection": {"level": "unknown", "note": "投影規格尚未取得"},
+      "audio": {"level": "unknown", "note": "音效規格尚未取得"},
+      "seats": {"level": "secondary_consensus", "note": "現行整理為 31 席；早期 30 張說法留在來源註記"},
+      "price": {"level": "unknown", "note": "現行票價待確認"},
+      "auditoriumNumber": {"level": "unknown", "note": "官方購票品牌可辨識，數字廳號未可靠公開"},
+      "bestRows": {"level": "unknown", "note": "尚無可靠推薦座位"},
+      "communityNotes": {"level": "unknown", "note": "尚無達證據門檻的策展口碑"}
+    }
+  },
+  {
+    "id": "skc-taoyuan-box-acg",
+    "name": "桃園青埔新光影城 B.O.X. ACG 動漫劇場",
+    "chain": "新光影城",
+    "venueId": "skc-taoyuan-qingpu",
+    "formatBrand": "B.O.X. ACG",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "B.O.X. ACG 動漫劇場",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "B.O.X. ACG",
+    "status": "operating",
+    "region": "north",
+    "city": "桃園市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 68,
+    "seatsNotes": "ACG 動漫劇場 68 席（二手實地資料）",
+    "booking": "https://www.skcinemas.com/",
+    "address": "桃園市中壢區春德路107號",
+    "verified": false,
+    "sources": [
+      {
+        "label": "桃園市政府觀光導覽：桃園新光影城",
+        "url": "https://travel.tycg.gov.tw/zh-tw/consume/detail/3010",
+        "note": "官方觀光資料確認 B.O.X. ACG 動漫劇場"
+      },
+      {
+        "label": "桃園青埔新光影城實地整理",
+        "url": "https://nikitarh.pixnet.net/blog/posts/6005806828",
+        "note": "ACG 動漫劇場 68 席"
+      }
+    ],
+    "notes": "B.O.X. 三個實體廳分開保存；數字廳號、銀幕、投影、音效待確認",
+    "provenance": {
+      "dimensions": {"level": "unknown", "note": "銀幕尺寸尚未取得"},
+      "projection": {"level": "unknown", "note": "投影規格尚未取得"},
+      "audio": {"level": "unknown", "note": "音效規格尚未取得"},
+      "seats": {"level": "community", "note": "單篇實地資料為 68 席，尚待官方席次表"},
+      "price": {"level": "unknown", "note": "現行票價待確認"},
+      "auditoriumNumber": {"level": "unknown", "note": "官方購票品牌可辨識，數字廳號未可靠公開"},
+      "bestRows": {"level": "unknown", "note": "尚無可靠推薦座位"},
+      "communityNotes": {"level": "unknown", "note": "尚無達證據門檻的策展口碑"}
+    }
+  },
+  {
+    "id": "vieshow-hualien-a-plus",
+    "name": "花蓮新天堂樂園威秀 A+ 沙發廳",
+    "chain": "威秀影城",
+    "venueId": "vieshow-hualien-paradiso",
+    "formatBrand": "A+",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "A+",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "projection": "Christie RGB 純雷射",
+    "brandLabel": "A+",
+    "status": "operating",
+    "region": "east",
+    "city": "花蓮縣",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效規格待確認",
+    "seats": 42,
+    "seatsNotes": "威秀官方：A+ 沙發廳 42 席，另有 2 個無障礙席",
+    "booking": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+    "address": "花蓮縣吉安鄉南濱路一段503號3樓（花蓮新天堂樂園）",
+    "verified": false,
+    "sources": [
+      {
+        "label": "威秀官方：花蓮新天堂樂園",
+        "url": "https://www.vscinemas.com.tw/theater/detail.aspx?id=21",
+        "note": "A+ 沙發廳 42 席、2 個無障礙席；2026 場次仍以 A+ 名稱售票"
+      },
+      {
+        "label": "Christie 官方案例",
+        "url": "https://www.christiedigital.com/press-releases/christie-reallaser-colors-first-pure-laser-multiplex/",
+        "note": "A 至 D 廳採 Christie CP2315-RGB；A+ 與 A 廳對應屬官方案例描述"
+      }
+    ],
+    "notes": "官方購票名稱為 A+；未取得可靠數字廳號，音效與銀幕尺寸待確認",
+    "provenance": {
+      "dimensions": {"level": "unknown", "note": "銀幕尺寸尚未取得"},
+      "projection": {"level": "official_indirect", "note": "Christie 官方案例確認 A 至 D 廳採 CP2315-RGB"},
+      "audio": {"level": "unknown", "note": "音效規格尚未取得，不由同館 IMAX 推定"},
+      "seats": {"level": "official", "note": "A+ 沙發廳 42 席"},
+      "price": {"level": "unknown", "note": "現行 A+ 全票價待取得官方明列"},
+      "auditoriumNumber": {"level": "unknown", "note": "官方只以 A+ 作購票名稱，未可靠公開數字廳號"},
+      "bestRows": {"level": "unknown", "note": "尚無可靠推薦座位"},
+      "communityNotes": {"level": "unknown", "note": "尚無達證據門檻的策展口碑"}
+    }
+  },
+  {
+    "id": "ambassador-bade-dbox-3",
+    "name": "桃園八德置地國賓 3 廳（D-BOX）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-bade",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "3",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "3廳",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "north",
+    "city": "桃園市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1（是否為 Atmos 待逐廳確認）",
+    "seats": 203,
+    "seatsNotes": "國賓官方：3 廳共 203 席；2、3 廳第 9、10 排合計 36 席 D-BOX",
+    "priceNTD": 560,
+    "priceNotes": "D-BOX 2D 全票 560 元",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=8fda9934-73d4-4c14-b1c4-386c2b81045c",
+    "address": "桃園市八德區介壽路一段728號3樓（置地生活廣場）",
+    "verified": false,
+    "sources": [
+      {"label": "國賓官網：八德置地", "url": "https://www.ambassador.com.tw/home/theater_intro_a12", "note": "3 廳 203 席"},
+      {"label": "國賓 D-BOX 官方據點頁", "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html", "note": "2、3 廳第 9、10 排合計 36 席 D-BOX"}
+    ],
+    "notes": "D-BOX 合計席數未拆至單廳，不自行平分",
+    "provenance": {
+      "dimensions": {"level": "unknown"},
+      "projection": {"level": "unknown"},
+      "audio": {"level": "official_indirect", "note": "全館 7.1；Atmos 未逐廳對應"},
+      "seats": {"level": "official", "note": "3 廳共 203 席"},
+      "price": {"level": "official"},
+      "auditoriumNumber": {"level": "official"},
+      "bestRows": {"level": "unknown"},
+      "communityNotes": {"level": "unknown"}
+    }
+  },
+  {
+    "id": "ambassador-eda-dbox-1",
+    "name": "高雄義大國賓 1 廳（D-BOX）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-eda",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "1廳",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1",
+    "seats": 144,
+    "seatsNotes": "國賓官方：1 廳共 144 席；第 6、7 排含 16 席 D-BOX",
+    "priceNTD": 540,
+    "priceNotes": "D-BOX 2D 全票 540 元",
+    "booking": "https://www.ambassador.com.tw/home/Showtime?ID=3b803334-631b-49c8-941c-5f759697e463",
+    "address": "高雄市大樹區學城路一段12號3樓（義大世界購物廣場）",
+    "verified": false,
+    "sources": [
+      {"label": "國賓官網：高雄義大", "url": "https://www.ambassador.com.tw/home/theater_intro_a4", "note": "1 廳 144 席、全館 7.1"},
+      {"label": "國賓 D-BOX 官方據點頁", "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html", "note": "1 廳第 6、7 排，D-BOX 16 席"}
+    ],
+    "notes": "D-BOX 16 席是整廳 144 席中的部分座位",
+    "provenance": {
+      "dimensions": {"level": "unknown"}, "projection": {"level": "unknown"},
+      "audio": {"level": "official"}, "seats": {"level": "official"},
+      "price": {"level": "official"}, "auditoriumNumber": {"level": "official"},
+      "bestRows": {"level": "unknown"}, "communityNotes": {"level": "unknown"}
+    }
+  },
+  {
+    "id": "ambassador-kh-skmpark-dbox-10",
+    "name": "高雄 SKM Park 國賓 10 廳（Atmos／D-BOX）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-kh-skmpark",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "10",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "10廳",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "south",
+    "city": "高雄市",
+    "audioTier": "ATMOS",
+    "audio": "Dolby Atmos",
+    "seats": 206,
+    "seatsNotes": "國賓官方：10 廳共 206 席；9、10 廳第 10、11 排合計 32 席 D-BOX",
+    "priceNTD": 540,
+    "priceNotes": "D-BOX 2D 全票 540 元",
+    "booking": "https://www.ambassador.com.tw/home/theater_intro_a11",
+    "address": "高雄市前鎮區中山四路100號3樓（SKM Park）",
+    "verified": false,
+    "sources": [
+      {"label": "國賓官網：高雄 SKM Park", "url": "https://www.ambassador.com.tw/home/theater_intro_a11", "note": "10 廳 206 席、全館兩廳 Atmos"},
+      {"label": "國賓 D-BOX 官方據點頁", "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html", "note": "9、10 廳第 10、11 排合計 32 席 D-BOX"}
+    ],
+    "notes": "9、10 廳分開保存；D-BOX 合計席數未拆至單廳",
+    "provenance": {
+      "dimensions": {"level": "unknown"}, "projection": {"level": "unknown"},
+      "audio": {"level": "official_indirect", "note": "官方確認兩廳 Atmos 且 D-BOX 位於 9、10 廳"},
+      "seats": {"level": "official"}, "price": {"level": "official"},
+      "auditoriumNumber": {"level": "official"}, "bestRows": {"level": "unknown"},
+      "communityNotes": {"level": "unknown"}
+    }
+  },
+  {
+    "id": "ambassador-pingtung-dbox-1",
+    "name": "屏東環球國賓 1 廳（D-BOX）",
+    "chain": "國賓影城",
+    "venueId": "ambassador-pingtung-global",
+    "formatBrand": "D-BOX",
+    "auditoriumNumber": "1",
+    "auditoriumNumberEvidence": "official",
+    "officialBookingLabel": "1廳",
+    "hallCategory": "STANDARD",
+    "widthM": null,
+    "heightM": null,
+    "status": "operating",
+    "region": "south",
+    "city": "屏東縣",
+    "audioTier": "SURROUND_7_1",
+    "audio": "Dolby Surround 7.1",
+    "seats": null,
+    "seatsNotes": "整廳總席次尚未取得；第 11、12 排為 18 席 D-BOX",
+    "priceNTD": 540,
+    "priceNotes": "D-BOX 2D 全票 540 元",
+    "booking": "https://www.ambassador.com.tw/home/theater_intro_a6",
+    "address": "屏東縣屏東市仁愛路90號6樓（環球購物中心）",
+    "verified": false,
+    "sources": [
+      {"label": "國賓官網：屏東環球", "url": "https://www.ambassador.com.tw/home/theater_intro_a6", "note": "全館 Dolby Surround 7.1"},
+      {"label": "國賓 D-BOX 官方據點頁", "url": "https://www.ambassador.com.tw/external/events/dbox/DBOX_MFX.html", "note": "1 廳第 11、12 排，D-BOX 18 席"}
+    ],
+    "notes": "18 席是 D-BOX 部分座位，不冒充整廳席次",
+    "provenance": {
+      "dimensions": {"level": "unknown"}, "projection": {"level": "unknown"},
+      "audio": {"level": "official"}, "seats": {"level": "unknown", "note": "僅知 D-BOX 18 席，整廳席次待確認"},
+      "price": {"level": "official"}, "auditoriumNumber": {"level": "official"},
+      "bestRows": {"level": "unknown"}, "communityNotes": {"level": "unknown"}
     }
   }
 ]

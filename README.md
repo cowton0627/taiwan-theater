@@ -39,7 +39,7 @@ npm run build    # 產出 dist/
 | `src/data/films.json` | 電影各版本畫幅（含信心旗標）、拍攝規格、原生大畫幅片段 | 手工維護（TMDB 無畫幅欄位），來源如片商格式頁、BBFC、媒體 |
 | `public/data/tmdb.json` | 台灣片單（階段二） | **尚未入庫**——workflow 目前停用（見下） |
 
-- 資料庫現況：**67 筆影廳（63 筆營運中、4 筆歇業保留歷史紀錄）**，涵蓋全台 IMAX、杜比影院、DVA、LUXE、巨幕、ScreenX、代表性 Atmos、4DX 與頂級座椅體驗廳。
+- 資料庫現況：**75 筆影廳（71 筆營運中、4 筆歇業保留歷史紀錄）**，涵蓋全台 IMAX、杜比影院、DVA、LUXE、巨幕、ScreenX、代表性 Atmos、4DX、D-BOX 與頂級座椅體驗廳。
 - `provenance` 逐欄標記尺寸、投影、音效、席次、票價、廳號、推薦座位與口碑的可信度（官方／官方間接／二手一致／社群實測／來源衝突／待確認／已過時）。舊 `verified` 僅為尺寸相容欄位，不可解讀為整張卡都已查證。
 - **TMDB 狀態**：`update-tmdb.yml` 已停用（disabled），排程不會執行、無成功紀錄；啟用步驟＝repo Settings → Secrets 加 `TMDB_TOKEN`（v4 Read Access Token）→ `gh workflow enable "Update TMDB film list"`。啟用前 roadmap 7 不打勾。
 
@@ -55,7 +55,7 @@ npm run build    # 產出 dist/
 ## Roadmap（精簡版，完整見 [roadmap.md](roadmap.md)）
 
 - [x] 階段一：畫幅 × 銀幕模擬器＋疊圖、三種排序、綜合評比、票價、URL 分享、行動版首屏（roadmap 1–29 主體完成）
-- [x] 訂票深連結：基礎建置完成（67 筆影廳資料），後續持續維護
+- [x] 訂票深連結：基礎建置完成（75 筆影廳資料），後續持續維護
 - [x] 資訊架構與可信度：卡片漸進展開（32）、來源摺疊（33）、欄位級 provenance（30）、分數資料覆蓋率（31）
 - [x] 內容與特殊格式：特殊格式版本建模（28）、四面向口碑評分（14）、ScreenX 實體影廳選擇指南（36）
 - [ ] 進行中：逐欄提升官方來源覆蓋（5）、體驗型廳與座位補全（16）
