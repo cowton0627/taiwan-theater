@@ -1329,7 +1329,17 @@ export default function App() {
                   toggleSelect(fit.screen.id);
                 }}
               >
-	                <div className={sortMode === 'audio' ? 'rank rank-audio' : 'rank'}>{i + 1}</div>
+	                <div
+	                  className={
+	                    sortMode === 'audio'
+	                      ? 'rank rank-audio'
+	                      : sortMode === 'score'
+	                        ? 'rank rank-score'
+	                        : 'rank'
+	                  }
+	                >
+	                  {i + 1}
+	                </div>
 	                <div className="card-body">
 	                  <h3>
 	                    {fit.screen.name}

@@ -26,6 +26,8 @@
   --shadow: rgba(0, 0, 0, 0.45);
   --audio: #7db9e3;
   --audio-border: #3d5a73;
+  --score: #b89ee0;
+  --score-border: #66558a;
   --success: #86cf8e;
   --success-border: #41603f;
   --warning: #f2c779;
@@ -80,6 +82,8 @@
   --shadow: rgba(63, 48, 34, 0.2);
   --audio: #245f86;
   --audio-border: #6b91aa;
+  --score: #65449a;
+  --score-border: #947db8;
   --success: #2f6e3d;
   --success-border: #78a27f;
   --warning: #825600;
@@ -556,6 +560,10 @@ main {
   color: var(--audio);
 }
 
+.rank.rank-score {
+  color: var(--score);
+}
+
 /* 音效層級序位＝人為層級非量測值，用音效模式的藍與面積金區隔 */
 .card-area.card-area-audio {
   color: var(--audio);
@@ -568,8 +576,8 @@ main {
 }
 
 .sort-note-score {
-  color: var(--gold);
-  border-color: var(--gold-dim);
+  color: var(--score);
+  border-color: var(--score-border);
 }
 
 .empty-state {
@@ -1076,7 +1084,7 @@ main {
 }
 
 .score-points {
-  color: var(--gold);
+  color: var(--score);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -1112,6 +1120,7 @@ main {
 
 .card-area-score {
   min-width: 6.8rem;
+  color: var(--score);
 }
 
 .score-coverage {
