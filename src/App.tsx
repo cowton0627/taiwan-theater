@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import screensData from './data/screens.json';
 import filmsData from './data/films.json';
 import screenXGuideData from './data/screenx-guide.json';
@@ -42,6 +42,23 @@ const CATEGORY_LABELS: Record<HallCategory, string> = {
 
 const CUSTOM_RATIOS = [1.43, 1.85, 1.9, 2.2, 2.39];
 const formatScore = (value: number) => String(Number(value.toFixed(2)));
+
+function ScreenAperture({ screen }: { screen: Screen }) {
+  const ratio =
+    screen.widthM != null && screen.heightM != null ? screen.widthM / screen.heightM : null;
+  const style = ratio
+    ? ({ '--screen-ratio': ratio } as CSSProperties)
+    : undefined;
+
+  return (
+    <span
+      className={ratio ? 'screen-aperture' : 'screen-aperture screen-aperture-unknown'}
+      style={style}
+      title={ratio ? `實際銀幕比例約 ${ratio.toFixed(2)}:1` : '銀幕比例待確認'}
+      aria-label={ratio ? `實際銀幕比例約 ${ratio.toFixed(2)} 比 1` : '銀幕比例待確認'}
+    />
+  );
+}
 
 /** 品牌分組鍵：子品牌歸入母集團（例：威秀影城（MUVIE）→ 威秀影城） */
 const chainKey = (chain: string) => chain.replace(/（.*）$/, '');
@@ -427,6 +444,7 @@ function UnsizedScreenCard({
   return (
     <article className={audioRanking ? 'card card-audio-unsized' : 'card card-unsized'}>
       <div className={audioRanking ? 'rank rank-audio' : 'rank'}>{rank ?? '–'}</div>
+      <ScreenAperture screen={s} />
       <div className="card-body">
         <h3>{s.name}</h3>
         <p className="key-takeaway">
@@ -972,7 +990,7 @@ export default function App() {
 
   return (
     <main>
-      <header>
+      <header className="site-header">
         <h1>台灣影廳畫幅模擬器</h1>
         <p className="subtitle">
           同一部片在不同影廳，實際看到的畫面有多大？依畫幅與銀幕尺寸計算有效成像面積。
@@ -1241,6 +1259,7 @@ export default function App() {
                 綜合評比排序
               </span>
             )}
+            <span className="screen-ratio-key">銀幕框依各廳實際比例</span>
           </h2>
           <div className="ranking">
             {displayRanked.map((entry, i) => {
@@ -1275,6 +1294,7 @@ export default function App() {
                 }}
               >
 	                <div className={sortMode === 'audio' ? 'rank rank-audio' : 'rank'}>{i + 1}</div>
+	                <ScreenAperture screen={fit.screen} />
 	                <div className="card-body">
 	                  <h3>
 	                    {fit.screen.name}

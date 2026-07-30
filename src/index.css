@@ -13,6 +13,8 @@
   --gold-dim: #8a6f42;
   /* 選取狀態專用色（銀幕光乳白）——與名次/數據的膠片金分離，解 U-3/U-13 語意撞色 */
   --select: #f0e9dc;
+  /* Display 字型只供片名式主標與關鍵數字，正文維持高可讀性的系統黑體。 */
+  --font-display: 'Avenir Next Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
 }
 
 * {
@@ -33,10 +35,46 @@ main {
   padding: 2rem 1rem 4rem;
 }
 
-header h1 {
+.site-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 1.15rem 1.35rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px 4px 14px 14px;
+  background: linear-gradient(180deg, #24191c 0%, var(--panel) 70%);
+  box-shadow: inset 0 -10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* 幕簾只用輪廓與明暗塑形，不鋪具象照片或搶閱讀的紋理。 */
+.site-header::before,
+.site-header::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  opacity: 0.32;
+  background: linear-gradient(90deg, #4b232a, transparent);
+  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 86%);
+}
+
+.site-header::before {
+  left: 0;
+}
+
+.site-header::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.site-header h1 {
   margin: 0;
   font-size: 1.7rem;
   letter-spacing: 0.03em;
+  font-family: var(--font-display);
+  font-weight: 750;
 }
 
 .subtitle {
@@ -371,6 +409,14 @@ header h1 {
   color: var(--muted);
 }
 
+.screen-ratio-key {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: normal;
+}
+
 /* 音效排序模式的狀態標籤——在資訊被閱讀的位置標示，而非只在控制列 */
 .sort-note {
   font-size: 0.72rem;
@@ -661,6 +707,8 @@ header h1 {
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 0.9rem;
@@ -668,6 +716,19 @@ header h1 {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.8rem 1rem;
+}
+
+/* 低對比片孔只落在卡片邊緣，維持「材質是形狀、不是內容」的原則。 */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 2px;
+  width: 5px;
+  pointer-events: none;
+  opacity: 0.36;
+  background:
+    radial-gradient(circle, var(--bg) 0 1.35px, transparent 1.5px)
+    center 2px / 5px 10px repeat-y;
 }
 
 .card.selectable {
@@ -717,7 +778,32 @@ header h1 {
   color: var(--gold);
   min-width: 1.6rem;
   text-align: center;
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 銀幕開口依每廳實際寬高比呈現；上下黑框借用遮幅語彙。 */
+.screen-aperture {
+  --screen-ratio: 1.85;
+  display: block;
+  flex: 0 0 auto;
+  height: 1.35rem;
+  aspect-ratio: var(--screen-ratio);
+  border: 3px solid #0c090a;
+  border-radius: 2px;
+  background: radial-gradient(ellipse at center, #f0e9dc 0%, #c9c0b2 72%, #8b8278 100%);
+  box-shadow:
+    0 0 0 1px var(--border),
+    inset 0 0 7px rgba(20, 16, 19, 0.42);
+}
+
+.screen-aperture-unknown {
+  width: 2.5rem;
+  aspect-ratio: auto;
+  border: 1px dashed var(--muted);
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.65;
 }
 
 .card-body {
@@ -913,7 +999,7 @@ header h1 {
   color: var(--gold);
   line-height: 1.1;
   white-space: nowrap;
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-family: var(--font-display);
   font-variant-numeric: tabular-nums;
 }
 
@@ -988,8 +1074,13 @@ footer {
 }
 
 @media (max-width: 560px) {
+  .site-header {
+    padding-inline: 1rem;
+  }
+
   .card {
     flex-wrap: wrap;
+    gap: 0.55rem 0.7rem;
   }
 
   .card-area {
@@ -1000,6 +1091,11 @@ footer {
 
   .spec-grid {
     grid-template-columns: 1fr;
+  }
+
+  .screen-ratio-key {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
