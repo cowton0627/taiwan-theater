@@ -1,21 +1,56 @@
 [
   {
     "id": "showtime-dome-screenx-10",
+    "venueId": "showtime-taipei-dome",
+    "venueName": "台北大巨蛋秀泰影城",
     "name": "台北大巨蛋秀泰 ScreenX 10 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "10 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "north",
     "city": "台北市",
     "address": "台北市信義區光復南路105號2樓",
     "booking": "https://www.showtimes.com.tw/cinemas/91/",
     "priceNTD": 520,
     "priceNotes": "大巨蛋 ScreenX 全票參考值",
-    "bestRows": "中後段置中",
-    "mainScreen": { "value": "約 11×6m", "evidence": "community" },
+    "bestRows": "第 10 排置中（單篇實測席位，非跨帖共識）",
+    "bestRowsEvidence": "community",
+    "seatLayout": { "value": "14 排；單排最多 21 席（座位圖見來源）", "evidence": "community" },
+    "mainScreen": { "value": "約寬 14–15m；另一實測約 11×6m，待複核", "evidence": "community" },
     "totalWidth": { "evidence": "unknown" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
-    "notes": "社群實測指出側幕受出入口與逃生門切割；主銀幕尺寸為實測約值。",
+    "notes": "大廳。兩篇社群實測對主銀幕約值有差異，未消除衝突前不採入正面成像排名；投影解析度與音效系統未查證。",
+    "reviews": [
+      {
+        "text": "側幕受出入口與逃生門切割；本文作者坐第 10 排伸腳排，心得只適用 10 廳。",
+        "scope": "auditorium",
+        "auditoriumId": "showtime-dome-screenx-10",
+        "sources": [
+          {
+            "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+            "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html"
+          }
+        ]
+      },
+      {
+        "text": "逃生門造成側幕缺角多少影響觀影，但作者認為程度不大；此段未指明只屬哪一廳，不用來產生特定廳推薦或規格。",
+        "scope": "venue_unspecified",
+        "sources": [
+          {
+            "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+            "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html"
+          }
+        ]
+      }
+    ],
     "sources": [
+      {
+        "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html",
+        "note": "2025-11 實測：10 廳為大廳，共 14 排、單排最多 21 席；主銀幕推測寬 14–15m；投影解析度與音效系統未公布"
+      },
       {
         "label": "PTT：全台 ScreenX 逐廳實測",
         "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
@@ -30,21 +65,56 @@
   },
   {
     "id": "showtime-dome-screenx-2",
+    "venueId": "showtime-taipei-dome",
+    "venueName": "台北大巨蛋秀泰影城",
     "name": "台北大巨蛋秀泰 ScreenX 2 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "2 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "north",
     "city": "台北市",
     "address": "台北市信義區光復南路105號2樓",
     "booking": "https://www.showtimes.com.tw/cinemas/91/",
     "priceNTD": 520,
     "priceNotes": "大巨蛋 ScreenX 全票參考值",
-    "bestRows": "中後段置中",
-    "mainScreen": { "evidence": "unknown" },
+    "bestRows": "第 5 排置中（單篇實測席位，非跨帖共識）",
+    "bestRowsEvidence": "community",
+    "seatLayout": { "value": "12 排；單排最多 15 席（座位圖見來源）", "evidence": "community" },
+    "mainScreen": { "value": "約寬 11–12m", "evidence": "community" },
     "totalWidth": { "evidence": "unknown" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
-    "notes": "社群實測指出主銀幕亮度足，但側幕仍受逃生門影響；沒有可靠尺寸值。",
+    "notes": "小廳。主銀幕寬度為單篇社群推測值，不採入正面成像排名；投影解析度與音效系統未查證。",
+    "reviews": [
+      {
+        "text": "本文作者坐第 5 排伸腳排；側邊各一組投影、環繞與低音配置不同於 10 廳，心得只適用 2 廳。",
+        "scope": "auditorium",
+        "auditoriumId": "showtime-dome-screenx-2",
+        "sources": [
+          {
+            "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+            "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html"
+          }
+        ]
+      },
+      {
+        "text": "逃生門造成側幕缺角多少影響觀影，但作者認為程度不大；此段未指明只屬哪一廳，不用來產生特定廳推薦或規格。",
+        "scope": "venue_unspecified",
+        "sources": [
+          {
+            "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+            "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html"
+          }
+        ]
+      }
+    ],
     "sources": [
+      {
+        "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html",
+        "note": "2025-11 實測：2 廳為小廳，共 12 排、單排最多 15 席；主銀幕推測寬 11–12m；投影解析度與音效系統未公布"
+      },
       {
         "label": "PTT：全台 ScreenX 逐廳實測",
         "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
@@ -59,8 +129,13 @@
   },
   {
     "id": "showtime-xinxin-screenx-1",
+    "venueId": "showtime-xinxin",
+    "venueName": "台北欣欣秀泰影城",
     "name": "台北欣欣秀泰 ScreenX 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "north",
     "city": "台北市",
     "address": "台北市中山區林森北路247號",
@@ -88,8 +163,13 @@
   },
   {
     "id": "showtime-shulin-screenx-1",
+    "venueId": "showtime-shulin",
+    "venueName": "樹林秀泰影城",
     "name": "樹林秀泰 ScreenX 巨幕 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "north",
     "city": "新北市",
     "address": "新北市樹林區樹新路40-6號",
@@ -117,8 +197,13 @@
   },
   {
     "id": "showtime-taichung-station-screenx-1",
+    "venueId": "showtime-taichung-station",
+    "venueName": "台中站前秀泰影城",
     "name": "台中站前秀泰 ScreenX 巨幕 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "central",
     "city": "台中市",
     "address": "台中市東區南京路76號",
@@ -146,8 +231,13 @@
   },
   {
     "id": "showtime-taichung-wenxin-screenx-1",
+    "venueId": "showtime-taichung-wenxin",
+    "venueName": "台中文心秀泰影城",
     "name": "台中文心秀泰 ScreenX 巨幕 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "central",
     "city": "台中市",
     "address": "台中市南屯區文心南路289號7樓",
@@ -175,8 +265,13 @@
   },
   {
     "id": "showtime-chiayi-screenx-1",
+    "venueId": "showtime-chiayi",
+    "venueName": "嘉義秀泰影城",
     "name": "嘉義秀泰 ScreenX 巨幕 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "south",
     "city": "嘉義市",
     "address": "嘉義市西區文化路299號",
@@ -203,8 +298,13 @@
   },
   {
     "id": "showtime-kaohsiung-dreammall-screenx-12",
+    "venueId": "showtime-kaohsiung-dreammall",
+    "venueName": "高雄夢時代秀泰影城",
     "name": "高雄夢時代秀泰 ScreenX 12 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "12 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "south",
     "city": "高雄市",
     "address": "高雄市前鎮區中華五路789號8樓",
@@ -232,8 +332,13 @@
   },
   {
     "id": "showtime-kaohsiung-gangshan-screenx-1",
+    "venueId": "showtime-kaohsiung-gangshan",
+    "venueName": "高雄岡山秀泰影城",
     "name": "高雄岡山秀泰 ScreenX 巨幕 1 廳",
     "chain": "秀泰影城",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": { "value": "1 廳", "evidence": "community" },
+    "officialBookingLabel": "SCREENX",
     "region": "south",
     "city": "高雄市",
     "address": "高雄市岡山區捷安路1巷2號4樓",

@@ -659,6 +659,11 @@
     "id": "miramar-dazhi-dolby",
     "name": "美麗華大直影城 杜比影院",
     "chain": "美麗華影城",
+    "venueId": "miramar-dazhi",
+    "formatBrand": "Dolby Cinema",
+    "auditoriumNumber": null,
+    "auditoriumNumberEvidence": "unknown",
+    "officialBookingLabel": "Dolby Cinema",
     "hallCategory": "DOLBY_CINEMA",
     "widthM": 14.8,
     "heightM": 7,
@@ -702,9 +707,14 @@
     "communityNotes": "@aedwarda 開幕實測：畫質出色、音質偏悶；PTT 同期評「畫質很棒、但跟青埔比各方面差一點、螢幕偏小」。"
   },
   {
-    "id": "showtime-dome-dva",
-    "name": "台北大巨蛋秀泰 DVA 廳（8、9 廳）",
+    "id": "showtime-dome-dva-8",
+    "name": "台北大巨蛋秀泰 DVA 8 廳",
     "chain": "秀泰影城",
+    "venueId": "showtime-taipei-dome",
+    "formatBrand": "DVA",
+    "auditoriumNumber": "8",
+    "auditoriumNumberEvidence": "community",
+    "officialBookingLabel": "DVA",
     "hallCategory": "PREMIUM",
     "widthM": null,
     "heightM": null,
@@ -737,7 +747,44 @@
       }
     ],
     "notes": "DVA＝Dolby Vision＋Atmos 授權（杜比 2024 年新層級），非 Dolby Cinema 整廳認證；銀幕尺寸未公布",
-    "communityNotes": "口碑（2025/10–12）：空心木地板令低頻無法從地板傳導、隔壁廳震動滲入（8 廳尤甚）、銀幕偏小（PTT 實測約寬 11.6m）、Dcard 有畫面偏暗評價。"
+    "communityNotes": "8 廳專屬口碑（2025/10–12）：空心木地板令低頻無法從地板傳導、隔壁廳震動滲入；銀幕偏小（PTT 實測約寬 11.6m）。未指明廳號的畫面偏暗評價不作本廳專屬結論。"
+  },
+  {
+    "id": "showtime-dome-dva-9",
+    "name": "台北大巨蛋秀泰 DVA 9 廳",
+    "chain": "秀泰影城",
+    "venueId": "showtime-taipei-dome",
+    "formatBrand": "DVA",
+    "auditoriumNumber": "9",
+    "auditoriumNumberEvidence": "community",
+    "officialBookingLabel": "DVA",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "DVA",
+    "status": "operating",
+    "region": "north",
+    "city": "台北市",
+    "audioTier": "DVA",
+    "audio": "Dolby Atmos",
+    "seats": null,
+    "priceNTD": 500,
+    "priceNotes": "一般廳 400（2025-10 開幕價，媒體）",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "address": "台北市信義區光復南路105號2樓",
+    "verified": false,
+    "sources": [
+      {
+        "label": "Dolby 官方新聞稿（2024/4）",
+        "note": "Dolby 2024/4 新聞稿：DVA＝Dolby Vision+Atmos 開放授權層級；JazzNews 秀泰結盟報導",
+        "url": "https://news.dolby.com/en-WW/236229-dolby-expanding-the-best-way-to-experience-movies-by-making-dolby-vision-and-dolby-atmos-available-to-all-premium-theater-exhibitors/"
+      },
+      {
+        "label": "大巨蛋秀泰 DVA 實測（未指明 9 廳專屬規格）",
+        "note": "現有來源不足以把 8 廳心得套用到 9 廳；只保留 DVA 共通授權資料"
+      }
+    ],
+    "notes": "DVA＝Dolby Vision＋Atmos 授權，非 Dolby Cinema 整廳認證；9 廳銀幕尺寸與專屬口碑待查證"
   },
   {
     "id": "in89-ximen-coach",
@@ -1046,9 +1093,14 @@
     "notes": "2025/10 開幕；動感座椅＋270° 三面投影雙系統，銀幕尺寸未公布"
   },
   {
-    "id": "showtime-dome-screenx",
-    "name": "台北大巨蛋秀泰 ScreenX 廳",
+    "id": "showtime-dome-screenx-10",
+    "name": "台北大巨蛋秀泰 ScreenX 10 廳",
     "chain": "秀泰影城",
+    "venueId": "showtime-taipei-dome",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": "10",
+    "auditoriumNumberEvidence": "community",
+    "officialBookingLabel": "SCREENX",
     "hallCategory": "PREMIUM",
     "widthM": null,
     "heightM": null,
@@ -1071,9 +1123,44 @@
         "url": "https://jazznews.com.tw/howtime-taipei-dome-open/"
       }
     ],
-    "notes": "2025/10 開幕；270° 三面投影，主銀幕尺寸未公布",
-    "bestRows": "中後段置中",
-    "communityNotes": "ScreenX 通則：中後段置中才收得進三面畫面；大巨蛋 10 廳側幕遭出入口裁切、有負評。"
+    "notes": "大廳；270° 三面投影，社群推測主銀幕寬約 14–15m，未採入正面成像排名",
+    "bestRows": "第 10 排置中（單篇實測席位）",
+    "communityNotes": "僅適用 10 廳：共 14 排、單排最多 21 席；側幕遭出入口裁切。"
+  },
+  {
+    "id": "showtime-dome-screenx-2",
+    "name": "台北大巨蛋秀泰 ScreenX 2 廳",
+    "chain": "秀泰影城",
+    "venueId": "showtime-taipei-dome",
+    "formatBrand": "ScreenX",
+    "auditoriumNumber": "2",
+    "auditoriumNumberEvidence": "community",
+    "officialBookingLabel": "SCREENX",
+    "hallCategory": "PREMIUM",
+    "widthM": null,
+    "heightM": null,
+    "brandLabel": "ScreenX",
+    "status": "operating",
+    "region": "north",
+    "city": "台北市",
+    "audioTier": "SURROUND_5_1",
+    "audio": "音效系統未查證",
+    "seats": null,
+    "priceNTD": 520,
+    "priceNotes": "2025-10",
+    "booking": "https://www.showtimes.com.tw/cinemas/91/",
+    "address": "台北市信義區光復南路105號2樓",
+    "verified": false,
+    "sources": [
+      {
+        "label": "PTT：大巨蛋 ScreenX 2／10 廳實測",
+        "url": "https://www.ptt.cc/bbs/Theater/M.1762441441.A.C83.html",
+        "note": "2 廳為小廳，共 12 排、單排最多 15 席；主銀幕推測寬 11–12m；投影與音效系統未知"
+      }
+    ],
+    "notes": "小廳；社群推測主銀幕寬約 11–12m，未採入正面成像排名",
+    "bestRows": "第 5 排置中（單篇實測席位）",
+    "communityNotes": "僅適用 2 廳：共 12 排、單排最多 15 席；配置與 10 廳不同。"
   },
   {
     "id": "venice-zhongli-atmos",

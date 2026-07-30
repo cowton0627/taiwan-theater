@@ -200,6 +200,9 @@ function ScreenXGuide({
       <p className="screenx-width-note">
         三面總寬＝主銀幕＋兩側延伸畫面，不能當成主銀幕寬，也不會代入本站正面成像面積。
       </p>
+      <p className="screenx-auditorium-warning">
+        同一影城可能有大小不同的 ScreenX 實體廳；購票前請核對廳號，規格、座位與口碑不跨廳套用。
+      </p>
       <SourcesFold sources={release.sources} />
 
       {entries.length === 0 ? (
@@ -209,13 +212,31 @@ function ScreenXGuide({
       ) : (
         <>
           <p className="screenx-scope">
-            {entries.length} 個據點{filtered ? '（目前篩選範圍）' : '（全台）'}；未查證欄位保留
+            {entries.length} 個實體廳{filtered ? '（目前篩選範圍）' : '（全台）'}；未查證欄位保留
             「待確認」，不自行推定。
           </p>
           <div className="screenx-grid">
             {entries.map((entry) => (
               <article className="screenx-card" key={entry.id}>
                 <h3>{entry.name}</h3>
+                <p className="auditorium-identity">
+                  <strong>實體廳號：</strong>
+                  {entry.auditoriumNumber?.value ?? '官方未公開'}
+                  <span
+                    className={`evidence-level evidence-${
+                      entry.auditoriumNumber?.evidence ?? 'unknown'
+                    }`}
+                  >
+                    {EVIDENCE_LABELS[entry.auditoriumNumber?.evidence ?? 'unknown']}
+                  </span>
+                  {entry.officialBookingLabel && (
+                    <>
+                      {' '}
+                      ・ <strong>購票標籤：</strong>
+                      {entry.officialBookingLabel}
+                    </>
+                  )}
+                </p>
                 <p className="meta">
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -243,16 +264,36 @@ function ScreenXGuide({
                 <p className="screenx-seat">
                   <strong>💺 建議座位：</strong>
                   {entry.bestRows ?? '待確認'}
+                  {entry.bestRowsEvidence && (
+                    <span className={`evidence-level evidence-${entry.bestRowsEvidence}`}>
+                      {EVIDENCE_LABELS[entry.bestRowsEvidence]}
+                    </span>
+                  )}
                 </p>
                 <details className="evidence-fold">
                   <summary>規格與依據</summary>
                   <dl className="guide-spec-grid">
+                    {entry.seatLayout && <GuideField label="座位圖／排數" field={entry.seatLayout} />}
                     <GuideField label="主銀幕" field={entry.mainScreen} />
                     <GuideField label="三面總寬" field={entry.totalWidth} />
                     <GuideField label="投影" field={entry.projection} />
                     <GuideField label="音效" field={entry.audio} />
                   </dl>
                   {entry.notes && <p className="evidence-note">{entry.notes}</p>}
+                  {entry.reviews?.map((review, index) => (
+                    <p className="community-line" key={index}>
+                      <strong>
+                        口碑（
+                        {review.scope === 'auditorium'
+                          ? `僅適用 ${entry.auditoriumNumber?.value ?? '本廳'}`
+                          : review.scope === 'venue_unspecified'
+                            ? '未指明廳號'
+                            : '影城共通'}
+                        ）：
+                      </strong>
+                      {review.text}
+                    </p>
+                  ))}
                   <SourcesFold sources={entry.sources} />
                 </details>
               </article>
@@ -270,6 +311,12 @@ function hallTypeLabel(s: Screen) {
   if (s.brandLabel === 'DVA') return 'DVA 特殊廳';
   if (s.brandLabel) return `${s.brandLabel}（${CATEGORY_LABELS[s.hallCategory]}）`;
   return CATEGORY_LABELS[s.hallCategory];
+}
+
+function auditoriumIdentity(s: Screen) {
+  if (s.auditoriumNumber) return `${s.auditoriumNumber} 廳`;
+  if (s.auditoriumNumber === null) return '數字廳號：官方未公開';
+  return '實體廳號待確認';
 }
 
 function SpecField({
@@ -332,6 +379,12 @@ function UnsizedScreenCard({
           <summary>規格與依據</summary>
           <dl className="spec-grid">
             <SpecField label="廳型">{hallTypeLabel(s)}</SpecField>
+            {(s.officialBookingLabel || s.auditoriumNumber !== undefined) && (
+              <SpecField label="實體廳／購票名稱">
+                {auditoriumIdentity(s)}
+                {s.officialBookingLabel && ` ・ ${s.officialBookingLabel}`}
+              </SpecField>
+            )}
             <SpecField label="投影">{s.projection ?? '未公布'}</SpecField>
             <SpecField
               label="音效"
@@ -1157,6 +1210,14 @@ export default function App() {
 	                    <summary>規格與依據</summary>
 	                    <dl className="spec-grid">
 	                      <SpecField label="廳型">{hallTypeLabel(fit.screen)}</SpecField>
+	                      {(fit.screen.officialBookingLabel ||
+	                        fit.screen.auditoriumNumber !== undefined) && (
+	                        <SpecField label="實體廳／購票名稱">
+	                          {auditoriumIdentity(fit.screen)}
+	                          {fit.screen.officialBookingLabel &&
+	                            ` ・ ${fit.screen.officialBookingLabel}`}
+	                        </SpecField>
+	                      )}
 	                      <SpecField label="投影">{fit.screen.projection ?? '未公布'}</SpecField>
 	                      <SpecField
 	                        label="音效"

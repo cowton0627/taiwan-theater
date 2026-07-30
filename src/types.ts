@@ -7,6 +7,8 @@ export type HallCategory =
   | 'STANDARD';    // 一般廳
 
 export type Region = 'north' | 'central' | 'south' | 'east';
+export type EvidenceLevel = 'official' | 'media' | 'community' | 'unknown';
+export type ReviewScope = 'auditorium' | 'venue' | 'venue_unspecified';
 
 /**
  * 結構化資料來源（roadmap 33）：卡片可顯示可點連結。
@@ -19,6 +21,14 @@ export interface SourceRef {
   url?: string;
   /** 完整原句／引用重點 */
   note?: string;
+}
+
+export interface CommunityReview {
+  text: string;
+  scope: ReviewScope;
+  /** scope=auditorium 時必須指向單一實體廳；未指明廳號不得填。 */
+  auditoriumId?: string;
+  sources: SourceRef[];
 }
 
 /**
@@ -60,6 +70,15 @@ export interface Screen {
   id: string;
   name: string;
   chain: string;
+  /** 同一營業據點的穩定識別；影城地址、票價與訂票入口可由此共享。 */
+  venueId?: string;
+  /** 特殊廳品牌／廳型，與實體廳號分開。 */
+  formatBrand?: string;
+  /** 實體廳號；null＝官方未公開，不得自行猜測。 */
+  auditoriumNumber?: string | null;
+  auditoriumNumberEvidence?: EvidenceLevel;
+  /** 官網場次／購票畫面使用的名稱，可能只有品牌、沒有數字廳號。 */
+  officialBookingLabel?: string;
   hallCategory: HallCategory;
   /** 銀幕寬（公尺）；未公布為 null，該廳不納入成像排名 */
   widthM: number | null;
@@ -82,6 +101,8 @@ export interface Screen {
   seatsNotes?: string;
   /** 社群口碑摘要（roadmap 14：經逐條開連結核對後才入庫，出處在 sources 的「口碑：」條目） */
   communityNotes?: string;
+  /** 有明確適用範圍的口碑；未指明廳號不得產生特定廳規格或推薦。 */
+  communityReviews?: CommunityReview[];
   /** 推薦座位排（跨帖共識；意見分歧或無可靠來源則缺省） */
   bestRows?: string;
   /** 該廳全票價（平日成人 2D，NTD）；顯示參考、不計入評比；未收集為缺省 */
@@ -115,8 +136,6 @@ export interface FilmVersion {
   confidence?: 'official' | 'reported' | 'expected';
 }
 
-export type EvidenceLevel = 'official' | 'media' | 'community' | 'unknown';
-
 export interface SpecialFormatRelease {
   format: 'SCREENX';
   market: 'TW';
@@ -136,8 +155,13 @@ export interface GuideValue {
 /** ScreenX 第一階段選擇指南；與正面銀幕排名資料分離，不參與 fit／score。 */
 export interface ScreenXGuideEntry {
   id: string;
+  venueId?: string;
+  venueName?: string;
   name: string;
   chain: string;
+  formatBrand?: string;
+  auditoriumNumber?: GuideValue;
+  officialBookingLabel?: string;
   region: Region;
   city: string;
   address?: string;
@@ -145,11 +169,14 @@ export interface ScreenXGuideEntry {
   priceNTD?: number | null;
   priceNotes?: string;
   bestRows?: string;
+  bestRowsEvidence?: EvidenceLevel;
+  seatLayout?: GuideValue;
   mainScreen: GuideValue;
   totalWidth: GuideValue;
   projection: GuideValue;
   audio: GuideValue;
   notes?: string;
+  reviews?: CommunityReview[];
   sources: SourceRef[];
 }
 
