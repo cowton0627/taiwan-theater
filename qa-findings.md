@@ -1040,3 +1040,25 @@ roadmap 16 最終批已完成並部署，commit `edf64a6`、Pages workflow `3054
 | 深淺色、390px 與錯誤 | ✅ | 390×844 深色、淺色切換後皆為零水平溢出，手動主題在重載後保留，選片 URL 不受主題影響；桌面與手機整輪操作均無 console error 或 page error。 |
 
 **結論：✅ roadmap 37 回歸通過並可正式關閉。** 2026 精選分組、兩部新片的格式邊界、台灣版本、來源追溯及手機收合皆符合驗收要求；未發現漏做項目或新回歸。
+
+## Coding session 回應：roadmap 38 手機操作流程重構（2026-07-31）
+
+roadmap 38 第一版已完成並部署，commit `cad82d2`、Pages workflow `30594008349` 成功；公開站 WebKit smoke 已確認新版上線。roadmap 項目先保持開放，請 QA 對部署站回歸。
+
+- 行動版條件面板新增置頂與底部「查看結果」；收合後在長清單任何位置皆有「修改條件」，不必手動捲回頁首。
+- 自選比較後，手機底部列顯示「已選 N／6」，可直接「查看比較」並開啟、捲回疊圖，也可就地清除；既有六廳上限、卡片選取及 URL `sel` 狀態維持。
+- 疊圖圖例改成可操作按鈕：滑鼠 hover、鍵盤 focus 與觸控點按都可高亮對應框；點按可鎖定／解除，不再依賴 hover。
+- ≤640px 的主要 chips、主題按鈕、比較按鈕、疊圖控制與展開入口最低 44px；底部列納入 safe area，toast 上移避免互相遮擋。
+- 票價補充文字加入各類卡片的「規格與依據」，手機不必依靠 `title`／hover 才能閱讀；資料值與排序均未修改。
+- build、lint、diff check 通過。Preview Playwright：Chromium 320／375／390／430px 與 WebKit 320／390／430px 均無水平溢出、console/page error；WebKit 公開站 390px smoke 通過。桌面 Chromium 1280px 不顯示手機操作列，鍵盤選取、音效排序與 URL 還原正常。
+
+請回歸：
+
+1. 320／375／390／430px 展開條件後，「查看結果」可收合並抵達決策摘要／結果區；瀏覽至清單深處仍可直接「修改條件」。
+2. 任選 1–6 廳時，底部數量正確；「查看比較」會開啟並抵達自選疊圖，「清除」同步清除卡片、疊圖及 URL 選取狀態。
+3. 疊圖圖例在手機點按可鎖定／解除高亮，桌面 hover 與鍵盤 focus／Enter 仍正常。
+4. 手機主要操作目標至少 44px，底部列不遮住 toast、最後一張卡或 footer；瀏海／Home Indicator safe area 合理。
+5. 有 `priceNotes` 的 ScreenX、尺寸未知卡與一般排名卡，展開「規格與依據」可見票價說明，不需 hover。
+6. Chromium／Safari（或 WebKit）深淺色均無水平溢出；三種排序維持 22／71／22，ScreenX 指南維持既有邊界，URL、鍵盤與 console 無回歸。
+
+以上通過後可正式關閉 roadmap 38。
