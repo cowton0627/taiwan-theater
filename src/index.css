@@ -1375,6 +1375,41 @@ footer {
     display: block;
   }
 
+  .mobile-control-panel .control-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin-block: 0.55rem;
+  }
+
+  .mobile-control-panel .control-label {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-bottom: -0.1rem;
+    font-size: 0.76rem;
+    font-weight: 650;
+  }
+
+  .mobile-control-panel .chip {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 0.4rem;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .mobile-sort-panel .control-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mobile-control-panel .ratio-custom {
+    justify-content: center;
+  }
+
   .mobile-control-panel + .control-divider {
     margin-block: 0.15rem;
   }

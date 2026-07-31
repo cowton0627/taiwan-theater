@@ -1172,7 +1172,7 @@ export default function App() {
           <strong>{film?.title ?? `自訂 ${customRatio}:1`}</strong>
           <span>{mobileControlSection === 'film' ? '▲' : '▼'}</span>
         </button>
-        <div className={mobileControlSection === 'film' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
+        <div className={mobileControlSection === 'film' ? 'mobile-control-panel mobile-film-panel open' : 'mobile-control-panel mobile-film-panel'}>
         <div className="control-group">
           <span className="control-label">2026 精選</span>
           {featured2026Films.map((f) => (
@@ -1298,7 +1298,7 @@ export default function App() {
           <strong>{sortMode === 'area' ? '成像面積' : sortMode === 'audio' ? '音效層級' : '綜合評比'}</strong>
           <span>{mobileControlSection === 'sort' ? '▲' : '▼'}</span>
         </button>
-        <div className={mobileControlSection === 'sort' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
+        <div className={mobileControlSection === 'sort' ? 'mobile-control-panel mobile-sort-panel open' : 'mobile-control-panel mobile-sort-panel'}>
         <div className="control-group">
           <span className="control-label">排序</span>
           <button
@@ -1353,7 +1353,7 @@ export default function App() {
           <strong>{chains.size + regions.size + activeCities.size || '全部'}</strong>
           <span>{mobileControlSection === 'filters' ? '▲' : '▼'}</span>
         </button>
-        <div className={mobileControlSection === 'filters' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
+        <div className={mobileControlSection === 'filters' ? 'mobile-control-panel mobile-filter-panel open' : 'mobile-control-panel mobile-filter-panel'}>
         <div className="control-group">
           <span className="control-label">品牌</span>
           {MAJOR_CHAINS.map((c) => (
