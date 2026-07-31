@@ -288,9 +288,29 @@ main {
   cursor: pointer;
 }
 
+.controls-view-results {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .controls-collapse {
     display: block;
+  }
+
+  .controls-view-results-top {
+    display: block;
+    position: sticky;
+    top: 0.45rem;
+    z-index: 4;
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 0.65rem;
+    border: 1px solid var(--accent-dim);
+    border-radius: 9px;
+    background: var(--panel);
+    color: var(--accent);
+    font-weight: 700;
+    box-shadow: 0 3px 12px var(--shadow);
   }
 }
 
@@ -507,10 +527,24 @@ main {
   color: var(--muted);
 }
 
-.overlay-legend li {
+.overlay-legend button {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 0.25rem 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.overlay-legend button.active {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--panel-hover);
 }
 
 .swatch {
@@ -834,6 +868,10 @@ main {
   font-size: 0.85rem;
   box-shadow: 0 4px 18px var(--shadow);
   z-index: 10;
+}
+
+.mobile-action-dock {
+  display: none;
 }
 
 .ranking {
@@ -1212,6 +1250,92 @@ footer {
     grid-template-columns: 1fr;
   }
 
+}
+
+@media (max-width: 640px) {
+  main {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .chip,
+  .theme-option,
+  .controls-collapse,
+  .overlay-toggle,
+  .overlay-clear,
+  .overlay-legend button,
+  .compare-pill,
+  .evidence-fold > summary,
+  .sources-fold summary {
+    min-height: 44px;
+  }
+
+  .controls-collapse {
+    padding-block: 0.65rem;
+  }
+
+  .overlay-legend {
+    gap: 0.2rem;
+  }
+
+  .overlay-legend li {
+    width: 100%;
+  }
+
+  .overlay-legend button {
+    width: 100%;
+  }
+
+  .mobile-action-dock {
+    position: fixed;
+    z-index: 20;
+    left: max(0.65rem, env(safe-area-inset-left));
+    right: max(0.65rem, env(safe-area-inset-right));
+    bottom: max(0.65rem, env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    min-height: 54px;
+    padding: 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--panel);
+    box-shadow: 0 6px 24px var(--shadow);
+  }
+
+  .mobile-action-dock button {
+    min-height: 44px;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 650;
+  }
+
+  .mobile-action-dock .mobile-compare-action,
+  .mobile-action-dock .mobile-controls-action {
+    border-color: var(--accent-dim);
+    color: var(--accent);
+  }
+
+  .mobile-selection-count {
+    margin-right: auto;
+    padding-left: 0.35rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .toast {
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  .results-start-anchor,
+  #controls,
+  #overlay-compare {
+    scroll-margin-top: 0.6rem;
+  }
 }
 
 /* 資料來源與查證展開區（roadmap 33） */

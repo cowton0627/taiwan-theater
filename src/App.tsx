@@ -339,6 +339,12 @@ function ScreenXGuide({
                     <GuideField label="投影" field={entry.projection} />
                     <GuideField label="音效" field={entry.audio} />
                   </dl>
+                  {entry.priceNotes && (
+                    <p className="evidence-note">
+                      <strong>票價說明：</strong>
+                      {entry.priceNotes}
+                    </p>
+                  )}
                   {entry.notes && <p className="evidence-note">{entry.notes}</p>}
                   {entry.reviews?.map((review, index) => (
                     <p className="community-line" key={index}>
@@ -498,6 +504,12 @@ function UnsizedScreenCard({
               <ProvenanceTag screen={s} field="price" />
             </SpecField>
           </dl>
+          {s.priceNotes && (
+            <p className="evidence-note">
+              <strong>票價說明：</strong>
+              {s.priceNotes}
+            </p>
+          )}
           <p className="evidence-note">
             查證狀態：銀幕尺寸尚無可核對資料
             {s.notes && ` ・ ${s.notes}`}
@@ -535,17 +547,21 @@ function OverlayCompare({
   selected,
   onClear,
   listResorted,
+  open,
+  onOpenChange,
 }: {
   fits: FitResult[];
   selected: FitResult[];
   onClear: () => void;
   /** 下方列表以音效層級／綜合評比重排——疊圖需自我聲明固定按面積 */
   listResorted: boolean;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }) {
-  /** 行動版預設收合（U-1：首屏讓位給決策摘要與第一張卡） */
-  const [open, setOpen] = useState(() => !window.matchMedia('(max-width: 640px)').matches);
-  /** 圖例 hover 中的項目——對應線框高亮、其餘淡出（色弱輔助之一，另有線框序號） */
+  /** 滑鼠／鍵盤暫時高亮；點按則鎖定，讓觸控裝置不依賴 hover。 */
   const [hovered, setHovered] = useState<number | null>(null);
+  const [pinned, setPinned] = useState<number | null>(null);
+  const highlighted = hovered ?? pinned;
   const comparing = selected.length > 0;
   const top = (comparing ? selected : fits).slice(0, 6);
   if (top.length === 0) return null;
@@ -570,11 +586,11 @@ function OverlayCompare({
     if (d > 0) gridYs.push(cy - d);
   }
   return (
-    <section className="overlay-section">
+    <section className="overlay-section" id="overlay-compare">
       <div className="overlay-head">
         <button
           className="overlay-toggle"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => onOpenChange(!open)}
           aria-expanded={open}
         >
           <span className={open ? 'caret open' : 'caret'}>▸</span>
@@ -624,7 +640,7 @@ function OverlayCompare({
                 const x = (width - w) / 2;
                 const y = (height - h) / 2;
                 const stateClass =
-                  hovered === null ? '' : hovered === i ? ' hot' : ' dim';
+                  highlighted === null ? '' : highlighted === i ? ' hot' : ' dim';
                 const lead = i === 0 ? ' lead' : '';
                 return (
                   <g key={f.screen.id} className={`overlay-item${lead}${stateClass}`}>
@@ -671,13 +687,20 @@ function OverlayCompare({
           </svg>
           <ul className="overlay-legend">
             {top.map((f, i) => (
-              <li
-                key={f.screen.id}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <span className={`swatch swatch-${i}`} />
-                {i + 1}. {f.screen.name}（{f.imageAreaM2.toFixed(0)} ㎡）
+              <li key={f.screen.id}>
+                <button
+                  type="button"
+                  aria-pressed={pinned === i}
+                  className={highlighted === i ? 'active' : ''}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                  onFocus={() => setHovered(i)}
+                  onBlur={() => setHovered(null)}
+                  onClick={() => setPinned((current) => (current === i ? null : i))}
+                >
+                  <span className={`swatch swatch-${i}`} />
+                  {i + 1}. {f.screen.name}（{f.imageAreaM2.toFixed(0)} ㎡）
+                </button>
               </li>
             ))}
           </ul>
@@ -706,6 +729,10 @@ export default function App() {
   });
   /** 行動版控制列：選完收成一行摘要（U-1／UI-REVIEW P0-2）；桌面恆展開 */
   const [controlsOpen, setControlsOpen] = useState(
+    () => !window.matchMedia('(max-width: 640px)').matches,
+  );
+  /** 疊圖開關由 App 管理，手機快速操作列才能直接開啟並捲回比較區。 */
+  const [overlayOpen, setOverlayOpen] = useState(
     () => !window.matchMedia('(max-width: 640px)').matches,
   );
   /** 短暫回饋訊息（如自選達上限） */
@@ -1013,6 +1040,27 @@ export default function App() {
     });
   };
 
+  const scrollToSection = (id: string) => {
+    window.requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
+  const openMobileControls = () => {
+    setControlsOpen(true);
+    scrollToSection('controls');
+  };
+
+  const showMobileResults = () => {
+    setControlsOpen(false);
+    scrollToSection('results-start');
+  };
+
+  const showMobileCompare = () => {
+    setOverlayOpen(true);
+    scrollToSection('overlay-compare');
+  };
+
   const displayRanked: Array<FitResult | Screen> =
     sortMode === 'audio'
       ? audioRanked.map((s) => fitMap.get(s.id) ?? s)
@@ -1048,7 +1096,7 @@ export default function App() {
         </p>
       </header>
 
-      <section className="controls">
+      <section className="controls" id="controls">
         {!controlsOpen && (
           <div className="controls-summary">
             <span>
@@ -1061,13 +1109,16 @@ export default function App() {
               · {sortMode === 'area' ? '成像面積' : sortMode === 'audio' ? '音效層級' : '綜合評比'}
               {chains.size + activeCities.size > 0 && `（＋${chains.size + activeCities.size} 篩選）`}
             </span>
-            <button className="chip" onClick={() => setControlsOpen(true)}>
+            <button className="chip" onClick={openMobileControls}>
               修改
             </button>
           </div>
         )}
         {controlsOpen && (
           <>
+        <button className="controls-view-results controls-view-results-top" onClick={showMobileResults}>
+          查看結果 ↓
+        </button>
         <div className="control-group">
           <span className="control-label">2026 精選</span>
           {featured2026Films.map((f) => (
@@ -1272,13 +1323,14 @@ export default function App() {
             ))}
           </div>
         )}
-        <button className="controls-collapse" onClick={() => setControlsOpen(false)}>
-          收合條件 ▲
+        <button className="controls-collapse" onClick={showMobileResults}>
+          查看結果 ↓
         </button>
           </>
         )}
       </section>
 
+      <div id="results-start" className="results-start-anchor" />
       {insight && <p className="insight">{insight}</p>}
 
       {film && screenXRelease && (
@@ -1295,6 +1347,8 @@ export default function App() {
         selected={selectedFits}
         onClear={() => setSelected(new Set())}
         listResorted={sortMode !== 'area'}
+        open={overlayOpen}
+        onOpenChange={setOverlayOpen}
       />
 
       {pool.length === 0 && (
@@ -1440,6 +1494,12 @@ export default function App() {
 	                        <ProvenanceTag screen={fit.screen} field="price" />
 	                      </SpecField>
 	                    </dl>
+	                    {fit.screen.priceNotes && (
+	                      <p className="evidence-note">
+	                        <strong>票價說明：</strong>
+	                        {fit.screen.priceNotes}
+	                      </p>
+	                    )}
 	                    <p className="dims">
 	                      銀幕 {fit.screen.widthM}×{fit.screen.heightM}m ・ 成像{' '}
 	                      {fit.imageWidthM.toFixed(1)}×{fit.imageHeightM.toFixed(1)}m ・ 銀幕利用率{' '}
@@ -1581,6 +1641,25 @@ export default function App() {
         <div className="toast" role="status">
           {toast}
         </div>
+      )}
+
+      {!controlsOpen && (
+        <nav className="mobile-action-dock" aria-label="手機快速操作">
+          {selected.size > 0 && <span className="mobile-selection-count">已選 {selected.size}／6</span>}
+          {selected.size > 0 && (
+            <>
+              <button type="button" className="mobile-compare-action" onClick={showMobileCompare}>
+                查看比較
+              </button>
+              <button type="button" onClick={() => setSelected(new Set())}>
+                清除
+              </button>
+            </>
+          )}
+          <button type="button" className="mobile-controls-action" onClick={openMobileControls}>
+            修改條件
+          </button>
+        </nav>
       )}
 
       <footer>
