@@ -240,6 +240,7 @@ function ScreenXGuide({
   entries: ScreenXGuideEntry[];
   filtered: boolean;
 }) {
+  const [showAllMobile, setShowAllMobile] = useState(false);
   return (
     <section className="screenx-guide" aria-labelledby="screenx-guide-title">
       <div className="screenx-head">
@@ -272,7 +273,7 @@ function ScreenXGuide({
             {entries.length} 個實體廳{filtered ? '（目前篩選範圍）' : '（全台）'}；未查證欄位保留
             「待確認」，不自行推定。
           </p>
-          <div className="screenx-grid">
+          <div className={showAllMobile ? 'screenx-grid mobile-expanded' : 'screenx-grid'}>
             {entries.map((entry) => (
               <article className="screenx-card" key={entry.id}>
                 <h3>{entry.name}</h3>
@@ -369,6 +370,16 @@ function ScreenXGuide({
               </article>
             ))}
           </div>
+          {entries.length > 2 && (
+            <button
+              type="button"
+              className="screenx-show-all"
+              aria-expanded={showAllMobile}
+              onClick={() => setShowAllMobile((current) => !current)}
+            >
+              {showAllMobile ? '收合 ScreenX 廳 ▲' : `查看全部 ${entries.length} 廳 ▼`}
+            </button>
+          )}
         </>
       )}
     </section>
@@ -523,6 +534,7 @@ function UnsizedScreenCard({
           className="card-area card-area-audio"
           title="音效層級序位（8＝最高；認證／規格層級排序，非實測音質；未查證顯示？）"
         >
+          <span className="mobile-metric-label">音效序位</span>
           {level == null ? (
             '？'
           ) : (
@@ -735,6 +747,13 @@ export default function App() {
   const [overlayOpen, setOverlayOpen] = useState(
     () => !window.matchMedia('(max-width: 640px)').matches,
   );
+  const [mobileLayout, setMobileLayout] = useState(
+    () => window.matchMedia('(max-width: 640px)').matches,
+  );
+  const [mobileControlSection, setMobileControlSection] = useState<
+    'film' | 'sort' | 'filters' | null
+  >(null);
+  const [showRankJump, setShowRankJump] = useState(false);
   /** 短暫回饋訊息（如自選達上限） */
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<number | undefined>(undefined);
@@ -794,6 +813,24 @@ export default function App() {
     media.addEventListener('change', applyTheme);
     return () => media.removeEventListener('change', applyTheme);
   }, [themePreference]);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 640px)');
+    const update = () => setMobileLayout(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  useEffect(() => {
+    const update = () => {
+      const ranking = document.getElementById('ranking');
+      setShowRankJump(Boolean(ranking && ranking.getBoundingClientRect().top < -500));
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
 
   /** 狀態 → URL（replaceState 不塞瀏覽紀錄；預設值省略、保持網址乾淨） */
   useEffect(() => {
@@ -1061,6 +1098,12 @@ export default function App() {
     scrollToSection('overlay-compare');
   };
 
+  const scrollToRanking = () => scrollToSection('ranking');
+
+  const toggleMobileControlSection = (section: 'film' | 'sort' | 'filters') => {
+    setMobileControlSection((current) => (current === section ? null : section));
+  };
+
   const displayRanked: Array<FitResult | Screen> =
     sortMode === 'audio'
       ? audioRanked.map((s) => fitMap.get(s.id) ?? s)
@@ -1117,8 +1160,19 @@ export default function App() {
         {controlsOpen && (
           <>
         <button className="controls-view-results controls-view-results-top" onClick={showMobileResults}>
-          查看結果 ↓
+          查看 {displayRanked.length} 個結果 ↓
         </button>
+        <button
+          type="button"
+          className="mobile-control-heading"
+          aria-expanded={mobileControlSection === 'film'}
+          onClick={() => toggleMobileControlSection('film')}
+        >
+          <span>選電影</span>
+          <strong>{film?.title ?? `自訂 ${customRatio}:1`}</strong>
+          <span>{mobileControlSection === 'film' ? '▲' : '▼'}</span>
+        </button>
+        <div className={mobileControlSection === 'film' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
         <div className="control-group">
           <span className="control-label">2026 精選</span>
           {featured2026Films.map((f) => (
@@ -1232,7 +1286,19 @@ export default function App() {
             <SourcesFold sources={film.sources} />
           </div>
         )}
+        </div>
         <div className="control-divider" />
+        <button
+          type="button"
+          className="mobile-control-heading"
+          aria-expanded={mobileControlSection === 'sort'}
+          onClick={() => toggleMobileControlSection('sort')}
+        >
+          <span>排序方式</span>
+          <strong>{sortMode === 'area' ? '成像面積' : sortMode === 'audio' ? '音效層級' : '綜合評比'}</strong>
+          <span>{mobileControlSection === 'sort' ? '▲' : '▼'}</span>
+        </button>
+        <div className={mobileControlSection === 'sort' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
         <div className="control-group">
           <span className="control-label">排序</span>
           <button
@@ -1275,7 +1341,19 @@ export default function App() {
             </p>
           </div>
         )}
+        </div>
         <div className="control-divider" />
+        <button
+          type="button"
+          className="mobile-control-heading"
+          aria-expanded={mobileControlSection === 'filters'}
+          onClick={() => toggleMobileControlSection('filters')}
+        >
+          <span>篩選影廳</span>
+          <strong>{chains.size + regions.size + activeCities.size || '全部'}</strong>
+          <span>{mobileControlSection === 'filters' ? '▲' : '▼'}</span>
+        </button>
+        <div className={mobileControlSection === 'filters' ? 'mobile-control-panel open' : 'mobile-control-panel'}>
         <div className="control-group">
           <span className="control-label">品牌</span>
           {MAJOR_CHAINS.map((c) => (
@@ -1323,8 +1401,9 @@ export default function App() {
             ))}
           </div>
         )}
+        </div>
         <button className="controls-collapse" onClick={showMobileResults}>
-          查看結果 ↓
+          查看 {displayRanked.length} 個結果 ↓
         </button>
           </>
         )}
@@ -1356,7 +1435,7 @@ export default function App() {
       )}
 
       {pool.length > 0 && (
-        <section className="region-group">
+        <section className="region-group" id="ranking">
           <h2 className="region-title">
             排名
             <span className="region-count">
@@ -1396,15 +1475,17 @@ export default function App() {
               <article
                 key={fit.screen.id}
                 className={selected.has(fit.screen.id) ? 'card selectable selected' : 'card selectable'}
-                title="點擊加入／移除疊圖比較"
-                role="button"
-                tabIndex={0}
-	                aria-pressed={selected.has(fit.screen.id)}
+                title={mobileLayout ? undefined : '點擊加入／移除疊圖比較'}
+                role={mobileLayout ? undefined : 'button'}
+                tabIndex={mobileLayout ? undefined : 0}
+	                aria-pressed={mobileLayout ? undefined : selected.has(fit.screen.id)}
 	                onClick={(e) => {
+	                  if (mobileLayout) return;
 	                  if ((e.target as HTMLElement).closest('a, button, input, details, summary')) return;
 	                  toggleSelect(fit.screen.id);
 	                }}
 	                onKeyDown={(e) => {
+	                  if (mobileLayout) return;
 	                  if (e.key !== 'Enter' && e.key !== ' ') return;
 	                  if ((e.target as HTMLElement).closest('a, button, input, details, summary')) return;
                   e.preventDefault();
@@ -1557,6 +1638,7 @@ export default function App() {
                     className="card-area card-area-score"
                     title="待確認數只統計得分卡的未知輸入；不扣分、不改變已確認分數與排序"
                   >
+                    <span className="mobile-metric-label">綜合評分</span>
                     <div>
                       {(() => {
                         const t = scoreMap.get(fit.screen.id)?.total ?? 0;
@@ -1573,6 +1655,7 @@ export default function App() {
                     className="card-area card-area-audio"
                     title="音效層級序位（8＝最高；認證／規格層級排序，非實測音質；未查證顯示？）"
                   >
+                    <span className="mobile-metric-label">音效序位</span>
                     {fit.screen.audioTier === 'SURROUND_5_1' ? (
                       '？'
                     ) : (
@@ -1584,6 +1667,7 @@ export default function App() {
                   </div>
                 ) : (
                   <div className="card-area" title="有效成像面積">
+                    <span className="mobile-metric-label">有效成像</span>
                     {fit.imageAreaM2.toFixed(0)}
                     <span className="unit">㎡</span>
                   </div>
@@ -1643,8 +1727,16 @@ export default function App() {
         </div>
       )}
 
-      {!controlsOpen && (
-        <nav className="mobile-action-dock" aria-label="手機快速操作">
+      {!controlsOpen && (selected.size > 0 || showRankJump) && (
+        <nav
+          className={selected.size > 0 ? 'mobile-action-dock has-selection' : 'mobile-action-dock compact'}
+          aria-label="手機快速操作"
+        >
+          {showRankJump && (
+            <button type="button" className="mobile-rank-action" onClick={scrollToRanking} aria-label="回到排名頂端">
+              ↑
+            </button>
+          )}
           {selected.size > 0 && <span className="mobile-selection-count">已選 {selected.size}／6</span>}
           {selected.size > 0 && (
             <>
@@ -1657,7 +1749,7 @@ export default function App() {
             </>
           )}
           <button type="button" className="mobile-controls-action" onClick={openMobileControls}>
-            修改條件
+            {selected.size > 0 ? '調整' : '篩選'}
           </button>
         </nav>
       )}

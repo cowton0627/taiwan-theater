@@ -292,6 +292,10 @@ main {
   display: none;
 }
 
+.mobile-control-heading {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .controls-collapse {
     display: block;
@@ -704,6 +708,10 @@ main {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
+}
+
+.screenx-show-all {
+  display: none;
 }
 
 .screenx-card {
@@ -1166,6 +1174,10 @@ main {
   margin-left: 2px;
 }
 
+.mobile-metric-label {
+  display: none;
+}
+
 .card-area-score {
   min-width: 6.8rem;
   color: var(--score);
@@ -1235,15 +1247,74 @@ footer {
     padding-inline: 1rem;
   }
 
-  .card {
-    flex-wrap: wrap;
-    gap: 0.55rem 0.7rem;
+  .card:is(.selectable, .card-audio-unsized) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 0.45rem 0.7rem;
+    padding: 0.85rem 0.9rem;
+    cursor: default;
   }
 
-  .card-area {
-    order: -1;
-    margin-left: auto;
-    min-width: 0;
+  .card:is(.selectable, .card-audio-unsized) .card-body {
+    display: contents;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .rank {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: auto;
+    padding-top: 0.1rem;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .rank::before {
+    content: '#';
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .card-body h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    align-items: flex-start;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .card-area {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    align-self: center;
+    min-width: 5.6rem;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .mobile-metric-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--muted);
+    font-family: 'PingFang TC', 'Noto Sans TC', system-ui, sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .key-takeaway {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .meta {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .card:is(.selectable, .card-audio-unsized) .evidence-fold {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: 0.15rem;
   }
 
   .spec-grid {
@@ -1271,6 +1342,41 @@ footer {
 
   .controls-collapse {
     padding-block: 0.65rem;
+  }
+
+  .mobile-control-heading {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    min-height: 48px;
+    padding: 0.55rem 0.65rem;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+  }
+
+  .mobile-control-heading strong {
+    overflow: hidden;
+    color: var(--accent);
+    font-size: 0.82rem;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-control-panel {
+    display: none;
+  }
+
+  .mobile-control-panel.open {
+    display: block;
+  }
+
+  .mobile-control-panel + .control-divider {
+    margin-block: 0.15rem;
   }
 
   .overlay-legend {
@@ -1303,6 +1409,18 @@ footer {
     box-shadow: 0 6px 24px var(--shadow);
   }
 
+  .mobile-action-dock.compact {
+    left: auto;
+    min-width: 0;
+    padding: 0.25rem;
+    border-radius: 999px;
+  }
+
+  .mobile-action-dock.compact .mobile-controls-action {
+    border-radius: 999px;
+    padding-inline: 0.9rem;
+  }
+
   .mobile-action-dock button {
     min-height: 44px;
     padding: 0.45rem 0.65rem;
@@ -1327,6 +1445,12 @@ footer {
     white-space: nowrap;
   }
 
+  .mobile-rank-action {
+    width: 44px;
+    padding-inline: 0 !important;
+    font-size: 1.1rem;
+  }
+
   .toast {
     bottom: calc(5rem + env(safe-area-inset-bottom));
   }
@@ -1335,6 +1459,32 @@ footer {
   #controls,
   #overlay-compare {
     scroll-margin-top: 0.6rem;
+  }
+
+  .screenx-grid:not(.mobile-expanded) .screenx-card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .screenx-show-all {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 0.75rem;
+    border: 1px solid var(--screenx-pill-border);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--screenx-pill);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-control-panel {
+    display: block;
+  }
+
+  .screenx-grid .screenx-card {
+    display: block;
   }
 }
 
