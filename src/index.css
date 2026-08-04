@@ -817,6 +817,8 @@ main {
   .screenx-no-rank {
     display: inline-block;
     margin-top: 0.45rem;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .screenx-grid,
