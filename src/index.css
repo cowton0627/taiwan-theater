@@ -606,6 +606,16 @@ main {
   color: var(--score);
 }
 
+.rank.rank-screenx {
+  color: var(--screenx-pill);
+}
+
+.screenx-card .rank {
+  display: block;
+  text-align: left;
+  margin: 0 0 0.15rem;
+}
+
 /* 音效層級序位＝人為層級非量測值，用音效模式的藍與面積金區隔 */
 .card-area.card-area-audio {
   color: var(--audio);
@@ -638,7 +648,8 @@ main {
   font-size: 0.92rem;
 }
 
-/* U-17：特殊格式指南獨立於正面銀幕排名，不使用名次／分數視覺。 */
+/* U-17：特殊格式指南獨立於正面銀幕排名，預設不使用名次／分數視覺；
+   2026-08-04 起僅在使用者主動切到「依主銀幕面積排序」時才顯示 ScreenX 專屬名次。 */
 .screenx-guide {
   margin: 0 0 1.25rem;
   padding: 1rem;
@@ -657,6 +668,13 @@ main {
 .screenx-head h2,
 .screenx-kicker {
   margin: 0;
+}
+
+.screenx-sort-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0;
 }
 
 .screenx-kicker {
@@ -825,6 +843,14 @@ main {
 }
 
 .unsized-fold .card {
+  margin-top: 0.6rem;
+}
+
+.screenx-unranked-fold {
+  margin-top: 0.7rem;
+}
+
+.screenx-unranked-fold .screenx-grid {
   margin-top: 0.6rem;
 }
 

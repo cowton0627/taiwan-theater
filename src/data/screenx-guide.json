@@ -17,11 +17,11 @@
     "bestRows": "第 10 排置中（單篇實測席位，非跨帖共識）",
     "bestRowsEvidence": "community",
     "seatLayout": { "value": "14 排；單排最多 21 席（座位圖見來源）", "evidence": "community" },
-    "mainScreen": { "value": "約寬 14–15m；另一實測約 11×6m，待複核", "evidence": "community" },
+    "mainScreen": { "value": "約寬 14–15m（單篇社群推測，無高度數據；新版逐廳實測未提供 10 廳尺寸）", "evidence": "community" },
     "totalWidth": { "evidence": "unknown" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
-    "notes": "大廳。兩篇社群實測對主銀幕約值有差異，未消除衝突前不採入正面成像排名；投影解析度與音效系統未查證。",
+    "notes": "大廳。主銀幕僅有單篇社群推測寬度、無高度數據，算不出面積，不採入正面成像排名與 ScreenX 面積排序；投影解析度與音效系統未查證。",
     "reviews": [
       {
         "text": "側幕受出入口與逃生門切割；本文作者坐第 10 排伸腳排，心得只適用 10 廳。",
@@ -56,7 +56,7 @@
       {
         "label": "PTT：全台 ScreenX 逐廳實測",
         "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
-        "note": "2026-03 實測：10 廳主銀幕約 11×6m；逃生門造成側幕缺口，音效表現為個人觀感"
+        "note": "2026-03 實測：未提供 10 廳尺寸；逃生門以布幕補強、側幕仍缺牙，音響表現主聲道欠佳（個人觀感）"
       },
       {
         "label": "大巨蛋秀泰官方頁",
@@ -83,11 +83,13 @@
     "bestRows": "第 5 排置中（單篇實測席位，非跨帖共識）",
     "bestRowsEvidence": "community",
     "seatLayout": { "value": "12 排；單排最多 15 席（座位圖見來源）", "evidence": "community" },
-    "mainScreen": { "value": "約寬 11–12m", "evidence": "community" },
+    "mainScreen": { "value": "約 11m×6m（新版逐廳實測反推）；舊估寬 11–12m", "evidence": "community" },
+    "mainScreenWidthM": 11,
+    "mainScreenHeightM": 6,
     "totalWidth": { "evidence": "unknown" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
-    "notes": "小廳。主銀幕寬度為單篇社群推測值，不採入正面成像排名；投影解析度與音效系統未查證。",
+    "notes": "小廳。主銀幕寬高為單篇社群推測值，不採入正面成像跨格式排名；投影解析度與音效系統未查證。",
     "reviews": [
       {
         "text": "本文作者坐第 5 排伸腳排；側邊各一組投影、環繞與低音配置不同於 10 廳，心得只適用 2 廳。",
@@ -122,7 +124,7 @@
       {
         "label": "PTT：全台 ScreenX 逐廳實測",
         "url": "https://www.ptt.cc/bbs/Theater/M.1772968025.A.26E.html",
-        "note": "2026-03 實測：2 廳側幕完整度與影音為個人觀感；未提供可靠尺寸"
+        "note": "2026-03 實測：高約 6m、主銀幕寬反推約 11m；全寬未公布，逃生門缺牙不對稱"
       },
       {
         "label": "大巨蛋秀泰官方頁",
@@ -148,6 +150,8 @@
     "priceNotes": "2025-10 ScreenX 全票參考值",
     "bestRows": "13–15 排置中",
     "mainScreen": { "value": "約 16.45×7m", "evidence": "community" },
+    "mainScreenWidthM": 16.45,
+    "mainScreenHeightM": 7,
     "totalWidth": { "value": "約 54m", "evidence": "community" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
@@ -182,6 +186,8 @@
     "priceNotes": "2025-10 ScreenX 全票參考值",
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "mainScreenWidthM": 22,
+    "mainScreenHeightM": 12,
     "totalWidth": { "value": "約 72m", "evidence": "community" },
     "projection": { "evidence": "unknown" },
     "audio": { "value": "Christie Vive Audio", "evidence": "media" },
@@ -216,6 +222,8 @@
     "priceNotes": "2025-10 ScreenX 全票參考值",
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "mainScreenWidthM": 22,
+    "mainScreenHeightM": 12,
     "totalWidth": { "value": "約 66m", "evidence": "community" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
@@ -250,6 +258,8 @@
     "priceNotes": "2025-10 ScreenX 全票參考值",
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "mainScreenWidthM": 22,
+    "mainScreenHeightM": 12,
     "totalWidth": { "value": "約 66m", "evidence": "media" },
     "projection": { "value": "4K 雷射", "evidence": "media" },
     "audio": { "evidence": "unknown" },
@@ -283,6 +293,8 @@
     "priceNTD": null,
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 22×12m", "evidence": "community" },
+    "mainScreenWidthM": 22,
+    "mainScreenHeightM": 12,
     "totalWidth": { "value": "約 75m", "evidence": "community" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
@@ -317,6 +329,8 @@
     "priceNotes": "2025-10 ScreenX 全票參考值",
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 14.8×8m", "evidence": "community" },
+    "mainScreenWidthM": 14.8,
+    "mainScreenHeightM": 8,
     "totalWidth": { "value": "約 49m", "evidence": "community" },
     "projection": { "evidence": "unknown" },
     "audio": { "evidence": "unknown" },
@@ -351,6 +365,8 @@
     "priceNotes": "巨幕廳全票參考值；ScreenX 場次請以官網為準",
     "bestRows": "中後段置中",
     "mainScreen": { "value": "約 20×11m", "evidence": "community" },
+    "mainScreenWidthM": 20,
+    "mainScreenHeightM": 11,
     "totalWidth": { "value": "約 71m", "evidence": "community" },
     "projection": { "value": "Christie RGB 雷射", "evidence": "community" },
     "audio": { "value": "Dolby 7.1", "evidence": "community" },

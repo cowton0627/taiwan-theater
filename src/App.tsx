@@ -241,6 +241,127 @@ function ScreenXGuide({
   filtered: boolean;
 }) {
   const [showAllMobile, setShowAllMobile] = useState(false);
+  const [areaSort, setAreaSort] = useState(false);
+
+  const { rankedEntries, unrankedEntries, rankMap } = useMemo(() => {
+    if (!areaSort) {
+      return {
+        rankedEntries: entries,
+        unrankedEntries: [] as ScreenXGuideEntry[],
+        rankMap: new Map<string, number>(),
+      };
+    }
+    const withArea = entries.filter(
+      (e) => e.mainScreenWidthM != null && e.mainScreenHeightM != null,
+    );
+    const withoutArea = entries.filter(
+      (e) => e.mainScreenWidthM == null || e.mainScreenHeightM == null,
+    );
+    withArea.sort(
+      (a, b) =>
+        b.mainScreenWidthM! * b.mainScreenHeightM! - a.mainScreenWidthM! * a.mainScreenHeightM!,
+    );
+    const rankMap = new Map(withArea.map((e, i) => [e.id, i + 1]));
+    return { rankedEntries: withArea, unrankedEntries: withoutArea, rankMap };
+  }, [entries, areaSort]);
+
+  const renderCard = (entry: ScreenXGuideEntry) => (
+    <article className="screenx-card" key={entry.id}>
+      {areaSort && rankMap.has(entry.id) && (
+        <span className="rank rank-screenx">{rankMap.get(entry.id)}</span>
+      )}
+      <h3>{entry.name}</h3>
+      <p className="auditorium-identity">
+        <strong>實體廳號：</strong>
+        {entry.auditoriumNumber?.value ?? '官方未公開'}
+        <span
+          className={`evidence-level evidence-${entry.auditoriumNumber?.evidence ?? 'unknown'}`}
+        >
+          {EVIDENCE_LABELS[entry.auditoriumNumber?.evidence ?? 'unknown']}
+        </span>
+        {entry.officialBookingLabel && (
+          <>
+            {' '}
+            ・ <strong>購票標籤：</strong>
+            {entry.officialBookingLabel}
+          </>
+        )}
+      </p>
+      <p className="meta">
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            entry.address ?? entry.name,
+          )}`}
+          target="_blank"
+          rel="noreferrer"
+          title={entry.address}
+        >
+          {entry.city} 📍
+        </a>{' '}
+        ・{' '}
+        {entry.priceNTD != null ? (
+          <span className="price" title={entry.priceNotes}>
+            全票 {entry.priceNTD} 元
+          </span>
+        ) : (
+          <span className="price">票價待確認</span>
+        )}{' '}
+        ・{' '}
+        <a href={entry.booking} target="_blank" rel="noreferrer">
+          查場次
+        </a>
+      </p>
+      <p className="screenx-seat">
+        <strong>💺 建議座位：</strong>
+        {entry.bestRows ?? '待確認'}
+        {entry.bestRowsEvidence && (
+          <span className={`evidence-level evidence-${entry.bestRowsEvidence}`}>
+            {EVIDENCE_LABELS[entry.bestRowsEvidence]}
+          </span>
+        )}
+        {!entry.bestRowsEvidence && entry.bestRows && (
+          <span className="evidence-level evidence-community">社群實測</span>
+        )}
+      </p>
+      <details className="evidence-fold">
+        <summary>規格與依據</summary>
+        <dl className="guide-spec-grid">
+          {entry.seatLayout && <GuideField label="座位圖／排數" field={entry.seatLayout} />}
+          <GuideField label="主銀幕" field={entry.mainScreen} />
+          <GuideField label="三面總寬" field={entry.totalWidth} />
+          <GuideField label="投影" field={entry.projection} />
+          <GuideField label="音效" field={entry.audio} />
+        </dl>
+        {entry.priceNotes && (
+          <p className="evidence-note">
+            <strong>票價說明：</strong>
+            {entry.priceNotes}
+          </p>
+        )}
+        {entry.notes && <p className="evidence-note">{entry.notes}</p>}
+        {entry.reviews?.map((review, index) => (
+          <p className="community-line" key={index}>
+            <strong>
+              口碑（
+              {review.scope === 'auditorium'
+                ? `僅適用 ${entry.auditoriumNumber?.value ?? '本廳'}`
+                : review.scope === 'venue_unspecified'
+                  ? '未指明廳號'
+                  : '影城共通'}
+              ）：
+            </strong>
+            {review.text}
+            {' '}
+            <span className={`evidence-level evidence-${review.evidence}`}>
+              {EVIDENCE_LABELS[review.evidence]}
+            </span>
+          </p>
+        ))}
+        <SourcesFold sources={entry.sources} />
+      </details>
+    </article>
+  );
+
   return (
     <section className="screenx-guide" aria-labelledby="screenx-guide-title">
       <div className="screenx-head">
@@ -248,8 +369,32 @@ function ScreenXGuide({
           <p className="screenx-kicker">本片特殊格式推薦</p>
           <h2 id="screenx-guide-title">ScreenX 選擇指南</h2>
         </div>
-        <span className="screenx-no-rank">獨立指南・不排名／不計分</span>
+        <span className="screenx-no-rank">
+          {areaSort ? '獨立指南・依主銀幕面積排序（不併入正面銀幕跨格式排名）' : '獨立指南・不排名／不計分'}
+        </span>
       </div>
+      <div className="screenx-sort-toggle">
+        <button
+          type="button"
+          className={areaSort ? 'chip' : 'chip active'}
+          onClick={() => setAreaSort(false)}
+        >
+          預設順序（依地區）
+        </button>
+        <button
+          type="button"
+          className={areaSort ? 'chip active' : 'chip'}
+          onClick={() => setAreaSort(true)}
+        >
+          依主銀幕面積排序
+        </button>
+      </div>
+      {areaSort && (
+        <p className="sort-basis">
+          僅比較 ScreenX 廳彼此的主銀幕面積（寬×高），不併入本站正面銀幕跨格式排名；
+          數值為單篇社群實測，來源衝突或未提供尺寸的廳不計入本排序。
+        </p>
+      )}
       <p className="screenx-intro">
         《{film.title}》已確認為 Shot for SCREENX；官方只確認<strong>選定場景</strong>
         以多機直接拍攝，不代表全片都有三面畫面。推薦依據是本片的 ScreenX 專屬製作，
@@ -274,111 +419,25 @@ function ScreenXGuide({
             「待確認」，不自行推定。
           </p>
           <div className={showAllMobile ? 'screenx-grid mobile-expanded' : 'screenx-grid'}>
-            {entries.map((entry) => (
-              <article className="screenx-card" key={entry.id}>
-                <h3>{entry.name}</h3>
-                <p className="auditorium-identity">
-                  <strong>實體廳號：</strong>
-                  {entry.auditoriumNumber?.value ?? '官方未公開'}
-                  <span
-                    className={`evidence-level evidence-${
-                      entry.auditoriumNumber?.evidence ?? 'unknown'
-                    }`}
-                  >
-                    {EVIDENCE_LABELS[entry.auditoriumNumber?.evidence ?? 'unknown']}
-                  </span>
-                  {entry.officialBookingLabel && (
-                    <>
-                      {' '}
-                      ・ <strong>購票標籤：</strong>
-                      {entry.officialBookingLabel}
-                    </>
-                  )}
-                </p>
-                <p className="meta">
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      entry.address ?? entry.name,
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    title={entry.address}
-                  >
-                    {entry.city} 📍
-                  </a>{' '}
-                  ・{' '}
-                  {entry.priceNTD != null ? (
-                    <span className="price" title={entry.priceNotes}>
-                      全票 {entry.priceNTD} 元
-                    </span>
-                  ) : (
-                    <span className="price">票價待確認</span>
-                  )}{' '}
-                  ・{' '}
-                  <a href={entry.booking} target="_blank" rel="noreferrer">
-                    查場次
-                  </a>
-                </p>
-                <p className="screenx-seat">
-                  <strong>💺 建議座位：</strong>
-                  {entry.bestRows ?? '待確認'}
-                  {entry.bestRowsEvidence && (
-                    <span className={`evidence-level evidence-${entry.bestRowsEvidence}`}>
-                      {EVIDENCE_LABELS[entry.bestRowsEvidence]}
-                    </span>
-                  )}
-                  {!entry.bestRowsEvidence && entry.bestRows && (
-                    <span className="evidence-level evidence-community">社群實測</span>
-                  )}
-                </p>
-                <details className="evidence-fold">
-                  <summary>規格與依據</summary>
-                  <dl className="guide-spec-grid">
-                    {entry.seatLayout && <GuideField label="座位圖／排數" field={entry.seatLayout} />}
-                    <GuideField label="主銀幕" field={entry.mainScreen} />
-                    <GuideField label="三面總寬" field={entry.totalWidth} />
-                    <GuideField label="投影" field={entry.projection} />
-                    <GuideField label="音效" field={entry.audio} />
-                  </dl>
-                  {entry.priceNotes && (
-                    <p className="evidence-note">
-                      <strong>票價說明：</strong>
-                      {entry.priceNotes}
-                    </p>
-                  )}
-                  {entry.notes && <p className="evidence-note">{entry.notes}</p>}
-                  {entry.reviews?.map((review, index) => (
-                    <p className="community-line" key={index}>
-                      <strong>
-                        口碑（
-                        {review.scope === 'auditorium'
-                          ? `僅適用 ${entry.auditoriumNumber?.value ?? '本廳'}`
-                          : review.scope === 'venue_unspecified'
-                            ? '未指明廳號'
-                            : '影城共通'}
-                        ）：
-                      </strong>
-                      {review.text}
-                      {' '}
-                      <span className={`evidence-level evidence-${review.evidence}`}>
-                        {EVIDENCE_LABELS[review.evidence]}
-                      </span>
-                    </p>
-                  ))}
-                  <SourcesFold sources={entry.sources} />
-                </details>
-              </article>
-            ))}
+            {rankedEntries.map(renderCard)}
           </div>
-          {entries.length > 2 && (
+          {rankedEntries.length > 2 && (
             <button
               type="button"
               className="screenx-show-all"
               aria-expanded={showAllMobile}
               onClick={() => setShowAllMobile((current) => !current)}
             >
-              {showAllMobile ? '收合 ScreenX 廳 ▲' : `查看全部 ${entries.length} 廳 ▼`}
+              {showAllMobile ? '收合 ScreenX 廳 ▲' : `查看全部 ${rankedEntries.length} 廳 ▼`}
             </button>
+          )}
+          {areaSort && unrankedEntries.length > 0 && (
+            <details className="unsized-fold screenx-unranked-fold">
+              <summary>未列入面積排序：{unrankedEntries.length} 廳（主銀幕數值未定或有衝突）</summary>
+              <div className="screenx-grid mobile-expanded">
+                {unrankedEntries.map(renderCard)}
+              </div>
+            </details>
           )}
         </>
       )}

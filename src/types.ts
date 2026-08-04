@@ -236,6 +236,9 @@ export interface ScreenXGuideEntry {
   bestRowsEvidence?: EvidenceLevel;
   seatLayout?: GuideValue;
   mainScreen: GuideValue;
+  /** 主銀幕面積排序用數值；僅在來源給出具體公尺數且無跨源衝突時填入，null／省略＝不參與排序。 */
+  mainScreenWidthM?: number | null;
+  mainScreenHeightM?: number | null;
   totalWidth: GuideValue;
   projection: GuideValue;
   audio: GuideValue;
