@@ -1,5 +1,18 @@
 # 架構決策紀錄
 
+## 2026-08-05 README 截圖：追蹤成品、不追蹤產生腳本
+
+公開專案需要讓非使用者一眼看懂在做什麼，README 補上四張介面截圖（排名清單、疊圖比較、規格與依據展開、行動版首屏）放 `docs/screenshots/`。
+
+- **成品進 git、腳本不進**：截圖是永久文件素材，必須跟著 repo；產生腳本屬一次性工具，重拍頻率低（僅 UI 改版時），不值得長期維護一份專案內建置腳本。重拍方式記在此處即可。
+- **存 WebP 而非 PNG**：同樣四張內容 PNG 約 1.3MB、WebP 約 578KB。本機 `sips` 不支援寫入 webp（`Can't write format: org.webmproject.webp`），改由 Playwright 的 Chromium 以 canvas `toDataURL('image/webp', 0.92)` 編碼；中文字在 dpr=2 下仍清晰。GitHub README 可直接顯示 webp。
+- **構圖靠 URL 參數固定**：截圖網址用既有的狀態參數（`?sel=…`、`?sort=score`）指定內容，不靠手動操作，日後重拍構圖一致。排名清單那張需先收合疊圖，卡片才會進入首屏。
+- **標注資料版本**：README 註明截圖為 2026-08 資料版本，避免日後廳數與面積數值變動時被誤認為程式錯誤。
+
+截圖本身無第三方素材風險：App 不使用任何 `<img>` 或外部圖片，畫面全由 CSS／SVG 產生，影城與認證名稱僅以文字作事實指稱。
+
+重拍步驟：`npm run build` → 用 static server 服務 `dist` → Playwright（chromium、深色、`locale: zh-TW`、`deviceScaleFactor: 2`；桌機 1280×1240／1280×860，行動 390×844 dpr3）依上述網址截圖 → canvas 轉 webp。
+
 ## 2026-08-04 ScreenX 主銀幕面積排序（第二階段局部開放）
 
 roadmap 36 原暫緩的 ScreenX 專屬排名，本次僅開放「主銀幕面積」單一、可重現的排序模式，作為 ScreenXGuide 指南內的選用檢視方式，不建立新的綜合評分、不產生分數，也不併入 screens.json 的正面銀幕跨格式排名（fitFilm／scoreScreen／isSized 皆不變動）。排序僅比較 ScreenX 廳彼此的主銀幕寬×高，三面總寬繼續禁止代入。大巨蛋 10 廳因只有單篇寬度推測、無高度數據，不參與本排序，以摺疊區呈現而非略去。排序資料完全來自可重現的公尺數，不使用單篇社群心得作者主觀的個人喜好名次作為依據。同批修正 `screenx-guide.json` 既有的新版 PTT 實測誤植（11×6m 原誤標為 10 廳數字，查證原文後確認實為 2 廳）。
